@@ -11,8 +11,8 @@ export default function ProductCard() {
           <img className="img-s7" src="./Tableaux/Benjkan-Salah1.jpg" />
         </div>
         <div className="text-s7">
-          <h3>Istanbul</h3>
-          <button className="button-s7">See Openings</button>
+          <h3>Benjkan Salah</h3>
+          <button className="button-s7">Détails</button>
         </div>
 
 

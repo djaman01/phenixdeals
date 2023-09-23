@@ -4,53 +4,53 @@ import Filter from '../Filter/Filter.js'
 export default function Header() {
   return (
     <>
-    
-    <div className="header">
 
-      <div className="logo-header">
-        <img className="logo" src="logo-phenixdeals.jpg" />
-      </div>
+      <div className="header">
 
-      <div className="navbar">
-
-      <div className="div-dropdown">
-          <a>Acheter</a>
-          <div className="dropdown">
-            <p>Marketing & PR</p>
-            <p>Customer Success & Sales</p>
-            <p>IT, Product, Data</p>
-            <p>Finance & Administration</p>
-            <p>HR & More</p>
-          </div>
-        </div>
-        <div className="div-dropdown">
-          <a>Vendre</a>
-          <div className="dropdown">
-            <p>Marketing & PR</p>
-            <p>Customer Success & Sales</p>
-            <p>IT, Product, Data</p>
-            <p>Finance & Administration</p>
-            <p>HR & More</p>
-          </div>
-        </div>
-        <div className="div-dropdown">
-          <a>Contact</a>
-          <div className="dropdown">
-            <p>Marketing & PR</p>
-            <p>Customer Success & Sales</p>
-            <p>IT, Product, Data</p>
-            <p>Finance & Administration</p>
-            <p>HR & More</p>
-          </div>
+        <div className="logo-header">
+          <img className="logo" src="logo-phenixdeals.jpg" />
         </div>
 
-      </div>
+        <div className="navbar">
 
-      <div>
-        <Filter />
-      </div>
+          <div className="div-dropdown">
+            <a>Acheter</a>
+            <div className="dropdown">
+              <p>1</p>
+              <p>2</p>
+              <p>3</p>
+              <p>4</p>
+              <p>5</p>
+            </div>
+          </div>
+          <div className="div-dropdown">
+            <a>Vendre</a>
+            <div className="dropdown">
+              <p>1</p>
+              <p>2</p>
+              <p>3</p>
+              <p>4</p>
+              <p>5</p>
+            </div>
+          </div>
+          <div className="div-dropdown">
+            <a>Contact</a>
+            <div className="dropdown">
+              <p>1</p>
+              <p>2</p>
+              <p>3</p>
+              <p>4</p>
+              <p>5</p>
+            </div>
+          </div>
 
-    </div>
+        </div>
+
+        <div>
+          <Filter />
+        </div>
+
+      </div>
     </>
   )
 }
