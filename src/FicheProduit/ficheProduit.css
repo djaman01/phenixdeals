@@ -1,13 +1,3 @@
-.fiche-produit {
-text-align: center;
+.image-fiche{
+  width: 350px;
 }
-
-.div-image {
-  margin-left: 200px;
-}
-
-.prix-produit {
-  margin-right: 900px;
-}
-
-

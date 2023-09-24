@@ -23,18 +23,15 @@ export default function FicheProduit() {
 
       <div className="fiche-produit">
 
-        <div className="div-image">
-          <img className="image" src={produit.thumbnail} alt={produit.détails} />
+        <div className="div-image-fiche">
+          <img className="image-fiche" src={produit.thumbnail} alt={produit.détails} />
         </div>
 
-        <div className="prix-produit">
+        <div className="prix-fiche">
           <h2>Prix: {produit.prix}</h2>
         </div>
 
-        <div className="buttons">
-          <div className="home-button">
-          </div>
-        </div>
+      
 
       </div>
 
