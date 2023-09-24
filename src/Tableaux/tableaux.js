@@ -6,7 +6,8 @@ export const tableaux= [
     "support": "toile",
     "titre": "Sans",
     "prix": "10.000 Dhs",
-    "thumbnail": "./imagesTableaux/tab001.jpg",
+    "thumbnail": "./imagesTableaux/N385.jpg",
+    "code": "N° 385",
     "id": 1,
   }
 

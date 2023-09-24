@@ -1,6 +1,3 @@
-
-
-
 .item-s7 {
   border: solid 1px rgb(247, 233, 233);
   border-radius: 10px;
@@ -12,7 +9,7 @@
 .item-s7:hover {
   cursor: pointer;
   box-shadow: 0 0 20px 15px rgba(0, 0, 0, 0.1);
-  transform: translateY(-5px);
+  transform: translateY(-5px); /*Pour que l'image se relève quand on hover*/
 }
 
 .img-s7 {
