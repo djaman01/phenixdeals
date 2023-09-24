@@ -15,20 +15,22 @@ export default function FicheProduit() {
 
   //Ainsi, on pourra facilement accéder aux propriétés de chaque objet et les utiliser
   return (
-    <div className="all-trailer-page">
+    <div className="fiche-produit">
       <div>
-        <h1 className="movie-title">{produit.type}</h1>
+        <h1>{produit.thumbnail}</h1>
+        <img className="img-s7" src={produit.thumbnail} alt={produit.détails} />
+        <img className="img-s7" src={produit.thumbnail3} alt={produit.détails} />
       </div>
 
       <div>
-        <h2 className="movie-description">{produit.prix}</h2>
-      </div>  
+        <h2 className="movie-description">{produit.détails}</h2>
+      </div>
 
       <div className="buttons">
         <div className="home-button">
-         
+
         </div>
-       
+
       </div>
     </div>
   )
