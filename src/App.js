@@ -7,8 +7,8 @@ import { nomIcone } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
 
 import Main from './Main/Main';
-import FicheTableau from './FicheTableau/FicheTableau'
 import NoPage from './NoPage/NoPage';
+import FicheProduit from './FicheProduit/FicheProduit';
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
           {/* path="/" est obligé car c'est la page par défaut qui va s'ouvrir */}
           <Route path="/" element={<Main />} />
           <Route path="Movies" element={<Main />} />
-          <Route path='fichetableau/:param' element={<FicheTableau />}/>
+          <Route path='fichetableau/:param' element={<FicheProduit />}/>
           <Route path="*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>

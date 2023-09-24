@@ -8,7 +8,7 @@ export default function Header() {
       <div className="header">
 
         <div className="logo-header">
-          <img className="logo" src="logo-phenixdeals.jpg" />
+          <img className="logo" src="logo-bon.jpg" />
         </div>
 
         <div className="navbar">
