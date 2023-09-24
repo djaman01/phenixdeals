@@ -17,11 +17,11 @@ export default function FicheProduit() {
   return (
     <div className="all-trailer-page">
       <div>
-        <h1 className="movie-title">{produit.artist}</h1>
+        <h1 className="movie-title">{produit.type}</h1>
       </div>
 
       <div>
-        <h2 className="movie-description">{produit.dimensions}</h2>
+        <h2 className="movie-description">{produit.prix}</h2>
       </div>  
 
       <div className="buttons">
