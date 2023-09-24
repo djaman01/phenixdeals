@@ -4,7 +4,6 @@
   background-color: white;
   margin-bottom: 50px;
   border: 2px solid yellow;
-  
 }
 
 .logo {
@@ -16,6 +15,7 @@ a {
   font-size: 15px;
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .navlink:hover {
