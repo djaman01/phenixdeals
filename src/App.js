@@ -20,7 +20,7 @@ function App() {
           {/* path="/" est obligé car c'est la page par défaut qui va s'ouvrir */}
           <Route path="/" element={<Main />} />
           <Route path="Movies" element={<Main />} />
-          <Route path='ficheproduit/:param' element={<FicheProduit />}/>
+          <Route path='ficheproduit/:id' element={<FicheProduit />}/>
           <Route path="*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>
