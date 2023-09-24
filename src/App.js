@@ -5,14 +5,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { nomIcone } from '@fortawesome/free-solid-svg-icons'
 
 import './App.css';
-import Header from './Header/Header';
-import ProductCard from './ProductCard/ProductCard';
+
+import Main from './Main/Main';
+import FicheTableau from './FicheTableau/FicheTableau'
+import NoPage from './NoPage/NoPage';
+
 
 function App() {
   return (
     <>
-    <Header />
-    <ProductCard />
+
+    <BrowserRouter>
+        <Routes>
+          {/* path="/" est obligé car c'est la page par défaut qui va s'ouvrir */}
+          <Route path="/" element={<Main />} />
+          <Route path="Movies" element={<Main />} />
+          <Route path='fichetableau/:param' element={<FicheTableau />}/>
+          <Route path="*" element={<NoPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

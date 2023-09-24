@@ -1,3 +1,4 @@
+
 export const tableaux= [
   {
     "artist": "Benjkan Salah",
@@ -5,9 +6,7 @@ export const tableaux= [
     "support": "toile",
     "titre": "Sans",
     "prix": "10.000 Dhs",
-    "thumbnail": "./Tableaux/Benjkan-Salah1.jpg",
-    "thumbnail_width": 150,
-    "thumbnail_height": 250,
+    "thumbnail": "./imagesTableaux/tab001.jpg",
     "id": 1,
   }
 
