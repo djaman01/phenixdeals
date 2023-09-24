@@ -1,6 +1,7 @@
 import './header.css'
 import Filter from '../Filter/Filter.js'
 
+
 export default function Header() {
   return (
     <>
@@ -8,7 +9,7 @@ export default function Header() {
       <div className="header">
 
         <div className="logo-header">
-          <img className="logo" src="logo-bon.jpg" />
+          <img className="logo" src="../logo-bon.jpg" />
         </div>
 
         <div className="navbar">

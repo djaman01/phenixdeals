@@ -1,6 +1,6 @@
 
 
-.item-s7 {
+.item{
   border: solid 1px rgb(247, 233, 233);
   border-radius: 10px;
   width: 90%;
@@ -13,12 +13,12 @@
   transform: translateY(-5px); /*Pour que l'image se relève quand on hover*/
 }
 
-.image-s7 {
+.div-image{
   border: 2px solid green;
   width: 220px;
   height: 240px;
 }
-.img-s7 {
+.image {
   width: 220px;
   height: 240px;
   object-fit: contain;
@@ -29,7 +29,7 @@
 }
 
 
-.button-s7 {
+.button{
   height: 32px;
   background-color: #3d83df;
   color: white;

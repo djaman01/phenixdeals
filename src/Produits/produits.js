@@ -7,9 +7,9 @@ export const produits= [
     "cadré": "Non",
     "état": "2ème Main",
     "Contact": "06-58",
-    "thumbnail": "./imagesTableaux/N385.jpg",
-    "thumbnail2": "./imagesTableaux/N386.jpg",
-    "thumbnail3": "./imagesTableaux/N387.jpg",
+    "thumbnail": "../imagesTableaux/N385.jpg", //On met .. pour pouvoir accéder à l'image partout, même dans le component FicheProduit
+    "thumbnail2": "../imagesTableaux/N386.jpg",
+    "thumbnail3": "../imagesTableaux/N387.jpg",
     "code": "N° 385",
     "id": 1,
   },

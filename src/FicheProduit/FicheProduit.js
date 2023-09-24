@@ -1,4 +1,6 @@
 import { useParams } from "react-router-dom";
+import Header from '../Header/Header' //Il faut donner les même className pour avoir le même style, sans importer le css
+import './ficheProduit.css'
 
 
 import { produits } from "../Produits/produits";
@@ -15,23 +17,27 @@ export default function FicheProduit() {
 
   //Ainsi, on pourra facilement accéder aux propriétés de chaque objet et les utiliser
   return (
-    <div className="fiche-produit">
-      <div>
-    
-        <img className="img-s7" src={produit.thumbnail} alt={produit.détails} />
-    
-      </div>
+    <>
+      {/* Le header bouge d'une page à l'autre, car il ya dans la page d'accueil une srcoll bar à droite qui prend la place */}
+      <Header />
 
-      <div>
-        <h2 className="movie-description">{produit.prix}</h2>
-      </div>
+      <div className="fiche-produit">
 
-      <div className="buttons">
-        <div className="home-button">
+        <div className="div-image">
+          <img className="image" src={produit.thumbnail} alt={produit.détails} />
+        </div>
 
+        <div className="prix-produit">
+          <h2>Prix: {produit.prix}</h2>
+        </div>
+
+        <div className="buttons">
+          <div className="home-button">
+          </div>
         </div>
 
       </div>
-    </div>
+
+    </>
   )
 }
