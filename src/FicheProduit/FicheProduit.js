@@ -17,13 +17,13 @@ export default function FicheProduit() {
   return (
     <div className="fiche-produit">
       <div>
-        <h1>{produit.thumbnail}</h1>
+    
         <img className="img-s7" src={produit.thumbnail} alt={produit.détails} />
-        <img className="img-s7" src={produit.thumbnail3} alt={produit.détails} />
+    
       </div>
 
       <div>
-        <h2 className="movie-description">{produit.détails}</h2>
+        <h2 className="movie-description">{produit.prix}</h2>
       </div>
 
       <div className="buttons">
