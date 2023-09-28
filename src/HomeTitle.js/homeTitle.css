@@ -1,0 +1,7 @@
+.div-title-home {
+  border: 2px solid black;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
