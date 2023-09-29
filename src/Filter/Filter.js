@@ -1,6 +1,6 @@
-import ProductCard from "../ProductCard/ProductCard";
+
 import { produits } from "../Produits/produits";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function Filter() {
   const [product, setProduct] = useState('');
