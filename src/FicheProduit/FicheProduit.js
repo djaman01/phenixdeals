@@ -27,9 +27,21 @@ export default function FicheProduit() {
           <img className="image-fiche" src={produit.thumbnail} alt={produit.détails} />
         </div>
 
-        <div className="prix-fiche">
-          <h2>Prix: {produit.prix}</h2>
+        <div className="infos-produit">
+          <h1>{produit.état}</h1>
+          <h1>{produit.nom}</h1>
+          <h2>{produit.dimensions}</h2>
+          <h2>{produit.matière}</h2>
+          <h2>{produit.prix}</h2>
+          <h3>{produit.code}</h3>
+          
+          <button>Voir d'autres {produit.nom}</button>
+
+          <button>Acheter</button>
+
         </div>
+
+      
 
       
 

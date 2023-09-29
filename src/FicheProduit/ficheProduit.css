@@ -1,10 +1,20 @@
 /* Object fit marche après avoir donné une width et height à une image */
 
+.fiche-produit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .image-fiche{
  width: 450px;
  height: 450px;
  object-fit: contain;
   
 }
+
+.div-image-fiche {
+  margin-top: 60px;
+  margin-left: 100px;
+}
+
 
 
