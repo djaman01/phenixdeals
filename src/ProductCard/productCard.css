@@ -1,5 +1,4 @@
 
-
 .item{
   border: solid 1px rgb(247, 233, 233);
   border-radius: 10px;
@@ -7,7 +6,7 @@
   border: 2px solid blue;
 }
 
-.item-s7:hover {
+.item:hover {
   cursor: pointer;
   box-shadow: 0 0 20px 15px rgba(0, 0, 0, 0.1);
   transform: translateY(-5px); /*Pour que l'image se relève quand on hover*/
@@ -28,9 +27,18 @@
 
 }
 
+.text-product {
+  text-align: center;
+}
 
-.button{
-  height: 32px;
+.product-title, .product-details{
+  margin-bottom: -10px;
+}
+
+
+
+.product-button{
+  height: 30px;
   background-color: #3d83df;
   color: white;
   font-weight: bold;

@@ -15,7 +15,7 @@ export const produits= [
   },
 
   {
-    "type": "Tableau",
+    "type": "Meuble",
     "détails": "Benjkan Salah/100x100cm/Toile",
     "prix": "20.000 Dhs",
     "cadré": "Non",
