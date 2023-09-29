@@ -1,5 +1,10 @@
+/* Object fit marche après avoir donné une width et height à une image */
+
 .image-fiche{
-  width: 350px;
+ width: 450px;
+ height: 450px;
+ object-fit: contain;
+  
 }
 
 
