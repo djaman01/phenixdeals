@@ -15,6 +15,7 @@
 .div-image-fiche {
   margin-top: 60px;
   margin-left: 150px;
+  margin-bottom: 50px;
 }
 
 .infos-produit {
@@ -28,7 +29,7 @@
   color: #0072B5;
 }
 
-.dimensions-produit, .matiere-produit {
+.dimensions-produit, .matiere-produit, .code-produit {
   color: #363945;
 }
 
@@ -37,5 +38,36 @@
   color: #0072B5;
 }
 
+.btn-produit {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-autre-produit {
+  
+    height: 30px;
+    background-color: #3d83df;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 5px;
+    border: none;
+    padding: 0 12px 0 12px;
+    cursor: pointer;
+  
+}
+
+.btn-réserver {
+  height: 30px;
+  background-color: #009B77;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 5px;
+  border: none;
+  padding: 0 12px 0 12px;
+  cursor: pointer;
+
+}
 
 
