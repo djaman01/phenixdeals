@@ -17,10 +17,10 @@ export default function HomeTitle() {
     <>
       <div class="div-title-home">
 
-        <h1>
+        <h1 className='home-title'>
           Les 20 Nouveaux produits
         </h1>
-        <div>
+        <div className='input-home'>
           <input value={product} onChange={inputValue} placeholder="Tableau, meuble, bijou" type="text" />
         </div>
 

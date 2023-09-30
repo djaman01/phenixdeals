@@ -2,9 +2,18 @@
   border: 2px solid black;
   height: 100px;
   display: flex;
-  justify-content: center;
   align-items: center;
+
 }
+
+.home-title {
+  margin-left: 400px;
+}
+
+.input-home{
+  margin-left: 100px;
+}
+
 
 .grid-home-filter {
   display: grid;
