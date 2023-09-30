@@ -1,5 +1,7 @@
 import './header.css'
 import Filter from '../Filter/Filter.js'
+import { Link } from 'react-router-dom'
+
 
 
 export default function Header() {
@@ -13,8 +15,12 @@ export default function Header() {
         </div>
 
         <div className="navbar">
+          <Link to='/accueil'>
+          <a>Accueil</a>
+          </Link>
 
           <div className="div-dropdown">
+
             <a>Acheter</a>
             <div className="dropdown">
               <p>1</p>
