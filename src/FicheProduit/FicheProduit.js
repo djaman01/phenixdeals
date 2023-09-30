@@ -3,7 +3,7 @@ import Header from '../Header/Header' //Il faut donner les même className pour 
 import './ficheProduit.css'
 
 
-import { produits } from "../Produits/produits";
+import { produits } from "../20Produits/20produits";
 
 export default function FicheProduit() {
 

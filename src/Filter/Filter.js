@@ -1,5 +1,5 @@
 
-import { produits } from "../Produits/produits";
+import { produits } from "../20Produits/20produits";
 import { useState } from 'react';
 
 export default function Filter() {

@@ -1,5 +1,5 @@
 import ProductCard from "../ProductCard/ProductCard";
-import { produits } from "../Produits/produits";
+import { produits } from "../20Produits/20produits";
 import './mapTableaux.css'
 
 

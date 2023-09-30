@@ -1,6 +1,6 @@
 
 import './homeTitle.css'
-import { produits } from "../Produits/produits";
+import { produits } from "../20Produits/20produits";
 import { useState } from 'react';
 import ProductCard from "../ProductCard/ProductCard";
 
@@ -18,10 +18,10 @@ export default function HomeTitle() {
       <div class="div-title-home">
 
         <h1>
-          Nouveaux Produits
+          Les 20 Nouveaux produits
         </h1>
         <div>
-          <input value={product} onChange={inputValue} placeholder="Tableaux, meubles, bijoux" type="text" />
+          <input value={product} onChange={inputValue} placeholder="Tableau, meuble, bijou" type="text" />
         </div>
 
       </div>
