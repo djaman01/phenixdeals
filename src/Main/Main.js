@@ -1,4 +1,5 @@
 import Filter from '../Filter/Filter'
+import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import HomeTitle from '../HomeTitle/HomeTitle'
 import ImageHome from '../ImageHome/ImageHome'
@@ -13,6 +14,7 @@ export default function Main() {
     <Header />
     <ImageHome />
     <HomeTitle />
+    <Footer />
     
     </>
   )
