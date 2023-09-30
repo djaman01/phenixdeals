@@ -12,17 +12,21 @@
   transform: translateY(-5px); /*Pour que l'image se relève quand on hover*/
 }
 
-.div-image{
+.div-thumbnail{
   width: 220px;
   height: 240px;
+  
 }
-.image {
+
+.thumbnail {
   width: 220px;
   height: 240px;
   object-fit: contain;
   /*avec contain, l'image apparait à 100% mais s'ajuste à la dimension donnée*/
   /*Avec cover: l'image s'ajuste à la dimension donnée, mais peut perdre une partie si trop grande*/
   border-radius: 10px 10px 0 0;
+  margin-left: 2.5px;
+  
 
 }
 

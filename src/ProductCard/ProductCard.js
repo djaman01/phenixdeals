@@ -8,10 +8,10 @@ export default function ProductCard({ type, détails, prix, thumbnail, id }) {
 
       <div className="item">
 
-        <Link to={`/ficheproduit/${id}`}>
+        <Link to={`/ficheproduit/${id}`} className='link'>
 
-          <div className="div-image">
-            <img className="image" src={thumbnail} alt={détails} />
+          <div className="div-thumbnail">
+            <img className="thumbnail" src={thumbnail} alt={détails} />
           </div>
 
           <div className="text-product">
