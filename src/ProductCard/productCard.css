@@ -3,7 +3,7 @@
   border: solid 1px rgb(247, 233, 233);
   border-radius: 10px;
   width: 90%;
-  border: 2px solid blue;
+  
 }
 
 .item:hover {
@@ -13,7 +13,6 @@
 }
 
 .div-image{
-  border: 2px solid green;
   width: 220px;
   height: 240px;
 }

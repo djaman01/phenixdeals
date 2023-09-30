@@ -1,8 +1,8 @@
 
 /* La property objecti-fit fonctionne, lorqu'on donne une width et une height à une image */
 .image-home {
-  border: 2px solid green;
-  width: 1500px;
+  
+  width: 1800px;
   height: 500px;
   object-fit: cover;
   

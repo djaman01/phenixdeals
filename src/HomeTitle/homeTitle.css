@@ -1,5 +1,5 @@
 .div-title-home {
-  border: 2px solid black;
+  
   height: 100px;
   display: flex;
   align-items: center;
@@ -20,5 +20,4 @@
   grid-template-columns: 250px 250px 250px 250px;
   gap: 50px 50px;
   justify-content: center;
-  border: 2px solid red;
 }
