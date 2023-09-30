@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 .image-fiche{
  width: 450px;
  height: 450px;
@@ -13,7 +14,27 @@
 
 .div-image-fiche {
   margin-top: 60px;
+  margin-left: 150px;
+}
+
+.infos-produit {
+  margin-top: 35px;
   margin-left: 100px;
+
+}
+
+.nom-produit {
+  font-family: 'Merriweather', serif;
+  color: #0072B5;
+}
+
+.dimensions-produit, .matiere-produit {
+  color: #363945;
+}
+
+.prix-produit {
+  font-family: 'Heebo', sans-serif;
+  color: #0072B5;
 }
 
 

@@ -5,7 +5,7 @@ export const produits= [
     "détails": "Benjkan Salah/100x100cm/Toile",
     "nom": "Benjkan Salah",
     "dimensions": "100x100cm",
-    "matière": "toile",
+    "matière": "Toile",
     "prix": "10.000 Dhs",
     "cadré": "Non",
     "état": "",
