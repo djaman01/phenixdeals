@@ -1,17 +1,26 @@
+.main-page{
+  margin-bottom: 100px;
+}
+
+
 .div-title-home {
   
+  margin-bottom: 50px;
   height: 100px;
   display: flex;
   align-items: center;
+
 
 }
 
 .home-title {
   margin-left: 400px;
+  margin-top: 50px;
 }
 
 .input-home{
   margin-left: 100px;
+  margin-top: 30px;
 }
 
 

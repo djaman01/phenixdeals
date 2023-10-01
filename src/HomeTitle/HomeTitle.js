@@ -14,7 +14,7 @@ export default function HomeTitle() {
   const filterType = produits.filter((elm) => elm.type.toLowerCase().includes(product.toLowerCase()));
 
   return (
-    <>
+    <div class="main-page">
       <div class="div-title-home">
 
         <h1 className='home-title'>
@@ -32,6 +32,6 @@ export default function HomeTitle() {
 
       </div>
 
-    </>
+    </div>
   )
 }
