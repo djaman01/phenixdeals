@@ -3,12 +3,17 @@ import './productCard.css'
 import { Link } from "react-router-dom";
 
 export default function ProductCard({ type, détails, prix, thumbnail, id }) {
+
+ const scrollToTop = () => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  };
+
   return (
     <div class="container">
 
       <div className="item">
 
-        <Link to={`/ficheproduit/${id}`} className='link'>
+        <Link to={`/ficheproduit/${id}`} className='link' onClick={scrollToTop}>
 
           <div className="div-thumbnail">
             <img className="thumbnail" src={thumbnail} alt={détails} />

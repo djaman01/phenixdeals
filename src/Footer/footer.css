@@ -1,0 +1,37 @@
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: 
+    "abonnement . . reseaux"
+    "phenix liens contact .";
+  background-color: #EDF1FF;
+}
+
+.abonnement {
+  grid-area: abonnement;
+  margin-left: 20px;
+  color: #363945;
+}
+
+.phenix-mot {
+  grid-area: phenix;
+  margin-left: 20px;
+  margin-top: 30px;
+  color: #363945;
+}
+
+.liens-footer{
+  grid-area: liens;
+  margin: 0 auto;
+  color: #363945;
+}
+
+.contact-footer {
+  grid-area: contact;
+  margin: 0 auto;
+
+}
+
+.reseaux-footer {
+  grid-area: reseaux;
+}
