@@ -9,7 +9,7 @@
   width: 150px;
 }
 
-a {
+.home-button, .page-selection, .contact-btn, .vendre-btn {
   color: #ababab;
   font-size: 15px;
   font-family: 'Roboto', sans-serif;
@@ -17,9 +17,6 @@ a {
   cursor: pointer;
 }
 
-.navlink:hover {
-  color: #00b39b;
-}
 
 .div-dropdown {
   position: relative;
@@ -28,9 +25,9 @@ a {
 
 .dropdown {
   position: absolute;
-  right: 1px;
-  top: 20px;
-  padding-left: 10px;
+  z-index: 1;
+  right: -75px;
+  top: 50px;
   cursor: pointer;
   border: 2px solid white;
   border-radius: 5px;
@@ -41,6 +38,7 @@ a {
   color: #ababab;
   line-height: 22px;
   display: none;
+  text-align: center;
 }
 
 .div-dropdown:hover .dropdown {
@@ -57,6 +55,14 @@ box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
   align-items: center;
   width: 250px;
   justify-content: space-around;
-  
-
 }
+
+.home-link {
+  text-decoration: none;
+}
+
+.home-button:hover, .contact-btn:hover, .vendre-btn:hover {
+  color:  #00A170;
+}
+
+

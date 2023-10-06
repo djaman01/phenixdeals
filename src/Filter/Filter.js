@@ -9,7 +9,7 @@ export default function Filter() {
       </div>
 
       <div className="button-header">
-        <button style={{ cursor: "pointer" }}>Vendez</button>
+        <button style={{ cursor: "pointer" }}>Vendre</button>
       </div>
 
     </>

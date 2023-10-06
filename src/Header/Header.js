@@ -11,44 +11,30 @@ export default function Header() {
       <div className="header">
 
         <div className="logo-header">
-          <img className="logo" src="../logo-bon.jpg" />
+          <img className="logo" src="../logo-bon.jpg" alt="logo-phenix" />
         </div>
 
         <div className="navbar">
-          <Link to='/accueil'>
-          <a>Accueil</a>
+          <Link to='/accueil' className='home-link'>
+          <h4 className='home-button'>Accueil</h4>
           </Link>
 
           <div className="div-dropdown">
+            <h4 className='page-selection'>Acheter</h4>
+            <div className="dropdown">
+              <p>Tableaux</p>
+              <p>Décoration</p>
+              <p>Bijoux</p>
+              <p>Livres</p>
+            </div>
+          </div>
 
-            <a>Acheter</a>
-            <div className="dropdown">
-              <p>1</p>
-              <p>2</p>
-              <p>3</p>
-              <p>4</p>
-              <p>5</p>
-            </div>
-          </div>
           <div className="div-dropdown">
-            <a>Vendre</a>
-            <div className="dropdown">
-              <p>1</p>
-              <p>2</p>
-              <p>3</p>
-              <p>4</p>
-              <p>5</p>
-            </div>
+            <h4 className='vendre-btn'>Vendre</h4>
           </div>
+
           <div className="div-dropdown">
-            <a>Contact</a>
-            <div className="dropdown">
-              <p>1</p>
-              <p>2</p>
-              <p>3</p>
-              <p>4</p>
-              <p>5</p>
-            </div>
+            <h4 className='contact-btn'>Contact</h4>
           </div>
 
         </div>
