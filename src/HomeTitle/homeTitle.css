@@ -16,6 +16,8 @@
 .home-title {
   margin-left: 400px;
   margin-top: 50px;
+  font-family: 'Martian Mono', monospace;
+  color: #FA7A35;
 }
 
 .input-home{
