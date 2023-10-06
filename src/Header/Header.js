@@ -22,10 +22,10 @@ export default function Header() {
           <div className="div-dropdown">
             <h4 className='page-selection'>Acheter</h4>
             <div className="dropdown">
-              <p>Tableaux</p>
-              <p>Décoration</p>
-              <p>Bijoux</p>
-              <p>Livres</p>
+              <p className="drop-btn">Tableaux</p>
+              <p className="drop-btn">Décoration</p>
+              <p className="drop-btn">Bijoux</p>
+              <p className="drop-btn">Livres</p>
             </div>
           </div>
 

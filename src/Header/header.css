@@ -9,7 +9,7 @@
   width: 150px;
 }
 
-.home-button, .page-selection, .contact-btn, .vendre-btn {
+.home-button, .page-selection, .contact-btn, .vendre-btn{
   color: #ababab;
   font-size: 15px;
   font-family: 'Roboto', sans-serif;
@@ -65,4 +65,6 @@ box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
   color:  #00A170;
 }
 
-
+.drop-btn:hover {
+  text-decoration: underline;
+}
