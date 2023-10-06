@@ -4,25 +4,19 @@
 
 
 .div-title-home {
-  
   margin-bottom: 50px;
   height: 100px;
-  display: flex;
-  align-items: center;
-
-
 }
 
 .home-title {
-  margin-left: 400px;
+  text-align: center;
   margin-top: 50px;
   font-family: 'Martian Mono', monospace;
   color: #FA7A35;
 }
 
 .input-home{
-  margin-left: 100px;
-  margin-top: 30px;
+  text-align: center;
 }
 
 
