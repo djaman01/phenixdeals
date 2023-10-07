@@ -40,21 +40,24 @@
   color: #0072B5;
   margin-top: 15px;
   
+  
 }
 
 
 .product-details {
- width: 210px;
  height: 38px;
  color: #363945;
+ margin-top: -10px;
  display: flex;
  align-items: center;
  justify-content: center;
- margin: 0 auto -5px auto;
-
+ font-size: 17px;
+ 
 }
 
 .product-price {
+  margin-top: -10px;
   color: #0072B5;
+  font-size: 17px;
 }
 
