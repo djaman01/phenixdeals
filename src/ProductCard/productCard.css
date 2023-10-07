@@ -1,10 +1,11 @@
 .link {
   text-decoration: none;
 } 
+
 .item{
   border: solid 1px rgb(247, 233, 233);
   border-radius: 10px;
-  height: 403px; 
+  height: 380px; 
   width: 100%;
 }
 
@@ -15,14 +16,13 @@
 }
 
 .div-thumbnail{
-  width: 100%;
-  height: 240px;
-  
+  width: 100%
 }
 
 .thumbnail {
+  /* C'est le container qui doit avoir width et height défini et object-fit */
   width: 100%;
-  height: 100%;
+  height: 240px;
   object-fit: cover;
   /*avec contain, l'image apparait à 100% mais s'ajuste à la dimension donnée*/
   /*Avec cover: l'image s'ajuste à la dimension donnée, mais peut perdre une partie si trop grande*/
@@ -33,7 +33,6 @@
 
 .text-product {
   text-align: center;
-  border: 2px solid red;
   height: 160px;
 }
 
@@ -41,32 +40,21 @@
   color: #0072B5;
   margin-top: 15px;
   
-
 }
 
 
 .product-details {
  width: 210px;
+ height: 38px;
  color: #363945;
- margin: -10px auto -10px auto;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin: 0 auto -5px auto;
 
 }
 
 .product-price {
- 
   color: #0072B5;
 }
 
-
-.product-button{
-  height: 25px;
-  background-color: #3d83df;
-  color: white;
-  font-weight: bold;
-  font-size: 12px;
-  border-radius: 5px;
-  border: none;
-  padding: 0 12px 0 12px;
-  cursor: pointer;
-  border: 2px solid red;
-}
