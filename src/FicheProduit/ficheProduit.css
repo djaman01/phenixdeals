@@ -10,12 +10,10 @@
   margin-top: 60px;
   margin-left: 150px;
   margin-bottom: 50px;
-  border: 2px red solid;
   width: 500px;
 }
 
 .div-image-fiche{
-  border: 2px purple solid;
   object-fit: contain;
   width: 500px;
   height: 525px;
