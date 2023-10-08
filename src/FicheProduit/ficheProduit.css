@@ -5,19 +5,25 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.image-fiche{
- width: 450px;
- height: 450px;
- object-fit: contain;
-  
-}
 
-.div-image-fiche {
+.div-carousel {
   margin-top: 60px;
   margin-left: 150px;
   margin-bottom: 50px;
+  border: 2px red solid;
   width: 500px;
 }
+
+.div-image-fiche{
+  border: 2px purple solid;
+  object-fit: contain;
+  width: 500px;
+  height: 525px;
+  /* important pour aligner les images du carousel qui ne sont pas hautes, ou qui sont trop hautes et dont on ne voit qu'une partie de l'image */
+  display: flex;
+  align-items: center;
+   
+ }
 
 .infos-produit {
   margin-top: 35px;

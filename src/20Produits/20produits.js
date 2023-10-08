@@ -44,7 +44,7 @@ export const produits= [
     "cadré": "Non",
     "état": "2ème Main",
     "Contact": "06-58",
-    "thumbnail": "../imagesTableaux/N385.jpg", //On met .. pour pouvoir accéder à l'image partout, même dans le component FicheProduit
+    "thumbnail": "../imagesTableaux/tableau-long.jpg", //On met .. pour pouvoir accéder à l'image partout, même dans le component FicheProduit
     "thumbnail2": "",
     "thumbnail3": "",
     "code": "Ref: 385",
