@@ -7,7 +7,6 @@
 
 
 .div-carousel {
-  margin-top: 60px;
   margin-left: 150px;
   margin-bottom: 50px;
   width: 500px;
@@ -15,8 +14,8 @@
 
 .div-image-fiche {
   object-fit: contain;
-  width: 500px;
-  height: 525px;
+  width: 475px;
+  height: 520px;
   /* important pour aligner les images du carousel qui ne sont pas hautes, ou qui sont trop hautes et dont on ne voit qu'une partie de l'image */
   display: flex;
   align-items: center;
