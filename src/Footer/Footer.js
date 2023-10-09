@@ -12,8 +12,8 @@ export default function Footer() {
 
         <div className='abonnement'>
           <h4>Abonnez-vous à nos réseaux sociaux</h4>
-          <span><SocialIcon url="https://www.instagram.com/phenixdeals/" />  </span>
-          <span style={{ marginLeft: 20 }}><SocialIcon url="https://web.facebook.com/profile.php?id=100090243464213" />  </span>
+          <span><SocialIcon url="https://www.instagram.com/phenixdeals/" target="_blank" />  </span>
+          <span style={{ marginLeft: 20 }}><SocialIcon url="https://web.facebook.com/profile.php?id=100090243464213" target="_blank" />  </span>
         </div>
 
 
