@@ -13,15 +13,15 @@
   width: 500px;
 }
 
-.div-image-fiche{
+.div-image-fiche {
   object-fit: contain;
   width: 500px;
   height: 525px;
   /* important pour aligner les images du carousel qui ne sont pas hautes, ou qui sont trop hautes et dont on ne voit qu'une partie de l'image */
   display: flex;
   align-items: center;
-   
- }
+
+}
 
 .infos-produit {
   margin-top: 35px;
@@ -34,7 +34,9 @@
   color: #0072B5;
 }
 
-.dimensions-produit, .matiere-produit, .code-produit {
+.dimensions-produit,
+.matiere-produit,
+.code-produit {
   color: #363945;
 }
 
@@ -44,30 +46,19 @@
 }
 
 .btn-produit {
-  width: 300px;
+  margin-top: 30px;
+  width: 500px;
   display: flex;
   justify-content: space-between;
 }
-.btn-autre-produit {
-  
-    height: 30px;
-    background-color: #3d83df;
-    color: white;
-    font-weight: bold;
-    font-size: 12px;
-    border-radius: 5px;
-    border: none;
-    padding: 0 12px 0 12px;
-    cursor: pointer;
-  
-}
 
-.btn-réserver {
-  height: 30px;
-  background-color: #009B77;
+.btn-autre-produit {
+
+  height: 40px;
+  background-color: #3d83df;
   color: white;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 17px;
   border-radius: 5px;
   border: none;
   padding: 0 12px 0 12px;
@@ -75,4 +66,16 @@
 
 }
 
+.btn-réserver {
+  height: 40px;
+  width: 100px;
+  background-color: #009B77;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+  border-radius: 5px;
+  border: none;
+  padding: 0 12px 0 12px;
+  cursor: pointer;
 
+}

@@ -10,53 +10,51 @@ export default function Contact() {
 
       <Header />
 
-      <div class="all-form">
-        <h2>Merci de remplir le formulaire ci-dessous:</h2>
+      <div className="all-form">
+        <h2 className='merci-form'>Merci de remplir le formulaire ci-dessous:</h2>
 
         <form>
 
-          <div class="form-grid">
+          <div className="form-grid">
 
-            <div class="first-column">
-              <div>
-                <label for="nom" class="nom"> Nom </label>
-                <input type="text" name="nom" id="nom" placeholder="Nom de famille" />
+            <div className="first-column">
+
+              <div className='nom-famille'>
+                <label for="nom" className="nom"> Nom </label>
+                <input type="text" name="nom" id="nom" placeholder="Nom" />
               </div>
 
-              <div>
+              <div className='prenom'>
                 <label for="prenom">Prénom</label>
                 <input type="text" id="prenom" name="prenom" placeholder="Prénom" />
               </div>
 
-              <div>
+              <div className='ville'>
                 <label for="ville">Ville</label>
-                <input type="text" id="ville" name="ville" />
+                <input type="text" id="ville" name="ville" placeholder='Ville' />
               </div>
 
-              <div>
+              <div className='mail'>
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" placeholder="votre e-mail" />
               </div>
 
             </div>
 
-            <div class="second-column">
+            <div className="second-column">
 
-            
-              <div class="text-area">
+              <div className="text-area-form">
                 <label for="aide">En quoi pouvons-nous vous aider ?</label>
-                <textarea name="aide" id="aide" cols="30" rows="5" placeholder="Ecrivez votre text ici"></textarea>
+                <textarea name="aide" id="aide" cols="60" rows="10" placeholder="Ecrivez votre texte ici"></textarea>
               </div>
 
-             
             </div>
 
           </div>
 
-          <div class="button-div">
-            <button type="reset"> Reset</button>
-            <button id='submitcheck' type="submit" class="submit">Submit</button>
-
+          <div class="form-button">
+            <button id='submitcheck' type="submit" className="submit-btn">Submit</button>
+            <button type="reset" className='reset-btn'> Reset </button>
           </div>
 
         </form>
