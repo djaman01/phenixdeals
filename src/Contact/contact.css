@@ -1,0 +1,100 @@
+
+.all-form {
+  border: 2px black dotted;
+  height: 500px;
+  padding: 20px 40px;
+  margin: 50px 150px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+label {
+  display: block;
+}
+
+
+.gender {
+  margin-top: 100px;
+}
+
+.text-area {
+  margin-top: 120px;
+}
+
+fieldset {
+  width: 200px;
+}
+
+.button-div {
+  margin-left: 450px;
+  width: 100px;
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.title-inputs{
+  margin-left: 350px;
+  margin-top: 20px;
+}
+
+.fieldset-inputs{
+  width: 300px;
+}
+
+/* Style image input list */
+
+.section-list {
+  border: 2px grey dotted
+}
+
+/* On donne au div qui contient l'image une forme circulaire */
+
+.title-inputs {
+  border: 2px red solid;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden; /*On rajoute hidden pour que tout l'excedent de l'image soit caché et qu'elle prenne une forme circulaire*/
+  position: relative; /*Pour faire bouger le div qui contient l'image et le placer au milieu du border*/
+  top: 70px;
+  left: 130px;
+}
+/* Puis on donne à l'image object-fit:cover, pour qu'elle prenne la tailel de tout le div circulaire */
+.img-list {
+object-fit: cover;
+width: 100%;
+height: 100%;
+
+}
+
+/* styling list inputs */
+
+
+.input-list{
+  display: grid;
+  grid-template-columns: 800px 800px;
+}
+
+.column-list1 div {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.column-list2 div {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.column-list1 span:first-child {
+  color: red;
+}
+
+.column-list2 span:first-child {
+  color: red;
+}

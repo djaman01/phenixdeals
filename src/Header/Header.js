@@ -16,7 +16,7 @@ export default function Header() {
 
         <div className="navbar">
           <Link to='/accueil' className='home-link'>
-          <h4 className='home-button'>Accueil</h4>
+            <h4 className='home-button'>Accueil</h4>
           </Link>
 
           <div className="div-dropdown">
@@ -34,7 +34,9 @@ export default function Header() {
           </div>
 
           <div className="div-dropdown">
-            <h4 className='contact-btn'>Contact</h4>
+            <Link to="/contact" style={{textDecoration: "none"}}>
+              <h4 className='contact-btn'>Contact</h4>
+            </Link>
           </div>
 
         </div>

@@ -3,12 +3,12 @@ import axios from 'axios';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { nomIcone } from '@fortawesome/free-solid-svg-icons'
-
 import './App.css';
 
 import Main from './Main/Main';
 import NoPage from './NoPage/NoPage';
 import FicheProduit from './FicheProduit/FicheProduit';
+import Contact from './Contact/Contact';
 
 
 
@@ -22,7 +22,9 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="accueil" element={<Main />} />
           <Route path='ficheproduit/:id' element={<FicheProduit />}/>
+          <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NoPage />} />
+      
         </Routes>
       </BrowserRouter>
     </>
