@@ -1,8 +1,12 @@
 .footer-container {
+  background-color: #EDF1FF;
+  
+}
+
+.top-footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: #EDF1FF;
-  height: 200px;
+  margin-bottom: 20px ;
 }
 
 .abonnement {
@@ -17,5 +21,13 @@
   margin-left: 150px;
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.copyright {
+  border-top: 2px solid grey;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+  
 }
 
