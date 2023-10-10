@@ -21,22 +21,22 @@ export default function Contact() {
 
               <div className='nom-famille'>
                 <label for="nom" className="nom"> Nom </label>
-                <input type="text" name="nom" id="nom" placeholder="Nom" />
+                <input type="text" name="nom" id="nom" placeholder="Nom" required />
               </div>
 
               <div className='prenom'>
                 <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" name="prenom" placeholder="Prénom" />
+                <input type="text" id="prenom" name="prenom" placeholder="Prénom" required />
               </div>
 
               <div className='ville'>
                 <label for="ville">Ville</label>
-                <input type="text" id="ville" name="ville" placeholder='Ville' />
+                <input type="text" id="ville" name="ville" placeholder='Ville' required />
               </div>
 
               <div className='mail'>
                 <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="votre e-mail" />
+                <input type="email" id="email" name="email" placeholder="votre e-mail" required />
               </div>
 
               <div className='tel'>
@@ -55,13 +55,16 @@ export default function Contact() {
 
               <div className='news-btn'>
 
-                <h3 style={{textDecoration: "underline", marginBottom:""}}>Voulez-vous recevoir nos nouveautés par mail ?</h3>
+                <h3 style={{ textDecoration: "underline", marginBottom: "" }}>Voulez-vous recevoir nos nouveautés par mail ?</h3>
 
-                <label for="oui" style={{display:"inline-block"}}> Oui </label>
-                <input type="checkbox" name="oui" id="oui" style={{marginRight:"50px"}} required />
+                {/* On utilise type: radio pour checker que 1 des 2 inputs */}
+                {/* Pour que les 2 inputs soient considérés comme 1 groupe, il faut qu'on leur donne le même name */}
+                {/* Mais ils auront un couple for/id différents */}
+                <label for="oui" style={{ display: "inline-block" }}> Oui </label>
+                <input type="radio" name="check" id="oui" style={{ marginRight: "50px" }} required />
 
-                <label for="non" style={{display:"inline-block"}}> Non </label>
-                <input type="checkbox" name="non" id="non" required />
+                <label for="non" style={{ display: "inline-block" }}> Non </label>
+                <input type="radio" name="check" id="non" required />
 
               </div>
 
