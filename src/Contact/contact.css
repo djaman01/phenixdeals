@@ -1,5 +1,6 @@
 .merci-form {
   text-align: center;
+  margin-top: 5px;
 
 }
 .nom-famille {
@@ -9,6 +10,10 @@
 .prenom {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.tel {
+  margin-top: 20px;
 }
 
 .ville {
@@ -32,6 +37,7 @@
 
 .first-column {
   margin-left: 100px;
+  margin-top: -10px;
 }
 
 label {

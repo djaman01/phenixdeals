@@ -39,6 +39,11 @@ export default function Contact() {
                 <input type="email" id="email" name="email" placeholder="votre e-mail" />
               </div>
 
+              <div className='tel'>
+                <label for="tel">Téléphone</label>
+                <input type="tel" id="tel" name="tel" placeholder="Numéro de téléphone" />
+              </div>
+
             </div>
 
             <div className="second-column">
