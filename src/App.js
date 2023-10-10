@@ -20,7 +20,6 @@ function App() {
         <Routes>
           {/* path="/" est obligé car c'est la page par défaut qui va s'ouvrir */}
           <Route path="/" element={<Main />} />
-          <Route path="accueil" element={<Main />} />
           <Route path='ficheproduit/:id' element={<FicheProduit />}/>
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NoPage />} />

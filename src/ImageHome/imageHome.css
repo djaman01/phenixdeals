@@ -1,7 +1,8 @@
-
+.all-img-home {
+  margin-top: 30px;
+}
 /* La property objecti-fit fonctionne, lorqu'on donne une width et une height à une image */
 .image-home {
-
   width: 1500px;
   height: 500px;
   object-fit: cover;

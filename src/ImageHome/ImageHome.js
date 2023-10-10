@@ -1,7 +1,7 @@
 import './imageHome.css'
 export default function ImageHome() {
   return (
-    <>
+    <div className='all-img-home'>
     <div className='div-img-home'>
       <img src="/imagesTableaux/salon-galerie.jpg" alt="home-slide" className="image-home" />
     </div>
@@ -10,6 +10,6 @@ export default function ImageHome() {
         Qui sommes Nous ?
       </h1>
     </div>
-    </>
+    </div>
   )
 }

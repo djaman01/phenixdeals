@@ -9,13 +9,14 @@ export default function Header() {
     <>
 
       <div className="header">
-
+      <Link to='/'>
         <div className="logo-header">
           <img className="logo" src="../logo-bon.jpg" alt="logo-phenix" />
         </div>
+        </Link>
 
         <div className="navbar">
-          <Link to='/accueil' className='home-link'>
+          <Link to='/' className='home-link'>
             <h4 className='home-button'>Accueil</h4>
           </Link>
 
