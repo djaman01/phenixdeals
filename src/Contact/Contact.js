@@ -53,6 +53,18 @@ export default function Contact() {
                 <textarea name="aide" id="aide" cols="60" rows="10" placeholder="Ecrivez votre texte ici"></textarea>
               </div>
 
+              <div className='news-btn'>
+
+                <h3 style={{textDecoration: "underline", marginBottom:""}}>Voulez-vous recevoir nos nouveautés par mail ?</h3>
+
+                <label for="oui" style={{display:"inline-block"}}> Oui </label>
+                <input type="checkbox" name="oui" id="oui" style={{marginRight:"50px"}} required />
+
+                <label for="non" style={{display:"inline-block"}}> Non </label>
+                <input type="checkbox" name="non" id="non" required />
+
+              </div>
+
             </div>
 
           </div>
