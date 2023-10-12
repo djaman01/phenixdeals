@@ -9,10 +9,10 @@ export default function Header() {
     <>
 
       <div className="header">
-      <Link to='/'>
-        <div className="logo-header">
-          <img className="logo" src="../logo-bon.jpg" alt="logo-phenix" />
-        </div>
+        <Link to='/'>
+          <div className="logo-header">
+            <img className="logo" src="../logo-bon.jpg" alt="logo-phenix" />
+          </div>
         </Link>
 
         <div className="navbar">
@@ -23,7 +23,9 @@ export default function Header() {
           <div className="div-dropdown">
             <h4 className='page-selection'>Acheter</h4>
             <div className="dropdown">
-              <p className="drop-btn">Tableaux</p>
+              <Link to='/tableaux'>
+                <p className="drop-btn">Tableaux</p>
+              </Link>
               <p className="drop-btn">Décoration</p>
               <p className="drop-btn">Bijoux</p>
               <p className="drop-btn">Livres</p>
@@ -35,7 +37,7 @@ export default function Header() {
           </div>
 
           <div className="div-dropdown">
-            <Link to="/contact" style={{textDecoration: "none"}}>
+            <Link to="/contact" style={{ textDecoration: "none" }}>
               <h4 className='contact-btn'>Contact</h4>
             </Link>
           </div>

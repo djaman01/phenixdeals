@@ -1,0 +1,7 @@
+.titre-page {
+  background-color: #9BB7D4;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
