@@ -11,8 +11,6 @@ export const produits= [
     "état": "",
     "Contact": "06-58",
     "thumbnail": "../imagesTableaux/N385.jpg", //On met .. pour pouvoir accéder à l'image partout, même dans le component FicheProduit
-    "thumbnail2": "../imagesTableaux/N387.jpg",
-    "thumbnail3": "../imagesTableaux/N388.jpg",
     "code": "Ref: 385",
     "id": 1,
   },
@@ -21,7 +19,7 @@ export const produits= [
     "type": "Déco",
     "détails": "Table déco",
     "nom": "Table déco",
-    "dimensions": "58x36cm",
+    "dimensions": "58x36cm",    
     "matière": "Bois",
     "prix": "800 Dhs",
     "cadré": "Non",
