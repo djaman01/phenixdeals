@@ -37,10 +37,10 @@ export default function Contact() {
 
     try {
       const response = await axios.post('http://localhost:3005/', formData);
-      // Handle the response if needed (e.g., show a success message)
+      
       console.log('Response from the server:', response.data);
     } catch (error) {
-      // Handle the error (e.g., show an error message)
+      
       console.error('Error:', error);
     }
   };
@@ -144,9 +144,6 @@ export default function Contact() {
 
                 <h3 style={{ textDecoration: "underline", marginBottom: "" }}>Voulez-vous recevoir nos nouveautés par mail ?</h3>
 
-                {/* On utilise type: radio pour checker que 1 des 2 inputs */}
-                {/* Pour que les 2 inputs soient considérés comme 1 groupe, il faut qu'on leur donne le même name */}
-                {/* Mais ils auront un couple for/id différents */}
                 <label htmlFor="oui" style={{ display: "inline-block" }}> Oui </label>
                 <input type="radio" name="check" id="oui" style={{ marginRight: "50px" }} required />
 

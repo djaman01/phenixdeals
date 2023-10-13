@@ -26,7 +26,7 @@ export default function Concept() {
           Nous proposons 2 solution:<br/>
           1: Mettre en vente sans frais sur notre site. Dans ce cas, nous prenons 15% de commission sur le prix de vente une fois le produit vendu.<br/>
           Ou<br/>
-          2: Economisez 50% en nous payons directement 7% du prix de vente, pour mettre en vente votre profuit, en laissant apparaitre votre contact (numéro de téléphone, nom)<br/>
+          2: Economisez 50% en nous payons directement 7% du prix de vente, pour mettre en vente votre produit, en laissant apparaitre votre contact (numéro de téléphone, nom)<br/>
         </p>
 
       </div>
