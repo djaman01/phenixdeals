@@ -62,10 +62,10 @@
   display: block;
   position: relative;
   max-width: 300px;
-  max-height: 320px;
+  max-height: 350px;
   background-color: #f2f8f9;
   border-radius: 10px;
-  padding: 2em 1.2em;
+  padding: 1.7em 1.2em;
   margin: 100px 100px 100px 100px;
   text-decoration: none;
   z-index: 0;
@@ -95,7 +95,7 @@
 
 .card-activité:hover .small-desc {
   transition: all 0.5s ease-out;
-  color: rgba(255, 255, 255, 0.8);
+  color: #ffffff;
 }
 
 .card-activité:hover .card-title {
@@ -113,7 +113,6 @@
     border: none;
     padding: 0 12px 0 12px;
     cursor: pointer;
-    margin-top: 35px;
 }
 
 /* Style carte vente */
@@ -131,6 +130,7 @@
   transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
   margin-top: 100px;
   margin-bottom: 100px;
+  height: 350px;
 }
 
 .content-vente {
@@ -209,7 +209,7 @@
   margin-left: 100px;
   border-radius: 20px;
   width: 320px;
-  height: 380px;
+  height: 400px;
   color: #ffffff;
   background: linear-gradient(to right,rgb(137, 104, 255),rgb(175, 152, 255));
   opacity: 0.85;

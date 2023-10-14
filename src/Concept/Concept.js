@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 import { SocialIcon } from 'react-social-icons'
+import { faUnderline } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function Concept() {
@@ -30,7 +31,7 @@ export default function Concept() {
           <p class="small-desc">
             <b>phenixdeals</b> est une plateforme d'intérmédiation, spécialisé dans la vente d'objets d'arts, de décoration et de Bijoux.
           </p>
-          <p class="small-desc">
+          <p class="small-desc" style={{marginBottom: "10px"}}>
             <b>Parcourez notre site:</b> Des articles variés sont disponibles, tous en rapport avec l'art et la décoration.
           </p>
           <div class="go-corner">
@@ -48,14 +49,14 @@ export default function Concept() {
           <div class="content-vente">
             <p class="heading-vente"> Vendez sur notre site !</p>
 
-            <p class="para-vente" style={{ marginTop: "-25px" }}> 2 choix s'offre à vous:</p>
+            <p class="para-vente" style={{ marginTop: "-40px", textDecoration: "underline" }}> 2 choix s'offre à vous:</p>
 
             <p style={{ marginTop: "-25px" }}>
               <b>1-</b> Postez vos bien sur le site <b>sans frais</b>: <br />
               <u>Une fois vendu</u>, nous prenons <b>15%</b> de commission sur le prix de vente
             </p>
 
-            <p style={{ marginTop: "-25px" }}>
+            <p style={{ marginTop: "-25px", marginBottom: "2px"}}>
               <b>2-</b> Payez <b>7% du prix de vente</b> <u>avant de poster</u> votre produit: <br />
               Dans ce cas, nous mettrons vos informations sur le produit (numéro, nom..etc) et vous serez en contact direct avec l'acheteur
             </p>
