@@ -1,39 +1,85 @@
 import './concept.css'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import { Link } from 'react-router-dom'
 
 
 export default function Concept() {
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  };
+
   return (
     <>
       <Header />
+
       <div className="concept">
         <h1>Notre concept</h1>
       </div>
 
-      <div className="vente-concept">
-        <img src="/HandShake.jpg" alt="Vendez vos objets d'art et déco" className="img-vente-concept" />
-        <h1 className='titre-vente-concept'>Vendez et Achetez des objets d'art et déco</h1>
+      <div className='all-concept'>
 
-        <p className='text-vente-concept'>
-          Phenixdeals est un site de vente et d'intermédiation d'objets d'arts, de Bijoux et de décorations.<br/>
 
-          Vous pouvez mettre en vente vos objets sur notre site:<br/>
-          Pour cela, il suffit juste de nous contacter, par mail ou par téléphone. <br/>
+        <div class="card-activité">
 
-          Nous serons heureux de vous répondre et de discuter avec vous.<br/>
+          <p class="card-title">Activité</p>
+          <p class="small-desc">
+            <b>phenixdeals</b> est une plateforme d'intérmédiation, spécialisé dans la vente d'objets d'arts, de décoration et de Bijoux.
+          </p>
+          <p class="small-desc">
+            <b>Parcourez notre site:</b> Des articles variés sont disponibles, tous en rapport avec l'art et la décoration.
+          </p>
+          <div class="go-corner">
+            <div class="go-arrow">→</div>
+          </div>
 
-          Nous proposons 2 solution:<br/>
-          1: Mettre en vente sans frais sur notre site. Dans ce cas, nous prenons 15% de commission sur le prix de vente une fois le produit vendu.<br/>
-          Ou<br/>
-          2: Economisez 50% en nous payons directement 7% du prix de vente, pour mettre en vente votre produit, en laissant apparaitre votre contact (numéro de téléphone, nom)<br/>
-        </p>
+          <Link to="/">
+            <button class="btn-achat">Voir les nouveaux produits</button>
+          </Link>
+
+        </div>
+
+        <div class="card-vente">
+
+          <div class="content-vente">
+            <p class="heading-vente"> Vendez sur notre site !</p>
+
+            <p class="para-vente" style={{ marginTop: "-25px" }}> 2 choix s'offre à vous:</p>
+
+            <p style={{ marginTop: "-25px" }}>
+              <b>1-</b> Postez vos bien sur le site <b>sans frais</b>: <br />
+              <u>Une fois vendu</u>, nous prenons <b>15%</b> de commission sur le prix de vente
+            </p>
+
+            <p style={{ marginTop: "-25px" }}>
+              <b>2-</b> Payez <b>7% du prix de vente</b> <u>avant de poster</u> votre produit: <br />
+              Dans ce cas, nous mettrons vos informations sur le produit (numéro, nom..etc) et vous serez en contact direct avec l'acheteur
+            </p>
+
+            <Link to="/contact" onClick={scrollToTop}>
+              <button class="btn-vente">Contactez-nous</button>
+            </Link>
+          </div>
+
+        </div>
+
+        
+    
+
+
 
       </div>
 
+
+
+
+
+
+
       <Footer />
 
-    </>
+    </ >
 
   )
 }
