@@ -1,5 +1,7 @@
 .all-concept {
   display: flex;
+  margin-bottom: 150px;
+  font-size: 20px;
 }
 
 .concept {
@@ -10,6 +12,7 @@
   justify-content: center;
   align-items: center;
   color: white;
+  font-size: 20px;
 }
 
 /* Style card activité */
@@ -20,6 +23,7 @@
   line-height: normal;
   font-weight: 700;
   margin-bottom: 0.5em;
+  margin-top: 9px;
 }
 
 .small-desc {
@@ -138,7 +142,7 @@
 }
 
 .heading-vente {
-  margin-top: 5px;
+  margin-top: 1px;
 }
 
 .content-vente .heading-vente{
@@ -199,3 +203,22 @@
 }
 
 /* Card social */
+.card-media {
+ 
+  margin-top: 100px;
+  margin-left: 100px;
+  border-radius: 20px;
+  width: 320px;
+  height: 380px;
+  color: #ffffff;
+  background: linear-gradient(to right,rgb(137, 104, 255),rgb(175, 152, 255));
+  opacity: 0.85;
+  padding-top: 12px;
+  padding-left: 25px;
+}
+
+.para-media {
+  margin-top: 45px;
+  margin-bottom: 45px;
+
+}
