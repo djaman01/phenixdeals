@@ -2,16 +2,16 @@
 export const produits= [
   {
     "type": "Tableau",
-    "détails": "Benjkan Salah/100x100cm/Toile",
-    "nom": "Benjkan Salah",
-    "dimensions": "100x100cm",
+    "détails": "Abousmah/120x60cm/Toile",
+    "nom": "Abousmah",
+    "dimensions": "120x60cm",
     "matière": "Toile",
-    "prix": "10.000 Dhs",
-    "cadré": "Non",
+    "prix": "6.000 Dhs",
+    "cadré": "Oui",
     "état": "",
-    "Contact": "06-58",
-    "thumbnail": "../imagesTableaux/N385.jpg", //On met .. pour pouvoir accéder à l'image partout, même dans le component FicheProduit
-    "code": "Ref: 385",
+    "Contact": "",
+    "thumbnail": "../imagesTableaux/abousmah502.jpeg", //On met .. pour pouvoir accéder à l'image partout, même dans le component FicheProduit
+    "code": "Ref: 502",
     "id": 1,
   },
 
