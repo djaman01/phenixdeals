@@ -13,3 +13,7 @@
 form, .add-tableau {
   margin-left: 650px;
 }
+
+input {
+  height: 25px;
+}

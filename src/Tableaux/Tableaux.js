@@ -91,7 +91,7 @@ export default function Tableaux() {
               name="dimensions"
               value={formData.dimensions}
               onChange={handleInputChange}
-              placeholder='dimensions produit'
+              placeholder='Dimensions produit'
             />
           </div>
 
