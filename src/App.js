@@ -10,6 +10,7 @@ import NoPage from './NoPage/NoPage';
 import FicheProduit from './FicheProduit/FicheProduit';
 import Contact from './Contact/Contact';
 import Concept from './Concept/Concept';
+import Tableaux from './Tableaux/Tableaux';
 
 
 
@@ -24,7 +25,8 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path='ficheproduit/:id' element={<FicheProduit />}/>
           <Route path="contact" element={<Contact />} />
-          <Route path="concept" element={<Concept />} />          
+          <Route path="concept" element={<Concept />} />  
+          <Route path="tableaux" element={<Tableaux />} />       
           <Route path="*" element={<NoPage />} />
       
         </Routes>

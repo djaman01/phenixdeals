@@ -5,3 +5,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.nom-produit, .dimensions, .matiere, .prix, .code {
+  margin-bottom: 20px;
+}
+
+form, .add-tableau {
+  margin-left: 650px;
+}
