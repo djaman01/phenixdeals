@@ -24,45 +24,40 @@ export default function Tableaux() {
     });
   };
 
- //Création de l'API avec la Request POST
- 
-  const handleSubmit = async (e) => {
-
-    // Pas besoin de créer cet objet en bas, car on l'a crée plus haut et avec toutes les properties
-    // const formData = new FormData();
-    // formData.append("nom", formData.nom);
-    // formData.append("thumbnail", formData.thumbnail);
-
-    try {
-      const response = await axios.post('http://localhost:3005/tableau', formData); //we say to use the formData object created
-      
-      console.log('Response from the server:', response.data);
-    } catch (error) {
-      
-      console.error('Error:', error);
-    }
+  const handleImageChange = (e) => {
+    const imageFile = e.target.files[0];
+    setFormData({
+      ...formData,
+      thumbnail: imageFile,
+    });
   };
 
-//Fetch Api
-  //   try { 
-  //     const response = await fetch("http://localhost:3005/tableau", {
-  //       method: "POST",
-  //       body: formData, // Use the FormData object
-  //     });
+  const handleSubmit = async (e) => {
 
-  //     if (response.status === 201) {
-  //       console.log("Tableau record added successfully");
-  //       setFormData({
-  //         nom: "",
-  //         thumbnail: ""
-  //       });
-  //     } else {
-  //       console.error("Error adding Tableau record");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //   }
-  // };
+    //création objet pour envoyer fichier json
+    const formData = new FormData();
+    formData.append("nom", formData.nom);
+    formData.append("thumbnail", formData.thumbnail);
+
+    try {
+      const response = await fetch("http://localhost:3005/tableau", {
+        method: "POST",
+        body: formData, // Use the FormData object
+      });
+
+      if (response.status === 201) {
+        console.log("Tableau record added successfully");
+        setFormData({
+          nom: "",
+          thumbnail: ""
+        });
+      } else {
+        console.error("Error adding Tableau record");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   return (
     <>
@@ -74,7 +69,7 @@ export default function Tableaux() {
       <div>
         <h2 className="add-tableau">Add New Tableau</h2>
 
-        <form className="form-product" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
 
           < div className='nom-produit'>
             <label htmlFor="nom-produit">Nom:</label>
@@ -136,23 +131,22 @@ export default function Tableaux() {
             />
           </div>
 
-          < div className='thumbnail-product'>
-            <label htmlFor="thumbnail-product">Thumbnail:</label>
+          < div className='thumbnail'>
+            <label htmlFor="thumbnail">Thumbnail:</label>
             <input
               type="file" //permet de créer un bouton pour choisir un fichier en local
-              id="thumbnail-product"
-              name="thumbnail-product"
+              id="thumbnail"
+              name="thumbnail"
               accept="image/*"//seul les images sont séléctionnables
               value={formData.thumbnail}
-              // onChange={handleImageChange}
+              onChange={handleImageChange}
               placeholder='Image produit'
             />
           </div>
 
-          <button className="btn-submit" type="submit">Submit</button>
+          <button type="submit">Submit</button>
         </form>
       </div>
-
       <Footer />
 
     </>

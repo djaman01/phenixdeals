@@ -6,17 +6,14 @@
   align-items: center;
 }
 
-.nom-produit, .dimensions, .matiere, .prix, .code, .thumbnail-product {
-  margin-bottom: 30px;
+.nom-produit, .dimensions, .matiere, .prix, .code {
+  margin-bottom: 20px;
 }
-.form-product, .add-tableau {
+
+form, .add-tableau {
   margin-left: 650px;
 }
 
 input {
   height: 25px;
-}
-
-.btn-submit {
-  margin-bottom: 50px;
 }
