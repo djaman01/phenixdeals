@@ -71,12 +71,12 @@ export default function Tableaux() {
 
         <form onSubmit={handleSubmit}>
 
-          < div className='nom-produit'>
-            <label htmlFor="nom-produit">Nom:</label>
+          < div className='nom'>
+            <label htmlFor="nom">Nom:</label>
             <input
               type="text"
-              id="nom-produit"
-              name="nom-produit"
+              id="nom"
+              name="nom"
               value={formData.nom}
               onChange={handleInputChange}
               placeholder='nom du produit'
@@ -86,7 +86,7 @@ export default function Tableaux() {
           < div className='dimensions'>
             <label htmlFor="dimensions">Dimensions:</label>
             <input
-              type="dimensions"
+              type="text"
               id="dimensions"
               name="dimensions"
               value={formData.dimensions}
