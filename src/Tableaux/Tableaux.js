@@ -24,40 +24,45 @@ export default function Tableaux() {
     });
   };
 
-  const handleImageChange = (e) => {
-    const imageFile = e.target.files[0];
-    setFormData({
-      ...formData,
-      thumbnail: imageFile,
-    });
-  };
-
+ //Création de l'API avec la Request POST
+ 
   const handleSubmit = async (e) => {
 
-    //création objet pour envoyer fichier json
-    const formData = new FormData();
-    formData.append("nom", formData.nom);
-    formData.append("thumbnail", formData.thumbnail);
+    // Pas besoin de créer cet objet en bas, car on l'a crée plus haut et avec toutes les properties
+    // const formData = new FormData();
+    // formData.append("nom", formData.nom);
+    // formData.append("thumbnail", formData.thumbnail);
 
     try {
-      const response = await fetch("http://localhost:3005/tableau", {
-        method: "POST",
-        body: formData, // Use the FormData object
-      });
-
-      if (response.status === 201) {
-        console.log("Tableau record added successfully");
-        setFormData({
-          nom: "",
-          thumbnail: ""
-        });
-      } else {
-        console.error("Error adding Tableau record");
-      }
+      const response = await axios.post('http://localhost:3005/tableau', formData); //we say to use the formData object created
+      
+      console.log('Response from the server:', response.data);
     } catch (error) {
-      console.error("Error:", error);
+      
+      console.error('Error:', error);
     }
   };
+
+//Fetch Api
+  //   try { 
+  //     const response = await fetch("http://localhost:3005/tableau", {
+  //       method: "POST",
+  //       body: formData, // Use the FormData object
+  //     });
+
+  //     if (response.status === 201) {
+  //       console.log("Tableau record added successfully");
+  //       setFormData({
+  //         nom: "",
+  //         thumbnail: ""
+  //       });
+  //     } else {
+  //       console.error("Error adding Tableau record");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //   }
+  // };
 
   return (
     <>
@@ -69,7 +74,7 @@ export default function Tableaux() {
       <div>
         <h2 className="add-tableau">Add New Tableau</h2>
 
-        <form onSubmit={handleSubmit}>
+        <form className="form-product" onSubmit={handleSubmit}>
 
           < div className='nom-produit'>
             <label htmlFor="nom-produit">Nom:</label>
@@ -131,22 +136,23 @@ export default function Tableaux() {
             />
           </div>
 
-          < div className='thumbnail'>
-            <label htmlFor="thumbnail">Thumbnail:</label>
+          < div className='thumbnail-product'>
+            <label htmlFor="thumbnail-product">Thumbnail:</label>
             <input
               type="file" //permet de créer un bouton pour choisir un fichier en local
-              id="thumbnail"
-              name="thumbnail"
+              id="thumbnail-product"
+              name="thumbnail-product"
               accept="image/*"//seul les images sont séléctionnables
               value={formData.thumbnail}
-              onChange={handleImageChange}
+              // onChange={handleImageChange}
               placeholder='Image produit'
             />
           </div>
 
-          <button type="submit">Submit</button>
+          <button className="btn-submit" type="submit">Submit</button>
         </form>
       </div>
+
       <Footer />
 
     </>

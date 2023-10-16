@@ -28,8 +28,8 @@ export default function Contact() {
     });
   };
 
+  //Création de l'API avec la Request POST
   //Will be called on the form attribute onSubmit={handleSubmit}
-  //Création de l'API avec HTTP method .post 
   //On peut mettre .preventDefault() pour pas que le form se rafraichisse par défaut quand on appuie sur submit, mais je veux qu'il se rafraichisse donc je ne le mets pas
 
   const handleSubmit = async (e) => {
@@ -44,6 +44,7 @@ export default function Contact() {
       console.error('Error:', error);
     }
   };
+  
   return (
 
 
