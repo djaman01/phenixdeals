@@ -12,25 +12,26 @@ export default function Tableaux() {
     matiere: "",
     prix: "",
     code: "",
-    thumbnail: ""
+    thumbnail: null
 
   });
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
+
+    if (type=='file') {
+      setFormData({
+        ...formData,
+        thumbnail: e.target.files[0] //Assigns the first selected file to the thumbnail property in the formData object. 
+      })
+    }
     setFormData({
       ...formData,
       [name]: value,
     });
   };
 
-  const handleImageChange = (e) => {
-    const imageFile = e.target.files[0];
-    setFormData({
-      ...formData,
-      thumbnail: imageFile,
-    });
-  };
+  
 
   const handleSubmit = async (e) => {
     //e.preventDefault();
@@ -128,7 +129,7 @@ export default function Tableaux() {
               name="thumbnail"
               accept="image/*"//seul les images sont séléctionnables
               value={formData.thumbnail}
-              onChange={handleImageChange}
+              onChange={handleInputChange}
               placeholder='Image produit'
             />
           </div>
