@@ -12,26 +12,25 @@ export default function Tableaux() {
     matiere: "",
     prix: "",
     code: "",
-    thumbnail: null
+    thumbnail: ""
 
   });
 
   const handleInputChange = (e) => {
-    const { name, value, type } = e.target;
-
-    if (type=='file') {
-      setFormData({
-        ...formData,
-        thumbnail: e.target.files[0] //Assigns the first selected file to the thumbnail property in the formData object. 
-      })
-    }
+    const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
     });
   };
 
-  
+  const handleImageChange = (e) => {
+    const imageFile = e.target.files[0];
+    setFormData({
+      ...formData,
+      thumbnail: imageFile,
+    });
+  };
 
   const handleSubmit = async (e) => {
     //e.preventDefault();
@@ -66,7 +65,7 @@ export default function Tableaux() {
             <input
               type="text"
               id="nom"
-              name="nom"
+              name="nom" //doit avoir même nom que value, même les majuscules
               value={formData.nom}
               onChange={handleInputChange}
               placeholder='nom du produit'
@@ -129,7 +128,7 @@ export default function Tableaux() {
               name="thumbnail"
               accept="image/*"//seul les images sont séléctionnables
               value={formData.thumbnail}
-              onChange={handleInputChange}
+              onChange={handleImageChange}
               placeholder='Image produit'
             />
           </div>
