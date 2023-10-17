@@ -12,8 +12,11 @@ export default function Tableaux() {
     matiere: "",
     prix: "",
     code: "",
+    thumbnail: ""
 
   });
+
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -23,21 +26,40 @@ export default function Tableaux() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    //e.preventDefault();
-
-    try {
-      const response = await axios.post('http://localhost:3005/addproduct', formData);
-
-      console.log('Response from the server:', response.data);
-    } catch (error) {
-
-      console.error('Error:', error);
-    }
+  const handleImageChange = (e) => {
+    const imageFile = e.target.files[0];
+    setFormData({
+      ...formData,
+      thumbnail: imageFile,
+    });
   };
 
-  
+  const handleSubmit = async (e) => {
 
+    //création objet pour envoyer fichier json
+    const formData = new FormData();
+    formData.append("nom", formData.nom);
+    formData.append("thumbnail", formData.thumbnail);
+
+    try {
+      const response = await fetch("http://localhost:3005/tableau", {
+        method: "POST",
+        body: formData, // Use the FormData object
+      });
+
+      if (response.status === 201) {
+        console.log("Tableau record added successfully");
+        setFormData({
+          nom: "",
+          thumbnail: ""
+        });
+      } else {
+        console.error("Error adding Tableau record");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   return (
     <>
@@ -56,7 +78,7 @@ export default function Tableaux() {
             <input
               type="text"
               id="nom"
-              name="nom" //doit avoir même nom que value, même les majuscules
+              name="nom"
               value={formData.nom}
               onChange={handleInputChange}
               placeholder='nom du produit'
@@ -119,7 +141,7 @@ export default function Tableaux() {
               name="thumbnail"
               accept="image/*"//seul les images sont séléctionnables
               value={formData.thumbnail}
-              
+              onChange={handleImageChange}
               placeholder='Image produit'
             />
           </div>

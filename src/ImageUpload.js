@@ -5,16 +5,25 @@ import Dropzone from 'react-dropzone';
 
 function ImageUpload() {
   const [imageUrl, setImageUrl] = useState('');
-  const [imageName, setImageName] = useState(''); // Add state for image name
+  const [nom, setNom] = useState('');
+  const [dimensions, setDimensions] = useState('');
+  const [matiere, setMatiere] = useState('');
+  const [prix, setPrix] = useState('');
+  const [code, setCode] = useState('');
 
   const handleFileUpload = async (acceptedFiles) => {
     const formData = new FormData();
     formData.append('file', acceptedFiles[0]);
-    formData.append('name', imageName); // Add the image name to the form data
-
+    formData.append('nom', nom);
+    formData.append('dimensions', dimensions);
+    formData.append('matiere', matiere);
+    formData.append('prix', prix);
+    formData.append('code', code);
+    
     try {
       const response = await axios.post('http://localhost:3005/upload', formData);
       setImageUrl(response.data.imageUrl);
+      console.log("the image urln is :", imageUrl)
     } catch (error) {
       console.error('Error uploading file:', error);
     }
@@ -32,16 +41,46 @@ function ImageUpload() {
         )}
       </Dropzone>
 
-      {/* Input for Image Name */}
       <div>
-        <label>Image Name:</label>
+        <label>Nom:</label>
         <input
           type="text"
-          value={imageName}
-          onChange={(e) => setImageName(e.target.value)}
+          value={nom}
+          onChange={(e) => setNom(e.target.value)}
         />
       </div>
-      
+      <div>
+        <label>Dimensions:</label>
+        <input
+          type="text"
+          value={dimensions}
+          onChange={(e) => setDimensions(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Matiere:</label>
+        <input
+          type="text"
+          value={matiere}
+          onChange={(e) => setMatiere(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Prix:</label>
+        <input
+          type="text"
+          value={prix}
+          onChange={(e) => setPrix(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Code:</label>
+        <input
+          type="text"
+          value={code}
+          onChange={(e) => setCode(e.target.value)}
+        />
+      </div>      
       {imageUrl && (
         <div>
           <h3>Uploaded Image</h3>
