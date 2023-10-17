@@ -12,7 +12,6 @@ export default function Tableaux() {
     matiere: "",
     prix: "",
     code: "",
-    thumbnail: ""
 
   });
 
@@ -21,14 +20,6 @@ export default function Tableaux() {
     setFormData({
       ...formData,
       [name]: value,
-    });
-  };
-
-  const handleImageChange = (e) => {
-    const imageFile = e.target.files[0];
-    setFormData({
-      ...formData,
-      thumbnail: imageFile,
     });
   };
 
@@ -128,7 +119,7 @@ export default function Tableaux() {
               name="thumbnail"
               accept="image/*"//seul les images sont séléctionnables
               value={formData.thumbnail}
-              onChange={handleImageChange}
+              
               placeholder='Image produit'
             />
           </div>
