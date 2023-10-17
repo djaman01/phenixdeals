@@ -33,31 +33,18 @@ export default function Tableaux() {
   };
 
   const handleSubmit = async (e) => {
-
-    //création objet pour envoyer fichier json
-    const formData = new FormData();
-    formData.append("nom", formData.nom);
-    formData.append("thumbnail", formData.thumbnail);
+    //e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3005/tableau", {
-        method: "POST",
-        body: formData, // Use the FormData object
-      });
+      const response = await axios.post('http://localhost:3005/addproduct', formData);
 
-      if (response.status === 201) {
-        console.log("Tableau record added successfully");
-        setFormData({
-          nom: "",
-          thumbnail: ""
-        });
-      } else {
-        console.error("Error adding Tableau record");
-      }
+      console.log('Response from the server:', response.data);
     } catch (error) {
-      console.error("Error:", error);
+
+      console.error('Error:', error);
     }
   };
+
 
   return (
     <>
