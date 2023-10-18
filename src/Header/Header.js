@@ -9,7 +9,7 @@ export default function Header() {
     <>
 
       <div className="header">
-        <Link to='/brouillon'>
+        <Link to='/addProduct'>
           <div className="logo-header">
             <img className="logo" src="../logo-bon.jpg" alt="logo-phenix" />
           </div>

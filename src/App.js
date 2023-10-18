@@ -12,7 +12,7 @@ import Contact from './Contact/Contact';
 import Concept from './Concept/Concept';
 import Tableaux from './Tableaux/Tableaux';
 import ImageUpload from './ImageUpload';
-import Brouillon from './Brouillon/Brouillon';
+import AddProduct from './AddProduct/AddProduct';
 
 
 
@@ -33,7 +33,7 @@ function App() {
           <Route path="concept" element={<Concept />} />  
           <Route path="tableaux" element={<Tableaux />} />
           <Route path= 'imageUpload' element= {<ImageUpload/>} />
-          <Route path= 'brouillon' element= {<Brouillon/>} />
+          <Route path= 'addProduct' element= {<AddProduct/>} />
           <Route path="*" element={<NoPage />} />
       
         </Routes>
