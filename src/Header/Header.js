@@ -9,7 +9,7 @@ export default function Header() {
     <>
 
       <div className="header">
-        <Link to='/imageUpload'>
+        <Link to='/brouillon'>
           <div className="logo-header">
             <img className="logo" src="../logo-bon.jpg" alt="logo-phenix" />
           </div>
