@@ -7,6 +7,7 @@ export default function AddProduct() {
 
   const [imageUrl, setImageUrl] = useState('');
   const [nom, setNom] = useState('');
+  const [type, setType] = useState('');
   const [dimensions, setDimensions] = useState('');
   const [matiere, setMatiere] = useState('');
   const [prix, setPrix] = useState('');
@@ -16,6 +17,7 @@ export default function AddProduct() {
     const formData = new FormData();
     formData.append('file', acceptedFiles[0]);
     formData.append('nom', nom);
+    formData.append('type', type);    
     formData.append('dimensions', dimensions);
     formData.append('matiere', matiere);
     formData.append('prix', prix);
@@ -42,19 +44,19 @@ export default function AddProduct() {
           <div className="div-input-add">
 
           <div className='div-add-product'>
-              <label className='label-add-product'>Produit:</label>
+              <label className='label-add-product'>Type:</label>
               <input
                 className="input-product"
-                placeholder="Nom produit"
+                placeholder="Type produit"
                 type="text"
-                value={nom}
-                onChange={(e) => setNom(e.target.value)}
+                value={type}
+                onChange={(e) => setType(e.target.value)}
               />
             </div>
 
 
             <div className='div-add-product'>
-              <label className='label-add-product'>Nom Produit:</label>
+              <label className='label-add-product'>Nom:</label>
               <input
                 className="input-product"
                 placeholder="Nom produit"
