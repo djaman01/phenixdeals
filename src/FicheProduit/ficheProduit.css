@@ -5,26 +5,25 @@
   grid-template-columns: 1fr 1fr;
 }
 
-
-.div-carousel {
-  margin-left: 150px;
+.div-image-fiche {
+  
+  width:500px;
+  height: 600px;
+  margin-top: 20px;
   margin-bottom: 50px;
-  width: 500px;
+  margin-left: 145px;
 }
 
-.div-image-fiche {
+.image-fiche {
+  width: 500px;
+  height: 600px;
   object-fit: contain;
-  width: 475px;
-  height: 520px;
-  /* important pour aligner les images du carousel qui ne sont pas hautes, ou qui sont trop hautes et dont on ne voit qu'une partie de l'image */
-  display: flex;
-  align-items: center;
 
 }
 
 .infos-produit {
   margin-top: 35px;
-  margin-left: 100px;
+  margin-left: 50px;
 
 }
 
@@ -46,7 +45,7 @@
 
 .btn-produit {
   margin-top: 30px;
-  width: 500px;
+  width: 450px;
   display: flex;
   justify-content: space-between;
 }

@@ -25,20 +25,9 @@ export default function FicheProduit() {
 
       <div className="fiche-produit">
 
-        <Carousel className="div-carousel">
           <div className="div-image-fiche">
             <img src={produit.thumbnail} alt={produit.détails}  className="image-fiche"   />
           </div>
-
-          <div className="div-image-fiche">
-            <img src={produit.thumbnail2} alt={produit.détails} className="image-fiche" />
-          </div>
-
-          <div className="div-image-fiche">
-            <img src={produit.thumbnail3} alt={produit.détails} className="image-fiche" />
-          </div>
-        </Carousel>
-
 
 
         <div className="infos-produit">
