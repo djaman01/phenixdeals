@@ -8,9 +8,9 @@ export default function GetProduct() {
 
   const [productObject, setProductObject] = useState([]); //State variable ou on va store tous les objets représentants les produits
   const [error, setError] = useState('');
-  
+
   const [productName, setProductName] = useState('');//State variable qui va store la value de l'input et qui doit changer en fonction de ce qu'on écrit
-  
+
   const handleProductName = (e) => setProductName(e.target.value); //ca c'est l'event handler qui fait que la state productName a pour valeur la value de l'input
 
   useEffect(() => {
@@ -46,21 +46,23 @@ export default function GetProduct() {
         {error ? (
           <p>Error: {error}</p>
         ) : (
-          <div>
-            <ul>
-              {filteredProducts.map((item) => (
+          <div className="grid-home-filter">
 
-                
-                <li key={item.id}>
-                  <h2>{item.nom}</h2>
+            {filteredProducts.map((item) => (
+
+              <div className="item">
+
+                <div key={item.id} className="div-thumbnail">
                   <img
-                    className='all-products-image'
+                    className='thumbnail'
                     src={`http://localhost:3005/${item.imageUrl}`}//On store le path de l'image dans la database,, donc c'est ce qu'il faut chercher
                     alt={item.nom}
                   />
-                </li>
-              ))}
-            </ul>
+                </div>
+
+              </div>
+            ))}
+
           </div>
         )}
       </div>
@@ -68,3 +70,6 @@ export default function GetProduct() {
     </>
   )
 }
+
+
+

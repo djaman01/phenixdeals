@@ -1,3 +1,71 @@
-.all-products-image {
-  width: 300px;
+.link {
+  text-decoration: none;
+} 
+
+.item{
+  border: solid 1px rgb(247, 233, 233);
+  border-radius: 10px;
+  height: 380px; 
+  width: 100%;
+}
+
+.item:hover {
+  cursor: pointer;
+  box-shadow: 0 0 20px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px); /*Pour que l'image se relève quand on hover*/
+}
+
+.div-thumbnail{
+  width: 100%;
+}
+
+.thumbnail {
+  /* C'est l'image qui doit avoir width et height défini et object-fit */
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  /*avec contain, l'image apparait à 100% mais s'ajuste à la dimension donnée*/
+  /*Avec cover: l'image s'ajuste à la dimension donnée, mais peut perdre une partie si trop grande*/
+  border-radius: 10px 10px 0 0;
+  
+
+}
+
+.text-product {
+  text-align: center;
+  height: 160px;
+}
+
+.product-type {
+  color: #0072B5;
+  margin-top: 15px;
+  
+  
+}
+
+
+.product-details {
+ height: 38px;
+ color: #363945;
+ margin-top: -10px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 17px;
+ 
+}
+
+.product-price {
+  margin-top: -10px;
+  color: #0072B5;
+  font-size: 17px;
+}
+
+
+.grid-home-filter {
+  display: grid;
+  grid-template-columns: 250px 250px 250px 250px;
+  gap: 50px 50px;
+  justify-content: center;
+  margin-top: 90px;
 }

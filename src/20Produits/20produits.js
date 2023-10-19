@@ -141,16 +141,16 @@ export const produits= [
   },
 
   {
-    "type": "Tableau",
-    "détails": "Abousmah/120x60cm/Toile",
-    "nom": "Abousmah",
-    "dimensions": "120x60cm",
-    "matière": "Toile",
-    "prix": "6.000 Dhs",
+    "type": "Bijoux",
+    "détails": "MoonSwatch/Mission to Mars",
+    "nom": "Swatch x Omegle",
+    "dimensions": "",
+    "matière": "Mission to Mars",
+    "prix": "5.800 Dhs",
     "état": "",
     "Contact": "",
-    "thumbnail": "../imagesTableaux/abousmah502.jpeg", //On met .. pour pouvoir accéder à l'image partout, même dans le component FicheProduit
-    "code": "Ref: 502",
+    "thumbnail": "../imagesTableaux/Marswatch-D030.jpeg", //On met .. pour pouvoir accéder à l'image partout, même dans le component FicheProduit
+    "code": "Ref: D030",
     "id": 11,
   },
 
