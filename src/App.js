@@ -15,11 +15,6 @@ import ImageUpload from './ImageUpload';
 import AddProduct from './AddProduct/AddProduct';
 
 
-
-
-
-
-
 function App() {
   return (
     <>
