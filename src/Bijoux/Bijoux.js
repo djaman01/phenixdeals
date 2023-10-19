@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import './bijoux.css'
+
 export default function Bijoux() {
 
   const [productObject, setProductObject] = useState([]); //State variable ou on va store tous les objets représentants les produits
@@ -13,7 +15,7 @@ export default function Bijoux() {
   useEffect(() => {
     const fetchData = () => {
 
-      axios.get('http://localhost:3005/products')
+      axios.get('http://localhost:3005/bijoux')//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
         .then((response) => {
           console.log("All products fetched", response.data);
           setProductObject(response.data);
@@ -26,9 +28,13 @@ export default function Bijoux() {
     fetchData();
   }, []);//fetch la data avec axios dès qu'on ouvre le browser, comme ça tous les produits apparaisse d'un coup
 
+ 
+  
+
   const filteredProducts = productObject.filter((item) =>
     item.nom.toLowerCase().includes(productName.toLowerCase())
   );
+  
 
   return (
     <>
