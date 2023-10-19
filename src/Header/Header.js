@@ -21,7 +21,9 @@ export default function Header() {
           </Link>
 
           <div className="div-dropdown">
+            <Link to='/getproduct'>
             <h4 className='page-selection'>Acheter</h4>
+            </Link>
             <div className="dropdown">
               <Link to='/tableaux'>
                 <p className="drop-btn">Tableaux</p>

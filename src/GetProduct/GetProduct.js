@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import "./getProducts.css"
+import "./getProduct.css"
 
 export default function GetProduct() {
 
@@ -26,7 +26,7 @@ export default function GetProduct() {
     };
 
     fetchData();
-  }, [productName]);//Dès que la value de l'input changee, fetch la data avec axios
+  }, []);//Dès que la value de l'input changee, fetch la data avec axios
 
 
   return (
@@ -43,7 +43,6 @@ export default function GetProduct() {
           <p>Error: {error}</p>
         ) : (
           <div>
-            <h1>Search Product</h1>
             <ul>
               {productObject.map((item) => (
                 <li key={item.id}>
