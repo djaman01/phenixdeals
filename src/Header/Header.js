@@ -22,15 +22,17 @@ export default function Header() {
 
           <div className="div-dropdown">
             <Link to='/getproduct'>
-            <h4 className='page-selection'>Acheter</h4>
+              <h4 className='page-selection'>Acheter</h4>
             </Link>
             <div className="dropdown">
               <Link to='/tableaux'>
                 <p className="drop-btn">Tableaux</p>
               </Link>
-              <p className="drop-btn">Décoration</p>
+              <Link to='/decoration'>
+                <p className="drop-btn">Décoration</p>
+              </Link>
               <Link to='/bijoux'>
-              <p className="drop-btn">Bijoux</p>
+                <p className="drop-btn">Bijoux</p>
               </Link>
               <p className="drop-btn">Livres</p>
             </div>

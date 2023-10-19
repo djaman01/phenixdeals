@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import './tableaux.css'
 
 
-
-export default function Tableaux() {
+export default function Decoration() {
 
   const [productObject, setProductObject] = useState([]); //State variable ou on va store tous les objets représentants les produits
   const [error, setError] = useState('');
@@ -17,7 +15,7 @@ export default function Tableaux() {
   useEffect(() => {
     const fetchData = () => {
 
-      axios.get('http://localhost:3005/tableau')//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
+      axios.get('http://localhost:3005/decoration')//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
         .then((response) => {
           console.log("tableau products fetched", response.data);
           setProductObject(response.data);
@@ -36,10 +34,11 @@ export default function Tableaux() {
   const filteredProducts = productObject.filter((item) =>
     item.nom.toLowerCase().includes(productName.toLowerCase())
   );
+
   return (
     <>
       <div>
-        <h1>Tous les Tableaux</h1>
+        <h1>Tous nos objets de Décoration</h1>
       </div>
 
       <div>
@@ -69,6 +68,9 @@ export default function Tableaux() {
           </div>
         )}
       </div>
+
+
+
     </>
   )
 }
