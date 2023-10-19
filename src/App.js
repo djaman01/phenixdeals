@@ -15,6 +15,7 @@ import GetProduct from './GetProduct/GetProduct';
 import Bijoux from './Bijoux/Bijoux';
 import Tableaux from './Tableaux/Tableaux';
 import Decoration from './Decoration/Decoration';
+import Livres from './Livres/Livres';
 
 
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="tableaux" element={<Tableaux />} />
           <Route path="bijoux" element={<Bijoux />} />
           <Route path="decoration" element={<Decoration />} />
+          <Route path="livres" element={<Livres />} />
           <Route path="*" element={<NoPage />} />
       
         </Routes>
