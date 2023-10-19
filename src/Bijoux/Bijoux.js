@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import "./getProduct.css"
-
-
-export default function GetProduct() {
+export default function Bijoux() {
 
   const [productObject, setProductObject] = useState([]); //State variable ou on va store tous les objets représentants les produits
   const [error, setError] = useState('');
@@ -35,8 +32,7 @@ export default function GetProduct() {
 
   return (
     <>
-      <div>
-        
+     <div>
         <h1>All Products</h1>
       </div>
 
@@ -67,10 +63,6 @@ export default function GetProduct() {
           </div>
         )}
       </div>
-
     </>
   )
 }
-
-
-

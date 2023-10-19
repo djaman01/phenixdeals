@@ -29,7 +29,9 @@ export default function Header() {
                 <p className="drop-btn">Tableaux</p>
               </Link>
               <p className="drop-btn">Décoration</p>
+              <Link to='/bijoux'>
               <p className="drop-btn">Bijoux</p>
+              </Link>
               <p className="drop-btn">Livres</p>
             </div>
           </div>

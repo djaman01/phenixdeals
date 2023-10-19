@@ -10,10 +10,8 @@ import NoPage from './NoPage/NoPage';
 import FicheProduit from './FicheProduit/FicheProduit';
 import Contact from './Contact/Contact';
 import Concept from './Concept/Concept';
-import ImageUpload from './ImageUpload';
-import AddProduct from './AddProduct/AddProduct';
 import GetProduct from './GetProduct/GetProduct';
-
+import Bijoux from './Bijoux/Bijoux';
 
 function App() {
   return (
@@ -27,8 +25,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="concept" element={<Concept />} />  
           <Route path="getproduct" element={<GetProduct />} />
-          <Route path= 'imageUpload' element= {<ImageUpload/>} />
-          <Route path= 'addProduct' element= {<AddProduct/>} />
+          <Route path="bijoux" element={<Bijoux />} />
           <Route path="*" element={<NoPage />} />
       
         </Routes>
