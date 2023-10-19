@@ -26,8 +26,11 @@ export default function GetProduct() {
     };
 
     fetchData();
-  }, []);//Dès que la value de l'input changee, fetch la data avec axios
+  }, []);//fetch la data avec axios dès qu'on ouvre le browser, comme ça tous les produits apparaisse d'un coup
 
+  const filteredProducts = productObject.filter((item) =>
+    item.nom.toLowerCase().includes(productName.toLowerCase())
+  );
 
   return (
     <>
@@ -44,7 +47,7 @@ export default function GetProduct() {
         ) : (
           <div>
             <ul>
-              {productObject.map((item) => (
+              {filteredProducts.map((item) => (
                 <li key={item.id}>
                   <h2>{item.nom}</h2>
                   <img
