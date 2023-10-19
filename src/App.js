@@ -13,6 +13,7 @@ import Concept from './Concept/Concept';
 import AddProduct from './AddProduct/AddProduct';
 import GetProduct from './GetProduct/GetProduct';
 import Bijoux from './Bijoux/Bijoux';
+import Tableaux from './Tableaux/Tableaux';
 
 
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="concept" element={<Concept />} />  
           <Route path="addProduct" element={<AddProduct />} />  
           <Route path="getproduct" element={<GetProduct />} />
+          <Route path="tableaux" element={<Tableaux />} />
           <Route path="bijoux" element={<Bijoux />} />
           <Route path="*" element={<NoPage />} />
       
