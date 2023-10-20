@@ -137,7 +137,7 @@ export default function Contact() {
             <div className="second-column">
 
               <div className="all-text-area">
-                <label className='contact-form-label' htmlFor="aide">En quoi pouvons-nous vous aider ?</label>
+                <label className='contact-form-label' htmlFor="aide">Que souhaitez-vous vendre ?</label>
                 <textarea className='contact-text-area'  defaultvalue={formData.Aide}
                   onChange={handleChange}
                   name="Aide"

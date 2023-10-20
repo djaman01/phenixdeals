@@ -5,7 +5,7 @@
 .item-ajout-recent {
   border: solid 1px rgb(186, 186, 186);
   border-radius: 10px;
-  height: 425px;
+  height: 410px;
   width: 100%;
 }
 
@@ -40,14 +40,10 @@
 
 .product-type {
   color: #0072B5;
-  margin-top: 15px;
   font-family: 'Heebo', sans-serif;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 
 }
-
-
-
 
 .product-details {
   height: 38px;
@@ -63,7 +59,7 @@
   font-family: 'Martian Mono', monospace;
   color: red;
   margin-top: -20px;
-  margin-bottom: 15px;
+  
 }
 
 
