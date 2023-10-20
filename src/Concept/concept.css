@@ -1,7 +1,7 @@
 .all-concept {
   display: flex;
   margin-bottom: 150px;
-  font-size: 20px;
+  font-size: 19px;
 }
 
 .concept {
@@ -61,8 +61,8 @@
 .card-activité {
   display: block;
   position: relative;
-  max-width: 300px;
-  max-height: 350px;
+  width: 300px;
+  height: 450px;
   background-color: #f2f8f9;
   border-radius: 10px;
   padding: 1.7em 1.2em;
@@ -71,7 +71,7 @@
   z-index: 0;
   overflow: hidden;
   background: linear-gradient(to bottom, #c3e6ec, #a7d1d9);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Heebo', sans-serif;
 }
 
 .card-activité:before {
@@ -123,6 +123,7 @@
   align-items: center;
   justify-content: center;
   width: 320px;
+  height: 450px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   padding: 32px;
   overflow: hidden;
@@ -130,7 +131,7 @@
   transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
   margin-top: 100px;
   margin-bottom: 100px;
-  height: 350px;
+  font-family: 'Heebo', sans-serif;
 }
 
 .content-vente {
@@ -209,12 +210,14 @@
   margin-left: 100px;
   border-radius: 20px;
   width: 320px;
-  height: 400px;
+  height: 500px;
   color: #ffffff;
   background: linear-gradient(to right,rgb(137, 104, 255),rgb(175, 152, 255));
   opacity: 0.85;
   padding-top: 12px;
   padding-left: 25px;
+  font-family: 'Heebo', sans-serif;
+  
 }
 
 .para-media {

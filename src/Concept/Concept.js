@@ -71,7 +71,7 @@ export default function Concept() {
         <div className='card-media'>
           <h2>Suivez-nous sur nos réseaux sociaux</h2>
           <p className='para-media'>Nous y sommes aussi très actifs !</p>
-          <h4>N'hésitez pas à vous abonner à nos pages:</h4>
+          <h4><u>N'hésitez pas à vous abonner à nos pages</u>:</h4>
           <div style={{marginLeft:"80px"}}>
             <span ><SocialIcon url="https://www.instagram.com/phenixdeals/" target="_blank" />  </span>
             <span style={{ marginLeft: 20 }}><SocialIcon url="https://web.facebook.com/profile.php?id=100090243464213" target="_blank" />  </span>
