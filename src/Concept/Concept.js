@@ -25,31 +25,31 @@ export default function Concept() {
       <div className='all-concept'>
 
 
-        <div class="card-activité">
+        <div className="card-activité">
 
-          <p class="card-title">Activité</p>
-          <p class="small-desc">
-            <b>phenixdeals</b> est une plateforme d'intérmédiation, spécialisé dans la vente d'objets d'arts, de décoration et de Bijoux.
+          <p  className="card-title">Activité</p>
+          <p  className="small-desc">
+            <b>phenixdeals.com</b> est une plateforme d'intérmédiation, spécialisé dans la vente d'objets d'arts, de décoration et de Bijoux.
           </p>
-          <p class="small-desc" style={{marginBottom: "10px"}}>
+          <p  className="small-desc2">
             <b>Parcourez notre site:</b> Des articles variés sont disponibles, tous en rapport avec l'art et la décoration.
           </p>
-          <div class="go-corner">
-            <div class="go-arrow">→</div>
+          <div  className="go-corner">
+            <div  className="go-arrow">→</div>
           </div>
 
           <Link to="/">
-            <button class="btn-achat">Voir les nouveaux produits</button>
+            <button  className="btn-achat">Voir les nouveaux produits</button>
           </Link>
 
         </div>
 
-        <div class="card-vente">
+        <div  className="card-vente">
 
-          <div class="content-vente">
-            <p class="heading-vente"> Vendez sur notre site !</p>
+          <div  className="content-vente">
+            <p  className="heading-vente"> Vendez sur notre site !</p>
 
-            <p class="para-vente" style={{ marginTop: "-40px", textDecoration: "underline" }}> 2 choix s'offre à vous:</p>
+            <p  className="para-vente" style={{ marginTop: "-40px", textDecoration: "underline" }}> 2 choix s'offre à vous:</p>
 
             <p style={{ marginTop: "-25px" }}>
               <b>1-</b> Postez vos bien sur le site <b>sans frais</b>: <br />
@@ -62,7 +62,7 @@ export default function Concept() {
             </p>
 
             <Link to="/contact" onClick={scrollToTop}>
-              <button class="btn-vente">Contactez-nous</button>
+              <button  className="btn-vente">Contactez-nous</button>
             </Link>
           </div>
 

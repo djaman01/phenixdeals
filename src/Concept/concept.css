@@ -23,18 +23,15 @@
   line-height: normal;
   font-weight: 700;
   margin-bottom: 0.5em;
-  margin-top: 9px;
+  margin-top: 12px;
 }
 
 .small-desc {
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.5em;
-  color: #452c2c;
+  margin-top: 43px;
 }
 
-.small-desc {
-  font-size: 1em;
+.small-desc2 {
+  margin-top: 40px;
 }
 
 .go-corner {
@@ -90,10 +87,10 @@
 }
 
 .card-activité:hover:before {
-  transform: scale(28);
+  transform: scale(35);
 }
 
-.card-activité:hover .small-desc {
+.card-activité:hover {
   transition: all 0.5s ease-out;
   color: #ffffff;
 }
