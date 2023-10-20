@@ -66,8 +66,8 @@ export default function Concept() {
             </Link>
           </div>
 
-          <div  className="go-corner-down">
-            <div  className="go-arrow"><span>&#8598;</span></div>
+          <div  className="go-corner-up">
+            <div  className="go-arrow"><span>&#8593;</span></div>
           </div>
 
         </div>

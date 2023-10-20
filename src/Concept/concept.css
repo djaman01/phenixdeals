@@ -1,7 +1,8 @@
 .all-concept {
   display: flex;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
   font-size: 19px;
+  margin-top: -20px;
 }
 
 .concept {
@@ -55,7 +56,7 @@
   font-family: courier, sans;
 }
 
-.go-corner-down {
+.go-corner-up {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,11 +64,12 @@
   width: 2em;
   height: 2em;
   overflow: hidden;
-  top: 478px;
+  top: 0;
   right: 0 ;
   background: linear-gradient(135deg, #e9aa21, #e5850f);
-  border-radius: 32px 0px 4px 0px;
+  border-radius: 0 4px 0 32px;
 }
+
 .card-activité {
   display: block;
   position: relative;
