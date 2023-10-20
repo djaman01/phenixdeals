@@ -25,9 +25,12 @@
 .all-form {
   color: white;
   background-image: radial-gradient(circle at 77% 43%, rgba(168, 168, 168,0.04) 0%, rgba(168, 168, 168,0.04) 50%,rgba(10, 10, 10,0.04) 50%, rgba(10, 10, 10,0.04) 100%),radial-gradient(circle at 33% 65%, rgba(248, 248, 248,0.04) 0%, rgba(248, 248, 248,0.04) 50%,rgba(228, 228, 228,0.04) 50%, rgba(228, 228, 228,0.04) 100%),radial-gradient(circle at 92% 79%, rgba(152, 152, 152,0.04) 0%, rgba(152, 152, 152,0.04) 50%,rgba(28, 28, 28,0.04) 50%, rgba(28, 28, 28,0.04) 100%),radial-gradient(circle at 91% 13%, rgba(41, 41, 41,0.04) 0%, rgba(41, 41, 41,0.04) 50%,rgba(214, 214, 214,0.04) 50%, rgba(214, 214, 214,0.04) 100%),linear-gradient(90deg, rgb(11, 127, 96),rgb(139, 205, 191));
-  height: 650px;
+  height: 600px;
   padding: 20px 40px;
-  margin: 20px 150px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
   font-family: 'Roboto', sans-serif;
   border-radius: 25px;
 }
@@ -38,7 +41,7 @@
 }
 
 .first-column {
-  margin-left: 100px;
+  margin-left: 50px;
   margin-top: -10px;
 }
 
@@ -69,7 +72,7 @@ font-size: 17px;
 }
 
 .form-button {
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
   width: 300px;
@@ -97,8 +100,8 @@ font-size: 17px;
 
 
 .contact-form-input {
-  
-width: 100%;
+
+width: 90%;
 padding: 10px 10px 20px 10px;
 border: 1px solid rgba(105, 105, 105, 0.397);
 border-radius: 10px;

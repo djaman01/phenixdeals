@@ -6,6 +6,8 @@ import './contact.css'
 
 export default function Contact() {
 
+  const alertFormulaire = () => alert('Formulaire Envoyé ! Nous vous répondrons dès que possible')
+
   //state variable qui aura la value de l'input et qui est un objet avec plusieurs properties pour mettre dans différents input
   const [formData, setFormData] = useState({
     Nom: "",
@@ -164,7 +166,7 @@ export default function Contact() {
           </div>
 
           <div class="form-button">
-            <button id='submitcheck' type="submit" className="submit-btn">Submit</button>
+            <button onClick ={alertFormulaire} id='submitcheck' type="submit" className="submit-btn">Envoyer</button>
             <button type="reset" className='reset-btn'> Reset </button>
           </div>
 
