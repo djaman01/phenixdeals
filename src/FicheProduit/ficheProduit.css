@@ -33,9 +33,23 @@
 }
 
 .dimensions-produit,
-.matiere-produit,
 .code-produit {
   color: #363945;
+
+}
+
+.matiere-produit {
+  color: #ed0000;
+}
+
+.code-produit {
+  font-family: 'Martian Mono', monospace;
+}
+
+
+.dimensions-produit {
+  font-family: 'Heebo', sans-serif;
+
 }
 
 .prix-produit {
@@ -77,3 +91,4 @@
   cursor: pointer;
 
 }
+

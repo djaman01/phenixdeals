@@ -34,7 +34,7 @@ export default function FicheProduit() {
           <h1>{produit.état}</h1>
           <h1 className="nom-produit">{produit.nom}</h1>
           <h2 className="dimensions-produit">{produit.dimensions}</h2>
-          <h2 className="matiere-produit">{produit.matière}</h2>
+          <h2 className="matiere-produit">{produit.matiere}</h2>
           <h2 className="prix-produit">{produit.prix}</h2>
           <h3 className="code-produit">{produit.code}</h3>
 
