@@ -20,7 +20,7 @@ export default function ProductCard({ type, détails, prix, thumbnail, id }) {
 
         <div className="text-product">
           <h3 className='product-type'>{type}</h3>
-          <h4 className='product-details'>{détails}</h4>
+          <h4 className='product-details' style={{fontSize: "15px"}}>{détails}</h4>
           <h4 className='product-price'>{prix}</h4>
         </div>
 
