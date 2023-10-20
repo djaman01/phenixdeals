@@ -25,9 +25,11 @@
 .all-form {
   color: white;
   background-image: radial-gradient(circle at 77% 43%, rgba(168, 168, 168,0.04) 0%, rgba(168, 168, 168,0.04) 50%,rgba(10, 10, 10,0.04) 50%, rgba(10, 10, 10,0.04) 100%),radial-gradient(circle at 33% 65%, rgba(248, 248, 248,0.04) 0%, rgba(248, 248, 248,0.04) 50%,rgba(228, 228, 228,0.04) 50%, rgba(228, 228, 228,0.04) 100%),radial-gradient(circle at 92% 79%, rgba(152, 152, 152,0.04) 0%, rgba(152, 152, 152,0.04) 50%,rgba(28, 28, 28,0.04) 50%, rgba(28, 28, 28,0.04) 100%),radial-gradient(circle at 91% 13%, rgba(41, 41, 41,0.04) 0%, rgba(41, 41, 41,0.04) 50%,rgba(214, 214, 214,0.04) 50%, rgba(214, 214, 214,0.04) 100%),linear-gradient(90deg, rgb(11, 127, 96),rgb(139, 205, 191));
-  height: 500px;
+  height: 650px;
   padding: 20px 40px;
-  margin: 50px 150px;
+  margin: 20px 150px;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 25px;
 }
 
 .form-grid {
@@ -44,12 +46,26 @@ label {
   display: block;
 }
 
-.text-area-form {
+.all-text-area, .news-btn {
   margin-top: 40px;
+  margin-left: 90px ;
+}
+
+.contact-text-area {
+border: 1px solid rgba(105, 105, 105, 0.397);
+border-radius: 10px;
+font-size: 17px; 
+}
+
+
+.all-news-btn {
+  margin-top: 60px;
+  margin-left: 180px;
 }
 
 .news-btn {
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-left: 100px;
 }
 
 .form-button {
@@ -62,13 +78,12 @@ label {
   
 }
 
-.submit-btn {
-  height: 30px;
+.submit-btn, .reset-btn {
+  height: 40px;
   width: 100px;
   background-color: #009B77;
   color: white;
-  font-weight: bold;
-  font-size: 12px;
+  font-size: 17px;
   border-radius: 5px;
   border: none;
   padding: 0 12px 0 12px;
@@ -76,21 +91,23 @@ label {
 }
 
 .reset-btn {
-  height: 30px;
   background-color: #DD4124;
-  width: 100px;
-  color: white;
-  font-weight: bold;
-  font-size: 12px;
-  border-radius: 5px;
-  border: none;
-  padding: 0 12px 0 12px;
-  cursor: pointer;
 }
 
 
 
+.contact-form-input {
+  
+width: 100%;
+padding: 10px 10px 20px 10px;
+border: 1px solid rgba(105, 105, 105, 0.397);
+border-radius: 10px;
+font-size: 17px;
 
+}
 
-
+.contact-form-label {
+  font-size: 20px;
+ 
+}
 

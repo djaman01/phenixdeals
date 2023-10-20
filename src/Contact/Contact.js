@@ -37,10 +37,10 @@ export default function Contact() {
 
     try {
       const response = await axios.post('http://localhost:3005/', formData);
-      
+
       console.log('Response from the server:', response.data);
     } catch (error) {
-      
+
       console.error('Error:', error);
     }
   };
@@ -61,8 +61,9 @@ export default function Contact() {
             <div className="first-column">
 
               < div className='nom-famille'>
-                <label htmlFor="Nom">Nom:</label>
+                <label className='contact-form-label' htmlFor="Nom">Nom:</label>
                 <input
+                  className='contact-form-input'
                   type="text"
                   id="Nom"
                   name="Nom"
@@ -74,8 +75,9 @@ export default function Contact() {
               </div>
 
               <div className='prenom'>
-                <label htmlFor="Prenom">Prénom:</label>
+                <label className='contact-form-label' htmlFor="Prenom">Prénom:</label>
                 <input
+                  className='contact-form-input'
                   type="text"
                   id="Prenom"
                   name="Prenom"
@@ -87,8 +89,9 @@ export default function Contact() {
               </div>
 
               <div className='ville'>
-                <label htmlFor="Ville">Ville:</label>
+                <label className='contact-form-label' htmlFor="Ville">Ville:</label>
                 <input
+                  className='contact-form-input'
                   type="text"
                   id="Ville"
                   name="Ville"
@@ -100,8 +103,9 @@ export default function Contact() {
               </div>
 
               <div className='mail'>
-                <label htmlFor="Mail">E-mail:</label>
+                <label className='contact-form-label' htmlFor="Mail">E-mail:</label>
                 <input
+                  className='contact-form-input'
                   type="text"
                   id="Mail"
                   name="Mail"
@@ -113,8 +117,9 @@ export default function Contact() {
               </div>
 
               <div className='telephone'>
-                <label htmlFor="Telephone">Téléphone:</label>
+                <label className='contact-form-label' htmlFor="Telephone">Téléphone:</label>
                 <input
+                  className='contact-form-input'
                   type="text"
                   id="Telephone"
                   name="Telephone"
@@ -129,27 +134,29 @@ export default function Contact() {
 
             <div className="second-column">
 
-              <div className="text-area-form">
-                <label htmlFor="aide">En quoi pouvons-nous vous aider ?</label>
-                <textarea value={formData.Aide}
+              <div className="all-text-area">
+                <label className='contact-form-label' htmlFor="aide">En quoi pouvons-nous vous aider ?</label>
+                <textarea className='contact-text-area' value={formData.Aide}
                   onChange={handleChange}
-                  name="Aide" 
-                  id="aide" 
-                  cols="60" 
-                  rows="10" 
+                  name="Aide"
+                  id="aide"
+                  cols="60"
+                  rows="10"
                   placeholder="Ecrivez votre texte ici"> </textarea>
               </div>
 
-              <div className='news-btn'>
+              <div className='all-news-btn'>
 
                 <h3 style={{ textDecoration: "underline", marginBottom: "" }}>Voulez-vous recevoir nos nouveautés par mail ?</h3>
 
-                <label htmlFor="oui" style={{ display: "inline-block" }}> Oui </label>
-                <input type="radio" name="check" id="oui" style={{ marginRight: "50px" }} required />
+                <div className="news-btn">
+                  <label htmlFor="oui" style={{ display: "inline-block", fontSize: "20px" }}> Oui </label>
+                  <input type="radio" name="check" id="oui" style={{ marginRight: "50px" }} required />
 
-                <label htmlFor="non" style={{ display: "inline-block" }}> Non </label>
-                <input type="radio" name="check" id="non" required />
-
+                  <label htmlFor="non" style={{ display: "inline-block", fontSize: "20px"  }}> Non </label>
+                  <input type="radio" name="check" id="non" required />
+                </div>
+                
               </div>
 
             </div>

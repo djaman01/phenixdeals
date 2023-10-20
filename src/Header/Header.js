@@ -42,12 +42,8 @@ export default function Header() {
           </div>
 
           <div className="div-dropdown">
-            <h4 className='vendre-btn'>Vendre</h4>
-          </div>
-
-          <div className="div-dropdown">
             <Link to="/contact" style={{ textDecoration: "none" }}>
-              <h4 className='contact-btn'>Contact</h4>
+              <h4 className='contact-btn'>Vendre</h4>
             </Link>
           </div>
 
