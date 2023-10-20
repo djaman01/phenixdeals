@@ -84,7 +84,6 @@ font-size: 17px;
 .submit-btn, .reset-btn {
   height: 40px;
   width: 100px;
-  background-color: #009B77;
   color: white;
   font-size: 17px;
   border-radius: 5px;
@@ -93,6 +92,9 @@ font-size: 17px;
   cursor: pointer;
 }
 
+.submit-btn {
+  background-color: #009B77;
+}
 .reset-btn {
   background-color: #DD4124;
 }

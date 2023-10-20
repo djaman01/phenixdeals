@@ -35,7 +35,7 @@ export default function Concept() {
             <b>Parcourez notre site:</b> Des articles variés sont disponibles, tous en rapport avec l'art et la décoration.
           </p>
           <div  className="go-corner">
-            <div  className="go-arrow">→</div>
+            <div  className="go-arrow"><span>&#8601;</span></div>
           </div>
 
           <Link to="/">
@@ -66,30 +66,23 @@ export default function Concept() {
             </Link>
           </div>
 
+          <div  className="go-corner-down">
+            <div  className="go-arrow"><span>&#8598;</span></div>
+          </div>
+
         </div>
 
         <div className='card-media'>
-          <h2>Suivez-nous sur nos réseaux sociaux</h2>
+          <h2 className='title-card-media'>Suivez-nous sur nos réseaux sociaux</h2>
           <p className='para-media'>Nous y sommes aussi très actifs !</p>
-          <h4><u>N'hésitez pas à vous abonner à nos pages</u>:</h4>
-          <div style={{marginLeft:"80px"}}>
+          <h4 className='abonne-contact'><u>N'hésitez pas à vous abonner à nos pages</u>:</h4>
+          <div className='btn-social-concept' style={{marginLeft:"80px"}}>
             <span ><SocialIcon url="https://www.instagram.com/phenixdeals/" target="_blank" />  </span>
             <span style={{ marginLeft: 20 }}><SocialIcon url="https://web.facebook.com/profile.php?id=100090243464213" target="_blank" />  </span>
           </div>
         </div>
 
-
-
-
-
-
       </div>
-
-
-
-
-
-
 
       <Footer />
 

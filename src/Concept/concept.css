@@ -31,7 +31,7 @@
 }
 
 .small-desc2 {
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .go-corner {
@@ -55,10 +55,23 @@
   font-family: courier, sans;
 }
 
+.go-corner-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  overflow: hidden;
+  top: 478px;
+  right: 0 ;
+  background: linear-gradient(135deg, #e9aa21, #e5850f);
+  border-radius: 32px 0px 4px 0px;
+}
 .card-activité {
   display: block;
   position: relative;
-  width: 300px;
+  width: 320px;
   height: 450px;
   background-color: #f2f8f9;
   border-radius: 10px;
@@ -101,15 +114,17 @@
 }
 
 .btn-achat {
-    height: 35px;
+    height: 45px;
+    font-size: 18px;
+    border-radius: 5px;
     background-color: #3d83df;
     color: white;
     font-weight: bold;
-    font-size: 14px;
-    border-radius: 5px;
     border: none;
     padding: 0 12px 0 12px;
     cursor: pointer;
+    margin-top: 50px;
+
 }
 
 /* Style carte vente */
@@ -131,6 +146,10 @@
   font-family: 'Heebo', sans-serif;
 }
 
+.title-card-media {
+  margin-top: 15px;
+}
+
 .content-vente {
   display: flex;
   flex-direction: column;
@@ -150,6 +169,12 @@
 
 .content-vente .para-vente {
   line-height: 1.5;
+}
+
+.btn-vente {
+  height: 45px;
+  font-size: 18px;
+  border-radius: 5px;
 }
 
 .content-vente .btn-vente {
@@ -206,7 +231,7 @@
   margin-top: 100px;
   margin-left: 100px;
   border-radius: 20px;
-  width: 320px;
+  width: 345px;
   height: 500px;
   color: #ffffff;
   background: linear-gradient(to right,rgb(137, 104, 255),rgb(175, 152, 255));
@@ -218,7 +243,13 @@
 }
 
 .para-media {
-  margin-top: 45px;
-  margin-bottom: 45px;
+  margin-top: 70px;
+  margin-bottom: 90px;
 
 }
+
+.abonne-contact {
+  margin-bottom: 70px;
+  margin-top: 95px;
+}
+
