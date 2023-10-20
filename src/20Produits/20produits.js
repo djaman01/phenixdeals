@@ -2,10 +2,10 @@
 export const produits= [
   {
     "type": "Tableau",
-    "détails": "Abousmah/120x60cm/Toile",
+    "détails": "Abousmah/120x60cm",
     "nom": "Abousmah",
     "dimensions": "120x60cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "6.000 Dhs",
     "état": "",
     "Contact": "",
@@ -16,10 +16,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Guessous/120x100cm/Toile",
+    "détails": "Guessous/120x100cm",
     "nom": "Guessous Meriem",
     "dimensions": "120x100cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "4.000 Dhs",
     "état": "",
     "Contact": "",
@@ -30,10 +30,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Benjkan/90x90cm/Toile",
+    "détails": "Benjkan/90x90cm",
     "nom": "Benjkan Salah",
     "dimensions": "90x90cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "10.000 Dhs",
     "état": "",
     "Contact": "",
@@ -44,10 +44,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Kadi Hamman/50x50cm/Toile",
+    "détails": "Kadi Hamman/50x50cm",
     "nom": "Kadi Hamman Hind",
     "dimensions": "50x50cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "4.000 Dhs",
     "état": "",
     "Contact": "",
@@ -58,10 +58,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Kadi Hamman/40x40cm/Toile",
+    "détails": "Kadi Hamman/40x40cm",
     "nom": "Kadi Hamman Hind",
     "dimensions": "40x40cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "3.600 Dhs",
     "état": "",
     "Contact": "",
@@ -72,10 +72,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Sayad/120x80cm/Toile",
+    "détails": "Sayad/120x80cm",
     "nom": "Sayad Zineb ",
     "dimensions": "120x60cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "8.400 Dhs",
     "état": "",
     "Contact": "",
@@ -86,10 +86,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Binebine/100x70cm/Lithographie",
+    "détails": "Binebine/100x70cm",
     "nom": "Binebine Mahi",
     "dimensions": "100x70cm",
-    "matière": "Lithographie",
+    "matiere": "Lithographie",
     "prix": "16.000Dhs",
     "état": "",
     "Contact": "",
@@ -100,10 +100,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Benjkan/100x85cm/Toile",
+    "détails": "Benjkan/100x85cm",
     "nom": "Benjkan Salah",
     "dimensions": "100x85cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "Vendu",
     "état": "",
     "Contact": "",
@@ -114,10 +114,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Toumi/120x60cm/Toile",
+    "détails": "Toumi/120x60cm",
     "nom": "Toumi",
     "dimensions": "95x153cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "7.000 Dhs",
     "état": "",
     "Contact": "",
@@ -128,10 +128,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Sayarh/40x30cm/papier",
+    "détails": "Sayarh/40x30cm",
     "nom": "Sayarh Amal",
     "dimensions": "40x30cm",
-    "matière": "papier",
+    "matiere": "papier",
     "prix": "1.300 Dhs",
     "état": "",
     "Contact": "",
@@ -142,10 +142,10 @@ export const produits= [
 
   {
     "type": "Bijoux",
-    "détails": "MoonSwatch/Mission to Mars",
+    "détails": "MoonSwatch",
     "nom": "Swatch x Omegle",
     "dimensions": "",
-    "matière": "Mission to Mars",
+    "matiere": "Mission to Mars",
     "prix": "5.800 Dhs",
     "état": "",
     "Contact": "",
@@ -156,10 +156,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Abousmah/120x60cm/Toile",
+    "détails": "Abousmah/120x60cm",
     "nom": "Abousmah",
     "dimensions": "120x60cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "6.000 Dhs",
     "état": "",
     "Contact": "",
@@ -170,10 +170,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Abousmah/120x60cm/Toile",
+    "détails": "Abousmah/120x60cm",
     "nom": "Abousmah",
     "dimensions": "120x60cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "6.000 Dhs",
     "état": "",
     "Contact": "",
@@ -184,10 +184,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Abousmah/120x60cm/Toile",
+    "détails": "Abousmah/120x60cm",
     "nom": "Abousmah",
     "dimensions": "120x60cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "6.000 Dhs",
     "état": "",
     "Contact": "",
@@ -198,10 +198,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Abousmah/120x60cm/Toile",
+    "détails": "Abousmah/120x60cm",
     "nom": "Abousmah",
     "dimensions": "120x60cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "6.000 Dhs",
     "état": "",
     "Contact": "",
@@ -212,10 +212,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Abousmah/120x60cm/Toile",
+    "détails": "Abousmah/120x60cm",
     "nom": "Abousmah",
     "dimensions": "120x60cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "6.000 Dhs",
     "état": "",
     "Contact": "",
@@ -226,10 +226,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Abousmah/120x60cm/Toile",
+    "détails": "Abousmah/120x60cm",
     "nom": "Abousmah",
     "dimensions": "120x60cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "6.000 Dhs",
     "état": "",
     "Contact": "",
@@ -240,10 +240,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Abousmah/120x60cm/Toile",
+    "détails": "Abousmah/120x60cm",
     "nom": "Abousmah",
     "dimensions": "120x60cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "6.000 Dhs",
     "état": "",
     "Contact": "",
@@ -254,10 +254,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Abousmah/120x60cm/Toile",
+    "détails": "Abousmah/120x60cm",
     "nom": "Abousmah",
     "dimensions": "120x60cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "6.000 Dhs",
     "état": "",
     "Contact": "",
@@ -268,10 +268,10 @@ export const produits= [
 
   {
     "type": "Tableau",
-    "détails": "Abousmah/120x60cm/Toile",
+    "détails": "Abousmah/120x60cm",
     "nom": "Abousmah",
     "dimensions": "120x60cm",
-    "matière": "Toile",
+    "matiere": "Toile",
     "prix": "6.000 Dhs",
     "état": "",
     "Contact": "",
