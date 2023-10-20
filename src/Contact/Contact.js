@@ -69,7 +69,7 @@ export default function Contact() {
                   type="text"
                   id="Nom"
                   name="Nom"
-                  value={formData.Nom}
+                  defaultvalue={formData.Nom}
                   onChange={handleChange}
                   placeholder='Nom'
                   required
@@ -83,7 +83,7 @@ export default function Contact() {
                   type="text"
                   id="Prenom"
                   name="Prenom"
-                  value={formData.Prenom}
+                  defaultvalue={formData.Prenom}
                   onChange={handleChange}
                   placeholder='Prénom'
                   required
@@ -97,7 +97,7 @@ export default function Contact() {
                   type="text"
                   id="Ville"
                   name="Ville"
-                  value={formData.Ville}
+                  defaultvalue={formData.Ville}
                   onChange={handleChange}
                   placeholder='ville'
                   required
@@ -111,7 +111,7 @@ export default function Contact() {
                   type="text"
                   id="Mail"
                   name="Mail"
-                  value={formData.Mail}
+                  defaultvalue={formData.Mail}
                   onChange={handleChange}
                   placeholder='Votre e-mail'
                   required
@@ -125,7 +125,7 @@ export default function Contact() {
                   type="text"
                   id="Telephone"
                   name="Telephone"
-                  value={formData.Telephone}
+                  defaultvalue={formData.Telephone}
                   onChange={handleChange}
                   placeholder='Numéro de Téléphone'
                   required
@@ -138,7 +138,7 @@ export default function Contact() {
 
               <div className="all-text-area">
                 <label className='contact-form-label' htmlFor="aide">En quoi pouvons-nous vous aider ?</label>
-                <textarea className='contact-text-area' value={formData.Aide}
+                <textarea className='contact-text-area'  defaultvalue={formData.Aide}
                   onChange={handleChange}
                   name="Aide"
                   id="aide"
