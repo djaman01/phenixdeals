@@ -1,4 +1,4 @@
-.grid-all-products {
+.grid-bijoux {
   display: grid;
   grid-template-columns: 250px 250px 250px 250px;
   gap: 50px 50px;
@@ -8,25 +8,25 @@
 
 
 
-.item-all-products {
+.item-bijoux {
   border: solid 1px rgb(186, 186, 186);
   border-radius: 10px;
   height: 410px;
   width: 100%;
 }
 
-.item-all-products:hover {
+.item-bijoux:hover {
   cursor: pointer;
   box-shadow: 0 0 20px 15px rgba(0, 0, 0, 0.1);
   transform: translateY(-5px);
 }
 
-.div-thumbnail-allproducts {
+.div-thumbnail-bijoux{
   width: 100%;
   height: 270px;
 }
 
-.thumbnail-products {
+.thumbnail-bijoux {
   /* C'est l'image qui doit avoir width et height défini et object-fit */
   width: 100%;
   height: 100%;
@@ -37,19 +37,19 @@
 
 }
 
-.text-all-products {
+.text-bijoux{
   text-align: center;
   height: 160px;
 }
 
-.all-products-type {
+.bijoux-type {
   color: #0072B5;
   font-family: 'Heebo', sans-serif;
   margin-bottom: 5px;
 
 }
 
-.nom-dimensions {
+.bijoux-nom-dimensions {
   display: flex;
   align-items: center;
   height: 38px;
@@ -62,13 +62,13 @@
 
 }
 
-.all-products-matiere {
+.bijoux-matiere {
   font-family: 'Martian Mono', monospace;
   color: #ff0921;
 }
 
 
-.all-products-price {
+.bijoux-price {
   color: #0072B5;
   font-family: 'Heebo', sans-serif;
   margin-top: -10px;

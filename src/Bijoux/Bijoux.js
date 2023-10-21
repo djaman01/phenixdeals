@@ -54,32 +54,32 @@ export default function Bijoux() {
       <div>
         {error ? (<p>Error: {error}</p>) : (
 
-          <div className="grid-home-filter">
+          <div className="grid-bijoux">
 
             {filteredProducts.map((item) => (
 
-              <div className="item-all-products">
+              <div className="item-bijoux">
 
-                <div className="div-thumbnail-allproducts">
+                <div className="div-thumbnail-bijoux">
                   <img
-                    className='thumbnail-products'
+                    className='thumbnail-bijoux'
                     src={`http://localhost:3005/${item.imageUrl}`}//On store le path de l'image dans la database,, donc c'est ce qu'il faut chercher
                     alt={item.nom}
                   />
                 </div>
 
 
-                <div className="text-all-products">
+                <div className="text-bijoux">
 
-                  <h3 className='all-products-type'>{item.type}</h3>
+                  <h3 className='bijoux-type'>{item.type}</h3>
 
-                  <div className='nom-dimensions'>
+                  <div className='bijoux-nom-dimensions'>
                     <h4 style={{ fontSize: "15px" }}>{item.nom}/</h4>
                     <h4 style={{ fontSize: "15px" }}>{item.dimensions}</h4>
                   </div>
-                  <h4 className='all-products-matiere' style={{ fontSize: "15px" }}>{item.matiere}</h4>
+                  <h4 className='bijoux-matiere' style={{ fontSize: "15px" }}>{item.matiere}</h4>
 
-                  <h4 className='all-products-price'>{item.prix}</h4>
+                  <h4 className='bijoux-price'>{item.prix}</h4>
 
                 </div>
 

@@ -41,7 +41,7 @@
 .product-type {
   color: #0072B5;
   font-family: 'Heebo', sans-serif;
-  margin-bottom: 5px;
+  margin-bottom: -25px;
 
 }
 
@@ -67,5 +67,6 @@
 .product-price {
   color: #0072B5;
   font-family: 'Heebo', sans-serif;
+  margin-top: -11px;
 }
 
