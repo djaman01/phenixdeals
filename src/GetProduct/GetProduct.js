@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer';
+
 import { Link } from "react-router-dom";
 
 import "./getProduct.css"
+
 
 
 export default function GetProduct() {
@@ -42,6 +46,8 @@ export default function GetProduct() {
 
   return (
     <>
+
+      <Header />
       <div>
 
         <h1>All Products</h1>
@@ -51,15 +57,15 @@ export default function GetProduct() {
         <input value={productName} onChange={handleProductName} type="text" />
       </div>
       <div>
-        {error ? (<p>Error: {error}</p> ) : (
-          
+        {error ? (<p>Error: {error}</p>) : (
+
           <div className="grid-all-products">
 
             {filteredProducts.map((item) => (
 
 
               <div className="item-all-products">
-                
+
                 <div className="div-thumbnail-allproducts">
                   <img
                     className='thumbnail-products'
@@ -77,7 +83,7 @@ export default function GetProduct() {
                     <h4 style={{ fontSize: "15px" }}>{item.nom}/</h4>
                     <h4 style={{ fontSize: "15px" }}>{item.dimensions}</h4>
                   </div>
-                  <h4 className='all-products-matiere' style={{fontSize: "15px"}}>{item.matiere}</h4>
+                  <h4 className='all-products-matiere' style={{ fontSize: "15px" }}>{item.matiere}</h4>
 
                   <h4 className='all-products-price'>{item.prix}</h4>
 
@@ -90,7 +96,7 @@ export default function GetProduct() {
           </div>
         )}
       </div>
-
+      <Footer />
     </>
   )
 }

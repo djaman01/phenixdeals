@@ -1,3 +1,4 @@
+
 .header {
   display: flex;
   justify-content: space-around;
@@ -9,13 +10,17 @@
   width: 150px;
 }
 
-.home-button, .page-selection, .contact-btn, .vendre-btn{
+.home-button, .page-selection, .vendre-btn{
   color: #ababab;
-  font-size: 15px;
-  font-family: 'Roboto', sans-serif;
   text-decoration: none;
   cursor: pointer;
+  font-family: 'Martian Mono', monospace;
+
 }
+
+
+
+
 
 
 .div-dropdown {

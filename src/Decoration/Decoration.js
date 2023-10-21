@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer';
+
 import './decoration.css'
 
 
@@ -39,6 +42,8 @@ export default function Decoration() {
 
   return (
     <>
+
+    <Header />
       <div>
         <h1>Tous nos objets de Décoration</h1>
       </div>
@@ -86,7 +91,7 @@ export default function Decoration() {
           </div>
         )}
       </div>
-
+<Footer />
 
 
     </>

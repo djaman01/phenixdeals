@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer';
+
 import './bijoux.css'
 
 export default function Bijoux() {
@@ -37,7 +40,10 @@ export default function Bijoux() {
 
 
   return (
+
     <>
+
+      <Header />
       <div>
         <h1>Tous les Bijoux</h1>
       </div>
@@ -85,6 +91,8 @@ export default function Bijoux() {
           </div>
         )}
       </div>
+
+      <Footer />
     </>
   )
 }

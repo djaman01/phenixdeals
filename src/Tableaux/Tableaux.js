@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer';
+
+
 import './tableaux.css'
 
 
@@ -38,6 +43,7 @@ export default function Tableaux() {
   );
   return (
     <>
+    <Header />
       <div>
         <h1>Tous les Tableaux</h1>
       </div>
@@ -85,6 +91,7 @@ export default function Tableaux() {
           </div>
         )}
       </div>
+      <Footer />
     </>
   )
 }

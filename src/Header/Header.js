@@ -3,7 +3,6 @@ import Filter from '../Filter/Filter.js'
 import { Link } from 'react-router-dom'
 
 
-
 export default function Header() {
   return (
     <>
@@ -43,7 +42,7 @@ export default function Header() {
 
           <div className="div-dropdown">
             <Link to="/contact" style={{ textDecoration: "none" }}>
-              <h4 className='contact-btn'>Vendre</h4>
+              <h4 className='vendre-btn'>Vendre</h4>
             </Link>
           </div>
 

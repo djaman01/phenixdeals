@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer';
+
 import './livres.css'
 
 import React from 'react'
@@ -40,6 +43,7 @@ export default function Livres() {
 
   return (
     <>
+      <Header />
       <div>
         <h1>Tous les Livres</h1>
       </div>
@@ -87,6 +91,7 @@ export default function Livres() {
           </div>
         )}
       </div>
+      <Footer />
 
     </>
   )
