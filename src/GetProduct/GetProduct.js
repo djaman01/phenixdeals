@@ -51,15 +51,15 @@ export default function GetProduct() {
         <input value={productName} onChange={handleProductName} type="text" />
       </div>
       <div>
-        {error ? (
-          <p>Error: {error}</p>
-        ) : (
+        {error ? (<p>Error: {error}</p> ) : (
+          
           <div className="grid-all-products">
 
             {filteredProducts.map((item) => (
 
 
               <div className="item-all-products">
+                
                 <div className="div-thumbnail-allproducts">
                   <img
                     className='thumbnail-products'

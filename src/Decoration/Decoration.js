@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import './decoration.css'
+
 
 
 export default function Decoration() {
@@ -45,24 +47,40 @@ export default function Decoration() {
         <input value={productName} onChange={handleProductName} type="text" />
       </div>
       <div>
-        {error ? (
-          <p>Error: {error}</p>
-        ) : (
+        {error ? (<p>Error: {error}</p>) : (
+
           <div className="grid-home-filter">
 
             {filteredProducts.map((item) => (
 
-              <div className="item">
+              <div className="item-all-products">
 
-                <div key={item.id} className="div-thumbnail">
+                <div className="div-thumbnail-allproducts">
                   <img
-                    className='thumbnail'
+                    className='thumbnail-products'
                     src={`http://localhost:3005/${item.imageUrl}`}//On store le path de l'image dans la database,, donc c'est ce qu'il faut chercher
                     alt={item.nom}
                   />
                 </div>
 
+
+                <div className="text-all-products">
+
+                  <h3 className='all-products-type'>{item.type}</h3>
+
+                  <div className='nom-dimensions'>
+                    <h4 style={{ fontSize: "15px" }}>{item.nom}/</h4>
+                    <h4 style={{ fontSize: "15px" }}>{item.dimensions}</h4>
+                  </div>
+                  <h4 className='all-products-matiere' style={{ fontSize: "15px" }}>{item.matiere}</h4>
+
+                  <h4 className='all-products-price'>{item.prix}</h4>
+
+                </div>
+
               </div>
+
+
             ))}
 
           </div>
