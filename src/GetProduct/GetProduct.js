@@ -1,10 +1,16 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import { Link } from "react-router-dom";
+
 import "./getProduct.css"
 
 
 export default function GetProduct() {
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  };
 
   const [productObject, setProductObject] = useState([]); //State variable ou on va store tous les objets représentants les produits
   const [error, setError] = useState('');
@@ -12,6 +18,7 @@ export default function GetProduct() {
   const [productName, setProductName] = useState('');//State variable qui va store la value de l'input et qui doit changer en fonction de ce qu'on écrit
 
   const handleProductName = (e) => setProductName(e.target.value); //ca c'est l'event handler qui fait que la state productName a pour valeur la value de l'input
+
 
   useEffect(() => {
     const fetchData = () => {
@@ -36,7 +43,7 @@ export default function GetProduct() {
   return (
     <>
       <div>
-        
+
         <h1>All Products</h1>
       </div>
 
@@ -47,21 +54,37 @@ export default function GetProduct() {
         {error ? (
           <p>Error: {error}</p>
         ) : (
-          <div className="grid-home-filter">
+          <div className="grid-all-products">
 
             {filteredProducts.map((item) => (
 
-              <div className="item">
 
-                <div key={item.id} className="div-thumbnail">
+              <div className="item-all-products">
+                <div className="div-thumbnail-allproducts">
                   <img
-                    className='thumbnail'
+                    className='thumbnail-products'
                     src={`http://localhost:3005/${item.imageUrl}`}//On store le path de l'image dans la database,, donc c'est ce qu'il faut chercher
                     alt={item.nom}
                   />
                 </div>
 
+
+                <div className="text-all-products">
+
+                  <h3 className='all-products-type'>{item.type}</h3>
+
+                  <div className='nom-dimensions'>
+                    <h4 style={{ fontSize: "15px" }}>{item.nom}/</h4>
+                    <h4 style={{ fontSize: "15px" }}>{item.dimensions}</h4>
+                  </div>
+                  <h4 className='all-products-matiere' style={{fontSize: "15px"}}>{item.matiere}</h4>
+
+                  <h4 className='all-products-price'>{item.prix}</h4>
+
+                </div>
+
               </div>
+
             ))}
 
           </div>
@@ -71,6 +94,10 @@ export default function GetProduct() {
     </>
   )
 }
+
+
+
+
 
 
 
