@@ -11,10 +11,12 @@
 }
 
 .home-button, .page-selection, .vendre-btn{
-  color: #ababab;
+  color: #939597;
   text-decoration: none;
   cursor: pointer;
   font-family: 'Martian Mono', monospace;
+  font-size: 20px;
+  
 
 }
 
@@ -29,7 +31,7 @@
   position: absolute;
   z-index: 1;
   right: -75px;
-  top: 50px;
+  top: 60px;
   cursor: pointer;
   border: 2px solid white;
   border-radius: 5px;
