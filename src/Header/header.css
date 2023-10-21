@@ -20,9 +20,6 @@
 
 
 
-
-
-
 .div-dropdown {
   position: relative;
 }
@@ -39,12 +36,13 @@
   background-color: white;
   text-align: left;
   width: 200px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Merriweather', serif;
   color: #ababab;
   line-height: 22px;
   display: none;
   text-align: center;
 }
+
 
 .div-dropdown:hover .dropdown {
 display: block;
