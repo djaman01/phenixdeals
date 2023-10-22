@@ -1,17 +1,11 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-
-
+import { Link, useParams } from "react-router-dom";
 import Header from '../Header/Header'
-import Footer from '../Footer/Footer';
+import Footer from '../Footer/Footer'
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 
-import './tableaux.css'
-import { Link } from 'react-router-dom';
-
-
-
-export default function Tableaux() {
+export default function FicheDatabase() {
 
   const [productObject, setProductObject] = useState([]); //State variable ou on va store tous les objets représentants les produits
   const [error, setError] = useState('');
@@ -23,9 +17,9 @@ export default function Tableaux() {
   useEffect(() => {
     const fetchData = () => {
 
-      axios.get('http://localhost:3005/tableau')//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
+      axios.get('http://localhost:3005/article')
         .then((response) => {
-          console.log("tableau products fetched", response.data);
+          console.log("article fetched", response.data);
           setProductObject(response.data);
         })
         .catch((error) => {
@@ -42,19 +36,12 @@ export default function Tableaux() {
     <>
       <Header />
       <div>
-        <h1>Tous les Tableaux</h1>
-      </div>
-
-      <div>
-        <input value={productName} onChange={handleProductName} type="text" />
-      </div>
-      <div>
         {error ? (<p>Error: {error}</p>) : (
 
           <div className="grid-tableaux">
 
             {productObject.map((item) => (
-              <Link to={`/fichedatabase/${item._id}`}>
+          
                 <div className="item-tableaux">
 
                   <div className="div-thumbnail-tableaux">
@@ -81,7 +68,7 @@ export default function Tableaux() {
                   </div>
 
                 </div>
-              </Link>
+            
 
 
             ))}
@@ -89,7 +76,12 @@ export default function Tableaux() {
           </div>
         )}
       </div>
+
       <Footer />
+
     </>
+
+
+
   )
 }

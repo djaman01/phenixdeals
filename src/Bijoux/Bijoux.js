@@ -34,11 +34,6 @@ export default function Bijoux() {
 
 
 
-  const filteredProducts = productObject.filter((item) =>
-    item.nom.toLowerCase().includes(productName.toLowerCase())
-  );
-
-
   return (
 
     <>
@@ -56,7 +51,7 @@ export default function Bijoux() {
 
           <div className="grid-bijoux">
 
-            {filteredProducts.map((item) => (
+            {productObject.map((item) => (
 
               <div className="item-bijoux">
 

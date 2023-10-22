@@ -34,13 +34,6 @@ export default function Livres() {
   }, []);//fetch la data avec axios dès qu'on ouvre le browser, comme ça tous les produits apparaisse d'un coup
 
 
-
-
-  const filteredProducts = productObject.filter((item) =>
-    item.nom.toLowerCase().includes(productName.toLowerCase())
-  );
-
-
   return (
     <>
       <Header />
@@ -56,7 +49,7 @@ export default function Livres() {
 
           <div className="grid-livres">
 
-            {filteredProducts.map((item) => (
+            {productObject.map((item) => (
 
               <div className="item-livres">
 

@@ -16,6 +16,7 @@ import Bijoux from './Bijoux/Bijoux';
 import Tableaux from './Tableaux/Tableaux';
 import Decoration from './Decoration/Decoration';
 import Livres from './Livres/Livres';
+import FicheDatabase from './FicheDatabase/FicheDatabase';
 
 
 
@@ -36,6 +37,7 @@ function App() {
           <Route path="bijoux" element={<Bijoux />} />
           <Route path="decoration" element={<Decoration />} />
           <Route path="livres" element={<Livres />} />
+          <Route path="fichedatabase/:_id" element={<FicheDatabase />} />
           <Route path="*" element={<NoPage />} />
       
         </Routes>

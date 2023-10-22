@@ -35,11 +35,6 @@ export default function Decoration() {
 
 
 
-
-  const filteredProducts = productObject.filter((item) =>
-    item.nom.toLowerCase().includes(productName.toLowerCase())
-  );
-
   return (
     <>
 
@@ -56,7 +51,7 @@ export default function Decoration() {
 
           <div className="grid-decoration">
 
-            {filteredProducts.map((item) => (
+            {productObject.map((item) => (
 
               <div className="item-decoration">
 
