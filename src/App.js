@@ -37,7 +37,7 @@ function App() {
           <Route path="bijoux" element={<Bijoux />} />
           <Route path="decoration" element={<Decoration />} />
           <Route path="livres" element={<Livres />} />
-          <Route path="fichedatabase/:_id" element={<FicheDatabase />} />
+          <Route path="fichedatabase/:productId" element={<FicheDatabase />} />
           <Route path="*" element={<NoPage />} />
       
         </Routes>
