@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Dropzone from 'react-dropzone';
 import './addProduct.css'
+import { Link } from 'react-router-dom';
 
 export default function AddProduct() {
 
@@ -20,7 +21,7 @@ export default function AddProduct() {
     const formData = new FormData();
     formData.append('file', acceptedFiles[0]);
     formData.append('nom', nom);
-    formData.append('type', type);    
+    formData.append('type', type);
     formData.append('dimensions', dimensions);
     formData.append('matiere', matiere);
     formData.append('prix', prix);
@@ -32,6 +33,8 @@ export default function AddProduct() {
       console.log("the image url is :", imageUrl)
     } catch (error) {
       console.error('Error uploading file:', error);
+
+
     }
   };
 
@@ -46,7 +49,7 @@ export default function AddProduct() {
 
           <div className="div-input-add">
 
-          <div className='div-add-product'>
+            <div className='div-add-product'>
               <label className='label-add-product'>Type:</label>
               <input
                 className="input-product"
@@ -127,8 +130,9 @@ export default function AddProduct() {
               </div>
             )}
           </Dropzone>
-
-          <button>Submit Product</button>
+          <Link to="/displayproducts">
+            <button>Submit Product</button>
+          </Link>
 
         </form>
 

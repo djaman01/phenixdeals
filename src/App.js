@@ -18,6 +18,7 @@ import Decoration from './Decoration/Decoration';
 import Livres from './Livres/Livres';
 import FicheDatabase from './FicheDatabase/FicheDatabase';
 import Reserve from './Reserve/Reserve';
+import DisplayProducts from './DisplayProducts/displayProducts';
 
 
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="decoration" element={<Decoration />} />
           <Route path="livres" element={<Livres />} />
           <Route path="reserve" element={<Reserve />} />
+          <Route path="displayproducts" element={<DisplayProducts />} />
           <Route path="fichedatabase/:productId" element={<FicheDatabase />} />
           <Route path="*" element={<NoPage />} />
       
