@@ -13,6 +13,9 @@ export default function AddProduct() {
   const [prix, setPrix] = useState('');
   const [code, setCode] = useState('');
 
+  //This function is used for handling the file upload when a file is dropped or selected using the <Dropzone> component. 
+  //On crée un objet formData auquel on donne les state variable precedente comme value
+  //Comme ça on pourra envoyé en .post formData et donc tous en 1 fois
   const handleFileUpload = async (acceptedFiles) => {
     const formData = new FormData();
     formData.append('file', acceptedFiles[0]);

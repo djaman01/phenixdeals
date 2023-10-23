@@ -1,13 +1,14 @@
 
 .header {
   display: flex;
-  justify-content: space-around;
   background-color: white;
+  height: 75px;
  
 }
 
 .logo {
-  width: 150px;
+  width: 120px;
+  margin-left: 150px;
 }
 
 .home-button, .page-selection, .vendre-btn{
@@ -30,7 +31,7 @@
 .dropdown {
   position: absolute;
   z-index: 1;
-  right: -75px;
+  right: -55px;
   top: 60px;
   cursor: pointer;
   border: 2px solid white;
@@ -60,6 +61,8 @@ box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
   align-items: center;
   width: 250px;
   justify-content: space-around;
+  margin-left: 190px;
+  margin-top: 15px;
 }
 
 .home-link {

@@ -17,7 +17,7 @@ export default function FicheDatabase() {
       axios.get(`http://localhost:3005/article/${productId}`)
         .then((response) => {
           console.log("article fetched", response.data);
-          setProduct(response.data);//1 product
+          setProduct(response.data);//valeur Variable product = 1 valeur d'1 produit
         })
         .catch((error) => {
           setError('An error occurred while fetching data.');
