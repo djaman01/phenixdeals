@@ -25,7 +25,10 @@ export default function DisplayProducts() {
       .catch((error) => {
         console.error('Error fetching products:', error);
       });
-  }, []);
+  }, [products]);
+  //On donne [products] pour que dès qu'il y a un changement de ce state, donc dès qu'on l'edit, ca va changer automatiquement le nom du produit dans le browser du dashboard, sans rafraichir la page (mais auss iquand on ajoite simplement un produit, car la valeur par défaut de products est [] empy array, donc quand on ajoute quelque chose ça change)
+
+
 
   //Arrow function that activate the PUT request
   const handleUpdateProduct = (productId) => {
