@@ -18,11 +18,11 @@ export default function HomeTitle() {
   return (
     <div class="main-page">
       <div class="div-title-home">
-        <Link to="/reserve">
+      
           <h1 className='home-title'>
             Les 20 Nouveaux produits
           </h1>
-        </Link>
+      
 
         <div className='input-home'>
 

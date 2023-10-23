@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from '../Header/Header' //Il faut donner les même className pour avoir le même style, sans importer le css
 import './ficheProduit.css'
 import Footer from '../Footer/Footer'
@@ -25,9 +25,9 @@ export default function FicheProduit() {
 
       <div className="fiche-produit">
 
-          <div className="div-image-fiche">
-            <img src={produit.thumbnail} alt={produit.détails}  className="image-fiche"   />
-          </div>
+        <div className="div-image-fiche">
+          <img src={produit.thumbnail} alt={produit.détails} className="image-fiche" />
+        </div>
 
 
         <div className="infos-produit">
@@ -39,7 +39,9 @@ export default function FicheProduit() {
           <h3 className="code-produit">{produit.code}</h3>
 
           <div className="btn-produit">
-            <button className="btn-réserver">Réserver</button>
+            <Link to="/reserve">
+              <button className="btn-réserver">Réserver</button>
+            </Link>
             <button className="btn-autre-produit">Voir d'autres {produit.nom}</button>
           </div>
 
