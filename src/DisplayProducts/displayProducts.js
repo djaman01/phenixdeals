@@ -9,6 +9,12 @@ export default function DisplayProducts() {
 
   const [products, setProducts] = useState([]);
 
+
+  const [editingProductId, setEditingProductId] = useState(null);
+
+  //State that will track, which product is beiing edited
+  const [editedProductName, setEditedProductName] = useState('');
+
   //Using the useEffect hook to make a GET request to the '/products' endpoint on the Express.js server.
   useEffect(() => {
     // GET Request to fetch all products from the server
@@ -22,18 +28,18 @@ export default function DisplayProducts() {
   }, []);
 
   //Arrow function that activate the PUT request
-  const handleUpdateProduct = () => {
+  const handleUpdateProduct = (productId) => {
     // Define the updated data: we have to include the fields we want to update
     const updatedProductData = {
-      nom: 'New Name',
+      nom: editedProductName,
     };
 
     // PUT request to update the product:
     //In this code, we use the .put method to handle update requests. It finds the product by its _id, updates it with the provided data, and returns the updated product in the response.
-    axios.put(`http://localhost:3005/products/${products._id}`, updatedProductData)
+    axios.put(`http://localhost:3005/products/${productId}`, updatedProductData)
       .then((response) => {
         console.log('Product updated successfully:', response.data);
-      
+        setEditingProductId(null); // Reset the editing state
       })
       .catch((error) => {
         console.error('Error updating product:', error);
@@ -44,25 +50,41 @@ export default function DisplayProducts() {
   return (
     <>
       <div>
-        <h2>All Products Added in DataBase</h2>
+        <h2>All Products Added in Database</h2>
         <ul>
           {products.map((product) => (
             <li key={product._id}>
-              <p>Type: {product.type}</p>
-              <p>Nom: {product.nom}</p>
-
-              <div className="icone-holder">
-                <BiEditAlt className='icon' onClick={handleUpdateProduct} />
-                {/* updateMode est une arrow function construite dans App.js et passé au props dans le component list de App.js */}
-                <BsTrash className='icon' />
-              </div>
-
-
+              {editingProductId === product._id ? (
+                // Show input field and save button when editing
+                <div>
+                  <input
+                    type="text"
+                    value={editedProductName}
+                    onChange={(e) => setEditedProductName(e.target.value)}
+                  />
+                  <button onClick={() => handleUpdateProduct(product._id)}>Save</button>
+                </div>
+              ) : (
+                // Show product information and edit button
+                <>
+                  <p>Type: {product.type}</p>
+                  <p>Nom: {product.nom}</p>
+                  <div className="icon-holder">
+                    <BiEditAlt
+                      className='icon'
+                      onClick={() => {
+                        setEditingProductId(product._id);
+                        setEditedProductName(product.nom);
+                      }}
+                    />
+                    <BsTrash className='icon' />
+                  </div>
+                </>
+              )}
             </li>
           ))}
         </ul>
       </div>
-
     </>
   )
 }
