@@ -3,6 +3,8 @@ import './homeTitle.css'
 import { produits } from "../20Produits/20produits";
 import { useState } from 'react';
 import ProductCard from "../ProductCard/ProductCard";
+import { Link } from 'react-router-dom';
+
 
 
 export default function HomeTitle() {
@@ -16,11 +18,12 @@ export default function HomeTitle() {
   return (
     <div class="main-page">
       <div class="div-title-home">
+        <Link to="/reserve">
+          <h1 className='home-title'>
+            Les 20 Nouveaux produits
+          </h1>
+        </Link>
 
-        <h1 className='home-title'>
-          Les 20 Nouveaux produits
-        </h1>
-        
         <div className='input-home'>
 
           <div class="searchbar">
