@@ -130,7 +130,7 @@ export default function AddProduct() {
               </div>
             )}
           </Dropzone>
-          <Link to="/displayproducts">
+          <Link to="/dashboard">
             <button>Submit Product</button>
           </Link>
 
