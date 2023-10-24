@@ -1,3 +1,61 @@
+/* Style for the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 10px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Style for the product image */
 .dashboard-img {
-  width: 70px;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+/* Style for the edit and delete icons */
+.icon-holder {
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 20px;
+  margin: 0 5px;
+}
+
+/* Style for the input and buttons when editing */
+input {
+  width: 100%;
+  padding: 5px;
+}
+
+/* Style for the dashboard-product div */
+.dashboard-product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style for the update and cancel buttons */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
 }

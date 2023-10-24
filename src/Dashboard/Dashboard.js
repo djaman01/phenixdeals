@@ -32,9 +32,6 @@ export default function Dashboard() {
       });
   }, [products]);
   //On donne [products] pour que dès qu'il y a un changement de ce state, donc dès qu'on l'edit, ca va changer automatiquement le nom du produit dans le browser du dashboard, sans rafraichir la page (mais auss iquand on ajoite simplement un produit, car la valeur par défaut de products est [] empy array, donc quand on ajoute quelque chose ça change)
-
-
-
   //Arrow function that activate the PUT request
   //On va mettre le paramettre (productId) en endpoint de l'url: il aura donc la valeur de _id du produit et on pourra donc identifier le produit
   const handleUpdateProduct = (productId) => {
@@ -54,7 +51,9 @@ export default function Dashboard() {
         console.error('Error updating product:', error);
       });
   }//When the "Update Product" button is clicked, the handleUpdateProduct function is called. This function sends a PUT request to the Express.js server with the updated product data and the product's _id as part of the URL.
-
+  const handleCancelProduct = () =>{
+    setEditingProductId(null)
+  }
 
   //Handles the Delete Request for a product
   const handleDeleteProduct = (productId) => {
@@ -73,81 +72,76 @@ export default function Dashboard() {
   }
 
   return (
-
-    
     <>
       <div>
-        <h2>All Products Added in Database</h2>
-
-
-        <ul style={{ listStyleType: "none" }}>
-          {products.map((product) => (
-            <li key={product._id}>
-              {editingProductId === product._id ? (
-                // Show input field and save button when editing
-                <div>
-                  <input
-                    type="text"
-                    value={editedProductName}
-                    onChange={(e) => setEditedProductName(e.target.value)} //Donne une nouvelle value a "editedProductName" state var, qui donne une nouvelle value à la property nom de l'objet store dans la state variable products
+        <h2>All Products Added in Database</h2> 
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Nom</th>
+              <th>Dimensions</th>
+              <th>Matiere</th>
+              <th>Prix</th>
+              <th>Code</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((product) => (
+              <tr key={product._id}>
+                <td>
+                  <img
+                    className='dashboard-img'
+                    src={`http://localhost:3005/${product.imageUrl}`}
+                    alt={product.nom}
                   />
-                  {/*Quand on va cliquer sur le buton update, ca va activer la put Request stored dans l'arrow function handleUpdateProduct et va 1) changer le nom 2) return the updated product 3)setEditingProductId to null pour remplacer l'inpu et le save buton par la data rempalcer et le stylo et la poubelle  */}
-                  <button onClick={() => handleUpdateProduct(product._id)}>Update</button>
-                </div>
-              ) : (
-                // Show product information and edit button
-                <>
-
-
-                  <div className='dashboard-product'>
-
-                    <img
-                      className='dashboard-img'
-                      src={`http://localhost:3005/${product.imageUrl}`}//On store le path de l'image dans la database,, donc c'est ce qu'il faut chercher
-                      alt={product.nom}
-                    />
-                    <p>Type: {product.type}</p>
-                    <p>Nom: {product.nom}</p>
-                    <p>Dimensions: {product.dimensions}</p>
-                    <p>Matiere: {product.matiere}</p>
-                    <p>Prix: {product.prix}</p>
-                    <p>Code: {product.code}</p>
-                    <div className="icon-holder">
-                      <BiEditAlt
-                        className='icon'
-                        onClick={() => {
-                          setEditingProductId(product._id); //Quand on clique sur le stylo: ça donne une value = product._id à la state variable editingProductId, qui a une valeur par défaut de 'null'. Et comme elle a une valeur ==product.id, alors l'input pour modifier et le bouton Update vont apparaitre
-                          setEditedProductName(product.nom);
-                        }}
+                </td>
+                <td>{product.type}</td>
+                <td>{product.nom}</td>
+                <td>{product.dimensions}</td>
+                <td>{product.matiere}</td>
+                <td>{product.prix}</td>
+                <td>{product.code}</td>
+                <td>
+                  {editingProductId === product._id ? (
+                    // Show input field and save button when editing
+                    <div>
+                      <input
+                        type="text"
+                        value={editedProductName}
+                        onChange={(e) => setEditedProductName(e.target.value)}
                       />
-                      <BsTrash
-                        className='icon'
-                        onClick={() => handleDeleteProduct(product._id)} />
+                      <button onClick={() => handleUpdateProduct(product._id)}>Update</button>
+                      <button onClick={handleCancelProduct}>Cancel</button>
+
                     </div>
-
-                  </div>
-
-
-                </>
-
-              )}
-            </li>
-          ))}
-        </ul>
+                  ) : (
+                    // Show product information and edit/delete buttons
+                    <div className='dashboard-product'>
+                      <div className="icon-holder">
+                        <BiEditAlt
+                          className='icon'
+                          onClick={() => {
+                            setEditingProductId(product._id);
+                            setEditedProductName(product.nom);
+                          }}
+                        />
+                        <BsTrash
+                          className='icon'
+                          onClick={() => handleDeleteProduct(product._id)}
+                        />
+                      </div>
+                    </div>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </>
-  )
+  );
+  
 }
-<table>
-  <thead>
-    <tr>
-      <th colspan="2">The table header</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>The table body</td>
-      <td>with two columns</td>
-    </tr>
-  </tbody>
-</table>
+
