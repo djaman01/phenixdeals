@@ -8,11 +8,14 @@ import { BiEditAlt } from "react-icons/bi";
 export default function DisplayProducts() {
 
   const [products, setProducts] = useState([]);
+  //state qui va contenir tous les objets stored dans la database et qu'on va fetch avec axios.Get
+  //C'est sur cette state variable qu'on va map, pour voir tous les produits dans le browser
 
-
+  //State pour faire apparaitre un input + save button à la place de la data, quand on veut l'edit !
+  //editingProductId stores the id of the product beeing edited; so that it keeps track of which product is currently being edited
   const [editingProductId, setEditingProductId] = useState(null);
 
-  //State that will track, which product is beiing edited
+  //This state variable stores the value of the product name that the user is currently editing.
   const [editedProductName, setEditedProductName] = useState('');
 
   //Using the useEffect hook to make a GET request to the '/products' endpoint on the Express.js server.
@@ -34,15 +37,15 @@ export default function DisplayProducts() {
   const handleUpdateProduct = (productId) => {
     // Define the updated data: we have to include the fields we want to update
     const updatedProductData = {
-      nom: editedProductName,
+      nom: editedProductName, //setEditedProductName sera dans le onChange de l'edit input, pour donner un nouveau nom à la propriété nom de la state variable products
     };
 
     // PUT request to update the product:
-    //In this code, we use the .put method to handle update requests. It finds the product by its _id, updates it with the provided data, and returns the updated product in the response.
+    // It finds the product by its _id, updates it with the provided data with the value of the state variale "editedProductName", and returns the updated product in the response.
     axios.put(`http://localhost:3005/products/${productId}`, updatedProductData)
       .then((response) => {
-        console.log('Product updated successfully:', response.data);
-        setEditingProductId(null); // Reset the editing state
+        console.log('Product updated successfully:', response.data);//Returns the updated product data
+        setEditingProductId(null); // Reset the "editingProductId" state variable to null value, so that it toggle the input and save button, to the name of the data
       })
       .catch((error) => {
         console.error('Error updating product:', error);
@@ -63,9 +66,10 @@ export default function DisplayProducts() {
                   <input
                     type="text"
                     value={editedProductName}
-                    onChange={(e) => setEditedProductName(e.target.value)}
+                    onChange={(e) => setEditedProductName(e.target.value)} //Donne une nouvelle value a "editedProductName" state var, qui donne une nouvelle value à la property nom de l'objet store dans la state variable products
                   />
-                  <button onClick={() => handleUpdateProduct(product._id)}>Save</button>
+                  {/*Quand on va cliquer sur le buton update, ca va activer la put Request stored dans l'arrow function handleUpdateProduct et va 1) changer le nom 2) return the updated product 3)setEditingProductId to null pour remplacer l'inpu et le save buton par la data rempalcer et le stylo et la poubelle  */}
+                  <button onClick={() => handleUpdateProduct(product._id)}>Update</button> 
                 </div>
               ) : (
                 // Show product information and edit button
@@ -76,8 +80,8 @@ export default function DisplayProducts() {
                     <BiEditAlt
                       className='icon'
                       onClick={() => {
-                        setEditingProductId(product._id);
-                        setEditedProductName(product.nom);
+                        setEditingProductId(product._id); //Quand on clique sur le stylo: ça donne une value = product._id à la state variable editingProductId, qui a une valeur par défaut de 'null'. Et comme elle a une valeur ==product.id, alors l'input pour modifier et le bouton Update vont apparaitre
+                        setEditedProductName(product.nom); 
                       }}
                     />
                     <BsTrash className='icon' />
