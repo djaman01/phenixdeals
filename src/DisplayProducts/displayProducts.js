@@ -34,7 +34,8 @@ export default function DisplayProducts() {
 
 
   //Arrow function that activate the PUT request
-  const handleUpdateProduct = (productId) => {
+  //On va mettre le paramettre (productId) en endpoint de l'url: il aura donc la valeur de _id du produit et on pourra donc identifier le produit
+  const handleUpdateProduct = (productId) => { 
     // Define the updated data: we have to include the fields we want to update
     const updatedProductData = {
       nom: editedProductName, //setEditedProductName sera dans le onChange de l'edit input, pour donner un nouveau nom à la propriété nom de la state variable products
@@ -52,6 +53,22 @@ export default function DisplayProducts() {
       });
   }//When the "Update Product" button is clicked, the handleUpdateProduct function is called. This function sends a PUT request to the Express.js server with the updated product data and the product's _id as part of the URL.
 
+
+  //Handles the Delete Request for a product
+  const handleDeleteProduct = (productId) => {
+
+    //Sending a DELETE request to the server to delete the product
+    axios.delete(`http://localhost:3005/products/${productId}`)
+      .then((response) => {
+         // If the DELETE request is successful, this code is executed.
+        console.log('Product deleted successfully:', response.data);
+        // Update the products states that contains all the data: if it's id in MongoDB is different than productId parameter, then we keep it = on supprime le produit avec la data sur lequel on a cliqué
+        setProducts(products.filter(product => product._id !== productId));
+      })
+      .catch((error) => {
+        console.error('Error deleting product:', error);
+      });
+  }
 
   return (
     <>
@@ -84,7 +101,9 @@ export default function DisplayProducts() {
                         setEditedProductName(product.nom); 
                       }}
                     />
-                    <BsTrash className='icon' />
+                    <BsTrash 
+                    className='icon'
+                    onClick={() => handleDeleteProduct(product._id)} />
                   </div>
                 </>
               )}
