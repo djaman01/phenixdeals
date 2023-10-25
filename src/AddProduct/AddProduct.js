@@ -44,7 +44,7 @@ export default function AddProduct() {
 
     <div className='all-add-product'>
 
-    <Header />
+      <Header />
 
       <div className="all-box">
 
@@ -53,8 +53,8 @@ export default function AddProduct() {
           <span className="title-add-product">Add Product</span>
           <span className="subtitle-add-product">Send product to Database</span>
 
-          <div className="div-input-add">
 
+          <div className="label-input">
             <label className='label-add-product' htmlFor='product-type'>Type:</label>
             <div className='div-add-product'>
               <input
@@ -63,9 +63,11 @@ export default function AddProduct() {
                 type="text"
                 id="product-type"
                 value={type}
-                onChange={(e) => setType(e.target.value)}              />
+                onChange={(e) => setType(e.target.value)} />
             </div>
+          </div>
 
+          <div className="label-input">
             <label className='label-add-product' htmlFor='product-nom'>Nom:</label>
             <div className='div-add-product'>
               <input
@@ -77,8 +79,10 @@ export default function AddProduct() {
                 onChange={(e) => setNom(e.target.value)}
               />
             </div>
+          </div>
 
-            <label className='label-add-product' htmlFor='product-dimensions'>Dimensions:</label>
+          <div className="label-input">
+            <label className='label-add-dimensions' htmlFor='product-dimensions'>Dimensions:</label>
             <div className='div-add-product'>
               <input
                 className="input-product"
@@ -89,8 +93,10 @@ export default function AddProduct() {
                 onChange={(e) => setDimensions(e.target.value)}
               />
             </div>
+          </div>
 
-            <label className='label-add-product' htmlFor='product-matiere'>Matiere:</label>
+          <div className="label-input">
+            <label className='label-add-matiere' htmlFor='product-matiere'>Matiere:</label>
             <div className='div-add-product'>
               <input
                 className="input-product"
@@ -101,8 +107,10 @@ export default function AddProduct() {
                 onChange={(e) => setMatiere(e.target.value)}
               />
             </div>
+          </div>
 
-            <label className='label-add-product' htmlFor='product-prix'>Prix:</label>
+          <div className="label-input">
+            <label className='label-add-prix' htmlFor='product-prix'>Prix:</label>
             <div className='div-add-product'>
               <input
                 className="input-product"
@@ -113,10 +121,11 @@ export default function AddProduct() {
                 onChange={(e) => setPrix(e.target.value)}
               />
             </div>
+          </div>
 
 
-
-            <label className='label-add-product' htmlFor='product-code'>Code:</label>
+          <div className="label-input">
+            <label className='label-add-code' htmlFor='product-code'>Code:</label>
             <div className='div-add-product'>
               <input
                 className="input-product"
@@ -127,8 +136,9 @@ export default function AddProduct() {
                 onChange={(e) => setCode(e.target.value)}
               />
             </div>
-
           </div>
+
+
 
           <Dropzone onDrop={handleFileUpload}>
             {({ getRootProps, getInputProps }) => (
