@@ -34,16 +34,8 @@
 }
 
 /*Inputs box*/
-.div-input-add {
-  overflow: hidden;
-  border-radius: 8px;
-  background-color: #fff;
-  margin: 1rem 0 .5rem;
-  width: 100%;
-}
 
 .input-product {
-  background: none;
   border: 0;
   outline: 0;
   height: 20px;
@@ -51,6 +43,9 @@
   border-bottom: 1px solid #eee;
   font-size: .9rem;
   padding: 8px 15px;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .form-section {

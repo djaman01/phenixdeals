@@ -57,7 +57,7 @@ export default function AddProduct() {
           <span className="title-add-product">Add Product</span>
           <span className="subtitle-add-product">Send product to Database</span>
 
-          <div className="div-input-add">
+          <div>
 
             <label className='label-add-product' htmlFor='product-type'>Type:</label>
             <div className='div-add-product'>
