@@ -49,7 +49,7 @@ export default function Dashboard() {
 
 
   //To cancel the editing of a product and toggle back to the data
-  const handleCancelProduct = () =>{
+  const handleCancelProduct = () => {
     setEditingProductId(null)
   }
 
@@ -71,7 +71,7 @@ export default function Dashboard() {
   return (
     <>
       <div>
-        <h2>All Products Added in Database</h2> 
+        <h2>All Products Added in Database</h2>
         <table>
           <thead>
             <tr>
@@ -137,6 +137,6 @@ export default function Dashboard() {
       </div>
     </>
   );
-  
+
 }
 
