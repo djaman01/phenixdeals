@@ -3,6 +3,10 @@ import axios from 'axios';
 import Dropzone from 'react-dropzone';
 import './addProduct.css'
 import { Link } from 'react-router-dom';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+
+
 
 export default function AddProduct() {
 
@@ -14,9 +18,7 @@ export default function AddProduct() {
   const [prix, setPrix] = useState('');
   const [code, setCode] = useState('');
 
-  //This function is used for handling the file upload when a file is dropped or selected using the <Dropzone> component. 
-  //On crée un objet formData auquel on donne les state variable precedente comme value
-  //Comme ça on pourra envoyé en .post formData et donc tous en 1 fois
+  //Création objet formData auquel on attache les state variable, pour tout envoyer avec .post
   const handleFileUpload = async (acceptedFiles) => {
     const formData = new FormData();
     formData.append('file', acceptedFiles[0]);
@@ -39,7 +41,11 @@ export default function AddProduct() {
   };
 
   return (
-    <div>
+
+    <div className='all-add-product'>
+
+    <Header />
+
       <div className="all-box">
 
         <form className="form-add-product">
@@ -49,73 +55,76 @@ export default function AddProduct() {
 
           <div className="div-input-add">
 
+            <label className='label-add-product' htmlFor='product-type'>Type:</label>
             <div className='div-add-product'>
-              <label className='label-add-product'>Type:</label>
               <input
                 className="input-product"
                 placeholder="Type produit"
                 type="text"
+                id="product-type"
                 value={type}
                 onChange={(e) => setType(e.target.value)}
               />
             </div>
 
-
+            <label className='label-add-product' htmlFor='product-nom'>Nom:</label>
             <div className='div-add-product'>
-              <label className='label-add-product'>Nom:</label>
               <input
                 className="input-product"
                 placeholder="Nom produit"
                 type="text"
+                id="product-nom"
                 value={nom}
                 onChange={(e) => setNom(e.target.value)}
               />
             </div>
 
-
+            <label className='label-add-product' htmlFor='product-dimensions'>Dimensions:</label>
             <div className='div-add-product'>
-              <label className='label-add-product'>Dimensions:</label>
               <input
                 className="input-product"
                 placeholder="Dimensions"
                 type="text"
+                id="product-dimensions"
                 value={dimensions}
                 onChange={(e) => setDimensions(e.target.value)}
               />
             </div>
 
-
+            <label className='label-add-product' htmlFor='product-matiere'>Matiere:</label>
             <div className='div-add-product'>
-              <label className='label-add-product'>Matière:</label>
               <input
                 className="input-product"
-                placeholder="Matière"
+                placeholder="Matiere"
                 type="text"
+                id="product-matiere"
                 value={matiere}
                 onChange={(e) => setMatiere(e.target.value)}
               />
             </div>
 
-
+            <label className='label-add-product' htmlFor='product-prix'>Prix:</label>
             <div className='div-add-product'>
-              <label className='label-add-product'>Prix:</label>
               <input
                 className="input-product"
-                placeholder="Prix"
+                placeholder="Prix produit"
                 type="text"
+                id="product-prix"
                 value={prix}
                 onChange={(e) => setPrix(e.target.value)}
               />
             </div>
 
 
+
+            <label className='label-add-product' htmlFor='product-code'>Code:</label>
             <div className='div-add-product'>
-              <label className='label-add-product'>Code:</label>
               <input
                 className="input-product"
                 placeholder="Code"
                 type="text"
-                value={code}
+                id="product-code"
+                value={prix}
                 onChange={(e) => setCode(e.target.value)}
               />
             </div>
@@ -130,6 +139,7 @@ export default function AddProduct() {
               </div>
             )}
           </Dropzone>
+
           <Link to="/dashboard">
             <button>Submit Product</button>
           </Link>
@@ -137,6 +147,8 @@ export default function AddProduct() {
         </form>
 
       </div>
+
+      <Footer />
 
     </div>
   )

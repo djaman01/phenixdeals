@@ -10,8 +10,7 @@ import './dashboard.css'
 export default function Dashboard() {
 
   const [products, setProducts] = useState([]);
-  //state qui va contenir tous les objets stored dans la database et qu'on va fetch avec axios.Get
-  //C'est sur cette state variable qu'on va map, pour voir tous les produits dans le browser
+//Store objet venant de Axios.get puis .map dans browser
 
   //State pour faire apparaitre un input + save button à la place de la data, quand on veut l'edit !
   //editingProductId stores the id of the product beeing edited; so that it keeps track of which product is currently being edited
