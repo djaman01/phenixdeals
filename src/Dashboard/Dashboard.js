@@ -101,20 +101,18 @@ export default function Dashboard() {
                 <td>{product.prix}</td>
                 <td>{product.code}</td>
                 <td>
-                  {editingProductId === product._id ? (
-                    // Show input field and save button when editing
+                  {editingProductId === product._id ? ( //Si clique stylo => donne value= product._id à state et fait apparaitre:
                     <div>
                       <input
                         type="text"
-                        value={editedProductName}
+                        value={editedProductName} //nouveau nom produit
                         onChange={(e) => setEditedProductName(e.target.value)}
                       />
                       <button onClick={() => handleUpdateProduct(product._id)}>Update</button>
                       <button onClick={handleCancelProduct}>Cancel</button>
 
                     </div>
-                  ) : (
-                    // Show product information and edit/delete buttons
+                  ) : ( //Sinon: Fait apparaitre stylo et poubelle
                     <div className='dashboard-product'>
                       <div className="icon-holder">
                         <BiEditAlt
