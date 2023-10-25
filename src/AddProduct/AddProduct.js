@@ -18,10 +18,15 @@ export default function AddProduct() {
   const [prix, setPrix] = useState('');
   const [code, setCode] = useState('');
 
-  //Création objet formData auquel on attache les state variable, pour tout envoyer avec .post
-  const handleFileUpload = async (acceptedFiles) => {
+  // To store the selected file in imageUrl State variable
+  const handleFileUpload = (acceptedFiles) => {
+    setImageUrl(acceptedFiles[0]);
+  };
+
+  //To submit all form data to the server with .post
+  const handleSubmit = async () => {
     const formData = new FormData();
-    formData.append('file', acceptedFiles[0]);
+    formData.append('file', imageUrl);
     formData.append('nom', nom);
     formData.append('type', type);
     formData.append('dimensions', dimensions);
@@ -31,20 +36,19 @@ export default function AddProduct() {
 
     try {
       const response = await axios.post('http://localhost:3005/upload', formData);
-      setImageUrl(response.data.imageUrl);
-      console.log("the image url is :", imageUrl)
+
     } catch (error) {
       console.error('Error uploading file:', error);
-
-
     }
   };
+
+
 
   return (
 
     <div className='all-add-product'>
 
-    <Header />
+      <Header />
 
       <div className="all-box">
 
@@ -63,7 +67,7 @@ export default function AddProduct() {
                 type="text"
                 id="product-type"
                 value={type}
-                onChange={(e) => setType(e.target.value)}              />
+                onChange={(e) => setType(e.target.value)} />
             </div>
 
             <label className='label-add-product' htmlFor='product-nom'>Nom:</label>
@@ -123,13 +127,14 @@ export default function AddProduct() {
                 placeholder="Code"
                 type="text"
                 id="product-code"
-                value={prix}
+                value={code}
                 onChange={(e) => setCode(e.target.value)}
               />
             </div>
 
           </div>
 
+          {/* Dropping image will store it in the imageUrl state variable */}
           <Dropzone onDrop={handleFileUpload}>
             {({ getRootProps, getInputProps }) => (
               <div className="dropzone" {...getRootProps()}>
@@ -139,8 +144,9 @@ export default function AddProduct() {
             )}
           </Dropzone>
 
+          {/* When clicked all Data is sent to the server */}
           <Link to="/dashboard">
-            <button>Submit Product</button>
+            <button onClick={handleSubmit}>Submit Product</button>
           </Link>
 
         </form>
