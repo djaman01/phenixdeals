@@ -9,19 +9,18 @@ import './dashboard.css'
 
 export default function Dashboard() {
 
+  //Store objet venant de Axios.get puis utilisé pour .map dans browser
   const [products, setProducts] = useState([]);
-//Store objet venant de Axios.get puis .map dans browser
 
-  //State pour faire apparaitre un input + save button à la place de la data, quand on veut l'edit !
-  //editingProductId stores the id of the product beeing edited; so that it keeps track of which product is currently being edited
+  //Store id object beeing edited and used to show un input + save button when editting
   const [editingProductId, setEditingProductId] = useState(null);
 
-  //This state variable stores the value of the product name that the user is currently editing.
+  //Stores the value of the product name that the user is currently editing, to pdate the name
   const [editedProductName, setEditedProductName] = useState('');
 
-  //Using the useEffect hook to make a GET request to the '/products' endpoint on the Express.js server.
+
+  //GET Request to fecth all products posted in the server
   useEffect(() => {
-    // GET Request to fetch all products from the server
     axios.get('http://localhost:3005/products')
       .then((response) => {
         setProducts(response.data);
@@ -29,41 +28,40 @@ export default function Dashboard() {
       .catch((error) => {
         console.error('Error fetching products:', error);
       });
-  }, [products]);
-  //On donne [products] pour que dès qu'il y a un changement de ce state, donc dès qu'on l'edit, ca va changer automatiquement le nom du produit dans le browser du dashboard, sans rafraichir la page (mais auss iquand on ajoite simplement un produit, car la valeur par défaut de products est [] empy array, donc quand on ajoute quelque chose ça change)
-  //Arrow function that activate the PUT request
-  //On va mettre le paramettre (productId) en endpoint de l'url: il aura donc la valeur de _id du produit et on pourra donc identifier le produit
-  const handleUpdateProduct = (productId) => {
-    // Define the updated data: we have to include the fields we want to update
-    const updatedProductData = {
-      nom: editedProductName, //setEditedProductName sera dans le onChange de l'edit input, pour donner un nouveau nom à la propriété nom de la state variable products
-    };
+  }, [products]); //[products]= to change automatically the updated name after editing
 
-    // PUT request to update the product:
-    // It finds the product by its _id, updates it with the provided data with the value of the state variale "editedProductName", and returns the updated product in the response.
+
+  //Arrow function with PUT Request
+  const handleUpdateProduct = (productId) => { //parameter to catch the endpoint of url
+    const updatedProductData = {
+      nom: editedProductName, //Giving a state as value to the "nom" property, so that it can be changed
+    };
+    // Finds the product by its _id + Update it with updateProductData 
     axios.put(`http://localhost:3005/products/${productId}`, updatedProductData)
       .then((response) => {
-        console.log('Product updated successfully:', response.data);//Returns the updated product data
-        setEditingProductId(null); // Reset the "editingProductId" state variable to null value, so that it toggle the input and save button, to the name of the data
+        console.log('Product updated successfully:', response.data);
+        setEditingProductId(null); // Reset the "editingProductId" state after editing, to toggle the input and save button, to the name of the data
       })
       .catch((error) => {
         console.error('Error updating product:', error);
       });
-  }//When the "Update Product" button is clicked, the handleUpdateProduct function is called. This function sends a PUT request to the Express.js server with the updated product data and the product's _id as part of the URL.
+  }
+
+
+  //To cancel the editing of a product and toggle back to the data
   const handleCancelProduct = () =>{
     setEditingProductId(null)
   }
 
-  //Handles the Delete Request for a product
+
+
+  //Arrow function with Delete Request
   const handleDeleteProduct = (productId) => {
 
-    //Sending a DELETE request to the server to delete the product
     axios.delete(`http://localhost:3005/products/${productId}`)
       .then((response) => {
-        // If the DELETE request is successful, this code is executed.
         console.log('Product deleted successfully:', response.data);
-        // Update the products states that contains all the data: if it's id in MongoDB is different than productId parameter, then we keep it = on supprime le produit avec la data sur lequel on a cliqué
-        setProducts(products.filter(product => product._id !== productId));
+        setProducts(products.filter(product => product._id !== productId));//Update the products states with removing the product with if=productId (product clicked)
       })
       .catch((error) => {
         console.error('Error deleting product:', error);
