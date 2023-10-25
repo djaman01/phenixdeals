@@ -63,8 +63,7 @@ export default function AddProduct() {
                 type="text"
                 id="product-type"
                 value={type}
-                onChange={(e) => setType(e.target.value)}
-              />
+                onChange={(e) => setType(e.target.value)}              />
             </div>
 
             <label className='label-add-product' htmlFor='product-nom'>Nom:</label>
