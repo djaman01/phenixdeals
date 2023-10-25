@@ -72,58 +72,59 @@ export default function Dashboard() {
     <>
       <div>
         <h2>All Products Added in Database</h2>
-        <table>
+        <table className='table-dashboard'>
           <thead>
             <tr>
-              <th>Type</th>
-              <th>Nom</th>
-              <th>Dimensions</th>
-              <th>Matiere</th>
-              <th>Prix</th>
-              <th>Code</th>
-              <th>Actions</th>
+              <th className='subtitle-dashboard'>Type</th>
+              <th className='subtitle-dashboard'>Nom</th>
+              <th className='subtitle-dashboard'>Dimensions</th>
+              <th className='subtitle-dashboard'>Matiere</th>
+              <th className='subtitle-dashboard'>Prix</th>
+              <th className='subtitle-dashboard'>Code</th>
+              <th className='subtitle-dashboard'>Actions</th>
             </tr>
           </thead>
           <tbody>
             {products.map((product) => (
               <tr key={product._id}>
-                <td>
+                <td className='data-dashboard'>
                   <img
                     className='dashboard-img'
                     src={`http://localhost:3005/${product.imageUrl}`}
                     alt={product.nom}
                   />
                 </td>
-                <td>{product.type}</td>
-                <td>{product.nom}</td>
-                <td>{product.dimensions}</td>
-                <td>{product.matiere}</td>
-                <td>{product.prix}</td>
-                <td>{product.code}</td>
-                <td>
+                <td className='data-dashboard'>{product.type}</td>
+                <td className='data-dashboard'>{product.nom}</td>
+                <td className='data-dashboard'>{product.dimensions}</td>
+                <td className='data-dashboard'>{product.matiere}</td>
+                <td className='data-dashboard'>{product.prix}</td>
+                <td className='data-dashboard'>{product.code}</td>
+                <td className='data-dashboard'>
                   {editingProductId === product._id ? ( //Si clique stylo => donne value= product._id à state et fait apparaitre:
                     <div>
                       <input
+                        className='input-edit-dash'
                         type="text"
                         value={editedProductName} //nouveau nom produit
                         onChange={(e) => setEditedProductName(e.target.value)}
                       />
-                      <button onClick={() => handleUpdateProduct(product._id)}>Update</button>
-                      <button onClick={handleCancelProduct}>Cancel</button>
+                      <button className='btn-dashboard' onClick={() => handleUpdateProduct(product._id)}>Update</button>
+                      <button className='btn-dashboard' onClick={handleCancelProduct}>Cancel</button>
 
                     </div>
                   ) : ( //Sinon: Fait apparaitre stylo et poubelle
-                    <div className='dashboard-product'>
-                      <div className="icon-holder">
+                    <div className='dashboard-icones'>
+                      <div className="icones-holder">
                         <BiEditAlt
-                          className='icon'
+                          className='icon-dashboard'
                           onClick={() => {
                             setEditingProductId(product._id);
                             setEditedProductName(product.nom);
                           }}
                         />
                         <BsTrash
-                          className='icon'
+                          className='icon-dashboard'
                           onClick={() => handleDeleteProduct(product._id)}
                         />
                       </div>
