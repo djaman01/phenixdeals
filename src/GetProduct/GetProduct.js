@@ -6,6 +6,9 @@ import Footer from '../Footer/Footer';
 
 import { Link } from "react-router-dom";
 
+import Aos from 'aos';
+import 'aos/dist/aos.css'
+
 import "./getProduct.css"
 
 
@@ -44,6 +47,17 @@ export default function GetProduct() {
     item.nom.toLowerCase().includes(productName.toLowerCase())
   );
 
+  useEffect(()=>{
+    Aos.init({
+      once: true,
+      offset: 100,
+      duration: 1000,
+      easing: 'ease-in-out',
+      // delay: 100,
+    });
+  })
+
+
   return (
     <>
 
@@ -59,7 +73,7 @@ export default function GetProduct() {
       <div>
         {error ? (<p>Error: {error}</p>) : (
 
-          <div className="grid-all-products">
+          <div className="grid-all-products" data-aos='zoom-in'>
 
             {filteredProducts.map((item) => (
 
