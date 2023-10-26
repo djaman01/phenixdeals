@@ -33,11 +33,12 @@ export default function Dashboard() {
 
   //Arrow function with PUT Request
   const handleUpdateProduct = (productId) => { //parameter to catch the endpoint of url
-    const updatedProductData = {
-      nom: editedProductName, //Giving a state as value to the "nom" property, so that it can be changed
-    };
+  
+    const updatedProductData = { //Giving "nom" property a state as value, so that it can be changed};
+      prix: editedProductName
+    }
     // Finds the product by its _id + Update it with updateProductData 
-    axios.put(`http://localhost:3005/products/${productId}`, updatedProductData)
+    axios.put(`http://localhost:3005/products/${productId}`,updatedProductData)
       .then((response) => {
         console.log('Product updated successfully:', response.data);
         setEditingProductId(null); // Reset the "editingProductId" state after editing, to toggle the input and save button, to the name of the data
@@ -47,17 +48,13 @@ export default function Dashboard() {
       });
   }
 
-
   //To cancel the editing of a product and toggle back to the data
   const handleCancelProduct = () => {
     setEditingProductId(null)
   }
 
-
-
   //Arrow function with Delete Request
   const handleDeleteProduct = (productId) => {
-
     axios.delete(`http://localhost:3005/products/${productId}`)
       .then((response) => {
         console.log('Product deleted successfully:', response.data);
@@ -75,6 +72,7 @@ export default function Dashboard() {
         <table className='table-dashboard'>
           <thead>
             <tr>
+            <th className='subtitle-dashboard'>Image</th>
               <th className='subtitle-dashboard'>Type</th>
               <th className='subtitle-dashboard'>Nom</th>
               <th className='subtitle-dashboard'>Dimensions</th>
@@ -100,6 +98,7 @@ export default function Dashboard() {
                 <td className='data-dashboard'>{product.matiere}</td>
                 <td className='data-dashboard'>{product.prix}</td>
                 <td className='data-dashboard'>{product.code}</td>
+
                 <td className='data-dashboard'>
                   {editingProductId === product._id ? ( //Si clique stylo => donne value= product._id à state et fait apparaitre:
                     <div>
@@ -111,7 +110,6 @@ export default function Dashboard() {
                       />
                       <button className='btn-dashboard' onClick={() => handleUpdateProduct(product._id)}>Update</button>
                       <button className='btn-dashboard' onClick={handleCancelProduct}>Cancel</button>
-
                     </div>
                   ) : ( //Sinon: Fait apparaitre stylo et poubelle
                     <div className='dashboard-icones'>
@@ -120,7 +118,7 @@ export default function Dashboard() {
                           className='icon-dashboard'
                           onClick={() => {
                             setEditingProductId(product._id);
-                            setEditedProductName(product.nom);
+                            setEditedProductName(product.prix);
                           }}
                         />
                         <BsTrash

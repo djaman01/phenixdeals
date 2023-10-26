@@ -5,7 +5,6 @@
 }
 
 
-
 .form-add-product {
   position: relative;
   display: flex;
@@ -85,4 +84,8 @@
 
 .div-add-product {
   display: flex;
+}
+
+.dropzone-add-product {
+  border: 2px solid rgb(191, 186, 186);
 }

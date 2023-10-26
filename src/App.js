@@ -1,8 +1,7 @@
-//Imports fait
 import axios from 'axios';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"; //Navigate is used to redirect to a component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { nomIcone } from '@fortawesome/free-solid-svg-icons'
+import { faIconName } from '@fortawesome/free-solid-svg-icons' // Replace with your actual icon import
 import './App.css';
 
 import Main from './Main/Main';
@@ -19,36 +18,39 @@ import Livres from './Livres/Livres';
 import FicheDatabase from './FicheDatabase/FicheDatabase';
 import Reserve from './Reserve/Reserve';
 import Dashboard from './Dashboard/Dashboard';
-
-
+import Login from './Login/Login';
+import { useState } from 'react';
 
 function App() {
-  return (
-    <>
+  const [authenticated, setAuthenticated] = useState(false); //State to confirm if i'm authenticated or not
 
+  return (
     <BrowserRouter>
-        <Routes>
-          {/* path="/" est obligé car c'est la page par défaut qui va s'ouvrir */}
-          <Route path="/" element={<Main />} />
-          <Route path='ficheproduit/:id' element={<FicheProduit />}/>
-          <Route path="contact" element={<Contact />} />
-          <Route path="concept" element={<Concept />} />  
-          <Route path="addProduct" element={<AddProduct />} />  
-          <Route path="getproduct" element={<GetProduct />} />
-          <Route path="tableaux" element={<Tableaux />} />
-          <Route path="bijoux" element={<Bijoux />} />
-          <Route path="decoration" element={<Decoration />} />
-          <Route path="livres" element={<Livres />} />
-          <Route path="reserve" element={<Reserve />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="fichedatabase/:productId" element={<FicheDatabase />} />
-          <Route path="*" element={<NoPage />} />
-      
-        </Routes>
-      </BrowserRouter>
-    
-    </>
-  )
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path='ficheproduit/:id' element={<FicheProduit />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="concept" element={<Concept />} />
+        <Route path="addProduct" element={<AddProduct />} />
+        <Route path="getproduct" element={<GetProduct />} />
+        <Route path="tableaux" element={<Tableaux />} />
+        <Route path="bijoux" element={<Bijoux />} />
+        <Route path="decoration" element={<Decoration />} />
+        <Route path="livres" element={<Livres />} />
+        <Route path="reserve" element={<Reserve />} />
+
+        {/* Pour accéder au DashBoard */}
+        <Route path="login" element={<Login onLogin={() => setAuthenticated(true)} />} />  {/*When the user logs in: authenticated=True  */}
+        <Route
+          path="dashboard"
+          element={authenticated ? <Dashboard /> : <Navigate to="/login" />} //if authenticated=true=>Dashboard appear if false=>REDIRECT to login page
+        />
+
+        <Route path="fichedatabase/:productId" element={<FicheDatabase />} />
+        <Route path="*" element={<NoPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

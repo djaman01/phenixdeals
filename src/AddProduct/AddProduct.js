@@ -24,7 +24,9 @@ export default function AddProduct() {
   };
 
   //To submit all form data to the server with .post
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+
+    if(imageUrl && nom && type &&dimensions&&matiere&&prix&&code) {
     const formData = new FormData();
     formData.append('file', imageUrl);
     formData.append('nom', nom);
@@ -40,7 +42,12 @@ export default function AddProduct() {
     } catch (error) {
       console.error('Error uploading file:', error);
     }
-  };
+  }
+  else {
+    e.preventDefault();
+    alert('Add all products before Submit');
+}
+}
 
 
 
@@ -58,10 +65,9 @@ export default function AddProduct() {
           <span className="subtitle-add-product">Send product to Database</span>
 
           <div>
-
-            <label className='label-add-product' htmlFor='product-type'>Type:</label>
             <div className='div-add-product'>
               <input
+              required
                 className="input-product"
                 placeholder="Type produit"
                 type="text"
@@ -70,7 +76,7 @@ export default function AddProduct() {
                 onChange={(e) => setType(e.target.value)} />
             </div>
 
-            <label className='label-add-product' htmlFor='product-nom'>Nom:</label>
+           
             <div className='div-add-product'>
               <input
                 className="input-product"
@@ -82,7 +88,6 @@ export default function AddProduct() {
               />
             </div>
 
-            <label className='label-add-product' htmlFor='product-dimensions'>Dimensions:</label>
             <div className='div-add-product'>
               <input
                 className="input-product"
@@ -94,7 +99,7 @@ export default function AddProduct() {
               />
             </div>
 
-            <label className='label-add-product' htmlFor='product-matiere'>Matiere:</label>
+    
             <div className='div-add-product'>
               <input
                 className="input-product"
@@ -106,7 +111,6 @@ export default function AddProduct() {
               />
             </div>
 
-            <label className='label-add-product' htmlFor='product-prix'>Prix:</label>
             <div className='div-add-product'>
               <input
                 className="input-product"
@@ -118,9 +122,6 @@ export default function AddProduct() {
               />
             </div>
 
-
-
-            <label className='label-add-product' htmlFor='product-code'>Code:</label>
             <div className='div-add-product'>
               <input
                 className="input-product"
@@ -137,7 +138,7 @@ export default function AddProduct() {
           {/* Dropping image will store it in the imageUrl state variable */}
           <Dropzone onDrop={handleFileUpload}>
             {({ getRootProps, getInputProps }) => (
-              <div className="dropzone" {...getRootProps()}>
+              <div className="dropzone-add-product" {...getRootProps()}>
                 <input {...getInputProps()} />
                 <p>Drag & drop an image here, or click to select one</p>
               </div>

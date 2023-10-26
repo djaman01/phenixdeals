@@ -1,6 +1,8 @@
 import './header.css'
 import Filter from '../Filter/Filter.js'
 import { Link } from 'react-router-dom'
+import Login from '../Login/Login'
+
 
 
 export default function Header() {
@@ -20,22 +22,22 @@ export default function Header() {
           </Link>
 
           <div className="div-dropdown">
-            <Link to='/getproduct' style={{textDecoration: "none"}}>
+            <Link to='/getproduct' style={{ textDecoration: "none" }}>
               <h4 className='page-selection'>Acheter</h4>
             </Link>
             <div className="dropdown">
-              <Link to='/tableaux' style={{textDecoration: "none"}}>
+              <Link to='/tableaux' style={{ textDecoration: "none" }}>
                 <p className="drop-btn">Tableaux</p>
               </Link>
-              <Link to='/decoration' style={{textDecoration: "none"}}>
+              <Link to='/decoration' style={{ textDecoration: "none" }}>
                 <p className="drop-btn">Décoration</p>
               </Link>
-              <Link to='/bijoux' style={{textDecoration: "none"}}>
+              <Link to='/bijoux' style={{ textDecoration: "none" }}>
                 <p className="drop-btn">Bijoux</p>
               </Link>
 
-              <Link to='/livres' style={{textDecoration: "none"}}>
-              <p className="drop-btn">Livres</p>
+              <Link to='/livres' style={{ textDecoration: "none" }}>
+                <p className="drop-btn">Livres</p>
               </Link>
             </div>
           </div>
@@ -51,9 +53,14 @@ export default function Header() {
               <h4 className='vendre-btn'>Concept</h4>
             </Link>
           </div>
-
         </div>
-        
+
+        <div className="div-dropdown">
+          <Link to="/login" style={{ textDecoration: "none" }}>
+            <h4 className='vendre-btn'>Connexion</h4>
+          </Link>
+        </div>
+
       </div>
     </>
   )
