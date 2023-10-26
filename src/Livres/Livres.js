@@ -7,6 +7,8 @@ import Footer from '../Footer/Footer';
 import './livres.css'
 
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 
 export default function Livres() {
 
@@ -48,36 +50,37 @@ export default function Livres() {
         {error ? (<p>Error: {error}</p>) : (
 
           <div className="grid-livres">
-
             {productObject.map((item) => (
 
-              <div className="item-livres">
 
-                <div className="div-thumbnail-livres">
-                  <img
-                    className='thumbnail-livres'
-                    src={`http://localhost:3005/${item.imageUrl}`}//On store le path de l'image dans la database,, donc c'est ce qu'il faut chercher
-                    alt={item.nom}
-                  />
-                </div>
+              <Link to={`/fichedatabase/${item._id}`}>
+                <div className="item-livres">
 
-
-                <div className="text-livres">
-
-                  <h3 className='livres-type'>{item.type}</h3>
-
-                  <div className='livres-nom-dimensions'>
-                    <h4 style={{ fontSize: "15px" }}>{item.nom}/</h4>
-                    <h4 style={{ fontSize: "15px" }}>{item.dimensions}</h4>
+                  <div className="div-thumbnail-livres">
+                    <img
+                      className='thumbnail-livres'
+                      src={`http://localhost:3005/${item.imageUrl}`}//On store le path de l'image dans la database,, donc c'est ce qu'il faut chercher
+                      alt={item.nom}
+                    />
                   </div>
-                  <h4 className='livres-matiere' style={{ fontSize: "15px" }}>{item.matiere}</h4>
 
-                  <h4 className='livres-price'>{item.prix}</h4>
+
+                  <div className="text-livres">
+
+                    <h3 className='livres-type'>{item.type}</h3>
+
+                    <div className='livres-nom-dimensions'>
+                      <h4 style={{ fontSize: "15px" }}>{item.nom}/</h4>
+                      <h4 style={{ fontSize: "15px" }}>{item.dimensions}</h4>
+                    </div>
+                    <h4 className='livres-matiere' style={{ fontSize: "15px" }}>{item.matiere}</h4>
+
+                    <h4 className='livres-price'>{item.prix}</h4>
+
+                  </div>
 
                 </div>
-
-              </div>
-
+              </Link>
 
             ))}
 

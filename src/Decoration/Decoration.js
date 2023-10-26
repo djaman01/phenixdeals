@@ -5,6 +5,7 @@ import Header from '../Header/Header'
 import Footer from '../Footer/Footer';
 
 import './decoration.css'
+import { Link } from 'react-router-dom';
 
 
 
@@ -38,7 +39,7 @@ export default function Decoration() {
   return (
     <>
 
-    <Header />
+      <Header />
       <div>
         <h1>Tous nos objets de Décoration</h1>
       </div>
@@ -50,43 +51,43 @@ export default function Decoration() {
         {error ? (<p>Error: {error}</p>) : (
 
           <div className="grid-decoration">
-
             {productObject.map((item) => (
 
-              <div className="item-decoration">
+              <Link to={`/fichedatabase/${item._id}`}>
+                <div className="item-decoration">
 
-                <div className="div-thumbnail-decoration">
-                  <img
-                    className='thumbnail-decoration'
-                    src={`http://localhost:3005/${item.imageUrl}`}//On store le path de l'image dans la database,, donc c'est ce qu'il faut chercher
-                    alt={item.nom}
-                  />
-                </div>
-
-
-                <div className="text-decoration">
-
-                  <h3 className='decoration-type'>{item.type}</h3>
-
-                  <div className='decoration-nom-dimensions'>
-                    <h4 style={{ fontSize: "15px" }}>{item.nom}/</h4>
-                    <h4 style={{ fontSize: "15px" }}>{item.dimensions}</h4>
+                  <div className="div-thumbnail-decoration">
+                    <img
+                      className='thumbnail-decoration'
+                      src={`http://localhost:3005/${item.imageUrl}`}//On store le path de l'image dans la database,, donc c'est ce qu'il faut chercher
+                      alt={item.nom}
+                    />
                   </div>
-                  <h4 className='decoration-matiere' style={{ fontSize: "15px" }}>{item.matiere}</h4>
 
-                  <h4 className='decoration-price'>{item.prix}</h4>
+
+                  <div className="text-decoration">
+
+                    <h3 className='decoration-type'>{item.type}</h3>
+
+                    <div className='decoration-nom-dimensions'>
+                      <h4 style={{ fontSize: "15px" }}>{item.nom}/</h4>
+                      <h4 style={{ fontSize: "15px" }}>{item.dimensions}</h4>
+                    </div>
+                    <h4 className='decoration-matiere' style={{ fontSize: "15px" }}>{item.matiere}</h4>
+
+                    <h4 className='decoration-price'>{item.prix}</h4>
+
+                  </div>
 
                 </div>
-
-              </div>
-
+              </Link>
 
             ))}
 
           </div>
         )}
-      </div>
-<Footer />
+      </div >
+      <Footer />
 
 
     </>

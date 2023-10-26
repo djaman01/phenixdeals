@@ -52,8 +52,8 @@ export default function Tableaux() {
         {error ? (<p>Error: {error}</p>) : (
 
           <div className="grid-tableaux">
-
             {productObject.map((item) => (
+
               <Link to={`/fichedatabase/${item._id}`}>
                 <div className="item-tableaux">
 
