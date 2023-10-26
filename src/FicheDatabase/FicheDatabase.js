@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function FicheDatabase() {
-  const { productId } = useParams();
+  const { productId } = useParams(); //pour pouvoir catcher le endpoint de l'url
 
   //Since i want to fetch a single product by its ID, there's no need for an array or mapping in the return statement.
   const [product, setProduct] = useState(null);
@@ -32,26 +32,34 @@ export default function FicheDatabase() {
       <Header />
       <div>
         {error ? (<p>Error: {error}</p>) : product ? (
-          <div className="grid-tableaux">
-            <div className="item-tableaux">
-              <div className="div-thumbnail-tableaux">
-                <img
-                  className='thumbnail-tableaux'
-                  src={`http://localhost:3005/${product.imageUrl}`}
-                  alt={product.nom}
-                />
-              </div>
-              <div className="text-tableaux">
-                <h3 className='tableaux-type'>{product.type}</h3>
-                <div className='tableaux-nom-dimensions'>
-                  <h4 style={{ fontSize: "15px" }}>{product.nom}/</h4>
-                  <h4 style={{ fontSize: "15px" }}>{product.dimensions}</h4>
-                </div>
-                <h4 className='tableaux-matiere' style={{ fontSize: "15px" }}>{product.matiere}</h4>
-                <h4 className='tableaux-price'>{product.prix}</h4>
-              </div>
-            </div>
-          </div>
+
+<div className="fiche-produit">
+
+<div className="div-image-fiche">
+  <img src={`http://localhost:3005/${product.imageUrl}`} alt={product.détails} className="image-fiche" />
+</div>
+
+
+<div className="infos-produit">
+  <h1>{product.état}</h1>
+  <h1 className="nom-produit">{product.nom}</h1>
+  <h2 className="dimensions-produit">{product.dimensions}</h2>
+  <h2 className="matiere-produit">{product.matiere}</h2>
+  <h2 className="prix-produit">{product.prix}</h2>
+  <h3 className="code-produit">{product.code}</h3>
+
+  <div className="btn-produit">
+    <Link to="/reserve">
+      <button className="btn-réserver">Réserver</button>
+    </Link>
+    <button className="btn-autre-produit">Voir d'autres {product.nom}</button>
+  </div>
+
+
+
+</div>
+
+</div>
         ) : null}
       </div>
       <Footer />
