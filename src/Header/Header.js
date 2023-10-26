@@ -22,10 +22,14 @@ export default function Header() {
           </Link>
 
           <div className="div-dropdown">
-            <Link to='/getproduct' style={{ textDecoration: "none" }}>
-              <h4 className='page-selection'>Acheter</h4>
-            </Link>
+
+            <h4 className='page-selection'>Acheter</h4>
+
+
             <div className="dropdown">
+              <Link to='/getproduct' style={{ textDecoration: "none" }}>
+                <p className="drop-btn">Tous les produits</p>
+              </Link>
               <Link to='/tableaux' style={{ textDecoration: "none" }}>
                 <p className="drop-btn">Tableaux</p>
               </Link>
