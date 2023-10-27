@@ -13,6 +13,10 @@ import { Link } from 'react-router-dom';
 
 export default function Tableaux() {
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  };
+
   const [productObject, setProductObject] = useState([]); //State variable ou on va store tous les objets représentants les produits
   const [error, setError] = useState('');
 
@@ -54,7 +58,8 @@ export default function Tableaux() {
           <div className="grid-tableaux">
             {productObject.map((item) => (
 
-              <Link to={`/fichedatabase/${item._id}`}>
+              <Link onClick={scrollToTop} to={`/fichedatabase/${item._id}`}>
+
                 <div className="item-tableaux">
 
                   <div className="div-thumbnail-tableaux">
@@ -81,6 +86,7 @@ export default function Tableaux() {
                   </div>
 
                 </div>
+
               </Link>
 
 

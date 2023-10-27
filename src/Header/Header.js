@@ -23,7 +23,7 @@ export default function Header() {
 
           <div className="div-dropdown">
 
-            <h4 className='page-selection'>Acheter</h4>
+            <h4 className='vendre-btn'>Acheter</h4>
 
 
             <div className="dropdown">
