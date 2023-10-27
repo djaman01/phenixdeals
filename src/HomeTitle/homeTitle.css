@@ -143,3 +143,27 @@
   padding: 0 8px;
   width: 2.8em;
 }
+
+.hautdepage {
+  cursor: pointer; 
+  color: #0072B5;
+  text-decoration: underline; 
+  margin-top: 65px;
+  margin-bottom: -35px;
+  transition: color 0.3s;
+  text-align: center;
+  border: 2px red solid;
+}
+
+.hautdepage-div {
+  margin-top: 65px;
+  margin-bottom: -35px;
+  text-align: center;
+}
+
+.hautdepage-div span {
+  color: #0072B5;
+  text-decoration: underline;
+  cursor: pointer;
+  width: 150px; 
+}

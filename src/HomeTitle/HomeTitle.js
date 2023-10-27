@@ -9,6 +9,13 @@ import { Link } from 'react-router-dom';
 
 export default function HomeTitle() {
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // To scroll to top slowly
+    });
+  };
+
   const [product, setProduct] = useState('');
 
   const inputValue = (e) => setProduct(e.target.value);
@@ -18,11 +25,11 @@ export default function HomeTitle() {
   return (
     <div class="main-page">
       <div class="div-title-home">
-      
-          <h1 className='home-title'>
-            Les 20 Nouveaux produits
-          </h1>
-      
+
+        <h1 className='home-title'>
+          Les 20 Nouveaux produits
+        </h1>
+
 
         <div className='input-home'>
 
@@ -56,6 +63,11 @@ export default function HomeTitle() {
         {filterType.map((e, i) => <ProductCard {...e} key={i} />)}
 
       </div>
+
+
+      <h2 className='hautdepage-div' >
+        <span onClick={scrollToTop}>Haut de page</span>
+      </h2>
 
     </div>
   )
