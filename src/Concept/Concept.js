@@ -3,9 +3,13 @@ import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import { Link } from 'react-router-dom'
 
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 import { SocialIcon } from 'react-social-icons'
 import { faUnderline } from '@fortawesome/free-solid-svg-icons'
+import { useEffect } from 'react';
+
 
 
 export default function Concept() {
@@ -13,6 +17,17 @@ export default function Concept() {
   const scrollToTop = () => {
     window.scrollTo(0, 0); // Scroll to the top of the page
   };
+
+  useEffect(() => {
+    Aos.init({
+      once: true,
+      offset: 100,
+      duration: 1500,
+      easing: 'ease-in-out',
+    
+    });
+  })
+
 
   return (
     <>
@@ -22,7 +37,7 @@ export default function Concept() {
       <div className='all-concept'>
 
 
-        <div className="card-activité">
+        <div className="card-activité" data-aos="fade-down">
 
           <p  className="card-title">Activité</p>
           <p  className="small-desc">
@@ -41,7 +56,7 @@ export default function Concept() {
 
         </div>
 
-        <div  className="card-vente">
+        <div  className="card-vente" data-aos="fade-up">
 
           <div  className="content-vente">
             <p  className="heading-vente"> Vendez sur notre site !</p>
@@ -69,7 +84,7 @@ export default function Concept() {
 
         </div>
 
-        <div className='card-media'>
+        <div className='card-media' data-aos="fade-down">
           <h2 className='title-card-media'>Suivez-nous sur nos réseaux sociaux</h2>
           <p className='para-media'>Nous y sommes aussi très actifs !</p>
           <h4 className='abonne-contact'><u>N'hésitez pas à vous abonner à nos pages</u>:</h4>
