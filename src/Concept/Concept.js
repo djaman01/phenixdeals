@@ -18,9 +18,6 @@ export default function Concept() {
     <>
       <Header />
 
-      <div className="concept">
-        <h1>Notre concept</h1>
-      </div>
 
       <div className='all-concept'>
 
