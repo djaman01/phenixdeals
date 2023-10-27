@@ -6,7 +6,9 @@ import Footer from '../Footer/Footer';
 
 import './livres.css'
 
-import React from 'react'
+import Aos from 'aos';
+import 'aos/dist/aos.css'
+
 import { Link } from 'react-router-dom';
 
 
@@ -35,6 +37,15 @@ export default function Livres() {
     fetchData();
   }, []);//fetch la data avec axios dès qu'on ouvre le browser, comme ça tous les produits apparaisse d'un coup
 
+  useEffect(() => {
+    Aos.init({
+      once: true,
+      offset: 100,
+      duration: 1500,
+      easing: 'ease-in-out',
+    
+    });
+  })
 
   return (
     <>
@@ -49,7 +60,7 @@ export default function Livres() {
       <div>
         {error ? (<p>Error: {error}</p>) : (
 
-          <div className="grid-livres">
+          <div className="grid-livres" data-aos='zoom-in'>
             {productObject.map((item) => (
 
 

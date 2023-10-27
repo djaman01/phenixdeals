@@ -4,6 +4,10 @@ import axios from 'axios';
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer';
 
+
+import Aos from 'aos';
+import 'aos/dist/aos.css'
+
 import './decoration.css'
 import { Link } from 'react-router-dom';
 
@@ -34,7 +38,15 @@ export default function Decoration() {
     fetchData();
   }, []);//fetch la data avec axios dès qu'on ouvre le browser, comme ça tous les produits apparaisse d'un coup
 
-
+  useEffect(() => {
+    Aos.init({
+      once: true,
+      offset: 100,
+      duration: 1500,
+      easing: 'ease-in-out',
+    
+    });
+  })
 
   return (
     <>
@@ -50,7 +62,7 @@ export default function Decoration() {
       <div>
         {error ? (<p>Error: {error}</p>) : (
 
-          <div className="grid-decoration">
+          <div className="grid-decoration" data-aos='zoom-in'>
             {productObject.map((item) => (
 
               <Link to={`/fichedatabase/${item._id}`}>
