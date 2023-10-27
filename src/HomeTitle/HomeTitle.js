@@ -66,7 +66,7 @@ export default function HomeTitle() {
 
 
       <h2 className='hautdepage-div' >
-        <span onClick={scrollToTop}>Haut de page</span>
+        <span onClick={scrollToTop}>Haut de page </span>
       </h2>
 
     </div>
