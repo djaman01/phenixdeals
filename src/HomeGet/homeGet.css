@@ -1,4 +1,32 @@
-.grid-all-products {
+.all-home-cards {
+  margin-bottom: 100px;
+}
+
+
+.main-page{
+  margin-bottom: 100px;
+}
+
+
+.div-title-home {
+  margin-bottom: 50px;
+  height: 100px;
+}
+
+.home-title {
+  text-align: center;
+  margin-top: 50px;
+  font-family: 'Martian Mono', monospace;
+  color: #FA7A35;
+}
+
+.input-home{
+  text-align: center;
+  margin-top: 40px;
+}
+
+
+.grid-home-filter {
   display: grid;
   grid-template-columns: 250px 250px 250px 250px;
   gap: 50px 50px;
@@ -6,70 +34,141 @@
   margin-top: 90px;
 }
 
+/* input style */
 
-
-.item-all-products {
-  border: solid 1px rgb(186, 186, 186);
-  border-radius: 10px;
-  height: 410px;
-  width: 100%;
+.searchbar {
+  font-size: 14px;
+  font-family: arial, sans-serif;
+  color: #202124;
+  display: flex;
+  z-index: 3;
+  height: 44px;
+  background: white;
+  border: 1px solid #dfe1e5;
+  box-shadow: none;
+  border-radius: 24px;
+  margin: 0 auto;
+  width: auto;
+  max-width: 250px;
 }
 
-.item-all-products:hover {
-  cursor: pointer;
-  box-shadow: 0 0 20px 15px rgba(0, 0, 0, 0.1);
-  transform: translateY(-5px);
+.searchbar:hover {
+  box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+  border-color: rgba(223,225,229,0);
 }
 
-.div-thumbnail-allproducts {
-  width: 100%;
-  height: 270px;
+.searchbar-wrapper {
+  flex: 1;
+  display: flex;
+  padding: 5px 8px 0 14px;
 }
 
-.thumbnail-products {
-  /* C'est l'image qui doit avoir width et height défini et object-fit */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /*avec contain, l'image apparait à 100% mais s'ajuste à la dimension donnée*/
-  /*Avec cover: l'image s'ajuste à la dimension donnée, mais peut perdre une partie si trop grande*/
-  border-radius: 10px 10px 0 0;
-
-}
-
-.text-all-products {
-  text-align: center;
-  height: 160px;
-}
-
-.all-products-type {
-  color: #0072B5;
-  font-family: 'Heebo', sans-serif;
-  margin-bottom: 5px;
-
-}
-
-.nom-dimensions {
+.searchbar-left {
+  font-size: 14px;
+  font-family: arial, sans-serif;
+  color: #202124;
   display: flex;
   align-items: center;
-  height: 38px;
-  color: #363945;
-  justify-content: center;
-  font-family: 'Martian Mono', monospace;
-  margin-top: -10px;
-  margin-bottom: -20px;
-
-
+  padding-right: 13px;
+  margin-top: -5px;
 }
 
-.all-products-matiere {
-  font-family: 'Martian Mono', monospace;
-  color: #ff0921;
+.search-icon-wrapper {
+  margin: auto;
 }
 
+.search-icon {
+  margin-top: 3px;
+  color: #9aa0a6;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+}
 
-.all-products-price {
+.searchbar-icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 24px;
+  line-height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.searchbar-center {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.searchbar-input-spacer {
+  color: transparent;
+  flex: 100%;
+  white-space: pre;
+  height: 34px;
+  font-size: 16px;
+}
+
+.searchbar-input {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, .87);
+  word-wrap: break-word;
+  outline: none;
+  display: flex;
+  flex: 100%;
+  margin-top: -37px;
+  height: 34px;
+  font-size: 16px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.searchbar-right {
+  display: flex;
+  flex: 0 0 auto;
+  margin-top: -5px;
+  align-items: stretch;
+  flex-direction: row
+}
+
+.searchbar-clear-icon {
+  margin-right: 12px
+}
+
+.voice-search {
+  flex: 1 0 auto;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  outline: none;
+  padding: 0 8px;
+  width: 2.8em;
+}
+
+.hautdepage {
+  cursor: pointer; 
   color: #0072B5;
-  font-family: 'Heebo', sans-serif;
-  margin-top: -10px;
+  text-decoration: underline; 
+  margin-top: 65px;
+  margin-bottom: -35px;
+  transition: color 0.3s;
+  text-align: center;
+  border: 2px red solid;
+}
+
+.hautdepage-div {
+  margin-top: 65px;
+  margin-bottom: -35px;
+  text-align: center;
+}
+
+.hautdepage-div span {
+  color: #0072B5;
+  text-decoration: underline;
+  cursor: pointer;
+  width: 150px; 
 }

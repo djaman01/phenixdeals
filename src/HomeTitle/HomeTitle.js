@@ -1,10 +1,8 @@
-
 import './homeTitle.css'
 import { produits } from "../20Produits/20produits";
 import { useState } from 'react';
 import ProductCard from "../ProductCard/ProductCard";
 import { Link } from 'react-router-dom';
-import HomeGet from '../HomeGet/HomeGet';
 
 
 
@@ -54,16 +52,21 @@ export default function HomeTitle() {
 
               <div class="searchbar-center">
                 <div class="searchbar-input-spacer"></div>
-                <input value={product} onChange={inputValue} class="searchbar-input" title="Search" role="combobox" maxlength="2048" name="q" autocapitalize="off" autocomplete="off" placeholder="tableau, déco, bijou, livre" type="text" />
+                <input value={product} onChange={inputValue} class="searchbar-input" title="Search" role="combobox" maxlength="2048" name="q" autocapitalize="off" autocomplete="off"  placeholder="tableau, déco, bijou, livre" type="text" />
               </div>
+
+
             </div>
           </div>
-          
         </div>
 
       </div>
 
-      <HomeGet />
+      <div className="grid-home-filter">
+
+        {filterType.map((e, i) => <ProductCard {...e} key={i} />)}
+
+      </div>
 
 
       <h2 className='hautdepage-div' >
@@ -73,3 +76,5 @@ export default function HomeTitle() {
     </div>
   )
 }
+
+

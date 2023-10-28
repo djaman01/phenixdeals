@@ -1,7 +1,8 @@
 import Filter from '../Filter/Filter'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
-import HomeTitle from '../HomeTitle/HomeTitle'
+import HomeGet from '../HomeGet/HomeGet'
+
 import ImageHome from '../ImageHome/ImageHome'
 import MapTableaux from '../MapTableaux/MapTableaux'
 
@@ -13,7 +14,7 @@ export default function Main() {
     <>
     <Header />
     <ImageHome />
-    <HomeTitle />
+    <HomeGet />
     <Footer />
     
     </>
