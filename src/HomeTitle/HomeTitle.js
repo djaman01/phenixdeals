@@ -16,10 +16,15 @@ export default function HomeTitle() {
     });
   };
 
+
+
+  //State qui prendra la value de l'input pour la recherche=filtre
   const [product, setProduct] = useState('');
 
+  //On donne au state la valeur de l'input et on store dans variable
   const inputValue = (e) => setProduct(e.target.value);
 
+  //On filtre les objets dans produits.js qui sont = à product = valeur de l'input
   const filterType = produits.filter((elm) => elm.type.toLowerCase().includes(product.toLowerCase()));
 
   return (
@@ -48,7 +53,7 @@ export default function HomeTitle() {
 
               <div class="searchbar-center">
                 <div class="searchbar-input-spacer"></div>
-                <input value={product} class="searchbar-input" title="Search" role="combobox" maxlength="2048" name="q" autocapitalize="off" autocomplete="off" onChange={inputValue} placeholder="tableau, déco, bijou, livre" type="text" />
+                <input value={product} onChange={inputValue} class="searchbar-input" title="Search" role="combobox" maxlength="2048" name="q" autocapitalize="off" autocomplete="off"  placeholder="tableau, déco, bijou, livre" type="text" />
               </div>
 
 
