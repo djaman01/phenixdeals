@@ -56,10 +56,9 @@ export default function HomeTitle() {
                 <div class="searchbar-input-spacer"></div>
                 <input value={product} onChange={inputValue} class="searchbar-input" title="Search" role="combobox" maxlength="2048" name="q" autocapitalize="off" autocomplete="off" placeholder="tableau, déco, bijou, livre" type="text" />
               </div>
-
-
             </div>
           </div>
+          
         </div>
 
       </div>
