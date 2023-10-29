@@ -36,8 +36,8 @@ export default function FicheDatabase() {
 
   //Quand cette function va etre appelé, la state deviendra = true et ca scroll a la Reservepart
   const handleReserveClicked = () => {
-   setReserveClicked((prev)=>!prev);
-   refReservePart.current.scrollIntoView({behavior:"smooth"}) //reservePartRef.current gives direct access to the DOM element that the ref is attached to
+    setReserveClicked((prevState)=> !prevState); //prevState cible la valeur par défaut du state
+    refReservePart.current.scrollIntoView({ behavior: "smooth" }) //reservePartRef.current gives direct access to the DOM element that the ref is attached to
   }
 
   return (
@@ -66,7 +66,20 @@ export default function FicheDatabase() {
                 <button className="btn-autre-produit">Voir d'autres {product.nom}</button>
               </div>
 
+              <div className="reseve-part" ref={refReservePart}> {/*ref={reservePartRef} associate the reservePartRef with this DOM element. */}
 
+                {reserveClicked == true &&
+
+                  <div className="whatsapp">
+                    <h1> Envoyez-nous un message whatsapp avec les informations du produit</h1>
+
+                    <a href="https://api.whatsapp.com/send?phone=212619635336&text=Bonjour%2C%0AJe%20suis%20int%C3%A9ress%C3%A9%20par%20un%20produit%20vu%20sur%20phenixdeals.com.%0ALa%20r%C3%A9f%C3%A9rence%20du%20produit%20est%3A%20" target="_blank">
+                      <button> Whatsapp </button>
+                    </a>
+                  </div>
+                }
+
+              </div>
 
             </div>
 
@@ -74,20 +87,7 @@ export default function FicheDatabase() {
         ) : null}
       </div>
 
-      <div className="reseve-part" ref={refReservePart}> {/*ref={reservePartRef} associate the reservePartRef with this DOM element. */}
 
-        {reserveClicked==true && 
-        
-        <div className="whatsapp">
-        <h1> Envoyez-nous un message whatsapp avec les informations du produit</h1>
-
-        <a href="https://api.whatsapp.com/send?phone=212619635336&text=Bonjour%2C%0AJe%20suis%20int%C3%A9ress%C3%A9%20par%20un%20produit%20vu%20sur%20phenixdeals.com" target="_blank">
-          <button> Whatsapp </button>
-        </a>
-      </div>
-      }
-
-      </div>
 
 
       <Footer />
