@@ -39,7 +39,6 @@ export default function GetProduct() {
           setError('An error occurred while fetching data.');
         });
     };
-
     fetchData();
   }, []);//fetch la data avec axios dès qu'on ouvre le browser, comme ça tous les produits apparaisse d'un coup
 
