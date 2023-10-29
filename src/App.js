@@ -16,7 +16,6 @@ import Tableaux from './Tableaux/Tableaux';
 import Decoration from './Decoration/Decoration';
 import Livres from './Livres/Livres';
 import FicheDatabase from './FicheDatabase/FicheDatabase';
-import Reserve from './Reserve/Reserve';
 import Dashboard from './Dashboard/Dashboard';
 import Login from './Login/Login';
 import { useState } from 'react';
@@ -37,7 +36,6 @@ function App() {
         <Route path="bijoux" element={<Bijoux />} />
         <Route path="decoration" element={<Decoration />} />
         <Route path="livres" element={<Livres />} />
-        <Route path="reserve" element={<Reserve />} />
 
         {/* Pour accéder au DashBoard */}
         <Route path="login" element={<Login onLogin={() => setAuthenticated(true)} />} />  {/*When the user logs in: authenticated=True  */}
