@@ -4,6 +4,8 @@ import Footer from '../Footer/Footer'
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
+import "./ficheDatabase.css"
+
 export default function FicheDatabase() {
 
   const { productId } = useParams(); //pour pouvoir catcher le endpoint de l'url
@@ -121,7 +123,7 @@ export default function FicheDatabase() {
               .filter((relatedProduct) => relatedProduct._id !== product._id)//Ne garde que les produits avec ._id différent du produit cliqué Puis .map sur eux pour les afficher
               .map((relatedProduct) => (
                 <Link onClick={scrollToTop} to={`/fichedatabase/${relatedProduct._id}`} key={relatedProduct._id}>
-                  <div className="item-all-products">
+                  <div className="item-fichedb">
                     <div className="div-thumbnail-allproducts">
                       <img
                         className="thumbnail-products"
