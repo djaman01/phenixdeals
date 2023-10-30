@@ -1,11 +1,11 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
-
 export default function FicheDatabase() {
+
   const { productId } = useParams(); //pour pouvoir catcher le endpoint de l'url
 
   //Since i want to fetch a single product by its ID, there's no need for an array or mapping in the return statement.
@@ -60,8 +60,12 @@ export default function FicheDatabase() {
 
   const handleAutresClicked = () => {
     setAutresProduits((prevState) => !prevState); //prevState cible la valeur par défaut du state
-    refReservePart.current.scrollIntoView({ behavior: "smooth" }) //reservePartRef.current gives direct access to the DOM element that the ref is attached to
+    refAutresPart.current.scrollIntoView({ behavior: "smooth" }) //reservePartRef.current gives direct access to the DOM element that the ref is attached to
   }
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  };
 
   return (
     <>
@@ -89,10 +93,10 @@ export default function FicheDatabase() {
                 <button className="btn-autre-produit" onClick={handleAutresClicked}>Voir d'autres {product.nom}</button>
               </div>
 
-              <div className="reseve-part" ref={refReservePart}> {/*ref={reservePartRef} associate the reservePartRef with this DOM element. */}
-                {reserveClicked == true &&
+              <div className="reserve-part" ref={refReservePart} > {/*ref={reservePartRef} associate the reservePartRef with this DOM element. */}
+                {reserveClicked === true &&
 
-                  <div className="whatsapp">
+                  <div className="whatsapp" >
                     <h1> Envoyez-nous un message whatsapp avec la référence du produit</h1>
 
                     <a href="https://api.whatsapp.com/send?phone=212619635336&text=Bonjour%2C%0AJe%20suis%20int%C3%A9ress%C3%A9%20par%20un%20produit%20vu%20sur%20phenixdeals.com.%0ALa%20r%C3%A9f%C3%A9rence%20du%20produit%20est%3A%20" target="_blank">
@@ -109,16 +113,46 @@ export default function FicheDatabase() {
         ) : null}
       </div>
 
-      <div className="autre-produits-part">
-        
-        {relatedProducts.map((relatedProduct) => (
-          <div className="related-product" key={relatedProduct._id}>
-            <h2>{relatedProduct.nom}</h2>
-            {/* Add the other details of the related product here */}
-          </div>
-        ))}
-      </div>
 
+      <div className="autres-product" ref={refAutresPart}   >
+
+        {autresProduits=== true &&
+          <div className="grid-all-products" >
+
+            {relatedProducts.map((relatedProduct) => (
+
+              <Link onClick={scrollToTop} to={`/fichedatabase/${relatedProduct._id}`}>
+
+                <div className="item-all-products" key={relatedProduct._id}>
+
+                  <div className="div-thumbnail-allproducts">
+                    <img
+                      className='thumbnail-products'
+                      src={`http://localhost:3005/${relatedProduct.imageUrl}`}//On store le path de l'image dans la database,, donc c'est ce qu'il faut chercher
+                      alt={relatedProduct.nom}
+                    />
+                  </div>
+
+                  <div className="text-all-products">
+
+                    <h3 className='all-products-type'>{relatedProduct.type}</h3>
+
+                    <div className='nom-dimensions'>
+                      <h4 style={{ fontSize: "15px" }}>{relatedProduct.nom}/</h4>
+                      <h4 style={{ fontSize: "15px" }}>{relatedProduct.dimensions}</h4>
+                    </div>
+                    <h4 className='all-products-matiere' style={{ fontSize: "15px" }}>{relatedProduct.matiere}</h4>
+
+                    <h4 className='all-products-price'>{relatedProduct.prix}</h4>
+
+                  </div>
+
+                </div>
+              </Link>
+            ))}
+          </div>
+        }
+      </div>
 
 
 
