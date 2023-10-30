@@ -113,46 +113,40 @@ export default function FicheDatabase() {
         ) : null}
       </div>
 
-
-      <div className="autres-product" ref={refAutresPart}   >
-
-        {autresProduits=== true &&
-          <div className="grid-all-products" >
-
-            {relatedProducts.map((relatedProduct) => (
-
-              <Link onClick={scrollToTop} to={`/fichedatabase/${relatedProduct._id}`}>
-
-                <div className="item-all-products" key={relatedProduct._id}>
-
-                  <div className="div-thumbnail-allproducts">
-                    <img
-                      className='thumbnail-products'
-                      src={`http://localhost:3005/${relatedProduct.imageUrl}`}//On store le path de l'image dans la database,, donc c'est ce qu'il faut chercher
-                      alt={relatedProduct.nom}
-                    />
-                  </div>
-
-                  <div className="text-all-products">
-
-                    <h3 className='all-products-type'>{relatedProduct.type}</h3>
-
-                    <div className='nom-dimensions'>
-                      <h4 style={{ fontSize: "15px" }}>{relatedProduct.nom}/</h4>
-                      <h4 style={{ fontSize: "15px" }}>{relatedProduct.dimensions}</h4>
+{/* Apparait when "autreProduits" state is true, quand on clique sur voir autres produits */}
+      <div className="autres-product" ref={refAutresPart}>
+        {autresProduits === true && (
+          <div className="grid-all-products">
+            {relatedProducts //state avec tous les produits ac même nom
+              .filter((relatedProduct) => relatedProduct._id !== product._id)//Ne garde que les produits avec ._id différent du produit cliqué Puis .map sur eux pour les afficher
+              .map((relatedProduct) => (
+                <Link onClick={scrollToTop} to={`/fichedatabase/${relatedProduct._id}`} key={relatedProduct._id}>
+                  <div className="item-all-products">
+                    <div className="div-thumbnail-allproducts">
+                      <img
+                        className="thumbnail-products"
+                        src={`http://localhost:3005/${relatedProduct.imageUrl}`}
+                        alt={relatedProduct.nom}
+                      />
                     </div>
-                    <h4 className='all-products-matiere' style={{ fontSize: "15px" }}>{relatedProduct.matiere}</h4>
-
-                    <h4 className='all-products-price'>{relatedProduct.prix}</h4>
-
+                    <div className="text-all-products">
+                      <h3 className="all-products-type">{relatedProduct.type}</h3>
+                      <div className="nom-dimensions">
+                        <h4 style={{ fontSize: "15px" }}>{relatedProduct.nom}/</h4>
+                        <h4 style={{ fontSize: "15px" }}>{relatedProduct.dimensions}</h4>
+                      </div>
+                      <h4 className="all-products-matiere" style={{ fontSize: "15px" }}>
+                        {relatedProduct.matiere}
+                      </h4>
+                      <h4 className="all-products-price">{relatedProduct.prix}</h4>
+                    </div>
                   </div>
-
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
           </div>
-        }
+        )}
       </div>
+
 
 
 
