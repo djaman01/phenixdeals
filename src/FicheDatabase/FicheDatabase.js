@@ -13,12 +13,25 @@ export default function FicheDatabase() {
 
   const [error, setError] = useState('');
 
+  const [relatedProducts, setRelatedProducts] = useState([]);
+
   useEffect(() => {
     const fetchData = () => {
+
       axios.get(`http://localhost:3005/article/${productId}`)
         .then((response) => {
           console.log("article fetched", response.data);
-          setProduct(response.data);//valeur Variable product = 1 valeur d'1 produit
+          setProduct(response.data); // Set the current product
+
+          // Fetch related products based on the product's name
+          axios.get(`http://localhost:3005/related-products/${response.data.nom}`)
+            .then((relatedResponse) => {
+              console.log("related products fetched", relatedResponse.data);
+              setRelatedProducts(relatedResponse.data);
+            })
+            .catch((relatedError) => {
+              console.error('Error fetching related products:', relatedError);
+            });
         })
         .catch((error) => {
           setError('An error occurred while fetching data.');
@@ -27,6 +40,7 @@ export default function FicheDatabase() {
 
     fetchData();
   }, [productId]);
+
 
   //State pour gérer visibilité partie réservée et autres produits quand boutons sont cliqués
   const [reserveClicked, setReserveClicked] = useState(false);
@@ -96,19 +110,13 @@ export default function FicheDatabase() {
       </div>
 
       <div className="autre-produits-part">
-        <div className="reseve-part" ref={refAutresPart}> {/*ref={reservePartRef} associate the reservePartRef with this DOM element. */}
-          {autresProduits == true &&
-
-            <div className="whatsapp">
-              <h1> Envoyez-nous un message whatsapp avec la référence du produit</h1>
-
-              <a href="https://api.whatsapp.com/send?phone=212619635336&text=Bonjour%2C%0AJe%20suis%20int%C3%A9ress%C3%A9%20par%20un%20produit%20vu%20sur%20phenixdeals.com.%0ALa%20r%C3%A9f%C3%A9rence%20du%20produit%20est%3A%20" target="_blank">
-                <button> Whatsapp </button>
-              </a>
-            </div>
-          }
-        </div>
-
+        
+        {relatedProducts.map((relatedProduct) => (
+          <div className="related-product" key={relatedProduct._id}>
+            <h2>{relatedProduct.nom}</h2>
+            {/* Add the other details of the related product here */}
+          </div>
+        ))}
       </div>
 
 
