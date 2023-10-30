@@ -4,7 +4,9 @@ import axios from 'axios';
 import { BsTrash } from "react-icons/bs";
 import { BiEditAlt } from "react-icons/bi";
 
+
 import './dashboard.css'
+import { Link } from 'react-router-dom';
 
 
 export default function Dashboard() {
@@ -33,12 +35,12 @@ export default function Dashboard() {
 
   //Arrow function with PUT Request
   const handleUpdateProduct = (productId) => { //parameter to catch the endpoint of url
-  
+
     const updatedProductData = { //Giving "nom" property a state as value, so that it can be changed};
       prix: editedProductName
     }
     // Finds the product by its _id + Update it with updateProductData 
-    axios.put(`http://localhost:3005/products/${productId}`,updatedProductData)
+    axios.put(`http://localhost:3005/products/${productId}`, updatedProductData)
       .then((response) => {
         console.log('Product updated successfully:', response.data);
         setEditingProductId(null); // Reset the "editingProductId" state after editing, to toggle the input and save button, to the name of the data
@@ -67,12 +69,15 @@ export default function Dashboard() {
 
   return (
     <>
+      <Link to='/' className='home-link'>
+        <h4 className='home-button'>Accueil</h4>
+      </Link>
       <div>
         <h2>All Products Added in Database</h2>
         <table className='table-dashboard'>
           <thead>
             <tr>
-            <th className='subtitle-dashboard'>Image</th>
+              <th className='subtitle-dashboard'>Image</th>
               <th className='subtitle-dashboard'>Type</th>
               <th className='subtitle-dashboard'>Nom</th>
               <th className='subtitle-dashboard'>Dimensions</th>
