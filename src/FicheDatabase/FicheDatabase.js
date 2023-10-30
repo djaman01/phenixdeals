@@ -24,7 +24,7 @@ export default function FicheDatabase() {
           setProduct(response.data); // Set the current product
 
           // Fetch related products based on the product's name
-          axios.get(`http://localhost:3005/related-products/${response.data.nom}`)
+          axios.get(`http://localhost:3005/related-products/${response.data.nom}`) //J'utilise la réponse du 1er Get pour accéder à la property nom et ne selectionner que les produits qui ont le même nom
             .then((relatedResponse) => {
               console.log("related products fetched", relatedResponse.data);
               setRelatedProducts(relatedResponse.data);
