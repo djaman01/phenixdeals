@@ -148,7 +148,7 @@ export default function FicheDatabase() {
           </div>
         ) :
         (
-          (autresProduits === true && relatedProducts.length==1) ? <div><h1>No</h1></div> : null
+          (autresProduits === true && relatedProducts.length==1) ? <div><h1>No other products of {product.nom}</h1></div> : null
         )
 
       }
