@@ -41,11 +41,13 @@ export default function Contact() {
       const response = await axios.post('http://localhost:3005/', formData);
 
       console.log('Response from the server:', response.data);
-    } catch (error) {
+    } 
+    catch (error) {
 
       console.error('Error:', error);
     }
   };
+  
   return (
 
 
@@ -62,14 +64,14 @@ export default function Contact() {
 
             <div className="first-column">
 
-              < div className='nom-famille'>
+              <div className='nom-famille'>
                 <label className='contact-form-label' htmlFor="Nom">Nom:</label>
                 <input
                   className='contact-form-input'
                   type="text"
                   id="Nom"
                   name="Nom"
-                  defaultvalue={formData.Nom}
+                  defaultvalue={formData.Nom} //car avec value, ca ne reset pas
                   onChange={handleChange}
                   placeholder='Nom'
                   required

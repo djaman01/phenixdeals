@@ -61,9 +61,11 @@ export default function HomeGet() {
   return (
     <div className='all-home-cards'>
 
-      <h1 className='home-title'>
-        Les 20 Nouveaux produits
-      </h1>
+      <Link to="/newsignup">
+        <h1 className='home-title'>
+          Les 20 Nouveaux produits
+        </h1>
+      </Link>
 
       <div className='input-home'>
 

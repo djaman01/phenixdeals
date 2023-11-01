@@ -19,6 +19,7 @@ import FicheDatabase from './FicheDatabase/FicheDatabase';
 import Dashboard from './Dashboard/Dashboard';
 import Login from './Login/Login';
 import { useState } from 'react';
+import NewSignup from './NewSignup/NewSignup';
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false); //State to confirm if i'm authenticated or not
@@ -36,6 +37,7 @@ function App() {
         <Route path="bijoux" element={<Bijoux />} />
         <Route path="decoration" element={<Decoration />} />
         <Route path="livres" element={<Livres />} />
+        <Route path="newsignup" element={<NewSignup />} />
 
         {/* Pour accéder au DashBoard */}
         <Route path="login" element={<Login onLogin={() => setAuthenticated(true)} />} />  {/*When the user logs in: authenticated=True  */}
