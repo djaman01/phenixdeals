@@ -19,7 +19,9 @@ import FicheDatabase from './FicheDatabase/FicheDatabase';
 import Dashboard from './Dashboard/Dashboard';
 import Login from './Login/Login';
 import { useState } from 'react';
-import NewSignup from './NewSignup/NewSignup';
+import Register from './Register/Register';
+import NewLogin from './NewLogin/NewLogin';
+
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false); //State to confirm if i'm authenticated or not
@@ -37,10 +39,16 @@ function App() {
         <Route path="bijoux" element={<Bijoux />} />
         <Route path="decoration" element={<Decoration />} />
         <Route path="livres" element={<Livres />} />
-        <Route path="newsignup" element={<NewSignup />} />
+        <Route path="register" element={<Register />} />
+        <Route path="/newlogin" element={<NewLogin/>} />
+
+        <Route path="/dashboard" element={<Dashboard/>} />
+
+
+    
 
         {/* Pour accéder au DashBoard */}
-        <Route path="login" element={<Login onLogin={() => setAuthenticated(true)} />} />  {/*When the user logs in: authenticated=True  */}
+        <Route path="log" element={<Login onLogin={() => setAuthenticated(true)} />} />  {/*When the user logs in: authenticated=True  */}
         <Route
           path="dashboard"
           element={authenticated ? <Dashboard /> : <Navigate to="/login" />} //if authenticated=true=>Dashboard appear if false=>REDIRECT to login page
