@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function InputGoogle({value, onChange}) {
+export default function InputGoogle({value, onChange, placeholder}) {
 
   return (
     <div className='input-home'>
@@ -20,7 +20,7 @@ export default function InputGoogle({value, onChange}) {
 
           <div class="searchbar-center">
             <div class="searchbar-input-spacer"></div>
-            <input value={value} onChange={onChange} class="searchbar-input" title="Search" role="combobox" maxlength="2048" name="q" autocapitalize="off" autocomplete="off" placeholder="tableau, déco, bijou, livre" type="text" />
+            <input value={value} onChange={onChange} placeholder={placeholder} class="searchbar-input" title="Search" role="combobox" maxlength="2048" name="q" autocapitalize="off" autocomplete="off" type="text" />
           </div>
         </div>
       </div>

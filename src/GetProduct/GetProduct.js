@@ -10,6 +10,8 @@ import Aos from 'aos';
 import 'aos/dist/aos.css'
 
 import "./getProduct.css"
+import InputGoogle from '../PropsComponents/InputGoogle';
+
 
 
 
@@ -22,9 +24,9 @@ export default function GetProduct() {
   const [productObject, setProductObject] = useState([]); //State variable ou on va store tous les objets représentants les produits
   const [error, setError] = useState('');
 
-  const [productName, setProductName] = useState('');//State variable qui va store la value de l'input et qui doit changer en fonction de ce qu'on écrit
+  const [productType, setProductType] = useState('');//State variable qui va store la value de l'input et qui doit changer en fonction de ce qu'on écrit
 
-  const handleProductName = (e) => setProductName(e.target.value); //ca c'est l'event handler qui fait que la state productName a pour valeur la value de l'input
+  const handleProductType = (e) => setProductType(e.target.value); //ca c'est l'event handler qui fait que la state productName a pour valeur la value de l'input
 
 
   useEffect(() => {
@@ -42,8 +44,9 @@ export default function GetProduct() {
     fetchData();
   }, []);//fetch la data avec axios dès qu'on ouvre le browser, comme ça tous les produits apparaisse d'un coup
 
+  //C'est sur cette aray qu'on va map pour pouvoir y accéder par la search bar
   const filteredProducts = productObject.filter((item) =>
-    item.nom.toLowerCase().includes(productName.toLowerCase())
+    item.type.toLowerCase().includes(productType.toLowerCase())
   );
 
   useEffect(() => {
@@ -65,15 +68,16 @@ export default function GetProduct() {
 
         <h1>All Products</h1>
       </div>
-
+      
       <div>
-        <input value={productName} onChange={handleProductName} type="text" />
+        <InputGoogle value={productType} onChange={handleProductType} placeholder={"Quel Type de produit "} />
       </div>
+  
       <div className='all-card-products'>
         {error ? (<p>Error: {error}</p>) : (
 
           <div className="grid-all-products" data-aos='zoom-in'>
-
+{/* il faut uiliser filteredProducts.map car on va filtrer avec searchbar dans cette array d'objet  */}
             {filteredProducts.map((item) => (
 
               <Link onClick={scrollToTop} to={`/fichedatabase/${item._id}`}>

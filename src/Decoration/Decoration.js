@@ -10,6 +10,7 @@ import 'aos/dist/aos.css'
 
 import './decoration.css'
 import { Link } from 'react-router-dom';
+import InputGoogle from '../PropsComponents/InputGoogle';
 
 
 
@@ -48,6 +49,10 @@ export default function Decoration() {
     });
   })
 
+  const filteredProducts = productObject.filter(
+    (item) => item.nom.toLowerCase().includes(productName.toLowerCase())
+  );
+
   return (
     <>
 
@@ -57,13 +62,14 @@ export default function Decoration() {
       </div>
 
       <div>
-        <input value={productName} onChange={handleProductName} type="text" />
+        <InputGoogle value={productName} onChange={handleProductName} placeholder={"Quel Type d'objet déco"} />
       </div>
+
       <div className='all-card-products'>
         {error ? (<p>Error: {error}</p>) : (
 
           <div className="grid-decoration" data-aos='zoom-in'>
-            {productObject.map((item) => (
+            {filteredProducts.map((item) => (
 
               <Link to={`/fichedatabase/${item._id}`}>
                 <div className="item-decoration">

@@ -10,6 +10,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css'
 
 import { Link } from 'react-router-dom';
+import InputGoogle from '../PropsComponents/InputGoogle';
 
 
 export default function Livres() {
@@ -47,6 +48,10 @@ export default function Livres() {
     });
   })
 
+  const filteredProducts = productObject.filter(
+    (item) => item.nom.toLowerCase().includes(productName.toLowerCase())
+  );
+
   return (
     <>
       <Header />
@@ -55,15 +60,15 @@ export default function Livres() {
       </div>
 
       <div>
-        <input value={productName} onChange={handleProductName} type="text" />
+        <InputGoogle value={productName} onChange={handleProductName} placeholder={"Nom de l'auteur"} />
       </div>
 
       <div className='all-card-products'>
         {error ? (<p>Error: {error}</p>) : (
 
           <div className="grid-livres" data-aos='zoom-in'>
-            {productObject.map((item) => (
 
+            {filteredProducts.map((item) => (
 
               <Link to={`/fichedatabase/${item._id}`}>
                 <div className="item-livres">

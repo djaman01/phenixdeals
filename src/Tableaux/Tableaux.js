@@ -11,6 +11,7 @@ import 'aos/dist/aos.css'
 
 import './tableaux.css'
 import { Link } from 'react-router-dom';
+import InputGoogle from '../PropsComponents/InputGoogle';
 
 
 
@@ -49,10 +50,13 @@ export default function Tableaux() {
       offset: 100,
       duration: 1500,
       easing: 'ease-in-out',
-    
+
     });
   })
 
+  const filteredProducts = productObject.filter(
+    (item) => item.nom.toLowerCase().includes(productName.toLowerCase())
+  );
 
 
   return (
@@ -63,13 +67,14 @@ export default function Tableaux() {
       </div>
 
       <div>
-        <input value={productName} onChange={handleProductName} type="text" />
+        <InputGoogle value={productName} onChange={handleProductName} placeholder={"Nom de l'artiste"} />
       </div>
+
       <div className='all-card-products'>
         {error ? (<p>Error: {error}</p>) : (
 
           <div className="grid-tableaux" data-aos='zoom-in'>
-            {productObject.map((item) => (
+            {filteredProducts.map((item) => (
 
               <Link onClick={scrollToTop} to={`/fichedatabase/${item._id}`}>
 
