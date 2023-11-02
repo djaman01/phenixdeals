@@ -3,10 +3,12 @@
 import { useState } from 'react'
 import './newLogin.css'
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 export default function Register() {
+
+  const navigate = useNavigate(); //Function qui permet de mener vers un lien sous condition / Si condition vraie, navigate(/...)
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -22,6 +24,15 @@ export default function Register() {
     e.preventDefault()    
     axios.post('http://localhost:3005/login', { email, password })
       .then(res => {
+        if(res.data.Status === "Success") {
+          if(res.data.role === "admin") {
+            navigate('/dashboard')
+            
+          }
+          else {
+            navigate ('/')
+          }
+        }
         console.log(res.data);//When login is success
 
         // navigate('/login')

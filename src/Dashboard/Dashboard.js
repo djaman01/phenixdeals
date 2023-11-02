@@ -6,7 +6,7 @@ import { BiEditAlt } from "react-icons/bi";
 
 
 import './dashboard.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 export default function Dashboard() {
@@ -19,6 +19,25 @@ export default function Dashboard() {
 
   //Stores the value of the product name that the user is currently editing, to pdate the name
   const [editedProductName, setEditedProductName] = useState('');
+
+  const navigate = useNavigate()
+
+  //Protected Route: dans le back-end, on va mettre une middleware pour vérifier le token avant d'autoriser une réponse
+  
+  axios.defaults.withCredentials = true; //Pour activer le code qui store le token dans le cookie
+
+  useEffect(() => {
+    axios.get('http://localhost:3005/dashboard')
+      .then((res) => {
+        if(res.data === "Success") {
+          console.log("Login with middleware successful ")
+        }
+        else {
+          navigate('/')
+        }
+      })
+      .catch((err) => console.log(err) );
+  }, []); 
 
 
   //GET Request to fecth all products posted in the server
@@ -72,6 +91,11 @@ export default function Dashboard() {
       <Link to='/' className='home-link'>
         <h4 className='home-button'>Accueil</h4>
       </Link>
+
+      <Link to='/addProduct' className='home-link'>
+        <h4 className='home-button'>Add Product</h4>
+      </Link>
+
       <div>
         <h2>All Products Added in Database</h2>
         <table className='table-dashboard'>
