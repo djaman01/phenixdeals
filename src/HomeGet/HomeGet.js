@@ -69,7 +69,7 @@ export default function HomeGet() {
         </h1>
       </Link>
 
-      <InputGoogle value={productType} onChange={handleProductType} />
+      <InputGoogle value={productType} onChange={handleProductType} placeholder={"Quel Type de produit "}  />
 
       <div>
         {error ? (<p>Error: {error}</p>) : (
