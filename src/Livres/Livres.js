@@ -57,7 +57,8 @@ export default function Livres() {
       <div>
         <input value={productName} onChange={handleProductName} type="text" />
       </div>
-      <div>
+
+      <div className='all-card-products'>
         {error ? (<p>Error: {error}</p>) : (
 
           <div className="grid-livres" data-aos='zoom-in'>

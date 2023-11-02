@@ -59,7 +59,7 @@ export default function Decoration() {
       <div>
         <input value={productName} onChange={handleProductName} type="text" />
       </div>
-      <div>
+      <div className='all-card-products'>
         {error ? (<p>Error: {error}</p>) : (
 
           <div className="grid-decoration" data-aos='zoom-in'>

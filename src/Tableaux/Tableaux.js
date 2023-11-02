@@ -65,7 +65,7 @@ export default function Tableaux() {
       <div>
         <input value={productName} onChange={handleProductName} type="text" />
       </div>
-      <div>
+      <div className='all-card-products'>
         {error ? (<p>Error: {error}</p>) : (
 
           <div className="grid-tableaux" data-aos='zoom-in'>

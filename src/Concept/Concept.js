@@ -85,6 +85,7 @@ export default function Concept() {
         </div>
 
         <div className='card-media' data-aos="fade-down">
+          
           <h2 className='title-card-media'>Suivez-nous sur nos réseaux sociaux</h2>
           <p className='para-media'>Nous y sommes aussi très actifs !</p>
           <h4 className='abonne-contact'><u>N'hésitez pas à vous abonner à nos pages</u>:</h4>

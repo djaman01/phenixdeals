@@ -59,7 +59,8 @@ export default function Bijoux() {
       <div>
         <input value={productName} onChange={handleProductName} type="text" />
       </div>
-      <div>
+
+      <div className='all-card-products'>
         {error ? (<p>Error: {error}</p>) : (
 
           <div className="grid-bijoux" data-aos='zoom-in'>

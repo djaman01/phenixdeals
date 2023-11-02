@@ -69,7 +69,7 @@ export default function GetProduct() {
       <div>
         <input value={productName} onChange={handleProductName} type="text" />
       </div>
-      <div>
+      <div className='all-card-products'>
         {error ? (<p>Error: {error}</p>) : (
 
           <div className="grid-all-products" data-aos='zoom-in'>
