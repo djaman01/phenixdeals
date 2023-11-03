@@ -70,7 +70,7 @@ export default function GetProduct() {
       </div>
       
       <div>
-        <InputGoogle value={productType} onChange={handleProductType} placeholder={"Quel Type de produit "} />
+        <InputGoogle value={productType} onChange={handleProductType} placeholder={"Tableau, Déco, Bijou, Livre"} />
       </div>
   
       <div className='all-card-products'>

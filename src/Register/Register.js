@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './register.css'
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import LoginModel from '../PropsComponents/LoginModel';
+
 
 export default function Register() {
 
@@ -33,63 +35,7 @@ export default function Register() {
   return (
     <>
 
-      <h1>Register</h1>
-
-      <form className='new-login-form' onSubmit={handleSubmit} >
-
-        <div className='new-email'>
-          <label htmlFor="name">Name</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            className='new-log-input'
-            placeholder='Enter Name'
-            onChange={handleName}
-            required
-          />
-        </div>
-
-        <div className='new-email'>
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="text"
-            className='new-log-input'
-            placeholder='Enter Email'
-            onChange={handleEmail}
-            required
-          />
-        </div>
-
-
-        <div className='new-password'>
-          <label htmlFor="email">Password</label>
-          <input
-            id="password"
-            name="password"
-            type="text"
-            className='new-log-password'
-            placeholder='Enter Password'
-            onChange={handlePassword}
-            required
-          />
-        </div>
-
-        <div className='new-divlog-button'>
-          <button className='new-log-button' type='submit'> Register </button>
-
-          <h4>Already have an Account ?</h4>
-
-          {/* Va sur page pour login */}
-          <Link to='/newlogin'>
-            <button className='new-signup' type='submit'> Login </button>
-          </Link>
-        </div>
-
-      </form>
-
+      <LoginModel heading="Register" handleSubmit={handleSubmit} handleEmail={handleEmail} handlePassword={handlePassword} btn1="Register" account="You have an account?" btn2="Sign in" link="/newlogin" />
 
     </>
   )

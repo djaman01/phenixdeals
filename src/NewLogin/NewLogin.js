@@ -44,9 +44,8 @@ export default function Register() {
   return (
     <>
 
-    <LoginModel handleSubmit={handleSubmit} handleEmail={handleEmail} handlePassword={handlePassword} />
+    <LoginModel heading="Login" handleSubmit={handleSubmit} handleEmail={handleEmail} handlePassword={handlePassword} btn1="Submit" account="Don't have any account?" btn2="Register" link="/register"/>
 
-    
     </>
   )
 }
