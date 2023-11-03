@@ -17,7 +17,6 @@ import Decoration from './Decoration/Decoration';
 import Livres from './Livres/Livres';
 import FicheDatabase from './FicheDatabase/FicheDatabase';
 import Dashboard from './Dashboard/Dashboard';
-import Login from './Login/Login';
 import { useState } from 'react';
 import Register from './Register/Register';
 import NewLogin from './NewLogin/NewLogin';

@@ -32,7 +32,7 @@ export default function LoginModel({ heading, handleSubmit, handleEmail, handleP
           <input
             id="password"
             name="password"
-            type="text"
+            type="password"
             className='input-login'
             placeholder='Enter Password'
             onChange={handlePassword}

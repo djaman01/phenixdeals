@@ -59,12 +59,6 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="div-dropdown">
-          <Link to="/login" style={{ textDecoration: "none" }}>
-            <h4 className='vendre-btn'>Connexion</h4>
-          </Link>
-        </div>
-
       </div>
     </>
   )
