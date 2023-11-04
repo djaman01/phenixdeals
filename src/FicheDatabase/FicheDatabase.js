@@ -99,7 +99,7 @@ export default function FicheDatabase() {
                 {reserveClicked === true &&
 
                   <div className="whatsapp-div" >
-                    <p style={{textAlign: "center", paddingTop: "7px"}}> Envoyez-nous un message whatsapp avec la référence du produit :</p>
+                    <p style={{ paddingTop: "7px" }}> Envoyez-nous un message whatsapp avec la référence du produit :</p>
 
                     <a className="link-whatsapp" href="https://api.whatsapp.com/send?phone=212619635336&text=Bonjour%2C%0AJe%20suis%20int%C3%A9ress%C3%A9%20par%20un%20produit%20vu%20sur%20phenixdeals.com.%0ALa%20r%C3%A9f%C3%A9rence%20du%20produit%20est%3A%20" target="_blank">
                       <button className="whatsapp-button"> Whatsapp </button>
@@ -115,9 +115,9 @@ export default function FicheDatabase() {
         ) : null}
       </div>
 
-{/* Apparait when "autreProduits" state is true, quand on clique sur voir autres produits */}
+      {/* Apparait when "autreProduits" state is true, quand on clique sur voir autres produits */}
       <div className="autres-product" ref={refAutresPart}>
-        {(autresProduits === true && relatedProducts.length>1) ? (
+        {(autresProduits === true && relatedProducts.length > 1) ? (
           <div className="grid-all-products">
             {relatedProducts //state avec tous les produits ac même nom
               .filter((relatedProduct) => relatedProduct._id !== product._id)//Ne garde que les produits avec ._id différent du produit cliqué Puis .map sur eux pour les afficher
@@ -147,15 +147,12 @@ export default function FicheDatabase() {
               ))}
           </div>
         ) :
-        (
-          (autresProduits === true && relatedProducts.length==1) ? <div><h1>No other products of <span style={{color: "#0072B5"}}>{product.nom}</span></h1></div> : null
-        )
+          (
+            (autresProduits === true && relatedProducts.length == 1) ? <div className="no-other-products"><p>Pas d'autres produits de: <span style={{ color: "#0072B5" }}>{product.nom}</span></p></div> : null
+          )
 
-      }
+        }
       </div>
-
-
-
 
       <Footer />
     </>

@@ -106,19 +106,21 @@
 }
 
 .link-whatsapp {
-  margin-left: 250px;
+  margin-left: -20px;
 }
+
 
 
 /* Style Reserve part */
 
 .whatsapp-div {
-  border: 2ps solid grey;
   background-color: #EDF1FF;
   font-family: 'Roboto', sans-serif;
   font-size: 21px;
   font-weight: bold;
   height: 110px;
+  width: 640px;
+  text-align: center;
 }
 
 .whatsapp-button {
@@ -133,4 +135,17 @@
 
 .whatsapp-button:hover {
   background-color: #009B77; 
+}
+
+/* no other products style */
+
+.autres-product {
+  margin-bottom: 140px;
+}
+.no-other-products {
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  color: #DD4124;
 }
