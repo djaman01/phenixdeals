@@ -17,6 +17,7 @@ export default function Header() {
         </Link>
 
         <div className="navbar">
+          
           <Link to='/' className='home-link'>
             <h4 className='home-button'>Accueil</h4>
           </Link>
@@ -57,6 +58,7 @@ export default function Header() {
               <h4 className='vendre-btn'>Concept</h4>
             </Link>
           </div>
+          
         </div>
 
       </div>

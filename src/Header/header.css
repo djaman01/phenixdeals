@@ -3,9 +3,8 @@
   display: flex;
   background-color: white;
   height: 75px;
+ 
 }
-
-
 
 
 .logo {
@@ -63,7 +62,7 @@ box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
   align-items: center;
   width: 250px;
   justify-content: space-around;
-  margin-left: 190px;
+  margin-left: 245px;
   margin-top: 15px;
 }
 

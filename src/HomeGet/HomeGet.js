@@ -63,11 +63,10 @@ export default function HomeGet() {
   return (
     <div className='all-home-cards'>
 
-      <Link to="/register">
         <h1 className='home-title'>
           Les 20 Nouveaux produits
         </h1>
-      </Link>
+     
 
       <InputGoogle value={productType} onChange={handleProductType} placeholder={"Tableau, Déco, Bijou, Livre"}  />
 

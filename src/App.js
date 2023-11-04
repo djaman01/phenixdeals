@@ -46,12 +46,12 @@ function App() {
 
     
 
-        {/* Pour accéder au DashBoard */}
-        <Route path="log" element={<Login onLogin={() => setAuthenticated(true)} />} />  {/*When the user logs in: authenticated=True  */}
-        <Route
+        {/* Pour accéder au DashBoard avec conditions */}
+        {/* <Route path="log" element={<Login onLogin={() => setAuthenticated(true)} />} />  When the user logs in: authenticated=True  */}
+        {/* <Route
           path="dashboard"
           element={authenticated ? <Dashboard /> : <Navigate to="/login" />} //if authenticated=true=>Dashboard appear if false=>REDIRECT to login page
-        />
+        /> */}
 
         <Route path="fichedatabase/:productId" element={<FicheDatabase />} />
         <Route path="*" element={<NoPage />} />
