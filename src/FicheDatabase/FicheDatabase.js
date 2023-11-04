@@ -98,11 +98,11 @@ export default function FicheDatabase() {
               <div className="reserve-part" ref={refReservePart} > {/*ref={reservePartRef} associate the reservePartRef with this DOM element. */}
                 {reserveClicked === true &&
 
-                  <div className="whatsapp" >
-                    <h1> Envoyez-nous un message whatsapp avec la référence du produit</h1>
+                  <div className="whatsapp-div" >
+                    <p style={{textAlign: "center", paddingTop: "7px"}}> Envoyez-nous un message whatsapp avec la référence du produit :</p>
 
-                    <a href="https://api.whatsapp.com/send?phone=212619635336&text=Bonjour%2C%0AJe%20suis%20int%C3%A9ress%C3%A9%20par%20un%20produit%20vu%20sur%20phenixdeals.com.%0ALa%20r%C3%A9f%C3%A9rence%20du%20produit%20est%3A%20" target="_blank">
-                      <button> Whatsapp </button>
+                    <a className="link-whatsapp" href="https://api.whatsapp.com/send?phone=212619635336&text=Bonjour%2C%0AJe%20suis%20int%C3%A9ress%C3%A9%20par%20un%20produit%20vu%20sur%20phenixdeals.com.%0ALa%20r%C3%A9f%C3%A9rence%20du%20produit%20est%3A%20" target="_blank">
+                      <button className="whatsapp-button"> Whatsapp </button>
                     </a>
                   </div>
                 }

@@ -6,8 +6,8 @@
 }
 
 .div-image-fiche {
-  
-  width:500px;
+
+  width: 500px;
   height: 600px;
   margin-top: 20px;
   margin-bottom: 50px;
@@ -64,18 +64,8 @@
   justify-content: space-between;
 }
 
-.btn-autre-produit {
-
-  height: 40px;
-  background-color: #3d83df;
-  color: white;
-  font-weight: bold;
-  font-size: 17px;
-  border-radius: 5px;
-  border: none;
-  padding: 0 12px 0 12px;
-  cursor: pointer;
-
+.reserve-part {
+  margin-top: 80px;
 }
 
 .btn-réserver {
@@ -91,4 +81,18 @@
   cursor: pointer;
 
 }
+
+.btn-autre-produit {
+  height: 40px;
+  background-color: #3d83df;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+  border-radius: 5px;
+  border: none;
+  padding: 0 12px 0 12px;
+  cursor: pointer;
+
+}
+
 

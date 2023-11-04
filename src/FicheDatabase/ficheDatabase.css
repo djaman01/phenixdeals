@@ -74,4 +74,63 @@
   color: #0072B5;
   font-family: 'Heebo', sans-serif;
   margin-top: -10px;
+
+}
+
+.btn-autre-produit {
+
+  height: 40px;
+  background-color: #3d83df;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+  border-radius: 5px;
+  border: none;
+  padding: 0 12px 0 12px;
+  cursor: pointer;
+
+}
+
+.btn-réserver {
+  height: 40px;
+  width: 100px;
+  background-color: #009B77;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+  border-radius: 5px;
+  border: none;
+  padding: 0 12px 0 12px;
+  cursor: pointer;
+
+}
+
+.link-whatsapp {
+  margin-left: 250px;
+}
+
+
+/* Style Reserve part */
+
+.whatsapp-div {
+  border: 2ps solid grey;
+  background-color: #EDF1FF;
+  font-family: 'Roboto', sans-serif;
+  font-size: 21px;
+  font-weight: bold;
+  height: 110px;
+}
+
+.whatsapp-button {
+
+  background-color: #25d366;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.whatsapp-button:hover {
+  background-color: #009B77; 
 }
