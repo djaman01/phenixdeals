@@ -57,8 +57,9 @@ export default function Decoration() {
     <>
 
       <Header />
-      <div>
-        <h1>Tous nos objets de Décoration</h1>
+
+      <div className='deco-header'>
+        <h1>Tous les objets de Décoration</h1>
       </div>
 
       <div>

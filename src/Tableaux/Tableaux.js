@@ -62,7 +62,7 @@ export default function Tableaux() {
   return (
     <>
       <Header />
-      <div>
+      <div className='tableau-header'>
         <h1>Tous les Tableaux</h1>
       </div>
 

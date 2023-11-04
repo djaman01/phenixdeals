@@ -75,3 +75,10 @@
 .tableaux-cards-link {
   text-decoration: none;
 }
+
+.tableau-header {
+  background-color: #E0B589;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}

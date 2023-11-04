@@ -57,7 +57,7 @@ export default function Bijoux() {
     <>
 
       <Header />
-      <div>
+      <div className='bijoux-card-header'>
         <h1>Tous les Bijoux</h1>
       </div>
 

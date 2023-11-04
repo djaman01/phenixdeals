@@ -55,7 +55,7 @@ export default function Livres() {
   return (
     <>
       <Header />
-      <div>
+      <div className='livre-card-header'>
         <h1>Tous les Livres</h1>
       </div>
 

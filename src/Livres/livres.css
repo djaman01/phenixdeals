@@ -77,3 +77,10 @@
 .livres-card-link {
   text-decoration: none;
 }
+
+.livre-card-header {
+  background-color: #E0B589;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}

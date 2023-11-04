@@ -64,11 +64,11 @@ export default function GetProduct() {
     <>
 
       <Header />
-      <div>
 
-        <h1>All Products</h1>
+      <div className='all-products-header'>
+        <h1>Tous les produits</h1>
       </div>
-      
+
       <div>
         <InputGoogle value={productType} onChange={handleProductType} placeholder={"Tableau, Déco, Bijou, Livre"} />
       </div>
