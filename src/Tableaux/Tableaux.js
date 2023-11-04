@@ -76,7 +76,7 @@ export default function Tableaux() {
           <div className="grid-tableaux" data-aos='zoom-in'>
             {filteredProducts.map((item) => (
 
-              <Link onClick={scrollToTop} to={`/fichedatabase/${item._id}`}>
+              <Link className= "tableaux-cards-link" onClick={scrollToTop} to={`/fichedatabase/${item._id}`}>
 
                 <div className="item-tableaux">
 

@@ -71,7 +71,8 @@ export default function Decoration() {
           <div className="grid-decoration" data-aos='zoom-in'>
             {filteredProducts.map((item) => (
 
-              <Link to={`/fichedatabase/${item._id}`}>
+              <Link className='deco-card-link' to={`/fichedatabase/${item._id}`}>
+
                 <div className="item-decoration">
 
                   <div className="div-thumbnail-decoration">

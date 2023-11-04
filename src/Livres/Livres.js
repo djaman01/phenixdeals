@@ -70,7 +70,8 @@ export default function Livres() {
 
             {filteredProducts.map((item) => (
 
-              <Link to={`/fichedatabase/${item._id}`}>
+              <Link className="livres-card-link" to={`/fichedatabase/${item._id}`}>
+
                 <div className="item-livres">
 
                   <div className="div-thumbnail-livres">

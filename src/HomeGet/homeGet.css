@@ -32,8 +32,12 @@
   gap: 50px 50px;
   justify-content: center;
   margin-top: 90px;
+  
 }
 
+.home-cards-link {
+  text-decoration: none;
+}
 /* input style */
 
 .searchbar {

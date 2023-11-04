@@ -73,3 +73,7 @@
   font-family: 'Heebo', sans-serif;
   margin-top: -10px;
 }
+
+.bijou-card-link {
+  text-decoration: none;
+}

@@ -80,7 +80,7 @@ export default function GetProduct() {
 {/* il faut uiliser filteredProducts.map car on va filtrer avec searchbar dans cette array d'objet  */}
             {filteredProducts.map((item) => (
 
-              <Link onClick={scrollToTop} to={`/fichedatabase/${item._id}`}>
+              <Link className="allproducts-div-link"onClick={scrollToTop} to={`/fichedatabase/${item._id}`}>
 
                 <div className="item-all-products">
 

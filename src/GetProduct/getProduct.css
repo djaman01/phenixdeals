@@ -75,3 +75,7 @@
   font-family: 'Heebo', sans-serif;
   margin-top: -10px;
 }
+
+.allproducts-div-link {
+  text-decoration: none;
+}

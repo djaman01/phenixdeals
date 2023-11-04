@@ -77,7 +77,7 @@ export default function HomeGet() {
 
             {filteredProducts.map((item) => (
 
-              <Link onClick={scrollToTop} to={`/fichedatabase/${item._id}`}>
+              <Link className= "home-cards-link" onClick={scrollToTop} to={`/fichedatabase/${item._id}`}>
 
                 <div className="item-all-products">
 
