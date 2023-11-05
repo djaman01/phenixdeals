@@ -11,6 +11,7 @@ import 'aos/dist/aos.css'
 
 import './homeGet.css'
 import InputGoogle from '../PropsComponents/InputGoogle';
+import MapCardModel from '../PropsComponents/MapCardModel';
 
 
 
@@ -71,46 +72,7 @@ export default function HomeGet() {
       <InputGoogle value={productType} onChange={handleProductType} placeholder={"Tableau, Déco, Bijou, Livre"}  />
 
       <div>
-        {error ? (<p>Error: {error}</p>) : (
-
-          <div className="grid-all-products" data-aos='zoom-in'>
-
-            {filteredProducts.map((item) => (
-
-              <Link className= "home-cards-link" onClick={scrollToTop} to={`/fichedatabase/${item._id}`}>
-
-                <div className="item-all-products">
-
-                  <div className="div-thumbnail-allproducts">
-                    <img
-                      className='thumbnail-products'
-                      src={`http://localhost:3005/${item.imageUrl}`}//On store le path de l'image dans la database,, donc c'est ce qu'il faut chercher
-                      alt={item.nom}
-                    />
-                  </div>
-
-
-                  <div className="text-all-products">
-
-                    <h3 className='all-products-type'>{item.type}</h3>
-
-                    <div className='nom-dimensions'>
-                      <h4 style={{ fontSize: "15px" }}>{item.nom}/</h4>
-                      <h4 style={{ fontSize: "15px" }}>{item.dimensions}</h4>
-                    </div>
-                    <h4 className='all-products-matiere' style={{ fontSize: "15px" }}>{item.matiere}</h4>
-
-                    <h4 className='all-products-price'>{item.prix}</h4>
-
-                  </div>
-
-                </div>
-              </Link>
-
-            ))}
-
-          </div>
-        )}
+        <MapCardModel error={error} filteredProducts={filteredProducts} />
       </div>
 
     </div>

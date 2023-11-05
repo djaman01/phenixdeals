@@ -10,6 +10,8 @@ import 'aos/dist/aos.css'
 import './bijoux.css'
 import { Link } from 'react-router-dom';
 import InputGoogle from '../PropsComponents/InputGoogle';
+import MapCardModel from '../PropsComponents/MapCardModel';
+
 
 
 export default function Bijoux() {
@@ -65,47 +67,8 @@ export default function Bijoux() {
         <InputGoogle value={productName} onChange={handleProductName} placeholder={"Quel Type de bijou"} />
       </div>
 
-      <div className='all-card-products'>
-        {error ? (<p>Error: {error}</p>) : (
-
-          <div className="grid-bijoux" data-aos='zoom-in'>
-            {filteredProducts.map((item) => (
-
-
-              <Link className='bijou-card-link' to={`/fichedatabase/${item._id}`}>
-
-                <div className="item-bijoux">
-
-                  <div className="div-thumbnail-bijoux">
-                    <img
-                      className='thumbnail-bijoux'
-                      src={`http://localhost:3005/${item.imageUrl}`}//On store le path de l'image dans la database,, donc c'est ce qu'il faut chercher
-                      alt={item.nom}
-                    />
-                  </div>
-
-
-                  <div className="text-bijoux">
-
-                    <h3 className='bijoux-type'>{item.type}</h3>
-
-                    <div className='bijoux-nom-dimensions'>
-                      <h4 style={{ fontSize: "15px" }}>{item.nom}/</h4>
-                      <h4 style={{ fontSize: "15px" }}>{item.dimensions}</h4>
-                    </div>
-                    <h4 className='bijoux-matiere' style={{ fontSize: "15px" }}>{item.matiere}</h4>
-
-                    <h4 className='bijoux-price'>{item.prix}</h4>
-
-                  </div>
-
-                </div>
-              </Link>
-
-            ))}
-
-          </div>
-        )}
+      <div>
+        <MapCardModel error={error} filteredProducts={filteredProducts} />
       </div>
 
       <Footer />

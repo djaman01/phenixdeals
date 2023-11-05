@@ -11,6 +11,8 @@ import 'aos/dist/aos.css'
 import './decoration.css'
 import { Link } from 'react-router-dom';
 import InputGoogle from '../PropsComponents/InputGoogle';
+import MapCardModel from '../PropsComponents/MapCardModel';
+
 
 
 
@@ -66,47 +68,11 @@ export default function Decoration() {
         <InputGoogle value={productName} onChange={handleProductName} placeholder={"Quel Type d'objet déco"} />
       </div>
 
-      <div className='all-card-products'>
-        {error ? (<p>Error: {error}</p>) : (
+      
+      <div>
+        <MapCardModel error={error} filteredProducts={filteredProducts} />
+      </div>
 
-          <div className="grid-decoration" data-aos='zoom-in'>
-            {filteredProducts.map((item) => (
-
-              <Link className='deco-card-link' to={`/fichedatabase/${item._id}`}>
-
-                <div className="item-decoration">
-
-                  <div className="div-thumbnail-decoration">
-                    <img
-                      className='thumbnail-decoration'
-                      src={`http://localhost:3005/${item.imageUrl}`}//On store le path de l'image dans la database,, donc c'est ce qu'il faut chercher
-                      alt={item.nom}
-                    />
-                  </div>
-
-
-                  <div className="text-decoration">
-
-                    <h3 className='decoration-type'>{item.type}</h3>
-
-                    <div className='decoration-nom-dimensions'>
-                      <h4 style={{ fontSize: "15px" }}>{item.nom}/</h4>
-                      <h4 style={{ fontSize: "15px" }}>{item.dimensions}</h4>
-                    </div>
-                    <h4 className='decoration-matiere' style={{ fontSize: "15px" }}>{item.matiere}</h4>
-
-                    <h4 className='decoration-price'>{item.prix}</h4>
-
-                  </div>
-
-                </div>
-              </Link>
-
-            ))}
-
-          </div>
-        )}
-      </div >
       <Footer />
 
 
