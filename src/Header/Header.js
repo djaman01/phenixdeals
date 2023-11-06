@@ -2,10 +2,18 @@ import './header.css'
 import Filter from '../Filter/Filter.js'
 import { Link } from 'react-router-dom'
 import Login from '../Login/Login'
-
+import { useState } from 'react'
 
 
 export default function Header() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+
   return (
     <>
 
@@ -17,7 +25,7 @@ export default function Header() {
         </Link>
 
         <div className="navbar">
-          
+
           <Link to='/' className='home-link'>
             <h4 className='home-button'>Accueil</h4>
           </Link>
@@ -58,7 +66,13 @@ export default function Header() {
               <h4 className='vendre-btn'>Concept</h4>
             </Link>
           </div>
-          
+
+        </div>
+{/* Si isOpen est true, ça ajoute une nouvelle classe "open" en + de la classname "hamburger-menu"; sinon ça n'ajoute rien */}
+        <div className={`hamburger-menu ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
         </div>
 
       </div>

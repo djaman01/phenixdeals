@@ -1,9 +1,8 @@
-
 .header {
   display: flex;
   background-color: white;
   height: 75px;
- 
+
 }
 
 
@@ -12,13 +11,15 @@
   margin-left: 150px;
 }
 
-.home-button, .page-selection, .vendre-btn{
+.home-button,
+.page-selection,
+.vendre-btn {
   color: #939597;
   text-decoration: none;
   cursor: pointer;
   font-family: 'Martian Mono', monospace;
   font-size: 20px;
-  
+
 
 }
 
@@ -49,8 +50,8 @@
 
 
 .div-dropdown:hover .dropdown {
-display: block;
-box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
+  display: block;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
 }
 
 .dropdown:hover {
@@ -70,10 +71,49 @@ box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
   text-decoration: none;
 }
 
-.home-button:hover, .contact-btn:hover, .vendre-btn:hover {
-  color:  #00A170;
+.home-button:hover,
+.contact-btn:hover,
+.vendre-btn:hover {
+  color: #00A170;
 }
 
 .drop-btn:hover {
   text-decoration: underline;
+}
+
+@media (max-width:1020px) {
+
+  .navbar {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.3s;
+    justify-content: center;
+    margin-left: 200px;
+  
+  }
+
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.4s;
+  }
+
+  .open .bar:nth-child(1) {
+    transform: rotate(-50deg) translate(-7px, 6px);
+  }
+
+  .open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
 }
