@@ -61,14 +61,14 @@ export default function Concept() {
           <div  className="content-vente">
             <p  className="heading-vente"> Vendez sur notre site !</p>
 
-            <p  className="para-vente" style={{ marginTop: "-40px", textDecoration: "underline" }}> 2 choix s'offre à vous:</p>
+            <p  className="para-vente"> 2 choix s'offre à vous:</p>
 
-            <p style={{ marginTop: "-25px" }}>
+            <p className='text1-vente'>
               <b>1-</b> Postez vos bien sur le site <b>sans frais</b>: <br />
               <u>Une fois vendu</u>, nous prenons <b>15%</b> de commission sur le prix de vente
             </p>
 
-            <p style={{ marginTop: "-25px", marginBottom: "2px"}}>
+            <p className='text2-vente'>
               <b>2-</b> Payez <b>7% du prix de vente</b> <u>avant de poster</u> votre produit: <br />
               Dans ce cas, nous mettrons vos informations sur le produit (numéro, nom..etc) et vous serez en contact direct avec l'acheteur
             </p>
@@ -89,9 +89,9 @@ export default function Concept() {
           <h2 className='title-card-media'>Suivez-nous sur nos réseaux sociaux</h2>
           <p className='para-media'>Nous y sommes aussi très actifs !</p>
           <h4 className='abonne-contact'><u>N'hésitez pas à vous abonner à nos pages</u>:</h4>
-          <div className='btn-social-concept' style={{marginLeft:"80px"}}>
+          <div className='btn-social-concept'>
             <span ><SocialIcon url="https://www.instagram.com/phenixdeals/" target="_blank" />  </span>
-            <span style={{ marginLeft: 20 }}><SocialIcon url="https://web.facebook.com/profile.php?id=100090243464213" target="_blank" />  </span>
+            <span className='facebook-card-btn'><SocialIcon url="https://web.facebook.com/profile.php?id=100090243464213" target="_blank" />  </span>
           </div>
         </div>
 

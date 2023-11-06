@@ -164,6 +164,21 @@
   line-height: 1.5;
 }
 
+.para-vente {
+  margin-top: -40px;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.text1-vente {
+  margin-top: -25px;
+}
+
+.text2-vente {
+  margin-top: -25px;
+  margin-bottom: 2px ;
+}
+
 .btn-vente {
   height: 45px;
   font-size: 18px;
@@ -244,4 +259,12 @@
 .abonne-contact {
   margin-bottom: 70px;
   margin-top: 95px;
+}
+
+.btn-social-concept {
+  margin-left: 80px;
+}
+
+.facebook-card-btn {
+  margin-left: 20px;
 }
