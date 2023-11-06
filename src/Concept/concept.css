@@ -3,7 +3,7 @@
   margin-bottom: 50px;
   font-size: 19px;
   margin-top: -20px;
-  
+
 }
 
 
@@ -97,7 +97,6 @@
 }
 
 .card-activité:hover {
-  transition: all 0.5s ease-out;
   color: #ffffff;
 }
 
@@ -176,7 +175,7 @@
 
 .text2-vente {
   margin-top: -25px;
-  margin-bottom: 2px ;
+  margin-bottom: 2px;
 }
 
 .btn-vente {
@@ -267,4 +266,64 @@
 
 .facebook-card-btn {
   margin-left: 20px;
+}
+
+/* Style pour Responsive */
+
+/* De 0 à 1450px max = Inférieur ou = à 1450px */
+@media (max-width:1450px) {
+  .all-concept {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-activité,
+  .card-vente {
+    text-align: center;
+  }
+
+  /* Pour la couleur qui grandit quand on hover */
+  .card-activité:hover:before {
+    transform: scale(40);
+  }
+
+  .heading-vente,
+  .para-vente {
+    text-align: center;
+    width: 100%;
+  }
+
+  .card-activité {
+    width: 500px;
+  }
+
+  .card-vente {
+
+    margin-top: -50px;
+    width: 480px;
+  }
+
+  .link-btn-vente {
+    margin: 0 auto;
+  }
+
+  .title-card-media,
+  .para-media,
+  .abonne-contact {
+    margin-right: 25px;
+  }
+
+  .card-media {
+    margin-top: -50px;
+    margin-right: 100px;
+    width: 520px;
+    text-align: center;
+  }
+
+  .btn-social-concept {
+    margin-right: 95px;
+  }
+
+
 }

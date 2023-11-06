@@ -73,7 +73,7 @@ export default function Concept() {
               Dans ce cas, nous mettrons vos informations sur le produit (numéro, nom..etc) et vous serez en contact direct avec l'acheteur
             </p>
 
-            <Link to="/contact" onClick={scrollToTop}>
+            <Link to="/contact" onClick={scrollToTop} className='link-btn-vente'>
               <button  className="btn-vente">Contactez-nous</button>
             </Link>
           </div>
