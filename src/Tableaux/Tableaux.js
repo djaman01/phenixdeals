@@ -61,19 +61,17 @@ export default function Tableaux() {
   return (
     <>
       <Header />
-      <div className='tableau-header'>
-        <h1>Tous les Tableaux</h1>
-      </div>
 
       <div>
-        <InputGoogle value={productName} onChange={handleProductName} placeholder={"Nom de l'artiste"} />
+        <MapCardModel
+          title=" Tous les Tableaux"
+          value={productName}
+          onChange={handleProductName}
+          placeholder={"Nom de l'artiste"}
+          error={error}
+          filteredProducts={filteredProducts} />
       </div>
-
-     
-      <div>
-        <MapCardModel error={error} filteredProducts={filteredProducts} />
-      </div>
-
+      
       <Footer />
     </>
   )

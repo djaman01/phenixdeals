@@ -68,16 +68,14 @@ export default function GetProduct() {
 
       <Header />
 
-      <div className='all-products-header'>
-        <h1>Tous les produits</h1>
-      </div>
-
       <div>
-        <InputGoogle value={productType} onChange={handleProductType} placeholder={"Tableau, Déco, Bijou, Livre"} />
-      </div>
-
-      <div>
-        <MapCardModel error={error} filteredProducts={filteredProducts} />
+        <MapCardModel
+          title=" Tous les Produits "
+          value={productType}
+          onChange={handleProductType}
+          placeholder={"Tableau, Déco, Bijou, Livre"}
+          error={error}
+          filteredProducts={filteredProducts} />
       </div>
 
       <Footer />

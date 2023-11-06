@@ -60,19 +60,17 @@ export default function Decoration() {
 
       <Header />
 
-      <div className='deco-header'>
-        <h1>Tous les objets de Décoration</h1>
-      </div>
 
       <div>
-        <InputGoogle value={productName} onChange={handleProductName} placeholder={"Quel Type d'objet déco"} />
+        <MapCardModel
+          title= "Tous les objets de Décoration"
+          value={productName}
+          onChange={handleProductName}
+          placeholder={"Type d'objet déco"}
+          error={error}
+          filteredProducts={filteredProducts} />
       </div>
-
       
-      <div>
-        <MapCardModel error={error} filteredProducts={filteredProducts} />
-      </div>
-
       <Footer />
 
 

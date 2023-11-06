@@ -64,15 +64,14 @@ export default function HomeGet() {
   return (
     <div className='all-home-cards'>
 
-        <h1 className='home-title'>
-          Les 20 Nouveaux produits
-        </h1>
-     
-
-      <InputGoogle value={productType} onChange={handleProductType} placeholder={"Tableau, Déco, Bijou, Livre"}  />
-
       <div>
-        <MapCardModel error={error} filteredProducts={filteredProducts} />
+        <MapCardModel
+          title=" Les 20 Nouveaux produits"
+          value={productType}
+          onChange={handleProductType}
+          placeholder={"Tableau, Déco, Bijou, Livre"}
+          error={error}
+          filteredProducts={filteredProducts} />
       </div>
 
     </div>

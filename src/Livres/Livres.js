@@ -45,7 +45,7 @@ export default function Livres() {
       offset: 100,
       duration: 1500,
       easing: 'ease-in-out',
-    
+
     });
   })
 
@@ -56,16 +56,15 @@ export default function Livres() {
   return (
     <>
       <Header />
-      <div className='livre-card-header'>
-        <h1>Tous les Livres</h1>
-      </div>
 
       <div>
-        <InputGoogle value={productName} onChange={handleProductName} placeholder={"Nom de l'auteur"} />
-      </div>
-
-      <div>
-        <MapCardModel error={error} filteredProducts={filteredProducts} />
+        <MapCardModel
+          title="Tous les Livres"
+          value={productName}
+          onChange={handleProductName}
+          placeholder={"Nom de l'auteur"}
+          error={error}
+          filteredProducts={filteredProducts} />
       </div>
 
       <Footer />

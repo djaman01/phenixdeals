@@ -59,18 +59,18 @@ export default function Bijoux() {
     <>
 
       <Header />
-      <div className='bijoux-card-header'>
-        <h1>Tous les Bijoux</h1>
-      </div>
+
 
       <div>
-        <InputGoogle value={productName} onChange={handleProductName} placeholder={"Quel Type de bijou"} />
+        <MapCardModel
+          title="Tous les Bijoux"
+          value={productName}
+          onChange={handleProductName}
+          placeholder={" Type de Bijou"}
+          error={error}
+          filteredProducts={filteredProducts} />
       </div>
-
-      <div>
-        <MapCardModel error={error} filteredProducts={filteredProducts} />
-      </div>
-
+      
       <Footer />
     </>
   )
