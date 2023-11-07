@@ -18,7 +18,7 @@ export default function Header() {
     <>
 {/* On rajoute la class "open" à "header" si on clique sur le menu hamburger; sinon on rajoute rien */}
       <div className={`header ${isOpen ? 'open' : ''}`}>
-        <Link to='/addProduct'>
+        <Link to='/'>
           <div className="logo-header">
             <img className="logo" src="../logo-bon.jpg" alt="logo-phenix" />
           </div>
