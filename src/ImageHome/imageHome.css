@@ -17,6 +17,7 @@
 @media(max-width: 1150px) {
 
   .image-home {
+    width: 1000px;
     object-fit: contain;
    
   }
