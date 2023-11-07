@@ -16,8 +16,8 @@ export default function Header() {
 
   return (
     <>
-
-      <div className="header">
+{/* On rajoute la class "open" à "header" si on clique sur le menu hamburger; sinon on rajoute rien */}
+      <div className={`header ${isOpen ? 'open' : ''}`}>
         <Link to='/addProduct'>
           <div className="logo-header">
             <img className="logo" src="../logo-bon.jpg" alt="logo-phenix" />
@@ -67,13 +67,18 @@ export default function Header() {
             </Link>
           </div>
 
+          
+
         </div>
-{/* Si isOpen est true, ça ajoute une nouvelle classe "open" en + de la classname "hamburger-menu"; sinon ça n'ajoute rien */}
+
+        {/* Si isOpen est true, ça ajoute une nouvelle classe "open" en + de la classname "hamburger-menu"; sinon ça n'ajoute rien */}
         <div className={`hamburger-menu ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
-        </div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </div>
+
+
 
       </div>
     </>

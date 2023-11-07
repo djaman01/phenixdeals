@@ -90,11 +90,14 @@
   .hamburger-menu {
     display: flex;
     flex-direction: column;
+    margin-left: 435px;
+    margin-top: 45px;
     cursor: pointer;
     transition: 0.3s;
-    justify-content: center;
-    margin-left: 200px;
-  
+    position: fixed;
+    z-index: 1;
+    top: 0;
+
   }
 
   .bar {
@@ -116,4 +119,64 @@
   .open .bar:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
   }
+
+  /*pour faire apparaitre le header en column sur toute la page */
+  /* .header.open = element ayant les 2 class  */
+  .header.open {
+    display: flex;
+    flex-direction: column;
+    /* fixed = will not move when the page is scrolled */
+    position: fixed;
+    /* top: 0 = collé au bord haut du browser */
+    top: 0;
+    /* positionned at the extrem left (pas obligé) */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    /* 1: Pour que le header soit au dessus de tous les élements de la page et qu'on ne voit que lui */
+    z-index: 1;
+  }
+
+  /* pour atteindre les élements dans le div clasName="navbar" à l'intérieur du header quand il a la class open active */
+  .header.open .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .header.open .logo-header {
+    display: flex;
+    margin: 0 251px;
+    margin-top: 50px;
+  }
+
+  .header.open .hamburger-menu {
+    margin-top: 160px;
+    margin-left: 440px;
+  }
+
+  .header.open .navbar {
+    margin: 80px -17px;
+  }
+
+  .header.open .div-dropdown {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .header.open .div-dropdown:hover .dropdown {
+    display: block;
+    box-shadow: none;
+    position: absolute;
+    left: 100px;
+    top: 13px;
+  }
+
+
+  .header.open .navbar a {
+    text-align: center;
+  }
+
 }
