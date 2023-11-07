@@ -153,7 +153,7 @@ export default function AddProduct() {
         </form>
 
         <div className='image-uploaded'>
-          {/* imageUrl est le file, donc on utilise cette méthode pour en sortir le path */}
+          {/* imageUrl est le file, donc on utilise URL.createObjectUrl() méthod, pour en sortir le path=l'url */}
           <img
             className='thumbnail-products'
             src={imageUrl && URL.createObjectURL(imageUrl)}
