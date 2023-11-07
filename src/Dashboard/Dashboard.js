@@ -17,27 +17,27 @@ export default function Dashboard() {
   //Store id object beeing edited and used to show un input + save button when editting
   const [editingProductId, setEditingProductId] = useState(null);
 
-  //Stores the value of the product name that the user is currently editing, to pdate the name
-  const [editedProductName, setEditedProductName] = useState('');
+  //Stores the value of the product name that the user is currently editing, to update the name
+  const [editedProductPrice, setEditedProductPrice] = useState('');
 
   const navigate = useNavigate()
 
   //Protected Route: dans le back-end, on va mettre une middleware pour vérifier le token avant d'autoriser une réponse
-  
+
   axios.defaults.withCredentials = true; //Pour activer le code qui store le token dans le cookie
 
   useEffect(() => {
     axios.get('http://localhost:3005/dashboard')
       .then((res) => {
-        if(res.data === "Success") {
+        if (res.data === "Success") {
           console.log("Login with middleware successful ")
         }
         else {
           navigate('/')
         }
       })
-      .catch((err) => console.log(err) );
-  }, []); 
+      .catch((err) => console.log(err));
+  }, []);
 
 
   //GET Request to fecth all products posted in the server
@@ -56,7 +56,7 @@ export default function Dashboard() {
   const handleUpdateProduct = (productId) => { //parameter to catch the endpoint of url
 
     const updatedProductData = { //Giving "nom" property a state as value, so that it can be changed};
-      prix: editedProductName
+      prix: editedProductPrice
     }
     // Finds the product by its _id + Update it with updateProductData 
     axios.put(`http://localhost:3005/products/${productId}`, updatedProductData)
@@ -112,7 +112,7 @@ export default function Dashboard() {
             </tr>
           </thead>
           <tbody>
-            {products.map((product) => (
+            {products.map((product) => (//On map sur tous les objets de la database
               <tr key={product._id}>
                 <td className='data-dashboard'>
                   <img
@@ -125,18 +125,28 @@ export default function Dashboard() {
                 <td className='data-dashboard'>{product.nom}</td>
                 <td className='data-dashboard'>{product.dimensions}</td>
                 <td className='data-dashboard'>{product.matiere}</td>
-                <td className='data-dashboard'>{product.prix}</td>
+
+                <td className='data-dashboard'>
+                  {editingProductId === product._id ? (
+                    <div>
+                    <input
+                      className='input-edit-dash'
+                      type="text"
+                      value={editedProductPrice} //nouveau nom produit
+                      placeholder='New price'
+                      onChange={(e) => setEditedProductPrice(e.target.value)}
+                    />
+                    </div>
+                  )
+                  : 
+                  product.prix
+                  }
+                  </td>
                 <td className='data-dashboard'>{product.code}</td>
 
                 <td className='data-dashboard'>
-                  {editingProductId === product._id ? ( //Si clique stylo => donne value= product._id à state et fait apparaitre:
+                  {editingProductId === product._id ? ( //Si clique stylo => donne value= product._id à state editProductId et fait apparaitre:
                     <div>
-                      <input
-                        className='input-edit-dash'
-                        type="text"
-                        value={editedProductName} //nouveau nom produit
-                        onChange={(e) => setEditedProductName(e.target.value)}
-                      />
                       <button className='btn-dashboard' onClick={() => handleUpdateProduct(product._id)}>Update</button>
                       <button className='btn-dashboard' onClick={handleCancelProduct}>Cancel</button>
                     </div>
@@ -147,7 +157,7 @@ export default function Dashboard() {
                           className='icon-dashboard'
                           onClick={() => {
                             setEditingProductId(product._id);
-                            setEditedProductName(product.prix);
+                            setEditedProductPrice(product.prix);
                           }}
                         />
                         <BsTrash
