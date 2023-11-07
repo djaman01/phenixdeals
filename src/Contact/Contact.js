@@ -145,22 +145,8 @@ export default function Contact() {
                   name="Aide"
                   id="aide"
                   cols="60"
-                  rows="10"
+                  rows="15"
                   placeholder="Ecrivez votre texte ici"> </textarea>
-              </div>
-
-              <div className='all-news-btn'>
-
-                <h3 style={{ textDecoration: "underline", marginBottom: "" }}>Voulez-vous recevoir nos nouveautés par mail ?</h3>
-
-                <div className="news-btn">
-                  <label htmlFor="oui" style={{ display: "inline-block", fontSize: "20px" }}> Oui </label>
-                  <input type="radio" name="check" id="oui" style={{ marginRight: "50px" }} required />
-
-                  <label htmlFor="non" style={{ display: "inline-block", fontSize: "20px"  }}> Non </label>
-                  <input type="radio" name="check" id="non" required />
-                </div>
-                
               </div>
 
             </div>

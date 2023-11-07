@@ -13,3 +13,12 @@
 .navbar {
   width: 500px;
 }
+
+@media(max-width: 1150px) {
+
+  .image-home {
+    object-fit: contain;
+   
+  }
+  
+}
