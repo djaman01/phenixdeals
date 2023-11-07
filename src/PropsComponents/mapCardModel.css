@@ -242,3 +242,13 @@
   text-align: center;
   padding: 15px;
 }
+
+@media(max-width: 1150px) {
+  .grid-all-products {
+    display: grid;
+    grid-template-columns: 250px 250px;
+    gap: 50px 50px;
+    justify-content: center;
+    margin-top: 90px;
+  }
+}
