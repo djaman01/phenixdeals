@@ -26,28 +26,28 @@ export default function AddProduct() {
   //To submit all form data to the server with .post
   const handleSubmit = async (e) => {
 
-    if(imageUrl && nom && type &&dimensions&&matiere&&prix&&code) {
-    const formData = new FormData();
-    formData.append('file', imageUrl);
-    formData.append('nom', nom);
-    formData.append('type', type);
-    formData.append('dimensions', dimensions);
-    formData.append('matiere', matiere);
-    formData.append('prix', prix);
-    formData.append('code', code);
+    if (imageUrl && nom && type && dimensions && matiere && prix && code) {
+      const formData = new FormData();
+      formData.append('file', imageUrl);
+      formData.append('nom', nom);
+      formData.append('type', type);
+      formData.append('dimensions', dimensions);
+      formData.append('matiere', matiere);
+      formData.append('prix', prix);
+      formData.append('code', code);
 
-    try {
-      const response = await axios.post('http://localhost:3005/upload', formData);
+      try {
+        const response = await axios.post('http://localhost:3005/upload', formData);
 
-    } catch (error) {
-      console.error('Error uploading file:', error);
+      } catch (error) {
+        console.error('Error uploading file:', error);
+      }
+    }
+    else {
+      e.preventDefault();
+      alert('Add all products before Submit');
     }
   }
-  else {
-    e.preventDefault();
-    alert('Add all products before Submit');
-}
-}
 
 
 
@@ -67,7 +67,7 @@ export default function AddProduct() {
           <div>
             <div className='div-add-product'>
               <input
-              required
+                required
                 className="input-product"
                 placeholder="Type produit"
                 type="text"
@@ -76,7 +76,7 @@ export default function AddProduct() {
                 onChange={(e) => setType(e.target.value)} />
             </div>
 
-           
+
             <div className='div-add-product'>
               <input
                 className="input-product"
@@ -99,7 +99,7 @@ export default function AddProduct() {
               />
             </div>
 
-    
+
             <div className='div-add-product'>
               <input
                 className="input-product"
@@ -152,7 +152,17 @@ export default function AddProduct() {
 
         </form>
 
+        <div className='image-uploaded'>
+          {/* imageUrl est le file, donc on utilise cette méthode pour en sortir le path */}
+          <img
+            className='thumbnail-products'
+            src={imageUrl && URL.createObjectURL(imageUrl)}
+          />
+        </div>
+
       </div>
+
+
 
       <Footer />
 
