@@ -153,7 +153,7 @@ export default function Contact() {
 
           </div>
 
-          <div class="form-button">
+          <div className="form-button">
             <button onClick ={alertFormulaire} id='submitcheck' type="submit" className="submit-btn">Envoyer</button>
             <button type="reset" className='reset-btn'> Reset </button>
           </div>

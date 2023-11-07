@@ -62,9 +62,9 @@ export default function HomeGet() {
 
 
   return (
-    <div className='all-home-cards'>
+  
 
-      <div>
+      
         <MapCardModel
           title=" Les 20 Nouveaux produits"
           value={productType}
@@ -72,9 +72,8 @@ export default function HomeGet() {
           placeholder={"Tableau, Déco, Bijou, Livre"}
           error={error}
           filteredProducts={filteredProducts} />
-      </div>
+    
 
-    </div>
   )
 }
 
