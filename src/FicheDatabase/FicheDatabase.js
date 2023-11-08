@@ -82,15 +82,11 @@ export default function FicheDatabase() {
             </div>
 
 
-            <div className="infos-produit">
-              <h1 className="nom-produit">{product.nom}</h1>
-              <h2 className="dimensions-produit">{product.dimensions}</h2>
-              <h2 className="matiere-produit">{product.matiere}</h2>
-              <h2 className="matiere-produit">{product.auteur}</h2>
-              <h2 className="matiere-produit">{product.marque}</h2>
-              <h2 className="prix-produit">{product.prix}</h2>
-              <h2 className="matiere-produit">{product.etat}</h2>
-              <h3 className="code-produit">Réf: {product.code}</h3>
+            <div className="commentaires-produit">
+              <h1 className="fiche-nom-produit">{product.auteur}</h1>
+              <h2 className="fiche-info-produit">{product.infoProduit}</h2>
+              <h2 className="fiche-prix-produit">{product.prix}</h2>
+              <h3 className="fiche-code-produit">Réf: {product.code}</h3>
 
               <div className="btn-produit">
                 <button className="btn-réserver" onClick={handleReserveClicked}>Réserver</button>

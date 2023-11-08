@@ -3,6 +3,8 @@
 .fiche-produit {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  font-family: 'Heebo', sans-serif;
+
 }
 
 .div-image-fiche {
@@ -21,19 +23,18 @@
 
 }
 
-.infos-produit {
+.commentaires-produit {
   margin-top: 35px;
   margin-left: 50px;
 
 }
 
-.nom-produit {
-  font-family: 'Merriweather', serif;
+.fiche-nom-produit {
   color: #0072B5;
 }
 
-.dimensions-produit,
-.code-produit {
+.fiche-info-produit,
+.fiche-code-produit {
   color: #363945;
 
 }
@@ -42,18 +43,12 @@
   color: #ed0000;
 }
 
-.code-produit {
+.fiche-code-produit {
   font-family: 'Martian Mono', monospace;
 }
 
 
-.dimensions-produit {
-  font-family: 'Heebo', sans-serif;
-
-}
-
-.prix-produit {
-  font-family: 'Heebo', sans-serif;
+.fiche-prix-produit {
   color: #0072B5;
 }
 
