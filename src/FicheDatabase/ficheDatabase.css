@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-family: 'Heebo', sans-serif;
+  margin-top: 20px;
 
 }
 
@@ -24,8 +25,9 @@
 }
 
 .commentaires-produit {
-  margin-top: 35px;
-  margin-left: 50px;
+  margin-top: 40px;
+  width: 500px;
+  text-align: center;
 
 }
 
@@ -33,14 +35,14 @@
   color: #0072B5;
 }
 
-.fiche-info-produit,
-.fiche-code-produit {
+.fiche-info-produit {
   color: #363945;
 
 }
 
-.matiere-produit {
-  color: #ed0000;
+
+.fiche-code-produit {
+  color: #ff0921;
 }
 
 .fiche-code-produit {
@@ -57,6 +59,7 @@
   width: 450px;
   display: flex;
   justify-content: space-between;
+  margin-left: 25px;
 }
 
 .reserve-part {
@@ -194,8 +197,6 @@
   margin-left: -20px;
 }
 
-
-
 /* Style Reserve part */
 
 .whatsapp-div {
@@ -203,13 +204,20 @@
   font-family: 'Roboto', sans-serif;
   font-size: 21px;
   font-weight: bold;
-  height: 110px;
-  width: 640px;
+  height: 150px;
+  width: 680px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.reserve-part {
+  margin-left: -50px;
+
 }
 
 .whatsapp-button {
-
   background-color: #25d366;
   color: #fff;
   padding: 10px 20px;
@@ -234,3 +242,13 @@
   text-align: center;
   color: #DD4124;
 }
+
+/* style fiche produit */
+
+.fiche-nom-produit, 
+.fiche-info-produit,
+.fiche-prix-produit {
+  border-bottom: 1px solid #333;
+
+}
+

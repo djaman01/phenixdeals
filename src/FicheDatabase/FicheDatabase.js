@@ -83,6 +83,7 @@ export default function FicheDatabase() {
 
 
             <div className="commentaires-produit">
+
               <h1 className="fiche-nom-produit">{product.auteur}</h1>
               <h2 className="fiche-info-produit">{product.infoProduit}</h2>
               <h2 className="fiche-prix-produit">{product.prix}</h2>
@@ -105,7 +106,6 @@ export default function FicheDatabase() {
                   </div>
                 }
               </div>
-
 
             </div>
 
