@@ -52,8 +52,18 @@ export default function Decoration() {
   })
 
   const filteredProducts = productObject.filter(
-    (item) => item.nom.toLowerCase().includes(productName.toLowerCase())
+    (item) => item.auteur.toLowerCase().includes(productName.toLowerCase())
   );
+
+  useEffect(() => {
+    Aos.init({
+      once: true,
+      offset: 100,
+      duration: 1000,
+      easing: 'ease-in-out',
+      // delay: 100,
+    });
+  })
 
   return (
     <>

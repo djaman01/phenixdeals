@@ -44,14 +44,14 @@ export default function Bijoux() {
     Aos.init({
       once: true,
       offset: 100,
-      duration: 1500,
+      duration: 1000,
       easing: 'ease-in-out',
-
+      // delay: 100,
     });
   })
 
   const filteredProducts = productObject.filter(
-    (item) => item.nom.toLowerCase().includes(productName.toLowerCase())
+    (item) => item.type.toLowerCase().includes(productName.toLowerCase())
   );
 
   return (

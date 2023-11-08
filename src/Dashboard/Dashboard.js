@@ -17,8 +17,9 @@ export default function Dashboard() {
   //Store id object beeing edited and used to show un input + save button when editting
   const [editingProductId, setEditingProductId] = useState(null);
 
-  //Stores the value of the product name that the user is currently editing, to update the name
+  //Stores the value of the product price that the user is currently editing, to update the price
   const [editedProductPrice, setEditedProductPrice] = useState('');
+  const [editedProductCode, setEditedProductCode] = useState('');
 
   const navigate = useNavigate()
 
@@ -55,8 +56,9 @@ export default function Dashboard() {
   //Arrow function with PUT Request
   const handleUpdateProduct = (productId) => { //parameter to catch the endpoint of url
 
-    const updatedProductData = { //Giving "nom" property a state as value, so that it can be changed};
-      prix: editedProductPrice
+    const updatedProductData = { //Giving "nom" property a state as value, so that it can be changed..etc
+      prix: editedProductPrice,
+      code: editedProductCode
     }
     // Finds the product by its _id + Update it with updateProductData 
     axios.put(`http://localhost:3005/products/${productId}`, updatedProductData)
@@ -103,9 +105,9 @@ export default function Dashboard() {
             <tr>
               <th className='subtitle-dashboard'>Image</th>
               <th className='subtitle-dashboard'>Type</th>
-              <th className='subtitle-dashboard'>Nom</th>
-              <th className='subtitle-dashboard'>Dimensions</th>
-              <th className='subtitle-dashboard'>Matiere</th>
+              <th className='subtitle-dashboard'>Auteur</th>
+              <th className='subtitle-dashboard'>Info Produit</th>
+              <th className='subtitle-dashboard'>Etat</th>
               <th className='subtitle-dashboard'>Prix</th>
               <th className='subtitle-dashboard'>Code</th>
               <th className='subtitle-dashboard'>Actions</th>
@@ -118,16 +120,16 @@ export default function Dashboard() {
                   <img
                     className='dashboard-img'
                     src={`http://localhost:3005/${product.imageUrl}`}
-                    alt={product.nom}
+                    alt={product.auteur}
                   />
                 </td>
                 <td className='data-dashboard'>{product.type}</td>
-                <td className='data-dashboard'>{product.nom}</td>
-                <td className='data-dashboard'>{product.dimensions}</td>
-                <td className='data-dashboard'>{product.matiere}</td>
+                <td className='data-dashboard'>{product.auteur}</td>
+                <td className='data-dashboard'>{product.infoProduit}</td>
+                <td className='data-dashboard'>{product.etat}</td>
 
                 <td className='data-dashboard'>
-                  {editingProductId === product._id ? (
+                  {editingProductId === product._id ? ( //Si clique stylo => donne value= product._id à state editProductId et fait apparaitre:
                     <div>
                     <input
                       className='input-edit-dash'
@@ -142,7 +144,22 @@ export default function Dashboard() {
                   product.prix
                   }
                   </td>
-                <td className='data-dashboard'>{product.code}</td>
+                  <td className='data-dashboard'>
+                  {editingProductId === product._id ? (
+                    <div>
+                    <input
+                      className='input-edit-dash'
+                      type="text"
+                      value={editedProductCode} //nouveau code produit
+                      placeholder='New code'
+                      onChange={(e) => setEditedProductCode(e.target.value)}
+                    />
+                    </div>
+                  )
+                  : 
+                  product.code
+                  }
+                  </td>
 
                 <td className='data-dashboard'>
                   {editingProductId === product._id ? ( //Si clique stylo => donne value= product._id à state editProductId et fait apparaitre:
@@ -158,6 +175,7 @@ export default function Dashboard() {
                           onClick={() => {
                             setEditingProductId(product._id);
                             setEditedProductPrice(product.prix);
+                            setEditedProductCode(product.code)
                           }}
                         />
                         <BsTrash

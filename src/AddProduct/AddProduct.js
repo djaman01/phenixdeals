@@ -11,10 +11,10 @@ import Footer from '../Footer/Footer';
 export default function AddProduct() {
 
   const [imageUrl, setImageUrl] = useState('');
-  const [nom, setNom] = useState('');
+  const [auteur, setauteur] = useState('');
   const [type, setType] = useState('');
-  const [dimensions, setDimensions] = useState('');
-  const [matiere, setMatiere] = useState('');
+  const [infoProduit, setInfoProduit] = useState('');
+  const [etat, setEtat] = useState('');
   const [prix, setPrix] = useState('');
   const [code, setCode] = useState('');
 
@@ -26,13 +26,13 @@ export default function AddProduct() {
   //To submit all form data to the server with .post
   const handleSubmit = async (e) => {
 
-    if (imageUrl && nom && type && dimensions && matiere && prix && code) {
+    if (imageUrl && auteur && type && etat && infoProduit && prix && code) {
       const formData = new FormData();
       formData.append('file', imageUrl);
-      formData.append('nom', nom);
+      formData.append('auteur', auteur);
       formData.append('type', type);
-      formData.append('dimensions', dimensions);
-      formData.append('matiere', matiere);
+      formData.append('etat', etat);
+      formData.append('infoProduit', infoProduit);
       formData.append('prix', prix);
       formData.append('code', code);
 
@@ -80,34 +80,33 @@ export default function AddProduct() {
             <div className='div-add-product'>
               <input
                 className="input-product"
-                placeholder="Nom produit"
+                placeholder="Auteur produit"
                 type="text"
-                id="product-nom"
-                value={nom}
-                onChange={(e) => setNom(e.target.value)}
+                id="product-auteur"
+                value={auteur}
+                onChange={(e) => setauteur(e.target.value)}
               />
             </div>
 
             <div className='div-add-product'>
               <input
                 className="input-product"
-                placeholder="Dimensions"
+                placeholder="Info Produit"
                 type="text"
-                id="product-dimensions"
-                value={dimensions}
-                onChange={(e) => setDimensions(e.target.value)}
+                id="info-produit"
+                value={infoProduit}
+                onChange={(e) => setInfoProduit(e.target.value)}
               />
             </div>
-
 
             <div className='div-add-product'>
               <input
                 className="input-product"
-                placeholder="Matiere"
+                placeholder="Etat produit"
                 type="text"
-                id="product-matiere"
-                value={matiere}
-                onChange={(e) => setMatiere(e.target.value)}
+                id="etat-produit"
+                value={etat}
+                onChange={(e) => setEtat(e.target.value)}
               />
             </div>
 

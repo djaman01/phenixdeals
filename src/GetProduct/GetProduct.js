@@ -51,17 +51,16 @@ export default function GetProduct() {
   const filteredProducts = productObject.filter((item) =>
     item.type.toLowerCase().includes(productType.toLowerCase())
   );
-
+  
   useEffect(() => {
     Aos.init({
       once: true,
       offset: 100,
-      duration: 1500,
+      duration: 1000,
       easing: 'ease-in-out',
       // delay: 100,
     });
   })
-
 
   return (
     <>
