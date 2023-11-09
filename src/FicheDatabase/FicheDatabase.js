@@ -26,7 +26,7 @@ export default function FicheDatabase() {
           setProduct(response.data); // Set the current product
 
           // Fetch related products based on the product's name
-          axios.get(`http://localhost:3005/related-products/${response.data.nom}`) //J'utilise la réponse du 1er Get pour accéder à la property nom et ne selectionner que les produits qui ont le même nom
+          axios.get(`http://localhost:3005/related-products/${response.data.auteur}`) //J'utilise la réponse du 1er Get pour accéder à la property nom et ne selectionner que les produits qui ont le même nom
             .then((relatedResponse) => {
               console.log("related products fetched", relatedResponse.data);
               setRelatedProducts(relatedResponse.data);
@@ -120,33 +120,38 @@ export default function FicheDatabase() {
             {relatedProducts //state avec tous les produits ac même nom
               .filter((relatedProduct) => relatedProduct._id !== product._id)//Ne garde que les produits avec ._id différent du produit cliqué Puis .map sur eux pour les afficher
               .map((relatedProduct) => (
-                <Link onClick={scrollToTop} to={`/fichedatabase/${relatedProduct._id}`} key={relatedProduct._id}>
-                  <div className="item-fichedb">
-                    <div className="div-thumbnail-allproducts">
-                      <img
-                        className="thumbnail-products"
-                        src={`http://localhost:3005/${relatedProduct.imageUrl}`}
-                        alt={relatedProduct.nom}
-                      />
-                    </div>
-                    <div className="text-all-products">
-                      <h3 className="all-products-type">{relatedProduct.type}</h3>
-                      <div className="nom-dimensions">
-                        <h4 style={{ fontSize: "15px" }}>{relatedProduct.nom}/</h4>
-                        <h4 style={{ fontSize: "15px" }}>{relatedProduct.dimensions}</h4>
+                <div className="grid-map-products">
+                  <Link className="map-div-link" onClick={scrollToTop} to={`/fichedatabase/${relatedProduct._id}`} key={relatedProduct._id}>
+
+                    <div className="item-map-products">
+
+                      <div className="div-thumbnail-map-products">
+                        <img
+                          className='thumbnail-map-products'
+                          src={`http://localhost:3005/${relatedProduct.imageUrl}`}
+                          alt={relatedProduct.nom}
+                        />
                       </div>
-                      <h4 className="all-products-matiere" style={{ fontSize: "15px" }}>
-                        {relatedProduct.matiere}
-                      </h4>
-                      <h4 className="all-products-price">{relatedProduct.prix}</h4>
+
+                      <div className="div-text-map-products">
+                        <h3 className='map-products-type'>{relatedProduct.type}</h3>
+                        <h4 className='info-produit-map'>{relatedProduct.infoProduit}</h4>
+                        <h4 className='map-products-auteur'>{relatedProduct.auteur}</h4>
+                        <h4 className='map-products-price'>{relatedProduct.prix}</h4>
+                      </div>
+
                     </div>
-                  </div>
-                </Link>
+
+                  </Link>
+                </div>
+
+
+
               ))}
           </div>
         ) :
           (
-            (autresProduits === true && relatedProducts.length == 1) ? <div className="no-other-products"><p>Pas d'autres produits de: <span style={{ color: "#0072B5" }}>{product.nom}</span></p></div> : null
+            (autresProduits === true && relatedProducts.length == 1) ? <div className="no-other-products"><p>Pas d'autres produits de: <span style={{ color: "#0072B5" }}>{product.auteur}</span></p></div> : null
           )
 
         }
