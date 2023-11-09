@@ -49,9 +49,8 @@ export default function Bijoux() {
       // delay: 100,
     });
   })
-
   const filteredProducts = productObject.filter(
-    (item) => item.type.toLowerCase().includes(productName.toLowerCase())
+    (item) => item.infoProduit.toLowerCase().includes(productName.toLowerCase())
   );
 
   return (
