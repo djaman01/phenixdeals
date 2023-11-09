@@ -22,7 +22,7 @@ export default function Concept() {
     Aos.init({
       once: true,
       offset: 100,
-      duration: 1500,
+      duration: 1000,
       easing: 'ease-in-out',
     
     });

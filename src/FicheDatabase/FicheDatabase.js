@@ -116,11 +116,11 @@ export default function FicheDatabase() {
       {/* Apparait when "autreProduits" state is true, quand on clique sur voir autres produits */}
       <div className="autres-product" ref={refAutresPart}>
         {(autresProduits === true && relatedProducts.length > 1) ? (
-          <div className="grid-all-products">
+          <div className="grid-map-products">
             {relatedProducts //state avec tous les produits ac même nom
               .filter((relatedProduct) => relatedProduct._id !== product._id)//Ne garde que les produits avec ._id différent du produit cliqué Puis .map sur eux pour les afficher
               .map((relatedProduct) => (
-                <div className="grid-map-products">
+                <div>
                   <Link className="map-div-link" onClick={scrollToTop} to={`/fichedatabase/${relatedProduct._id}`} key={relatedProduct._id}>
 
                     <div className="item-map-products">
@@ -151,7 +151,7 @@ export default function FicheDatabase() {
           </div>
         ) :
           (
-            (autresProduits === true && relatedProducts.length == 1) ? <div className="no-other-products"><p>Pas d'autres produits de: <span className="span-no-products">{product.auteur}</span></p></div> : null
+            (autresProduits === true && relatedProducts.length == 1) ? <div className="no-other-products"><p>Pas d'autres {product.type} de: <span className="span-no-products">{product.auteur}</span></p></div> : null
           )
 
         }
