@@ -1,5 +1,9 @@
 /* Object fit marche après avoir donné une width et height à une image */
 
+.all-fiche-produit {
+ margin-bottom: -100px;
+}
+
 .fiche-produit {
   display: grid;
   grid-template-columns: 1fr 1fr;

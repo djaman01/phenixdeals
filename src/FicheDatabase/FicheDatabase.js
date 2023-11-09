@@ -72,7 +72,7 @@ export default function FicheDatabase() {
   return (
     <>
       <Header />
-      <div>
+      <div className="all-fiche-produit">
         {error ? (<p>Error: {error}</p>) : product ? (
 
           <div className="fiche-produit">
