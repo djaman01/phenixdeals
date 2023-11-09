@@ -70,7 +70,7 @@ export default function FicheDatabase() {
   };
 
   return (
-    <>
+    <div className="color-fiche-produit">
       <Header />
       <div className="all-fiche-produit">
         {error ? (<p>Error: {error}</p>) : product ? (
@@ -151,13 +151,13 @@ export default function FicheDatabase() {
           </div>
         ) :
           (
-            (autresProduits === true && relatedProducts.length == 1) ? <div className="no-other-products"><p>Pas d'autres produits de: <span style={{ color: "#0072B5" }}>{product.auteur}</span></p></div> : null
+            (autresProduits === true && relatedProducts.length == 1) ? <div className="no-other-products"><p>Pas d'autres produits de: <span className="span-no-products">{product.auteur}</span></p></div> : null
           )
 
         }
       </div>
 
       <Footer />
-    </>
+    </div>
   );
 }
