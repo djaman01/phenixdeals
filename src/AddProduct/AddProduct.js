@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Dropzone from 'react-dropzone';
 import './addProduct.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+
 
 
 
@@ -49,6 +50,21 @@ export default function AddProduct() {
     }
   }
 
+  const navigate = useNavigate()
+  axios.defaults.withCredentials = true;
+
+  useEffect(() => {
+    axios.get('http://localhost:3005/addProduct')
+      .then((res) => {
+        if (res.data === "Success") {
+          console.log("Login with middleware successful ")
+        }
+        else {
+          navigate('/')
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
 
   return (

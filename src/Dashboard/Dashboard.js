@@ -131,35 +131,35 @@ export default function Dashboard() {
                 <td className='data-dashboard'>
                   {editingProductId === product._id ? ( //Si clique stylo => donne value= product._id à state editProductId et fait apparaitre:
                     <div>
-                    <input
-                      className='input-edit-dash'
-                      type="text"
-                      value={editedProductPrice} //nouveau nom produit
-                      placeholder='New price'
-                      onChange={(e) => setEditedProductPrice(e.target.value)}
-                    />
+                      <input
+                        className='input-edit-dash'
+                        type="text"
+                        value={editedProductPrice} //nouveau nom produit
+                        placeholder='New price'
+                        onChange={(e) => setEditedProductPrice(e.target.value)}
+                      />
                     </div>
                   )
-                  : 
-                  product.prix
+                    :
+                    product.prix
                   }
-                  </td>
-                  <td className='data-dashboard'>
+                </td>
+                <td className='data-dashboard'>
                   {editingProductId === product._id ? (
                     <div>
-                    <input
-                      className='input-edit-dash'
-                      type="text"
-                      value={editedProductCode} //nouveau code produit
-                      placeholder='New code'
-                      onChange={(e) => setEditedProductCode(e.target.value)}
-                    />
+                      <input
+                        className='input-edit-dash'
+                        type="text"
+                        value={editedProductCode} //nouveau code produit
+                        placeholder='New code'
+                        onChange={(e) => setEditedProductCode(e.target.value)}
+                      />
                     </div>
                   )
-                  : 
-                  product.code
+                    :
+                    product.code
                   }
-                  </td>
+                </td>
 
                 <td className='data-dashboard'>
                   {editingProductId === product._id ? ( //Si clique stylo => donne value= product._id à state editProductId et fait apparaitre:

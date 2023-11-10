@@ -32,29 +32,21 @@ function App() {
         <Route path='ficheproduit/:id' element={<FicheProduit />} />
         <Route path="contact" element={<Contact />} />
         <Route path="concept" element={<Concept />} />
-        <Route path="addProduct" element={<AddProduct />} />
         <Route path="getproduct" element={<GetProduct />} />
         <Route path="tableaux" element={<Tableaux />} />
         <Route path="bijoux" element={<Bijoux />} />
         <Route path="decoration" element={<Decoration />} />
         <Route path="livres" element={<Livres />} />
         <Route path="register" element={<Register />} />
-        <Route path="/newlogin" element={<NewLogin/>} />
-
-        <Route path="/dashboard" element={<Dashboard/>} />
-
-
-    
-
-        {/* Pour accéder au DashBoard avec conditions */}
-        {/* <Route path="log" element={<Login onLogin={() => setAuthenticated(true)} />} />  When the user logs in: authenticated=True  */}
-        {/* <Route
-          path="dashboard"
-          element={authenticated ? <Dashboard /> : <Navigate to="/login" />} //if authenticated=true=>Dashboard appear if false=>REDIRECT to login page
-        /> */}
-
+        <Route path="/newlogin" element={<NewLogin />} />
         <Route path="fichedatabase/:productId" element={<FicheDatabase />} />
+
+        {/* 2 Protected routes par tokens: on y accède que par l'url */}
+        <Route path="addProduct" element={<AddProduct />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+
         <Route path="*" element={<NoPage />} />
+
       </Routes>
     </BrowserRouter>
   );
