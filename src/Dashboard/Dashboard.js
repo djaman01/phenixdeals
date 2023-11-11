@@ -25,7 +25,7 @@ export default function Dashboard() {
 
   //Protected Route: dans le back-end, on va mettre une middleware pour vérifier le token avant d'autoriser une réponse
 
-  axios.defaults.withCredentials = true; //Pour activer le code qui store le token dans le cookie
+  axios.defaults.withCredentials = true; //Pour activer le code qui store le token dans le cookie ET revenir à la page sans logging in le temps que le token s'expire
 
   useEffect(() => {
     axios.get('http://localhost:3005/dashboard')
@@ -88,6 +88,20 @@ export default function Dashboard() {
       });
   }
 
+  //To logout request: Get request to logout / Back-end Respond by clear cookie et écrit Success /Then, if "Success", Front-end reloads the page
+
+  const handleLogout = () => {
+    axios.get('http://localhost:3005/logout')
+    .then (res => {
+      if(res.data.status === "Success") { //"Success" = message quand on clear le cookie du back-end et donc le token (car stocké dans le cookie)
+      window.location.reload(true); //Refresh the application from server side et repart dans Home
+      } else {
+        alert("error");
+      }
+    })
+    .catch(err=>console.log(err))
+  }
+
   return (
     <>
       <Link to='/' className='home-link'>
@@ -97,6 +111,8 @@ export default function Dashboard() {
       <Link to='/addProduct' className='home-link'>
         <h4 className='home-button'>Add Product</h4>
       </Link>
+
+      <h4 className='home-button' onClick={handleLogout}>Log Out</h4>
 
       <div>
         <h2>All Products Added in Database</h2>
