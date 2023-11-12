@@ -90,17 +90,25 @@ export default function Dashboard() {
 
   //To logout request: Get request to logout / Back-end Respond by clear cookie et écrit Success /Then, if "Success", Front-end reloads the page
 
+  //Pour changer background color logout button when clicked
+  const [logoutClicked, setLogoutClicked] = useState(false)
+
+
   const handleLogout = () => {
     axios.get('http://localhost:3005/logout')
-    .then (res => {
-      if(res.data.status === "Success") { //"Success" = message quand on clear le cookie du back-end et donc le token (car stocké dans le cookie)
-      window.location.reload(true); //Refresh the application from server side et repart dans Home
-      } else {
-        alert("error");
-      }
-    })
-    .catch(err=>console.log(err))
+      .then(res => {
+        if (res.data.status === "Success") { //"Success" = message quand on clear le cookie du back-end et donc le token (car stocké dans le cookie)
+          window.location.reload(true); //Refresh the application from server side et repart dans Home
+          setLogoutClicked(true)
+        }
+        else {
+          alert("error");
+        }
+      })
+      .catch(err => console.log(err))
   }
+
+
 
   return (
     <>
@@ -112,7 +120,7 @@ export default function Dashboard() {
         <h4 className='home-button'>Add Product</h4>
       </Link>
 
-      <h4 className='home-button' onClick={handleLogout}>Log Out</h4>
+      <p className={`logout-button ${logoutClicked ? 'logout-clicked' : ''}`} onClick={handleLogout}>Log Out</p>
 
       <div>
         <h2>All Products Added in Database</h2>
