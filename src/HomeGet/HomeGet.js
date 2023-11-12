@@ -71,7 +71,9 @@ export default function HomeGet() {
           onChange={handleProductType}
           placeholder={"Tableau, Déco, Bijou, Livre"}
           error={error}
-          filteredProducts={filteredProducts} />
+          filteredProducts={filteredProducts} 
+          paginationStyle= "homePagination"
+          />
     
 
   )

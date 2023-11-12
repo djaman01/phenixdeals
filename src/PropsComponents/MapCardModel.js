@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 //Il faut mettre les props que pour error et la function sur laquelle on map et non pas les elements à l'intérieur
 
-export default function MapCardModel({ title, value, onChange, placeholder, error, filteredProducts }) {
+export default function MapCardModel({ title, value, onChange, placeholder, error, filteredProducts, paginationStyle }) {
 
   const scrollToTop = () => {
     window.scrollTo(0, 0); // Scroll to the top of the page
@@ -91,7 +91,7 @@ export default function MapCardModel({ title, value, onChange, placeholder, erro
               </Link>
             ))}
 
-            <div className='pagination'>
+            <div className={paginationStyle}>
               {Array.from({ length: Math.ceil(filteredProducts.length / itemsPerPage) }, (_, index) => (
                 <button key={index} onClick={() => paginate(index + 1)}>
                   {index + 1}
