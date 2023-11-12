@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import './mapCardModel.css'
+import { useState } from 'react';
+
 
 //Il faut mettre les props que pour error et la function sur laquelle on map et non pas les elements à l'intérieur
 
@@ -8,6 +10,22 @@ export default function MapCardModel({ title, value, onChange, placeholder, erro
   const scrollToTop = () => {
     window.scrollTo(0, 0); // Scroll to the top of the page
   };
+
+  //Mise en place de la pagination
+
+  const itemsPerPage = 20; //nombre d'item que je veux par page
+  const [currentPage, setCurrentPage] = useState(1); //numéros pages
+
+  const indexOfLastItem = currentPage * itemsPerPage; //=20
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;//=0
+
+  //currentItems store nouvelle array avec que les elements entre 0 et 20 exclus donc de 0 à 19 = 20 items
+  //On va donc mapper sur cette nouvelle array
+  const currentItems = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);
+
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
 
   return (
     <>
@@ -47,7 +65,7 @@ export default function MapCardModel({ title, value, onChange, placeholder, erro
 
           <div className="grid-map-products" data-aos='zoom-in'>
             {/* il faut uiliser filteredProducts.map car on va filtrer avec searchbar dans cette array d'objet  */}
-            {filteredProducts.map((item) => (
+            {currentItems.map((item) => (
 
               <Link className="map-div-link" onClick={scrollToTop} to={`/fichedatabase/${item._id}`}>
 
@@ -63,22 +81,30 @@ export default function MapCardModel({ title, value, onChange, placeholder, erro
 
 
                   <div className="div-text-map-products">
-
                     <h3 className='map-products-type'>{item.type}</h3>
                     <h4 className='info-produit-map'>{item.infoProduit}</h4>
                     <h4 className='map-products-auteur'>{item.auteur}</h4>
                     <h4 className='map-products-price'>{item.prix}</h4>
-
                   </div>
 
                 </div>
               </Link>
-
             ))}
 
+            <div className='pagination'>
+              {Array.from({ length: Math.ceil(filteredProducts.length / itemsPerPage) }, (_, index) => (
+                <button key={index} onClick={() => paginate(index + 1)}>
+                  {index + 1}
+                </button>
+              ))}
+            </div>
+
           </div>
+
+
+
         )}
       </div>
     </>
-  )
+  );
 }
