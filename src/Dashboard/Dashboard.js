@@ -129,6 +129,11 @@ export default function Dashboard() {
       name: "Auteur",
       selector: 'auteur',
       sortable: true,
+      title: (
+        <div style={{ fontSize: '16px', color: 'blue' }}>
+          Auteur
+        </div>
+      ),
     },
     {
       name: "Info Produit",
@@ -140,6 +145,8 @@ export default function Dashboard() {
       selector: 'etat',
       sortable: true,
     },
+
+    //Here we need the cell property because we want to customize it
     {
       name: "Prix",
       selector: 'prix',
@@ -180,8 +187,6 @@ export default function Dashboard() {
         )
       )
     },
-
-    //Here we need the cell property because we want to customize it with content that we don't fetch from the database
     {
       name: "Actions",
       selector: '_id',
@@ -213,9 +218,23 @@ export default function Dashboard() {
     }
   ];
 
+  // Input search bar
+
+  //State qui va contenir la value qu'on va écrire en direct dans l'input 
+  const [filterText, setFilterText] = useState('');
+
+  //event handler a mettre dans onChange de l'input
+  const handleFilter = (e) => setFilterText(e.target.value)
+
+  //Pour que le contenu du DashBoard soit = à ce qu'il y a écrit dans l'input: si on écrit rien on voit tout / si on écrit, on voit les items qui correspondent à ce qu'on écrit
+  const filteredProducts = products.filter((product) =>
+    product.auteur.toLowerCase().includes(filterText.toLowerCase())
+  );
+
+
   return (
     <>
-    
+
 
       <Link to='/' className='home-link'>
         <h4 className='home-button'>Accueil</h4>
@@ -228,12 +247,20 @@ export default function Dashboard() {
       {/* logout button avec changement de style si clicked */}
       <p className={`logout-button ${logoutClicked ? 'logout-clicked' : ''}`} onClick={handleLogout}>Log Out</p>
 
+      <input
+        type="text"
+        placeholder="Filter by Auteur"
+        value={filterText}
+        onChange={handleFilter}
+      />
+
       <div>
         <h2>All Products Added in Database</h2>
 
+        {/* Création Tableau Dashboard */}
         <DataTable
           columns={columns}
-          data={products}
+          data={filteredProducts} //la data qui va structurer le tableau
           pagination
           fixedHeader //Pour que le header suive quand on scroll down
 
