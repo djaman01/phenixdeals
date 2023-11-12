@@ -4,14 +4,13 @@ import axios from 'axios';
 import { BsTrash } from "react-icons/bs";
 import { BiEditAlt } from "react-icons/bi";
 
-import DataTable from "react-data-table-component"
+
 
 import './dashboard.css'
 import { Link, useNavigate } from 'react-router-dom';
 
 
-
-export default function Dashboard() {
+export default function OldDashboard() {
 
   //Store objet venant de Axios.get puis utilisé pour .map dans browser
   const [products, setProducts] = useState([]);
@@ -110,113 +109,10 @@ export default function Dashboard() {
       .catch(err => console.log(err))
   }
 
-  //-------------------------------------------------
 
-  const columns = [
-    {
-      name: "Image",
-      selector: 'imageUrl', //property name in the Model object schema= the data that should be found in the imageUrl property of each row.
-      cell: row => <img className='dashboard-img' src={`http://localhost:3005/${row.imageUrl}`} alt={row.auteur} /> //row.auteur va marcher même si pas défini précedemment
-    },
-
-    //Don't need a custom cell property because the default rendering is suitable for displaying text or number data in the cells. 
-    {
-      name: "Type",
-      selector: 'type',
-      sortable: true, //Permet d'ordonné par ordre Alphabétic ou inverse
-    },
-    {
-      name: "Auteur",
-      selector: 'auteur',
-      sortable: true,
-    },
-    {
-      name: "Info Produit",
-      selector: 'infoProduit',
-      sortable: true,
-    },
-    {
-      name: "Etat",
-      selector: 'etat',
-      sortable: true,
-    },
-    {
-      name: "Prix",
-      selector: 'prix',
-      sortable: true,
-      cell: row => (
-        editingProductId === row._id ? (
-          <div>
-            <input
-              className='input-edit-dash'
-              type="text"
-              value={editedProductPrice}
-              placeholder='New price'
-              onChange={(e) => setEditedProductPrice(e.target.value)}
-            />
-          </div>
-        ) : (
-          row.prix
-        )
-      )
-    },
-    {
-      name: "Code",
-      selector: 'code',
-      sortable: true,
-      cell: row => (
-        editingProductId === row._id ? (
-          <div>
-            <input
-              className='input-edit-dash'
-              type="text"
-              value={editedProductCode}
-              placeholder='New code'
-              onChange={(e) => setEditedProductCode(e.target.value)}
-            />
-          </div>
-        ) : (
-          row.code
-        )
-      )
-    },
-
-    //Here we need the cell property because we want to customize it with content that we don't fetch from the database
-    {
-      name: "Actions",
-      selector: '_id',
-      cell: row => (
-        editingProductId === row._id ? (
-          <div>
-            <button className='btn-dashboard' onClick={() => handleUpdateProduct(row._id)}>Update</button>
-            <button className='btn-dashboard' onClick={handleCancelProduct}>Cancel</button>
-          </div>
-        ) : (
-          <div className='dashboard-icones'>
-            <div className="icones-holder">
-              <BiEditAlt
-                className='icon-dashboard'
-                onClick={() => {
-                  setEditingProductId(row._id);
-                  setEditedProductPrice(row.prix);
-                  setEditedProductCode(row.code);
-                }}
-              />
-              <BsTrash
-                className='icon-dashboard'
-                onClick={() => handleDeleteProduct(row._id)}
-              />
-            </div>
-          </div>
-        )
-      )
-    }
-  ];
 
   return (
     <>
-    
-
       <Link to='/' className='home-link'>
         <h4 className='home-button'>Accueil</h4>
       </Link>
@@ -224,20 +120,101 @@ export default function Dashboard() {
       <Link to='/addProduct' className='home-link'>
         <h4 className='home-button'>Add Product</h4>
       </Link>
-
       {/* logout button avec changement de style si clicked */}
       <p className={`logout-button ${logoutClicked ? 'logout-clicked' : ''}`} onClick={handleLogout}>Log Out</p>
 
       <div>
         <h2>All Products Added in Database</h2>
+        <table className='table-dashboard'>
+          <thead>
+            <tr>
+              <th className='subtitle-dashboard'>Image</th>
+              <th className='subtitle-dashboard'>Type</th>
+              <th className='subtitle-dashboard'>Auteur</th>
+              <th className='subtitle-dashboard'>Info Produit</th>
+              <th className='subtitle-dashboard'>Etat</th>
+              <th className='subtitle-dashboard'>Prix</th>
+              <th className='subtitle-dashboard'>Code</th>
+              <th className='subtitle-dashboard'>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((product) => (//On map sur tous les objets de la database
+              <tr key={product._id}>
+                <td className='data-dashboard'>
+                  <img
+                    className='dashboard-img'
+                    src={`http://localhost:3005/${product.imageUrl}`}
+                    alt={product.auteur}
+                  />
+                </td>
+                <td className='data-dashboard'>{product.type}</td>
+                <td className='data-dashboard'>{product.auteur}</td>
+                <td className='data-dashboard'>{product.infoProduit}</td>
+                <td className='data-dashboard'>{product.etat}</td>
 
-        <DataTable
-          columns={columns}
-          data={products}
-          pagination
-          fixedHeader //Pour que le header suive quand on scroll down
+                <td className='data-dashboard'>
+                  {editingProductId === product._id ? ( //Si clique stylo => donne value= product._id à state editProductId et fait apparaitre:
+                    <div>
+                      <input
+                        className='input-edit-dash'
+                        type="text"
+                        value={editedProductPrice} //nouveau nom produit
+                        placeholder='New price'
+                        onChange={(e) => setEditedProductPrice(e.target.value)}
+                      />
+                    </div>
+                  )
+                    :
+                    product.prix
+                  }
+                </td>
+                <td className='data-dashboard'>
+                  {editingProductId === product._id ? (
+                    <div>
+                      <input
+                        className='input-edit-dash'
+                        type="text"
+                        value={editedProductCode} //nouveau code produit
+                        placeholder='New code'
+                        onChange={(e) => setEditedProductCode(e.target.value)}
+                      />
+                    </div>
+                  )
+                    :
+                    product.code
+                  }
+                </td>
 
-        />
+                <td className='data-dashboard'>
+                  {editingProductId === product._id ? ( //Si clique stylo => donne value= product._id à state editProductId et fait apparaitre:
+                    <div>
+                      <button className='btn-dashboard' onClick={() => handleUpdateProduct(product._id)}>Update</button>
+                      <button className='btn-dashboard' onClick={handleCancelProduct}>Cancel</button>
+                    </div>
+                  ) : ( //Sinon: Fait apparaitre stylo et poubelle
+                    <div className='dashboard-icones'>
+                      <div className="icones-holder">
+                        <BiEditAlt
+                          className='icon-dashboard'
+                          onClick={() => {
+                            setEditingProductId(product._id);
+                            setEditedProductPrice(product.prix);
+                            setEditedProductCode(product.code)
+                          }}
+                        />
+                        <BsTrash
+                          className='icon-dashboard'
+                          onClick={() => handleDeleteProduct(product._id)}
+                        />
+                      </div>
+                    </div>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </>
   );

@@ -10,7 +10,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css'
 
 import './homeGet.css'
-import InputGoogle from '../PropsComponents/InputGoogle';
+
 import MapCardModel from '../PropsComponents/MapCardModel';
 
 

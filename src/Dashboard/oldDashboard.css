@@ -1,0 +1,85 @@
+/* Style for the table */
+.table-dashboard {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.subtitle-dashboard, .data-dashboard {
+  border: 3px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+
+.subtitle-dashboard {
+  background-color: #f2f2f2;
+}
+
+/* Style for the product image */
+.dashboard-img {
+width: 60px;
+height: 60px;
+}
+
+/* Style for the edit and delete icons */
+.icones-holder {
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+}
+
+.icon-dashboard {
+  cursor: pointer;
+  font-size: 20px;
+  margin: 0 5px;
+}
+
+/* Style for the input and buttons when editing */
+.input-edit-dash{
+  width: 40%;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/* Style for the dashboard-product div */
+.dashboard-icones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style for the update and cancel buttons */
+ .btn-dashboard{
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.btn-dashboard:hover {
+  background-color: #0056b3;
+}
+
+.logout-button {
+ 
+ width: 90px;
+ height: 30px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 9px;
+ font-family: 'Roboto', sans-serif;
+ background-color: red;
+ color: white;
+ margin-right: auto;
+ margin-left: auto;
+ cursor: pointer;
+ 
+}
+
+.logout-clicked {
+  background-color: #ed0000;
+}
