@@ -91,19 +91,19 @@ export default function MapCardModel({ title, value, onChange, placeholder, erro
               </Link>
             ))}
 
-            <div className={paginationStyle}>
-              {Array.from({ length: Math.ceil(filteredProducts.length / itemsPerPage) }, (_, index) => (
-                <button key={index} onClick={() => paginate(index + 1)} style={{cursor: 'pointer'}}>
-                  {index + 1}
-                </button>
-              ))}
-            </div>
 
           </div>
 
-
-
         )}
+      </div>
+      <div className="div-pagination">
+        <div className={`all-pagination ${paginationStyle}`}>
+          {Array.from({ length: Math.ceil(filteredProducts.length / itemsPerPage) }, (_, index) => (
+            <button key={index} onClick={() => paginate(index + 1)} style={{ cursor: 'pointer' }}>
+              {index + 1}
+            </button>
+          ))}
+        </div>
       </div>
     </>
   );

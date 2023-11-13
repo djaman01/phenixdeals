@@ -163,7 +163,7 @@
 }
 
 .map-card-products {
-  margin-bottom: 140px;
+  margin-bottom: 20px;
 }
 
 .item-map-products{
@@ -240,6 +240,18 @@
   text-decoration: none;
 }
 
+.div-pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.all-pagination {
+  width: 100px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 80px;
+
+}
 
 @media(max-width: 1150px) {
 
