@@ -91,7 +91,7 @@ export default function FicheDatabase() {
 
               <div className="btn-produit">
                 <button className="btn-réserver" onClick={handleReserveClicked}>Réserver</button>
-                <button className="btn-autre-produit" onClick={handleAutresClicked}>Voir d'autres {product.nom}</button>
+                <button className="btn-autre-produit" onClick={handleAutresClicked}>Voir d'autres {product.auteur}</button>
               </div>
 
               <div className="reserve-part" ref={refReservePart} > {/*ref={reservePartRef} associate the reservePartRef with this DOM element. */}
