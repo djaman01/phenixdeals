@@ -9,7 +9,6 @@ import 'aos/dist/aos.css'
 
 import './tableaux.css'
 import { Link } from 'react-router-dom';
-import InputGoogle from '../PropsComponents/InputGoogle';
 import MapCardModel from '../PropsComponents/MapCardModel';
 
 
@@ -29,8 +28,7 @@ export default function Tableaux() {
 
   useEffect(() => {
     const fetchData = () => {
-
-      axios.get('http://localhost:3005/tableau')//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
+      axios.get('http://localhost:3005/tableau')//Je mets un nouveau endpoint pour crée un nouveau path pour ce nouveau GET request pour fetch que les tableaux
         .then((response) => {
           console.log("tableau products fetched", response.data);
           setProductObject(response.data);
@@ -39,20 +37,10 @@ export default function Tableaux() {
           setError('An error occurred while fetching data.');
         });
     };
-
     fetchData();
   }, []);//fetch la data avec axios dès qu'on ouvre le browser, comme ça tous les produits apparaisse d'un coup
 
-  useEffect(() => {
-    Aos.init({
-      once: true,
-      offset: 100,
-      duration: 1500,
-      easing: 'ease-in-out',
-
-    });
-  })
-
+  //On filtre la state variable productObject pour voir que les produits écrit dans la searchbar: si on écrit rien, on voit tous les produits
   const filteredProducts = productObject.filter(
     (item) => item.auteur.toLowerCase().includes(productName.toLowerCase())
   );
@@ -78,6 +66,7 @@ export default function Tableaux() {
           onChange={handleProductName}
           placeholder={"Nom de l'artiste"}
           error={error}
+          //{filteredProducts}= variable qui store la productObject State variable, qu'on filtre
           filteredProducts={filteredProducts} />
       </div>
       
