@@ -27,7 +27,6 @@ export default function Tableaux() {
   const handleProductName = (e) => setProductName(e.target.value); //ca c'est l'event handler qui fait que la state productName a pour valeur la value de l'input
 
   useEffect(() => {
-    const fetchData = () => {
       axios.get('http://localhost:3005/tableau')//Je mets un nouveau endpoint pour crée un nouveau path pour ce nouveau GET request pour fetch que les tableaux
         .then((response) => {
           console.log("tableau products fetched", response.data);
@@ -36,9 +35,7 @@ export default function Tableaux() {
         .catch((error) => {
           setError('An error occurred while fetching data.');
         });
-    };
-    fetchData();
-  }, []);//fetch la data avec axios dès qu'on ouvre le browser, comme ça tous les produits apparaisse d'un coup
+    }, []);//fetch la data avec axios dès qu'on ouvre le browser, comme ça tous les produits apparaisse d'un coup
 
   //On filtre la state variable productObject pour voir que les produits écrit dans la searchbar: si on écrit rien, on voit tous les produits
   const filteredProducts = productObject.filter(

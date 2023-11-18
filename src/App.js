@@ -42,7 +42,7 @@ function App() {
         <Route path="fichedatabase/:productId" element={<FicheDatabase />} />
 
         {/* 2 Protected routes par tokens: on y accède que par l'url */}
-        <Route path="addProduct" element={<AddProduct />} />
+        <Route path="/addProduct" element={<AddProduct />} />
         <Route path="/dashboard" element={<Dashboard />} />
 
         <Route path="*" element={<NoPage />} />

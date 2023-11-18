@@ -26,9 +26,7 @@ export default function Dashboard() {
   const navigate = useNavigate()
 
   //Protected Route: dans le back-end, on va mettre une middleware pour vérifier le token avant d'autoriser une réponse
-
   axios.defaults.withCredentials = true; //Pour activer le code qui store le token dans le cookie ET revenir à la page sans logging in le temps que le token s'expire
-
   useEffect(() => {
     axios.get('http://localhost:3005/dashboard')
       .then((res) => {
@@ -56,27 +54,21 @@ export default function Dashboard() {
 
 
   //Arrow function with PUT Request
-  const handleUpdateProduct = (productId) => { //parameter to catch the endpoint of url
-
-    const updatedProductData = { //Giving "nom" property a state as value, so that it can be changed..etc
+  const handleUpdateProduct = (productId) => { //parameter to catch the endpoint of url pour identifier le produit que l'on souhaite modifier
+    const updatedProductData = { //les propriété prix et code devront être remplacé par les valeurs des states variables ci-après
       prix: editedProductPrice,
       code: editedProductCode
     }
-    // Finds the product by its _id + Update it with updateProductData 
-    axios.put(`http://localhost:3005/products/${productId}`, updatedProductData)
+    axios.put(`http://localhost:3005/products/${productId}`, updatedProductData) // Finds the product by its _id + Update it with updateProductData 
       .then((response) => {
         console.log('Product updated successfully:', response.data);
-        setEditingProductId(null); // Reset the "editingProductId" state after editing, to toggle the input and save button, to the name of the data
+        setEditingProductId(null); // Reset the "editingProductId" state after editing, to toggle the input and save button pour voir les noms de la data et ne plus voir update et cancel
       })
       .catch((error) => {
         console.error('Error updating product:', error);
       });
   }
 
-  //To cancel the editing of a product and toggle back to the data
-  const handleCancelProduct = () => {
-    setEditingProductId(null)
-  }
 
   //Arrow function with Delete Request
   const handleDeleteProduct = (productId) => {
@@ -89,6 +81,11 @@ export default function Dashboard() {
         console.error('Error deleting product:', error);
       });
   }
+
+    //To cancel the editing of a product and toggle back to the data
+    const handleCancelProduct = () => {
+      setEditingProductId(null)
+    }
 
   //To logout request: Get request to logout / Back-end Respond by clear cookie et écrit Success /Then, if "Success", Front-end reloads the page
 
@@ -187,7 +184,7 @@ export default function Dashboard() {
         )
       )
     },
-    {
+    {//Colonne Actions, qui va afficher des boutons différents en fonction de la valeur de editingProductId
       name: "Actions",
       selector: '_id',
       cell: row => (
@@ -201,10 +198,8 @@ export default function Dashboard() {
             <div className="icones-holder">
               <BiEditAlt
                 className='icon-dashboard'
-                onClick={() => {
-                  setEditingProductId(row._id);
-                  setEditedProductPrice(row.prix);
-                  setEditedProductCode(row.code);
+                onClick={() => { //Quand on clique sur le stylo, ca met à jour les states variables suivantes:
+                  setEditingProductId(row._id); //editingProductId === _id du produit => Donc change code colonne Action, prix et code
                 }}
               />
               <BsTrash

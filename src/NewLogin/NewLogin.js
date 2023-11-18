@@ -17,8 +17,8 @@ export default function Register() {
   const handlePassword = (e) => setPassword(e.target.value);
 
   axios.defaults.withCredentials = true; //Pour activer le code qui store le token dans le cookie
-  //Pour Post la data une fois qu'on clique sur Submit
 
+  //Pour Post la data une fois qu'on clique sur Submit
   const handleSubmit = (e) => {
     e.preventDefault()
     axios.post('http://localhost:3005/login', { email, password })
@@ -33,9 +33,6 @@ export default function Register() {
           }
         }
         console.log(res.data);//When login is success
-
-        // navigate('/login')
-
       })
       .catch(err => console.log(err))
 
