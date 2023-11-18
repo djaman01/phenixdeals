@@ -109,14 +109,17 @@ export default function Dashboard() {
 
   //-------------------------------------------------
 
+  //!!!!! voir return( <DataTable columns={columns} data={filteredProducts} /> ) donc même si on écrit rien, ça amène les données de la database pour chaque property = selector de chaque colonne
+  //Si on veut faire des modifications dans uen cellules, on écrit cell: row => modif.
+
   const columns = [
     {
       name: "Image",
-      selector: 'imageUrl', //property name in the Model object schema= the data that should be found in the imageUrl property of each row.
-      cell: row => <img className='dashboard-img' src={`http://localhost:3005/${row.imageUrl}`} alt={row.auteur} /> //row.auteur va marcher même si pas défini précedemment
+      selector: 'imageUrl', //property name dans modèle base de donnée
+      cell: row => <img className='dashboard-img' src={`http://localhost:3005/${row.imageUrl}`} alt={row.auteur} /> //Obligé de faire cell et src sinon ne montre que le path de l'image qui est dans base de donnée
     },
 
-    //Don't need a custom cell property because the default rendering is suitable for displaying text or number data in the cells. 
+    //On ne met pas de cell property, car data base de donnée est suffisante
     {
       name: "Type",
       selector: 'type',
@@ -126,11 +129,6 @@ export default function Dashboard() {
       name: "Auteur",
       selector: 'auteur',
       sortable: true,
-      title: (
-        <div style={{ fontSize: '16px', color: 'blue' }}>
-          Auteur
-        </div>
-      ),
     },
     {
       name: "Info Produit",
@@ -147,9 +145,8 @@ export default function Dashboard() {
     {
       name: "Prix",
       selector: 'prix',
-      sortable: true,
       cell: row => (
-        editingProductId === row._id ? (
+        editingProductId === row._id ? ( //quand on clique sur stylo on a codé plus bas setEditingProductId(row._id); donc ce code apparaitra
           <div>
             <input
               className='input-edit-dash'
@@ -186,9 +183,10 @@ export default function Dashboard() {
     },
     {//Colonne Actions, qui va afficher des boutons différents en fonction de la valeur de editingProductId
       name: "Actions",
-      selector: '_id',
+      selector: '_id', 
       cell: row => (
         editingProductId === row._id ? (
+          // On sera obligé d'écrire l'event handler dans le onclick, car on cible row._id et on ne peut l'atteindre que ici
           <div>
             <button className='btn-dashboard' onClick={() => handleUpdateProduct(row._id)}>Update</button>
             <button className='btn-dashboard' onClick={handleCancelProduct}>Cancel</button>
@@ -196,12 +194,12 @@ export default function Dashboard() {
         ) : (
           <div className='dashboard-icones'>
             <div className="icones-holder">
-              <BiEditAlt
+              <BiEditAlt //Quand on clique sur le stylo, state variable editingProductId = _id du produit => Donc change code colonne Action, prix et code comme écrit précédemment
                 className='icon-dashboard'
-                onClick={() => { //Quand on clique sur le stylo, ca met à jour les states variables suivantes:
-                  setEditingProductId(row._id); //editingProductId === _id du produit => Donc change code colonne Action, prix et code
-                }}
+                onClick={() => { setEditingProductId(row._id)}}
               />
+               
+              /
               <BsTrash
                 className='icon-dashboard'
                 onClick={() => handleDeleteProduct(row._id)}
@@ -255,7 +253,7 @@ export default function Dashboard() {
         {/* Création Tableau Dashboard */}
         <DataTable
           columns={columns}
-          data={filteredProducts} //la data qui va structurer le tableau
+          data={filteredProducts} //la data qui va structurer le tableau, c'est pourquoi ça amène les données de la database, sans rie nécrire
           pagination
           fixedHeader //Pour que le header suive quand on scroll down
 
