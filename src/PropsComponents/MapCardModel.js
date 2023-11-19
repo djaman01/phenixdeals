@@ -53,7 +53,7 @@ export default function MapCardModel({ title, value, onChange, placeholder, erro
 
             <div className="searchbar-center">
               <div className="searchbar-input-spacer"></div>
-              <input value={value} onChange={onChange} placeholder={placeholder} className="searchbar-input" title="Search" role="combobox" maxlength="2048" name="q" autocapitalize="off" autocomplete="off" type="text" />
+              <input value={value} onChange={onChange} placeholder={placeholder} className="searchbar-input" title="Search" role="combobox" maxLength="2048" name="q" autoCapitalize="off" autoComplete="off" type="text" />
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function MapCardModel({ title, value, onChange, placeholder, erro
             {/* il faut uiliser currentItems.map car on va filtrer et on veut voir la pagination: currentItems= filtredProducts.slice() */}
             {currentItems.map((item) => (
 
-              <Link className="map-div-link" onClick={scrollToTop} to={`/fichedatabase/${item._id}`}>
+              <Link key={item._id} className="map-div-link" onClick={scrollToTop} to={`/fichedatabase/${item._id}`}>
 
                 <div className="item-map-products">
 

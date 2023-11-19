@@ -11,6 +11,8 @@ import Footer from '../Footer/Footer';
 
 export default function AddProduct() {
 
+  //On crée des states pour chaque input field, pour stocké les valeurs qu'on va écrire en direct
+  //Comme il y a l'ilage, faire un state avec un objet comme dans contact ne va pas marcher
   const [imageUrl, setImageUrl] = useState('');
   const [auteur, setauteur] = useState('');
   const [type, setType] = useState('');
@@ -27,10 +29,11 @@ export default function AddProduct() {
   //To submit all form data to the server with .post
   const handleSubmit = async (e) => {
 
+//Pour interdire l'envoie si on ne rempli pas un champ de addProduct
     if (imageUrl && auteur && type && etat && infoProduit && prix && code) {
-      const formData = new FormData(); //  Pour tout envoyé en 1 fois et plus simplement on utilise FormData() =built-in JavaScript object that allows to construct a set of key/value pairs representing form fields and their values.
-      formData.append('file', imageUrl);
-      formData.append('auteur', auteur);
+      const formData = new FormData(); //Vu qu'on envoie un file, on utilise la method FormData() pour créer un objet avec key-values, et tout envoyer en 1 fois
+      formData.append('file', imageUrl);//"file": value de la state imageUrl
+      formData.append('auteur', auteur);//"auteur" property: value de la state auteur
       formData.append('type', type);  
       formData.append('etat', etat);
       formData.append('infoProduit', infoProduit);
@@ -38,8 +41,8 @@ export default function AddProduct() {
       formData.append('code', code);
 
       try {
-        const response = await axios.post('http://localhost:3005/upload', formData);
-
+        const response = await axios.post('http://localhost:3005/upload', formData);//On envoie tout en 1 fois
+        alert('Product submitted to DataBase')
       } catch (error) {
         console.error('Error uploading file:', error);
       }
