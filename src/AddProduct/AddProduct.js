@@ -28,10 +28,10 @@ export default function AddProduct() {
   const handleSubmit = async (e) => {
 
     if (imageUrl && auteur && type && etat && infoProduit && prix && code) {
-      const formData = new FormData();
+      const formData = new FormData(); //  Pour tout envoyé en 1 fois et plus simplement on utilise FormData() =built-in JavaScript object that allows to construct a set of key/value pairs representing form fields and their values.
       formData.append('file', imageUrl);
       formData.append('auteur', auteur);
-      formData.append('type', type);
+      formData.append('type', type);  
       formData.append('etat', etat);
       formData.append('infoProduit', infoProduit);
       formData.append('prix', prix);

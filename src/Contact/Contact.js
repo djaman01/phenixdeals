@@ -8,6 +8,7 @@ export default function Contact() {
 
   const alertFormulaire = () => alert('Formulaire Envoyé ! Nous vous répondrons dès que possible')
 
+  //Comme on a 1 form, on veut tout envoyé en 1 fois
   //state variable qui aura la value de l'input et qui est un objet avec plusieurs properties pour mettre dans différents input
   const [formData, setFormData] = useState({
     Nom: "",
@@ -18,16 +19,11 @@ export default function Contact() {
     Aide: ""
   });
 
-
-  // Arrow function qui est l'event handler = Elle sera activé quand un event sera triger (ici le onChange de l'input)
-  // Elle donnera des values à la state variable formData avec setFormData en fonction des values de l'input que donnera l'user
-  //[name] = keyName de la properties de la state variable formData et value= value des properties de l'objet formData
+  //onChange={handleChange} Va être écrit dans tous les inputs, pour en prendre les values écrites et les stores dans les states variables respectives
+  //const { name, value } = e.target; is using destructuring assignment to extract the name and value properties from the input objects that contains the onChange
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    const { name, value } = e.target; //e.target = extrait name et value (ici defaultValue) ecrite par l'user, de tous les input fields avec onChange={handleChange} 
+    setFormData({...formData, [name]: value, }); //...formData recrée une copie de l'objet formData et [name]:value, remplace les values pour chaque property
   };
 
   //Will be called on the form attribute onSubmit={handleSubmit}
