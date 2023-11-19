@@ -49,7 +49,7 @@ export default function AddProduct() {
       alert('Add all products before Submit');
     }
   }
-
+//Pour faire une protected route à addProduct et n'y accéder que si token avec admin
   const navigate = useNavigate()
   axios.defaults.withCredentials = true;
 

@@ -6,6 +6,8 @@ import { BiEditAlt } from "react-icons/bi";
 
 import DataTable from "react-data-table-component"
 
+import { StyleSheetManager } from 'styled-components';
+
 import './dashboard.css'
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -27,10 +29,12 @@ export default function Dashboard() {
 
   //Protected Route: dans le back-end, on va mettre une middleware pour vérifier le token avant d'autoriser une réponse
   axios.defaults.withCredentials = true; //Pour activer le code qui store le token dans le cookie ET revenir à la page sans logging in le temps que le token s'expire
+
+  //Protected route: pour empêcher d'accéder à la page /dashboard si token n'est pas dans le cookie = si pas login en tant qu'admin
   useEffect(() => {
     axios.get('http://localhost:3005/dashboard')
       .then((res) => {
-        if (res.data === "Success") {
+        if (res.data === "Success") { //si token présent et vérifié
           console.log("Login with middleware successful ")
         }
         else {
@@ -53,16 +57,16 @@ export default function Dashboard() {
   }, [products]); //[products]= to change automatically the updated name after editing
 
 
-  //Arrow function with PUT Request
+  //Arrow function with PUT Request pour changer prix et code
   const handleUpdateProduct = (productId) => { //parameter to catch the endpoint of url pour identifier le produit que l'on souhaite modifier
     const updatedProductData = { //les propriété prix et code devront être remplacé par les valeurs des states variables ci-après
       prix: editedProductPrice,
       code: editedProductCode
     }
-    axios.put(`http://localhost:3005/products/${productId}`, updatedProductData) // Finds the product by its _id + Update it with updateProductData 
+    axios.put(`http://localhost:3005/products/${productId}`, updatedProductData) // Finds the product by its _id + Update it with updateProductData / pas besoin de useParams car on n'a pas besoin d'un trcu dynamique qui peut changer 
       .then((response) => {
         console.log('Product updated successfully:', response.data);
-        setEditingProductId(null); // Reset the "editingProductId" state after editing, to toggle the input and save button pour voir les noms de la data et ne plus voir update et cancel
+        setEditingProductId(null); // Reset the "editingProductId" state after editing, to toggle the input and save button pour voir stylo et poubelle au lieu de update et cancel
       })
       .catch((error) => {
         console.error('Error updating product:', error);
@@ -75,17 +79,17 @@ export default function Dashboard() {
     axios.delete(`http://localhost:3005/products/${productId}`)
       .then((response) => {
         console.log('Product deleted successfully:', response.data);
-        setProducts(products.filter(product => product._id !== productId));//Update the products states with removing the product with if=productId (product clicked)
+        setProducts(products.filter(product => product._id !== productId));//But= que le produit supprimé disparaisse de notre state avec laquelle on map les données Update the products states with removing the product if=productId de notre produit / Donc remove le produit lui-même  de notre state et ne pas avoir la possibilité de mapper sur elle
       })
       .catch((error) => {
         console.error('Error deleting product:', error);
       });
   }
 
-    //To cancel the editing of a product and toggle back to the data
-    const handleCancelProduct = () => {
-      setEditingProductId(null)
-    }
+  //To cancel the editing of a product and toggle back to the data
+  const handleCancelProduct = () => {
+    setEditingProductId(null)
+  }
 
   //To logout request: Get request to logout / Back-end Respond by clear cookie et écrit Success /Then, if "Success", Front-end reloads the page
 
@@ -115,36 +119,36 @@ export default function Dashboard() {
   const columns = [
     {
       name: "Image",
-      selector: 'imageUrl', //property name dans modèle base de donnée
+      selector: row => row.imageUrl, //property name dans modèle base de donnée pour l'extraire de la base de donnée
       cell: row => <img className='dashboard-img' src={`http://localhost:3005/${row.imageUrl}`} alt={row.auteur} /> //Obligé de faire cell et src sinon ne montre que le path de l'image qui est dans base de donnée
     },
 
     //On ne met pas de cell property, car data base de donnée est suffisante
     {
       name: "Type",
-      selector: 'type',
+      selector: row => row.type,
       sortable: true, //Permet d'ordonné par ordre Alphabétic ou inverse
     },
     {
       name: "Auteur",
-      selector: 'auteur',
+      selector: row => row.auteur,
       sortable: true,
     },
     {
       name: "Info Produit",
-      selector: 'infoProduit',
+      selector: row => row.infoProduit,
       sortable: true,
     },
     {
       name: "Etat",
-      selector: 'etat',
+      selector: row => row.etat,
       sortable: true,
     },
 
     //Here we need the cell property because we want to customize it
     {
       name: "Prix",
-      selector: 'prix',
+      selector: row => row.prix,
       cell: row => (
         editingProductId === row._id ? ( //quand on clique sur stylo on a codé plus bas setEditingProductId(row._id); donc ce code apparaitra
           <div>
@@ -163,7 +167,7 @@ export default function Dashboard() {
     },
     {
       name: "Code",
-      selector: 'code',
+      selector: row => row.code,
       sortable: true,
       cell: row => (
         editingProductId === row._id ? (
@@ -183,7 +187,7 @@ export default function Dashboard() {
     },
     {//Colonne Actions, qui va afficher des boutons différents en fonction de la valeur de editingProductId
       name: "Actions",
-      selector: '_id', 
+      selector: row => row._id,
       cell: row => (
         editingProductId === row._id ? (
           // On sera obligé d'écrire l'event handler dans le onclick, car on cible row._id et on ne peut l'atteindre que ici
@@ -196,9 +200,9 @@ export default function Dashboard() {
             <div className="icones-holder">
               <BiEditAlt //Quand on clique sur le stylo, state variable editingProductId = _id du produit => Donc change code colonne Action, prix et code comme écrit précédemment
                 className='icon-dashboard'
-                onClick={() => { setEditingProductId(row._id)}}
+                onClick={() => { setEditingProductId(row._id) }}
               />
-               
+
               /
               <BsTrash
                 className='icon-dashboard'
@@ -224,41 +228,45 @@ export default function Dashboard() {
     product.auteur.toLowerCase().includes(filterText.toLowerCase())
   );
 
+  //Pour ce npm on utilise des styled components, donc on doit écrire ce code pour éviter l'écriture d'erreur dans la console
+  const shouldForwardProp = (prop) => prop !== 'sortActive';
 
   return (
     <>
+    
+      <StyleSheetManager shouldForwardProp={shouldForwardProp}> {/* Pour éviter errur styledprops component dans la console */}
 
+        <Link to='/' className='home-link'>
+          <h4 className='home-button'>Accueil</h4>
+        </Link>
 
-      <Link to='/' className='home-link'>
-        <h4 className='home-button'>Accueil</h4>
-      </Link>
+        <Link to='/addProduct' className='home-link'>
+          <h4 className='home-button'>Add Product</h4>
+        </Link>
 
-      <Link to='/addProduct' className='home-link'>
-        <h4 className='home-button'>Add Product</h4>
-      </Link>
+        {/* logout button avec changement de style si clicked */}
+        <p className={`logout-button ${logoutClicked ? 'logout-clicked' : ''}`} onClick={handleLogout}>Log Out</p>
 
-      {/* logout button avec changement de style si clicked */}
-      <p className={`logout-button ${logoutClicked ? 'logout-clicked' : ''}`} onClick={handleLogout}>Log Out</p>
-
-      <input
-        type="text"
-        placeholder="Filter by Auteur"
-        value={filterText}
-        onChange={handleFilter}
-      />
-
-      <div>
-        <h2>All Products Added in Database</h2>
-
-        {/* Création Tableau Dashboard */}
-        <DataTable
-          columns={columns}
-          data={filteredProducts} //la data qui va structurer le tableau, c'est pourquoi ça amène les données de la database, sans rie nécrire
-          pagination
-          fixedHeader //Pour que le header suive quand on scroll down
-
+        <input
+          type="text"
+          placeholder="Filter by Auteur"
+          value={filterText}
+          onChange={handleFilter}
         />
-      </div>
+
+        <div>
+          <h2>All Products Added in Database</h2>
+
+          {/* Création Tableau Dashboard */}
+          <DataTable
+            columns={columns}
+            data={filteredProducts} //la data qui va structurer le tableau, c'est pourquoi ça amène les données de la database, sans rie nécrire
+            pagination
+            fixedHeader //Pour que le header suive quand on scroll down
+
+          />
+        </div>
+      </StyleSheetManager>
     </>
   );
 
