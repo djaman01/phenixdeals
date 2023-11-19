@@ -8,8 +8,8 @@ export default function Contact() {
 
   const alertFormulaire = () => alert('Formulaire Envoyé ! Nous vous répondrons dès que possible')
 
-  //Comme on a 1 form, on veut tout envoyé en 1 fois
-  //state variable qui aura la value de l'input et qui est un objet avec plusieurs properties pour mettre dans différents input
+  //Pour envoyes les values des inputs du form en 1 fois: On crée un objets avec les properties correspondant aux valeus des inputs
+  //Puis dans les input on fera par ex: value={formData.Nom}
   const [formData, setFormData] = useState({
     Nom: "",
     Prenom: "",
@@ -19,22 +19,17 @@ export default function Contact() {
     Aide: ""
   });
 
-  //onChange={handleChange} Va être écrit dans tous les inputs, pour en prendre les values écrites et les stores dans les states variables respectives
-  //const { name, value } = e.target; is using destructuring assignment to extract the name and value properties from the input objects that contains the onChange
+  //onChange={handleChange} Va être écrit dans tous les inputs du form pour mettre à jour les values des properties du state
   const handleChange = (e) => {
-    const { name, value } = e.target; //e.target = extrait name et value (ici defaultValue) ecrite par l'user, de tous les input fields avec onChange={handleChange} 
+    const { name, value } = e.target; //e.target => extrait name et value (ici defaultValue) ecrits par l'user
     setFormData({...formData, [name]: value, }); //...formData recrée une copie de l'objet formData et [name]:value, remplace les values pour chaque property
   };
 
-  //Will be called on the form attribute onSubmit={handleSubmit}
-  //Création de l'API avec HTTP method .post 
-  //On peut mettre .preventDefault() pour pas que le form se rafraichisse par défaut quand on appuie sur submit, mais je veux qu'il se rafraichisse donc je ne le mets pas
-
+  //form onSubmit={handleSubmit}
   const handleSubmit = async (e) => {
     //e.preventDefault();
-
     try {
-      const response = await axios.post('http://localhost:3005/', formData);
+      const response = await axios.post('http://localhost:3005/contact', formData);//on envoie toutes les properties en 1 fois avec la state formData qui est un objet avec toutes les properties et values entrés par l'user
 
       console.log('Response from the server:', response.data);
     } 
