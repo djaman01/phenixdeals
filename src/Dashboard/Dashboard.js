@@ -58,12 +58,12 @@ export default function Dashboard() {
 
 
   //Arrow function with PUT Request pour changer prix et code
-  const handleUpdateProduct = (productId) => { //parameter to catch the endpoint of url pour identifier le produit que l'on souhaite modifier
-    const updatedProductData = { //les propriété prix et code devront être remplacé par les valeurs des states variables ci-après
+  const handleUpdateProduct = (productId) => { //parametre auquel on va donner comme valeur _id quand on va appeler handleUpdateProduct(row._id)
+    const updatedProductData = {//valeurs des colonnes comme dans le modèle du back-end à modifier avec input et value={state variable}
       prix: editedProductPrice,
       code: editedProductCode
     }
-    axios.put(`http://localhost:3005/products/${productId}`, updatedProductData) // Finds the product by its _id + Update it with updateProductData / pas besoin de useParams car on n'a pas besoin d'un trcu dynamique qui peut changer 
+    axios.put(`http://localhost:3005/products/${productId}`, updatedProductData) // Finds the product by its _id + Update it with updateProductData / pas besoin de useParams car on n'a pas besoin d'un truc dynamique qui peut changer 
       .then((response) => {
         console.log('Product updated successfully:', response.data);
         setEditingProductId(null); // Reset the "editingProductId" state after editing, to toggle the input and save button pour voir stylo et poubelle au lieu de update et cancel
