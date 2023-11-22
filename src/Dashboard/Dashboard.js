@@ -11,6 +11,17 @@ import { StyleSheetManager } from 'styled-components';
 import './dashboard.css'
 import { Link, useNavigate } from 'react-router-dom';
 
+const customStyles = {
+  headCells: {
+    style: {
+      color: 'white',
+      fontWeight: 'bold',
+      fontSize: 20,
+      backgroundColor: "grey"
+    },
+  },
+};
+
 
 
 export default function Dashboard() {
@@ -79,7 +90,7 @@ export default function Dashboard() {
     axios.delete(`http://localhost:3005/products/${productId}`)
       .then((response) => {
         console.log('Product deleted successfully:', response.data);
-        setProducts(products.filter(product => product._id !== productId));//But= que le produit supprimé disparaisse de notre state avec laquelle on map les données Update the products states with removing the product if=productId de notre produit / Donc remove le produit lui-même  de notre state et ne pas avoir la possibilité de mapper sur elle
+        setProducts(products.filter(product => product._id !== productId));//But= que le produit supprimé disparaisse de notre state qui stocke tous les produits
       })
       .catch((error) => {
         console.error('Error deleting product:', error);
@@ -120,7 +131,11 @@ export default function Dashboard() {
     {
       name: "Image",
       selector: row => row.imageUrl, //property name dans modèle base de donnée pour l'extraire de la base de donnée
-      cell: row => <img className='dashboard-img' src={`http://localhost:3005/${row.imageUrl}`} alt={row.auteur} /> //Obligé de faire cell et src sinon ne montre que le path de l'image qui est dans base de donnée
+      cell: row => <img className='dashboard-img' src={`http://localhost:3005/${row.imageUrl}`} alt={row.auteur} />, //Obligé de faire cell et src sinon ne montre que le path de l'image qui est dans base de donnée
+      style: {
+        color: 'blue', 
+        fontWeight: 'bold',
+      },
     },
 
     //On ne met pas de cell property, car data base de donnée est suffisante
@@ -263,6 +278,7 @@ export default function Dashboard() {
             data={filteredProducts} //la data qui va structurer le tableau, c'est pourquoi ça amène les données de la database, sans rie nécrire
             pagination
             fixedHeader //Pour que le header suive quand on scroll down
+            customStyles={customStyles} 
 
           />
         </div>
