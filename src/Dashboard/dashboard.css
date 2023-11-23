@@ -10,7 +10,34 @@
   text-align: center;
 }
 
+.all-btn-dash {
+  display: flex;
+  justify-content: space-around;
+  width: 1000px;
+  margin: 0 auto;
+}
 
+.dashboard-name-title {
+  font-family: 'Martian Mono', monospace;
+  margin-bottom: 50px;
+}
+
+.input-search-dash {
+  height: 25px;
+  border-radius: 9px;
+  margin-left: 660px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.btn-dash-home {
+  background-color: green;
+  border-radius: 9px;
+}
+
+.btn-dash-add {
+  border-radius: 9px;
+}
 .subtitle-dashboard {
   background-color: #f2f2f2;
 }
@@ -74,8 +101,6 @@ height: 60px;
  font-family: 'Roboto', sans-serif;
  background-color: red;
  color: white;
- margin-right: auto;
- margin-left: auto;
  cursor: pointer;
  
 }

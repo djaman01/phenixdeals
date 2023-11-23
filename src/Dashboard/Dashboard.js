@@ -133,7 +133,7 @@ export default function Dashboard() {
       selector: row => row.imageUrl, //property name dans modèle base de donnée pour l'extraire de la base de donnée
       cell: row => <img className='dashboard-img' src={`http://localhost:3005/${row.imageUrl}`} alt={row.auteur} />, //Obligé de faire cell et src sinon ne montre que le path de l'image qui est dans base de donnée
       style: {
-        color: 'blue', 
+        color: 'blue',
         fontWeight: 'bold',
       },
     },
@@ -248,29 +248,34 @@ export default function Dashboard() {
 
   return (
     <>
-    
+
       <StyleSheetManager shouldForwardProp={shouldForwardProp}> {/* Pour éviter errur styledprops component dans la console */}
+        <div className="all-btn-dash">
+          <Link to='/' className='home-link'>
+            <button className='btn-dash-home'>Accueil</button>
+          </Link>
 
-        <Link to='/' className='home-link'>
-          <h4 className='home-button'>Accueil</h4>
-        </Link>
 
-        <Link to='/addProduct' className='home-link'>
-          <h4 className='home-button'>Add Product</h4>
-        </Link>
+          <Link to='/addProduct' className='home-link'>
+            <button className='btn-dash-add'>Add Product</button>
+          </Link>
 
-        {/* logout button avec changement de style si clicked */}
+             {/* logout button avec changement de style si clicked */}
         <p className={`logout-button ${logoutClicked ? 'logout-clicked' : ''}`} onClick={handleLogout}>Log Out</p>
 
+        </div>
+
+     
         <input
           type="text"
           placeholder="Filter by Auteur"
           value={filterText}
           onChange={handleFilter}
+          className='input-search-dash'
         />
 
         <div>
-          <h2>All Products Added in Database</h2>
+          <h2 className='dashboard-name-title'>All Products Added in Database</h2>
 
           {/* Création Tableau Dashboard */}
           <DataTable
@@ -278,7 +283,7 @@ export default function Dashboard() {
             data={filteredProducts} //la data qui va structurer le tableau, c'est pourquoi ça amène les données de la database, sans rie nécrire
             pagination
             fixedHeader //Pour que le header suive quand on scroll down
-            customStyles={customStyles} 
+            customStyles={customStyles}
 
           />
         </div>
