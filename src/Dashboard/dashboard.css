@@ -30,6 +30,9 @@
   margin-bottom: 30px;
 }
 
+.btn-dash-home, .btn-dash-add, .logout-button {
+  cursor: pointer;
+}
 .btn-dash-home {
   background-color: green;
   border-radius: 9px;
