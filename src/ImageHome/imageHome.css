@@ -14,11 +14,12 @@
   width: 500px;
 }
 
-@media(max-width: 1150px) {
+@media(max-width: 500px) {
 
   .image-home {
-    width: 1000px;
+    width: 400px;
     object-fit: contain;
+    margin-left: -10px;
    
   }
   

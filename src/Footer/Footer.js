@@ -12,13 +12,15 @@ export default function Footer() {
 
         <div className='abonnement'>
           <h4>Abonnez-vous à nos réseaux sociaux: </h4>
+          <div className='social-icons'>
           <span><SocialIcon url="https://www.instagram.com/phenixdeals/" target="_blank" />  </span>
           <span style={{ marginLeft: 20 }}><SocialIcon url="https://web.facebook.com/profile.php?id=100090243464213" target="_blank" />  </span>
+          </div>
         </div>
 
 
         <div className='contact-footer'>
-          <h4 style={{ color: "black" }}>Contact: </h4>
+          <h4 className="contact-title" style={{ color: "black" }}>Contact: </h4>
           <div>
             <span><FontAwesomeIcon icon={faHouse} style={{ color: "#404544" }} /> </span>
             <span>Casablanca, Maroc</span>

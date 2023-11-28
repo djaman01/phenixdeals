@@ -101,12 +101,13 @@ font-size: 17px;
 
 }
 
-.contact-form-label {
+.contact-form-label, .label-area-title {
   font-size: 20px;
  
 }
 
-@media (max-width: 1350px) {
+
+@media (max-width: 500px) {
   .form-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -114,12 +115,34 @@ font-size: 17px;
   }
 
   .all-form {
-    width: 700px;
+    margin-top: 100px;
+    margin-left: -5px;
+    width: 300px;
     height: 1000px;
   }
 
+  .contact-form-input {
+    margin-left: -80px;
+    width: 340px;
+  }
   .all-text-area {
     margin-left: 50px;
+  }
+
+  .contact-form-label {
+    margin-left: -70px;
+  }
+
+  .all-text-area {
+    margin-left: -27px;
+  }
+
+  .label-area-title {
+    margin-left: 10px;
+  }
+
+  .contact-text-area {
+    width: 350px;
   }
 
 }

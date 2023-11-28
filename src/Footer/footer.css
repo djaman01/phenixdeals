@@ -41,8 +41,13 @@
 
 }
 
+.social-icons {
+  display: flex;
+  justify-content: space-around;
+}
+
 .footer-container {
-  width: 1000px;
+  width: 400px;
   
 }
 
@@ -50,7 +55,13 @@
   margin: 0 auto;
 }
 
-.contact-footer{
-  margin: 0 auto;
+.contact-title {
+  margin-left: 50px;
 }
+
+.contact-footer {
+  margin-left: 120px;
+}
+
+
 }

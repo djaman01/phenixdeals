@@ -22,23 +22,31 @@ export default function Contact() {
   //onChange={handleChange} Va être écrit dans tous les inputs du form pour mettre à jour les values des properties du state
   const handleChange = (e) => {
     const { name, value } = e.target; //e.target => extrait name et value (ici defaultValue) ecrits par l'user
-    setFormData({...formData, [name]: value, }); //...formData recrée une copie de l'objet formData et [name]:value, remplace les values pour chaque property
+    setFormData({ ...formData, [name]: value, }); //...formData recrée une copie de l'objet formData et [name]:value, remplace les values pour chaque property
   };
 
-  //form onSubmit={handleSubmit}
+  //A mettre dans le form => form onSubmit={handleSubmit}
   const handleSubmit = async (e) => {
-    //e.preventDefault();
+    e.preventDefault();
+
+    for (const property in formData) { //pour chaque property de la formData = input du form
+      if (formData.hasOwnProperty(property) && formData[property].trim() === "") {//=Si une property existe et que sa value en enlevant les espaces dans les extrémités(=.trim()) est  alors:
+        alert(`Merci de remplir tous les champs du formulaire `);
+        return; // Stop form submission if any required field is empty
+      }
+    }
+    //Si tous les inputs sont remplies et qu'on clique sur submit, alors:
     try {
       const response = await axios.post('http://localhost:3005/contact', formData);//on envoie toutes les properties en 1 fois avec la state formData qui est un objet avec toutes les properties et values entrés par l'user
-
       console.log('Response from the server:', response.data);
-    } 
+      alertFormulaire()
+    }
     catch (error) {
 
       console.error('Error:', error);
     }
   };
-  
+
   return (
 
 
@@ -131,7 +139,7 @@ export default function Contact() {
 
               <div className="all-text-area">
                 <label className='contact-form-label' htmlFor="aide">Que souhaitez-vous vendre ?</label>
-                <textarea className='contact-text-area'  defaultvalue={formData.Aide}
+                <textarea className='contact-text-area' value={formData.Aide}
                   onChange={handleChange}
                   name="Aide"
                   id="aide"
@@ -145,7 +153,7 @@ export default function Contact() {
           </div>
 
           <div className="form-button">
-            <button onClick ={alertFormulaire} id='submitcheck' type="submit" className="submit-btn">Envoyer</button>
+            <button id='submitcheck' type="submit" className="submit-btn">Envoyer</button>
             <button type="reset" className='reset-btn'> Reset </button>
           </div>
 
