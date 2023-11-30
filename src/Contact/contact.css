@@ -83,7 +83,12 @@ font-size: 17px;
 }
 
 .submit-btn {
-  background-color: #009B77;
+  background-color: #0072B5;
+  font-weight: bold;
+}
+
+.submit-btn:active{
+  background-color: green;
 }
 .reset-btn {
   background-color: #DD4124;

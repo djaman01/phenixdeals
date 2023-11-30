@@ -98,7 +98,7 @@ export default function FicheDatabase() {
                 {reserveClicked === true &&
 
                   <div className="whatsapp-div" >
-                    <p style={{ paddingTop: "7px" }}> Envoyez-nous un message whatsapp avec la référence du produit :</p>
+                    <p style={{ paddingTop: "7px" }}> Envoyez-nous un message whatsapp <span className="ref-text">avec la référence du produit</span> :</p>
 
                     <a className="link-whatsapp" href="https://api.whatsapp.com/send?phone=212619635336&text=Bonjour%2C%0AJe%20suis%20int%C3%A9ress%C3%A9%20par%20un%20produit%20vu%20sur%20phenixdeals.com.%0ALa%20r%C3%A9f%C3%A9rence%20du%20produit%20est%3A%20" target="_blank">
                       <button className="whatsapp-button"> Whatsapp </button>

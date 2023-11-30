@@ -6,8 +6,6 @@ import './contact.css'
 
 export default function Contact() {
 
-  const alertFormulaire = () => alert('Formulaire Envoyé ! Nous vous répondrons dès que possible')
-
   //Pour envoyes les values des inputs du form en 1 fois: On crée un objets avec les properties correspondant aux valeus des inputs
   //Puis dans les input on fera par ex: value={formData.Nom}
   const [formData, setFormData] = useState({
@@ -39,7 +37,7 @@ export default function Contact() {
     try {
       const response = await axios.post('http://localhost:3005/contact', formData);//on envoie toutes les properties en 1 fois avec la state formData qui est un objet avec toutes les properties et values entrés par l'user
       console.log('Response from the server:', response.data);
-      alertFormulaire()
+      alert('Formulaire Envoyé ! Nous vous répondrons dès que possible')
     }
     catch (error) {
 
@@ -70,7 +68,7 @@ export default function Contact() {
                   type="text"
                   id="Nom"
                   name="Nom"
-                  defaultvalue={formData.Nom} //car avec value, ca ne reset pas
+                  value={formData.Nom} //car avec value, ca ne reset pas
                   onChange={handleChange}
                   placeholder='Nom'
                   required
@@ -84,7 +82,7 @@ export default function Contact() {
                   type="text"
                   id="Prenom"
                   name="Prenom"
-                  defaultvalue={formData.Prenom}
+                  value={formData.Prenom}
                   onChange={handleChange}
                   placeholder='Prénom'
                   required
@@ -98,7 +96,7 @@ export default function Contact() {
                   type="text"
                   id="Ville"
                   name="Ville"
-                  defaultvalue={formData.Ville}
+                  value={formData.Ville}
                   onChange={handleChange}
                   placeholder='ville'
                   required
@@ -112,7 +110,7 @@ export default function Contact() {
                   type="text"
                   id="Mail"
                   name="Mail"
-                  defaultvalue={formData.Mail}
+                  value={formData.Mail}
                   onChange={handleChange}
                   placeholder='Votre e-mail'
                   required
@@ -126,7 +124,7 @@ export default function Contact() {
                   type="text"
                   id="Telephone"
                   name="Telephone"
-                  defaultvalue={formData.Telephone}
+                  value={formData.Telephone}
                   onChange={handleChange}
                   placeholder='Numéro de Téléphone'
                   required
@@ -154,7 +152,6 @@ export default function Contact() {
 
           <div className="form-button">
             <button id='submitcheck' type="submit" className="submit-btn">Envoyer</button>
-            <button type="reset" className='reset-btn'> Reset </button>
           </div>
 
         </form>
