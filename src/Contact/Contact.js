@@ -66,9 +66,9 @@ export default function Contact() {
                 <input
                   className='contact-form-input'
                   type="text"
-                  id="Nom"
-                  name="Nom"
-                  value={formData.Nom} //car avec value, ca ne reset pas
+                  id="Nom" //pas de nom composés sinon impossible d'écrrie dans l'input
+                  name="Nom" //pas de nom composés sinon impossible d'écrrie dans l'input
+                  value={formData.Nom}
                   onChange={handleChange}
                   placeholder='Nom'
                   required

@@ -21,20 +21,14 @@ export default function AddProduct() {
   const [prix, setPrix] = useState('');
   const [code, setCode] = useState('');
 
-  // To store the selected file in imageUrl State variable
-  const handleFileUpload = (acceptedFiles) => {
-    setImageUrl(acceptedFiles[0]);
-  };
-
   //To submit all form data to the server with .post
   const handleSubmit = async (e) => {
-
-//Pour interdire l'envoie si on ne rempli pas un champ de addProduct
+    //Pour interdire l'envoie si on ne rempli pas un champ de addProduct
     if (imageUrl && auteur && type && etat && infoProduit && prix && code) {
       const formData = new FormData(); //Vu qu'on envoie un file, on utilise la method FormData() pour créer un objet avec key-values, et tout envoyer en 1 fois
-      formData.append('file', imageUrl);//"file": value de la state imageUrl
-      formData.append('auteur', auteur);//"auteur" property: value de la state auteur
-      formData.append('type', type);  
+      formData.append('file', imageUrl);// 'file"=property / imageUrl= Value = state variable
+      formData.append('auteur', auteur);
+      formData.append('type', type);
       formData.append('etat', etat);
       formData.append('infoProduit', infoProduit);
       formData.append('prix', prix);
@@ -52,7 +46,7 @@ export default function AddProduct() {
       alert('Add all products before Submit');
     }
   }
-//Pour faire une protected route à addProduct et n'y accéder que si token avec admin
+  //Pour faire une protected route à addProduct et n'y accéder que si token avec admin
   const navigate = useNavigate()
   axios.defaults.withCredentials = true;
 
@@ -154,7 +148,7 @@ export default function AddProduct() {
           </div>
 
           {/* Dropping image will store it in the imageUrl state variable */}
-          <Dropzone onDrop={handleFileUpload}>
+          <Dropzone onDrop={acceptedFiles => setImageUrl(acceptedFiles[0])}>
             {({ getRootProps, getInputProps }) => (
               <div className="dropzone-add-product" {...getRootProps()}>
                 <input {...getInputProps()} />
