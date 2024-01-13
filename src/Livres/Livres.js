@@ -24,8 +24,6 @@ export default function Livres() {
   const handleProductName = (e) => setProductName(e.target.value); //ca c'est l'event handler qui fait que la state productName a pour valeur la value de l'input
 
   useEffect(() => {
-    const fetchData = () => {
-
       axios.get('http://localhost:3005/livre')//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
         .then((response) => {
           console.log("tableau products fetched", response.data);
@@ -34,10 +32,8 @@ export default function Livres() {
         .catch((error) => {
           setError('An error occurred while fetching data.');
         });
-    };
-
-    fetchData();
-  }, []);//fetch la data avec axios dès qu'on ouvre le browser, comme ça tous les produits apparaisse d'un coup
+        
+    }, []);//fetch la data avec axios dès qu'on ouvre le browser, comme ça tous les produits apparaisse d'un coup
   
   useEffect(() => {
     Aos.init({

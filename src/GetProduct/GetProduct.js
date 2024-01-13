@@ -13,11 +13,6 @@ import "./getProduct.css"
 import InputGoogle from '../PropsComponents/InputGoogle';
 import MapCardModel from '../PropsComponents/MapCardModel';
 
-
-
-
-
-
 export default function GetProduct() {
 
   const scrollToTop = () => {

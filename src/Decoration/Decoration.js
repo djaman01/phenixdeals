@@ -25,8 +25,7 @@ export default function Decoration() {
 
   const handleProductName = (e) => setProductName(e.target.value); //ca c'est l'event handler qui fait que la state productName a pour valeur la value de l'input
 
-  useEffect(() => {
-    const fetchData = () => {
+  useEffect(() => {//useEffect is essential for ensuring that the data fetching operation occurs when the component is initially mounted.
 
       axios.get('http://localhost:3005/decoration')//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
         .then((response) => {
@@ -36,9 +35,7 @@ export default function Decoration() {
         .catch((error) => {
           setError('An error occurred while fetching data.');
         });
-    };
-
-    fetchData();
+        
   }, []);//fetch la data avec axios dès qu'on ouvre le browser, comme ça tous les produits apparaisse d'un coup
 
   useEffect(() => {

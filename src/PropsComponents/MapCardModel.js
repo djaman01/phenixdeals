@@ -19,7 +19,7 @@ export default function MapCardModel({ title, value, onChange, placeholder, erro
   const indexOfLastItem = currentPage * itemsPerPage; //=20
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;//=0
 
-  //!!!!! Nouvelle variable sur laquelle on va mapper = currentItems 
+  //!!!!! Nouvelle variable sur laquelle on va mapper = currentItems / On utilise props pour ensuite mapper sur la function qu'on veut dans d'autres components 
   //store nouvelle array avec que les elements entre 0 et 20 exclus donc de 0 à 19 = 20 items
   const currentItems = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);
 
@@ -64,7 +64,7 @@ export default function MapCardModel({ title, value, onChange, placeholder, erro
         {error ? (<p>Error: {error}</p>) : (
 
           <div className="grid-map-products" data-aos='zoom-in'>
-            {/* il faut uiliser currentItems.map car on va filtrer et on veut voir la pagination: currentItems= filtredProducts.slice() */}
+            {/* il faut uiliser currentItems.map car on va filtrer dans les produits database et on veut voir la pagination: currentItems= filtredProducts.slice() */}
             {currentItems.map((item) => (
 
               <Link key={item._id} className="map-div-link" onClick={scrollToTop} to={`/fichedatabase/${item._id}`}>
