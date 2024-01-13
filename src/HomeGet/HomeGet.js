@@ -51,6 +51,10 @@ export default function HomeGet() {
   );
 
   useEffect(() => {
+    document.title = `Phenix Deals`;
+  }, []);
+
+  useEffect(() => {
     Aos.init({
       once: true,
       offset: 100,
