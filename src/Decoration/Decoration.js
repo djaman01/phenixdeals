@@ -27,7 +27,7 @@ export default function Decoration() {
 
   useEffect(() => {//useEffect is essential for ensuring that the data fetching operation occurs when the component is initially mounted.
 
-      axios.get('http://localhost:3005/decoration')//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
+      axios.get('https://phenixdeals.onrender.com/decoration')//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
         .then((response) => {
           console.log("tableau products fetched", response.data);
           setProductObject(response.data);

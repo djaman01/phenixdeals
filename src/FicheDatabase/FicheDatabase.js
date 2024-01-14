@@ -20,13 +20,13 @@ export default function FicheDatabase() {
   useEffect(() => {
     const fetchData = () => {
 
-      axios.get(`http://localhost:3005/article/${productId}`)
+      axios.get(`https://phenixdeals.onrender.com/article/${productId}`)
         .then((response) => {
           console.log("article fetched", response.data);
           setProduct(response.data); // Set the current product
 
           // Fetch related products based on the product's name
-          axios.get(`http://localhost:3005/related-products/${response.data.auteur}`) //J'utilise la réponse du 1er Get pour accéder à la property nom et ne selectionner que les produits qui ont le même nom
+          axios.get(`https://phenixdeals.onrender.com/related-products/${response.data.auteur}`) //J'utilise la réponse du 1er Get pour accéder à la property nom et ne selectionner que les produits qui ont le même nom
             .then((relatedResponse) => {
               console.log("related products fetched", relatedResponse.data);
               setRelatedProducts(relatedResponse.data);
@@ -78,7 +78,7 @@ export default function FicheDatabase() {
           <div className="fiche-produit">
 
             <div className="div-image-fiche">
-              <img src={`http://localhost:3005/${product.imageUrl}`} alt={product.détails} className="image-fiche" />
+              <img src={`https://phenixdeals.onrender.com/${product.imageUrl}`} alt={product.détails} className="image-fiche" />
             </div>
 
 
@@ -128,7 +128,7 @@ export default function FicheDatabase() {
                       <div className="div-thumbnail-map-products">
                         <img
                           className='thumbnail-map-products'
-                          src={`http://localhost:3005/${relatedProduct.imageUrl}`}
+                          src={`https://phenixdeals.onrender.com/${relatedProduct.imageUrl}`}
                           alt={relatedProduct.nom}
                         />
                       </div>
