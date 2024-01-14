@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import './loginModel.css'
 
 export default function LoginModel({ heading, handleSubmit, handleEmail, handlePassword, btn1, account, btn2, link }) {
+ 
+ 
   return (
     <>
 

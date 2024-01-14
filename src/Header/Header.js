@@ -1,7 +1,6 @@
 import './header.css'
 import Filter from '../Filter/Filter.js'
 import { Link } from 'react-router-dom'
-import Login from '../Login/Login'
 import { useState } from 'react'
 
 
