@@ -24,7 +24,7 @@ export default function Livres() {
   const handleProductName = (e) => setProductName(e.target.value); //ca c'est l'event handler qui fait que la state productName a pour valeur la value de l'input
 
   useEffect(() => {
-      axios.get('https://phenixdeals.onrender.com/livre')//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
+      axios.get('https://phenixback.onrender.com/livre')//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
         .then((response) => {
           console.log("tableau products fetched", response.data);
           setProductObject(response.data);

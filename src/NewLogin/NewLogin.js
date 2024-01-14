@@ -21,7 +21,7 @@ export default function Register() {
   //Pour Post la data une fois qu'on clique sur Submit
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('https://phenixdeals.onrender.com/login', { email, password })
+    axios.post('https://phenixback.onrender.com/login', { email, password })
       .then(res => {
         if (res.data.Status === "Success") {
           if (res.data.role === "admin") {

@@ -35,7 +35,7 @@ export default function AddProduct() {
       formData.append('code', code);
 
       try {
-        const response = await axios.post('https://phenixdeals.onrender.com/upload', formData);//On envoie tout en 1 fois
+        const response = await axios.post('https://phenixback.onrender.com/upload', formData);//On envoie tout en 1 fois
         alert('Product submitted to DataBase')
       } catch (error) {
         console.error('Error uploading file:', error);
@@ -51,7 +51,7 @@ export default function AddProduct() {
   axios.defaults.withCredentials = true;
 
   useEffect(() => {
-    axios.get('https://phenixdeals.onrender.com/addProduct')
+    axios.get('https://phenixback.onrender.com/addProduct')
       .then((res) => {
         if (res.data === "Success") {
           console.log("Login with middleware successful ")
