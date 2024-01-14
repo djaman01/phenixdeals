@@ -24,9 +24,6 @@ export default function NewLogin() {
     axios.post('https://phenixback.onrender.com/newlogin', { email, password })
       .then(res => {
         if (res.data.Status === "Success") {
-          const token = res.data.token; // Assuming your token is sent as res.data.token
-          axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-
           if (res.data.role === "admin") {
             navigate('/dashboard')
           }
