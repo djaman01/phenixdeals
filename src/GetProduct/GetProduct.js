@@ -30,7 +30,7 @@ export default function GetProduct() {
   useEffect(() => {
     const fetchData = () => {
 
-      axios.get('https://phenixback.onrender.com/products')
+      axios.get('http://localhost:3005/products')
         .then((response) => {
           console.log("All products fetched", response.data);
           setProductObject(response.data);

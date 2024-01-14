@@ -25,7 +25,7 @@ export default function Bijoux() {
 
   useEffect(() => {
     
-      axios.get('https://phenixback.onrender.com/bijou')//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
+      axios.get('http://localhost:3005/bijou')//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
         .then((response) => {
           console.log("All products fetched", response.data);
           setProductObject(response.data);

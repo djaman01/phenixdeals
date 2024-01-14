@@ -23,6 +23,7 @@ import NewLogin from './NewLogin/NewLogin';
 
 
 function App() {
+  const [authenticated, setAuthenticated] = useState(false); //State to confirm if i'm authenticated or not
 
   return (
     <BrowserRouter>

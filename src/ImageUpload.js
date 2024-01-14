@@ -21,7 +21,7 @@ function ImageUpload() {
     formData.append('code', code);
     
     try {
-      const response = await axios.post('https://phenixback.onrender.com/upload', formData);
+      const response = await axios.post('http://localhost:3005/upload', formData);
       setImageUrl(response.data.imageUrl);
       console.log("the image urln is :", imageUrl)
     } catch (error) {
@@ -87,7 +87,7 @@ function ImageUpload() {
           <img
             width={300}
             height={300}
-            src={`https://phenixback.onrender.com/${imageUrl}`}
+            src={`http://localhost:3005/${imageUrl}`}
             alt="Uploaded"
           />
         </div>

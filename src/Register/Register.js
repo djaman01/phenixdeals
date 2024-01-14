@@ -22,7 +22,7 @@ export default function Register() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    axios.post('https://phenixback.onrender.com/register', { email, password }) //Une fois qu'on post la data, si succès crée alert, sinon catch err console.log l'err
+    axios.post('http://localhost:3005/register', { email, password }) //Une fois qu'on post la data, si succès crée alert, sinon catch err console.log l'err
       .then(res => {
         navigate('/newlogin') //Si on signup bien, ca nous mènera vers login page
       })

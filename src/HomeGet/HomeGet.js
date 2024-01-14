@@ -32,7 +32,7 @@ export default function HomeGet() {
 
   useEffect(() => {
     const fetchData = () => {
-      axios.get('https://phenixback.onrender.com/lastproducts?limit=20') // Add the query parameter for limiting the results
+      axios.get('http://localhost:3005/lastproducts?limit=20') // Add the query parameter for limiting the results
         .then((response) => {
           console.log("Last 20 products fetched", response.data);
           setProductObject(response.data);

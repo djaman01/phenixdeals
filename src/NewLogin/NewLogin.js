@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LoginModel from '../PropsComponents/LoginModel';
 
 
-export default function NewLogin() {
+export default function Register() {
 
   const navigate = useNavigate(); //Function qui permet de mener vers un lien sous condition / Si condition vraie, navigate(/...)
 
@@ -21,11 +21,12 @@ export default function NewLogin() {
   //Pour Post la data une fois qu'on clique sur Submit
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('https://phenixback.onrender.com/newlogin', { email, password })
+    axios.post('http://localhost:3005/login', { email, password })
       .then(res => {
         if (res.data.Status === "Success") {
           if (res.data.role === "admin") {
             navigate('/dashboard')
+
           }
           else {
             navigate('/')
@@ -40,7 +41,7 @@ export default function NewLogin() {
   return (
     <>
 
-      <LoginModel heading="Login" handleSubmit={handleSubmit} handleEmail={handleEmail} handlePassword={handlePassword} btn1="Submit" />
+    <LoginModel heading="Login" handleSubmit={handleSubmit} handleEmail={handleEmail} handlePassword={handlePassword} btn1="Submit" account="Don't have any account?" btn2="Register" link="/register"/>
 
     </>
   )
