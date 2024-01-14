@@ -42,13 +42,13 @@ export default function LoginModel({ heading, handleSubmit, handleEmail, handleP
 
 
         <button id="button-submit-login" type="submit">{btn1}</button>
-
+{/* 
         <div className="signupContainer">
           <p style={{ fontSize: "19px", marginBottom:"-10px", marginTop:"30px" }}>{account}</p>
           <Link to={link}>
             <button type='submit' style={{ cursor: "pointer" }}> {btn2} </button>
           </Link>
-        </div>
+        </div> */}
 
       </form>
 
