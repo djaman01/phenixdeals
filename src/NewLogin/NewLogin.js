@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import LoginModel from '../PropsComponents/LoginModel';
 
 
-export default function Register() {
+export default function NewLogin() {
 
   const navigate = useNavigate(); //Function qui permet de mener vers un lien sous condition / Si condition vraie, navigate(/...)
 

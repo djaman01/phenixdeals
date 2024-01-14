@@ -1,7 +1,5 @@
 import './header.css'
-import Filter from '../Filter/Filter.js'
 import { Link } from 'react-router-dom'
-import Login from '../Login/Login'
 import { useState } from 'react'
 
 
@@ -18,7 +16,7 @@ export default function Header() {
     <>
 {/* On rajoute la class "open" à "header" si on clique sur le menu hamburger; sinon on rajoute rien */}
       <div className={`header ${isOpen ? 'open' : ''}`}>
-        <Link to='/'>
+        <Link to='/newlogin'>
           <div className="logo-header">
             <img className="logo" src="../logo-bon.jpg" alt="logo-phenix" />
           </div>
