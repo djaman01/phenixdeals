@@ -25,7 +25,7 @@ export default function Register() {
       .then(res => {
         if (res.data.Status === "Success") {
           if (res.data.role === "admin") {
-            navigate('/dashboard')
+            navigate('https://phenix-back.onrender.com/dashboard')
 
           }
           else {
