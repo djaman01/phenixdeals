@@ -3,8 +3,6 @@ import axios from 'axios';
 import Dropzone from 'react-dropzone';
   // import ImageList from './ImageList';
 
-  import backUrl from '../backUrl';
-
 function ImageUpload() {
   const [imageUrl, setImageUrl] = useState('');
   const [nom, setNom] = useState('');
@@ -23,7 +21,7 @@ function ImageUpload() {
     formData.append('code', code);
     
     try {
-      const response = await axios.post(`${backUrl}/upload`, formData);
+      const response = await axios.post('http://localhost:3005/upload', formData);
       setImageUrl(response.data.imageUrl);
       console.log("the image urln is :", imageUrl)
     } catch (error) {
@@ -89,7 +87,7 @@ function ImageUpload() {
           <img
             width={300}
             height={300}
-            src={`${backUrl}/${imageUrl}`}
+            src={`http://localhost:3005/${imageUrl}`}
             alt="Uploaded"
           />
         </div>

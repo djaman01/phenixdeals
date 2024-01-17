@@ -3,9 +3,6 @@ import Header from '../Header/Header'
 import axios from 'axios'
 import { useState } from 'react';
 import './contact.css'
-import backUrl from '../backUrl';
-
-
 
 export default function Contact() {
 
@@ -38,7 +35,7 @@ export default function Contact() {
     }
     //Si tous les inputs sont remplies et qu'on clique sur submit, alors:
     try {
-      const response = await axios.post(`${backUrl}/contact`, formData);//on envoie toutes les properties en 1 fois avec la state formData qui est un objet avec toutes les properties et values entrés par l'user
+      const response = await axios.post('http://localhost:3005/contact', formData);//on envoie toutes les properties en 1 fois avec la state formData qui est un objet avec toutes les properties et values entrés par l'user
       console.log('Response from the server:', response.data);
       alert('Formulaire Envoyé ! Nous vous répondrons dès que possible')
     }

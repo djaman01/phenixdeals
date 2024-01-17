@@ -10,9 +10,6 @@ import { StyleSheetManager } from 'styled-components';
 
 import './dashboard.css'
 import { Link, useNavigate } from 'react-router-dom';
-import backUrl from '../backUrl';
-
-
 
 const customStyles = {
   headCells: {
@@ -46,7 +43,7 @@ export default function Dashboard() {
 
   //Protected route: pour empêcher d'accéder à la page /dashboard si token n'est pas dans le cookie = si pas login en tant qu'admin
   useEffect(() => {
-    axios.get(`${backUrl}/dashboard`)
+    axios.get('http://localhost:3005/dashboard')
       .then((res) => {
         if (res.data === "Success") { //si token présent et vérifié
           console.log("Login with middleware successful ")
@@ -61,7 +58,7 @@ export default function Dashboard() {
 
   //GET Request to fecth all products posted in the server
   useEffect(() => {
-    axios.get(`${backUrl}/products`)
+    axios.get('http://localhost:3005/products')
       .then((response) => {
         setProducts(response.data);
       })
@@ -77,7 +74,7 @@ export default function Dashboard() {
       prix: editedProductPrice,
       code: editedProductCode
     }
-    axios.put(`${backUrl}/products/${productId}`, updatedProductData) // Finds the product by its _id + Update it with updateProductData / pas besoin de useParams car on n'a pas besoin d'un truc dynamique qui peut changer 
+    axios.put(`http://localhost:3005/products/${productId}`, updatedProductData) // Finds the product by its _id + Update it with updateProductData / pas besoin de useParams car on n'a pas besoin d'un truc dynamique qui peut changer 
       .then((response) => {
         console.log('Product updated successfully:', response.data);
         setEditingProductId(null); // Reset the "editingProductId" state after editing, to toggle the input and save button pour voir stylo et poubelle au lieu de update et cancel
@@ -90,7 +87,7 @@ export default function Dashboard() {
 
   //Arrow function with Delete Request
   const handleDeleteProduct = (productId) => {
-    axios.delete(`${backUrl}/products/${productId}`)
+    axios.delete(`http://localhost:3005/products/${productId}`)
       .then((response) => {
         console.log('Product deleted successfully:', response.data);
         setProducts(products.filter(product => product._id !== productId));//But= que le produit supprimé disparaisse de notre state qui stocke tous les produits
@@ -112,7 +109,7 @@ export default function Dashboard() {
 
 
   const handleLogout = () => {
-    axios.get(`${backUrl}/logout`)
+    axios.get('http://localhost:3005/logout')
       .then(res => {
         if (res.data.status === "Success") { //"Success" = message quand on clear le cookie du back-end et donc le token (car stocké dans le cookie)
           window.location.reload(true); //Refresh the application from server side et repart dans Home
@@ -134,7 +131,7 @@ export default function Dashboard() {
     {
       name: "Image",
       selector: row => row.imageUrl, //property name dans modèle base de donnée pour l'extraire de la base de donnée
-      cell: row => <img className='dashboard-img' src={`${backUrl}/${row.imageUrl}`} alt={row.auteur} />, //Obligé de faire cell et src sinon ne montre que le path de l'image qui est dans base de donnée
+      cell: row => <img className='dashboard-img' src={`http://localhost:3005/${row.imageUrl}`} alt={row.auteur} />, //Obligé de faire cell et src sinon ne montre que le path de l'image qui est dans base de donnée
       style: {
         color: 'blue',
         fontWeight: 'bold',

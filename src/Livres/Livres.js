@@ -13,7 +13,6 @@ import { Link } from 'react-router-dom';
 import InputGoogle from '../PropsComponents/InputGoogle';
 import MapCardModel from '../PropsComponents/MapCardModel';
 
-import backUrl from '../backUrl';
 
 export default function Livres() {
 
@@ -25,7 +24,7 @@ export default function Livres() {
   const handleProductName = (e) => setProductName(e.target.value); //ca c'est l'event handler qui fait que la state productName a pour valeur la value de l'input
 
   useEffect(() => {
-      axios.get(`${backUrl}/livre`)//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
+      axios.get('http://localhost:3005/livre')//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
         .then((response) => {
           console.log("tableau products fetched", response.data);
           setProductObject(response.data);

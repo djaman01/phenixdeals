@@ -5,7 +5,8 @@ import './addProduct.css'
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import backUrl from '../backUrl';
+
+
 
 
 export default function AddProduct() {
@@ -34,7 +35,7 @@ export default function AddProduct() {
       formData.append('code', code);
 
       try {
-        const response = await axios.post(`${backUrl}/upload`, formData);//On envoie tout en 1 fois
+        const response = await axios.post('http://localhost:3005/upload', formData);//On envoie tout en 1 fois
         alert('Product submitted to DataBase')
       } catch (error) {
         console.error('Error uploading file:', error);
@@ -50,7 +51,7 @@ export default function AddProduct() {
   axios.defaults.withCredentials = true;
 
   useEffect(() => {
-    axios.get(`${backUrl}/addProduct`)
+    axios.get('http://localhost:3005/addProduct')
       .then((res) => {
         if (res.data === "Success") {
           console.log("Login with middleware successful ")

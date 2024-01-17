@@ -13,9 +13,6 @@ import "./getProduct.css"
 import InputGoogle from '../PropsComponents/InputGoogle';
 import MapCardModel from '../PropsComponents/MapCardModel';
 
-import backUrl from '../backUrl';
-
-
 export default function GetProduct() {
 
   const scrollToTop = () => {
@@ -33,7 +30,7 @@ export default function GetProduct() {
   useEffect(() => {
     const fetchData = () => {
 
-      axios.get(`${backUrl}/products`)
+      axios.get('http://localhost:3005/products')
         .then((response) => {
           console.log("All products fetched", response.data);
           setProductObject(response.data);

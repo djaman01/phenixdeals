@@ -11,7 +11,6 @@ import './bijoux.css'
 import { Link } from 'react-router-dom';
 import InputGoogle from '../PropsComponents/InputGoogle';
 import MapCardModel from '../PropsComponents/MapCardModel';
-import backUrl from '../backUrl';
 
 
 
@@ -26,7 +25,7 @@ export default function Bijoux() {
 
   useEffect(() => {
     
-      axios.get(`${backUrl}/bijou`)//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
+      axios.get('http://localhost:3005/bijou')//Je mets un nouveau endpoint pour crée un nuveau path pour ce nouveau GET request pour fetch que les bijoux 
         .then((response) => {
           console.log("All products fetched", response.data);
           setProductObject(response.data);
