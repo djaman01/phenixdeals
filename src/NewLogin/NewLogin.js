@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import LoginModel from '../PropsComponents/LoginModel';
 
 
-export default function Register() {
+export default function NewLogin() {
 
   const navigate = useNavigate(); //Function qui permet de mener vers un lien sous condition / Si condition vraie, navigate(/...)
 
@@ -26,7 +26,6 @@ export default function Register() {
         if (res.data.Status === "Success") {
           if (res.data.role === "admin") {
             navigate('/dashboard')
-
           }
           else {
             navigate('/')
