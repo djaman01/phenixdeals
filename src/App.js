@@ -1,7 +1,6 @@
-import axios from 'axios';
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"; //Navigate is used to redirect to a component
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faIconName } from '@fortawesome/free-solid-svg-icons' // Replace with your actual icon import
+
+import { BrowserRouter, Routes, Route} from "react-router-dom"; //Navigate is used to redirect to a component
+
 import './App.css';
 
 import Main from './Main/Main';
@@ -17,14 +16,11 @@ import Decoration from './Decoration/Decoration';
 import Livres from './Livres/Livres';
 import FicheDatabase from './FicheDatabase/FicheDatabase';
 import Dashboard from './Dashboard/Dashboard';
-import { useState } from 'react';
 import Register from './Register/Register';
 import NewLogin from './NewLogin/NewLogin';
 
 
 function App() {
-  const [authenticated, setAuthenticated] = useState(false); //State to confirm if i'm authenticated or not
-
   return (
     <BrowserRouter>
       <Routes>
