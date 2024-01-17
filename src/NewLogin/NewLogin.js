@@ -27,9 +27,6 @@ export default function NewLogin() {
           if (res.data.role === "admin") {
             navigate('/dashboard')
           }
-          else {
-            navigate('/')
-          }
         }
         console.log(res.data);//When login is success
       })
