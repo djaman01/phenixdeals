@@ -29,7 +29,7 @@ export default function OldDashboard() {
   axios.defaults.withCredentials = true; //Pour activer le code qui store le token dans le cookie ET revenir à la page sans logging in le temps que le token s'expire
 
   useEffect(() => {
-    axios.get('http://localhost:3005/dashboard')
+    axios.get('https://phenix-back.onrender.com/dashboard')
       .then((res) => {
         if (res.data === "Success") {
           console.log("Login with middleware successful ")
@@ -44,7 +44,7 @@ export default function OldDashboard() {
 
   //GET Request to fecth all products posted in the server
   useEffect(() => {
-    axios.get('http://localhost:3005/products')
+    axios.get('https://phenix-back.onrender.com/products')
       .then((response) => {
         setProducts(response.data);
       })
@@ -62,7 +62,7 @@ export default function OldDashboard() {
       code: editedProductCode
     }
     // Finds the product by its _id + Update it with updateProductData 
-    axios.put(`http://localhost:3005/products/${productId}`, updatedProductData)
+    axios.put(`https://phenix-back.onrender.com/products/${productId}`, updatedProductData)
       .then((response) => {
         console.log('Product updated successfully:', response.data);
         setEditingProductId(null); // Reset the "editingProductId" state after editing, to toggle the input and save button, to the name of the data
@@ -79,7 +79,7 @@ export default function OldDashboard() {
 
   //Arrow function with Delete Request
   const handleDeleteProduct = (productId) => {
-    axios.delete(`http://localhost:3005/products/${productId}`)
+    axios.delete(`https://phenix-back.onrender.com/products/${productId}`)
       .then((response) => {
         console.log('Product deleted successfully:', response.data);
         setProducts(products.filter(product => product._id !== productId));//Update the products states with removing the product with if=productId (product clicked)
@@ -96,7 +96,7 @@ export default function OldDashboard() {
 
 
   const handleLogout = () => {
-    axios.get('http://localhost:3005/logout')
+    axios.get('https://phenix-back.onrender.com/logout')
       .then(res => {
         if (res.data.status === "Success") { //"Success" = message quand on clear le cookie du back-end et donc le token (car stocké dans le cookie)
           window.location.reload(true); //Refresh the application from server side et repart dans Home
@@ -144,7 +144,7 @@ export default function OldDashboard() {
                 <td className='data-dashboard'>
                   <img
                     className='dashboard-img'
-                    src={`http://localhost:3005/${product.imageUrl}`}
+                    src={`https://phenix-back.onrender.com/${product.imageUrl}`}
                     alt={product.auteur}
                   />
                 </td>
