@@ -43,7 +43,7 @@ export default function Dashboard() {
 
   //Protected route: pour empêcher d'accéder à la page /dashboard si token n'est pas dans le cookie = si pas login en tant qu'admin
   useEffect(() => {
-    axios.get('https://phenix-back.onrender.com/dashboard', { withCredentials: true })
+    axios.get('https://phenix-back.onrender.com/dashboard')
       .then((res) => {
         if (res.data === "Success") { //si token présent et vérifié
           console.log("Login with middleware successful ")
@@ -58,7 +58,7 @@ export default function Dashboard() {
 
   //GET Request to fecth all products posted in the server
   useEffect(() => {
-    axios.get('https://phenix-back.onrender.com/products', { withCredentials: true })
+    axios.get('https://phenix-back.onrender.com/products')
       .then((response) => {
         setProducts(response.data);
       })
