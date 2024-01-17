@@ -21,7 +21,7 @@ export default function NewLogin() {
   //Pour Post la data une fois qu'on clique sur Submit
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('https://phenix-back.onrender.com/login', { email, password })
+    axios.post('https://phenix-back.onrender.com/login', { email, password }, {withCredentials: true})
       .then(res => {
         if (res.data.Status === "Success") {
           if (res.data.role === "admin") {
