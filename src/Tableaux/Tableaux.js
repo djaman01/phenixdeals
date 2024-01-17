@@ -10,7 +10,7 @@ import 'aos/dist/aos.css'
 import './tableaux.css'
 import { Link } from 'react-router-dom';
 import MapCardModel from '../PropsComponents/MapCardModel';
-
+import backUrl from '../backUrl';
 
 
 export default function Tableaux() {
@@ -27,7 +27,7 @@ export default function Tableaux() {
   const handleProductName = (e) => setProductName(e.target.value); //ca c'est l'event handler qui fait que la state productName a pour valeur la value de l'input
 
   useEffect(() => {
-      axios.get('http://localhost:3005/tableau')//Je mets un nouveau endpoint pour crée un nouveau path pour ce nouveau GET request pour fetch que les tableaux
+      axios.get(`${backUrl}/tableau`)//Je mets un nouveau endpoint pour crée un nouveau path pour ce nouveau GET request pour fetch que les tableaux
         .then((response) => {
           console.log("tableau products fetched", response.data);
           setProductObject(response.data);

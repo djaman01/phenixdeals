@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import './mapCardModel.css'
 import { useState } from 'react';
 
+import backUrl from '../backUrl';
 
 //Il faut mettre les props que pour error et la function sur laquelle on map et non pas les elements à l'intérieur
 
@@ -74,7 +75,7 @@ export default function MapCardModel({ title, value, onChange, placeholder, erro
                   <div className="div-thumbnail-map-products">
                     <img
                       className='thumbnail-map-products'
-                      src={`http://localhost:3005/${item.imageUrl}`}//On store le path de l'image dans la database,, donc c'est ce qu'il faut chercher
+                      src={`${backUrl}/${item.imageUrl}`}//On store le path de l'image dans la database,, donc c'est ce qu'il faut chercher
                       alt={item.nom}
                     />
                   </div>

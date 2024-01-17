@@ -3,6 +3,7 @@ import './register.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import LoginModel from '../PropsComponents/LoginModel';
+import backUrl from '../backUrl';
 
 
 export default function Register() {
@@ -22,7 +23,7 @@ export default function Register() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    axios.post('http://localhost:3005/register', { email, password }) //Une fois qu'on post la data, si succès crée alert, sinon catch err console.log l'err
+    axios.post(`${backUrl}/register`, { email, password }) //Une fois qu'on post la data, si succès crée alert, sinon catch err console.log l'err
       .then(res => {
         navigate('/newlogin') //Si on signup bien, ca nous mènera vers login page
       })

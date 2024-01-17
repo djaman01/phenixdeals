@@ -12,9 +12,7 @@ import 'aos/dist/aos.css'
 import './homeGet.css'
 
 import MapCardModel from '../PropsComponents/MapCardModel';
-
-
-
+import backUrl from '../backUrl';
 
 export default function HomeGet() {
 
@@ -32,7 +30,7 @@ export default function HomeGet() {
 
   useEffect(() => {
     const fetchData = () => {
-      axios.get('http://localhost:3005/lastproducts?limit=20') // Add the query parameter for limiting the results
+      axios.get(`${backUrl}/lastproducts?limit=20`) // Add the query parameter for limiting the results
         .then((response) => {
           console.log("Last 20 products fetched", response.data);
           setProductObject(response.data);

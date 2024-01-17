@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import LoginModel from '../PropsComponents/LoginModel';
 
+import backUrl from '../backUrl';
 
 export default function Register() {
 
@@ -21,7 +22,7 @@ export default function Register() {
   //Pour Post la data une fois qu'on clique sur Submit
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3005/login', { email, password })
+    axios.post(`${backUrl}/login`, { email, password })
       .then(res => {
         if (res.data.Status === "Success") {
           if (res.data.role === "admin") {
